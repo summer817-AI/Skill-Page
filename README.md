@@ -1,6 +1,6 @@
 # SummerAI Skill 推荐库
 
-这是 SummerAI 的静态 Skill 推荐页面发布仓库。
+通过 GitHub 推送和 Cloudflare Pages 部署好用的 AI agent skill 推荐页面。
 
 ## Cloudflare Pages 设置
 
