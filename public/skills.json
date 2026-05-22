@@ -1,0 +1,908 @@
+{
+  "site": "https://summerai.cc/skills/",
+  "updated_at": "2026-05-22",
+  "purpose": "A curated directory of practical GitHub-hosted AI agent skills, written for both humans and searchable agents.",
+  "authors": [
+    {
+      "login": "KKKKhazix",
+      "name": "KKKKhazix",
+      "github_url": "https://github.com/KKKKhazix",
+      "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4",
+      "summary": "把自己日常使用的 agent skills 按标准整理出来，偏实战、轻依赖，适合直接装进工作流。"
+    },
+    {
+      "login": "op7418",
+      "name": "op7418 / 歸藏",
+      "github_url": "https://github.com/op7418",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4",
+      "summary": "持续发布高完成度的 Claude/Codex skills，强项是 PPT、视频、设计生成和中文写作工具链。"
+    },
+    {
+      "login": "tengfei0114us",
+      "name": "tengfei0114us",
+      "github_url": "https://github.com/tengfei0114us",
+      "avatar_url": "https://avatars.githubusercontent.com/u/271443298?v=4",
+      "summary": "专注把视频处理流程做成可复用 skill，尤其是 YouTube 字幕、翻译、硬字幕烧录。"
+    },
+    {
+      "login": "orange2ai",
+      "name": "orange2ai",
+      "github_url": "https://github.com/orange2ai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77816124?v=4",
+      "summary": "偏思考与决策类 skill，把 agent 从“顺着说”拉回到能挑战方案的工作状态。"
+    },
+    {
+      "login": "zephyrwang6",
+      "name": "zephyrwang6",
+      "github_url": "https://github.com/zephyrwang6",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4",
+      "summary": "高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。"
+    }
+  ],
+  "source_repositories": [
+    {
+      "name": "KKKKhazix/khazix-skills",
+      "url": "https://github.com/KKKKhazix/khazix-skills",
+      "author": "KKKKhazix"
+    },
+    {
+      "name": "op7418/guizang-ppt-skill",
+      "url": "https://github.com/op7418/guizang-ppt-skill",
+      "author": "op7418"
+    },
+    {
+      "name": "op7418/NanoBanana-PPT-Skills",
+      "url": "https://github.com/op7418/NanoBanana-PPT-Skills",
+      "author": "op7418"
+    },
+    {
+      "name": "op7418/Humanizer-zh",
+      "url": "https://github.com/op7418/Humanizer-zh",
+      "author": "op7418"
+    },
+    {
+      "name": "op7418/Youtube-clipper-skill",
+      "url": "https://github.com/op7418/Youtube-clipper-skill",
+      "author": "op7418"
+    },
+    {
+      "name": "tengfei0114us/youtube-bilingual-hardburn",
+      "url": "https://github.com/tengfei0114us/youtube-bilingual-hardburn",
+      "author": "tengfei0114us"
+    },
+    {
+      "name": "op7418/logo-generator-skill",
+      "url": "https://github.com/op7418/logo-generator-skill",
+      "author": "op7418"
+    },
+    {
+      "name": "orange2ai/devils-advocate-skill",
+      "url": "https://github.com/orange2ai/devils-advocate-skill",
+      "author": "orange2ai"
+    },
+    {
+      "name": "zephyrwang6/pm-skills",
+      "url": "https://github.com/zephyrwang6/pm-skills",
+      "author": "zephyrwang6"
+    },
+    {
+      "name": "zephyrwang6/brand-design-md",
+      "url": "https://github.com/zephyrwang6/brand-design-md",
+      "author": "zephyrwang6"
+    },
+    {
+      "name": "zephyrwang6/career.skill",
+      "url": "https://github.com/zephyrwang6/career.skill",
+      "author": "zephyrwang6"
+    },
+    {
+      "name": "zephyrwang6/pm-product-describer",
+      "url": "https://github.com/zephyrwang6/pm-product-describer",
+      "author": "zephyrwang6"
+    }
+  ],
+  "agent_entrypoints": {
+    "html": "https://summerai.cc/skills/",
+    "json": "https://summerai.cc/skills.json",
+    "llms": "https://summerai.cc/llms.txt",
+    "sitemap": "https://summerai.cc/sitemap.xml"
+  },
+  "skills": [
+    {
+      "id": "aihot",
+      "name": "aihot",
+      "category": [
+        "info",
+        "research"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "aihot/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/aihot",
+      "summary": "让 agent 直接查询 AI HOT 的公开 API，生成中文 AI 资讯简报，不需要 API Key 或 MCP server。",
+      "use_when": [
+        "用户问“今天 AI 圈有什么”“最近 OpenAI/Anthropic/Google 发了什么”。",
+        "需要基于实时资讯生成日报、精选条目、公司或关键词动态。"
+      ],
+      "inputs_outputs": [
+        "输入：自然语言问题、日期、关键词、分类或时间窗口。",
+        "输出：中文 markdown 简报、精选条目、来源链接和摘要。"
+      ],
+      "limitations": [
+        "API 调用可能需要浏览器式 User-Agent；实时内容仍要看源站可用性。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\aihot \"$env:USERPROFILE\\.codex\\skills\\aihot\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/aihot ~/.codex/skills/aihot"
+        ]
+      },
+      "example_prompt": "Use aihot to check the most important AI updates from the past 24 hours.",
+      "page_url": "https://summerai.cc/skills/#aihot",
+      "invocation": {
+        "codex": [
+          "请使用 aihot 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$aihot <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 aihot 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the aihot skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "hv-analysis",
+      "name": "hv-analysis",
+      "category": [
+        "research",
+        "product"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "hv-analysis/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis",
+      "summary": "用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 PDF 研究报告。",
+      "use_when": [
+        "用户说“研究一下”“调研一下”“帮我搞懂这个产品/公司/概念”。",
+        "写作、投资、产品判断前需要系统收集材料和竞品对比。"
+      ],
+      "inputs_outputs": [
+        "输入：研究对象、类型、关注点和研究动机。",
+        "输出：纵向故事、横向对比、交叉洞察和排版 PDF 报告。"
+      ],
+      "limitations": [
+        "不适合简单名词解释或几句话摘要。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\hv-analysis \"$env:USERPROFILE\\.codex\\skills\\hv-analysis\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/hv-analysis ~/.codex/skills/hv-analysis"
+        ]
+      },
+      "example_prompt": "Use hv-analysis to deeply research this company and compare it with current competitors.",
+      "page_url": "https://summerai.cc/skills/#hv-analysis",
+      "invocation": {
+        "codex": [
+          "请使用 hv-analysis 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$hv-analysis <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 hv-analysis 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the hv-analysis skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "khazix-writer",
+      "name": "khazix-writer",
+      "category": [
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "khazix-writer/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer",
+      "summary": "数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。",
+      "use_when": [
+        "用户要写公众号长文、续写文章，或把 PDF、brief、新闻链接扩成文章。",
+        "希望文章有明确个人口吻，而不是通用营销文案。"
+      ],
+      "inputs_outputs": [
+        "输入：素材、核心观点、个人经历、情绪节点和目标读者。",
+        "输出：公众号长文草稿、结构建议和四层风格自检。"
+      ],
+      "limitations": [
+        "不适合短社交帖或通用企业文案。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\khazix-writer \"$env:USERPROFILE\\.codex\\skills\\khazix-writer\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/khazix-writer ~/.codex/skills/khazix-writer"
+        ]
+      },
+      "example_prompt": "Use khazix-writer to turn this brief and my notes into a WeChat long article.",
+      "page_url": "https://summerai.cc/skills/#khazix-writer",
+      "invocation": {
+        "codex": [
+          "请使用 khazix-writer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$khazix-writer <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 khazix-writer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the khazix-writer skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "neat-freak",
+      "name": "neat-freak",
+      "category": [
+        "dev"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "neat-freak/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak",
+      "summary": "会话结束后同步项目文档、AGENTS/CLAUDE 规则和 agent 记忆，防止知识体系腐烂。",
+      "use_when": [
+        "用户说“整理一下”“同步一下”“收尾”“更新记忆”或准备交接。",
+        "项目文档、README、规则文件和实际代码已经出现不一致。"
+      ],
+      "inputs_outputs": [
+        "输入：当前项目状态、近期改动、文档和规则文件。",
+        "输出：变更摘要、过期信息清理、文档/记忆同步建议或补丁。"
+      ],
+      "limitations": [
+        "需要避免把规则文件写成追加式流水账。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\neat-freak \"$env:USERPROFILE\\.codex\\skills\\neat-freak\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/neat-freak ~/.codex/skills/neat-freak"
+        ]
+      },
+      "example_prompt": "Use neat-freak to sync this project docs and memory after the current milestone.",
+      "page_url": "https://summerai.cc/skills/#neat-freak",
+      "invocation": {
+        "codex": [
+          "请使用 neat-freak 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$neat-freak <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 neat-freak 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the neat-freak skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "guizang-ppt-skill",
+      "name": "guizang-ppt-skill",
+      "category": [
+        "office",
+        "design",
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/guizang-ppt-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/guizang-ppt-skill",
+      "summary": "生成单文件横向翻页 HTML PPT，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。",
+      "use_when": [
+        "用户要做演讲、分享、发布会、demo day 或杂志风/瑞士风网页 PPT。",
+        "需要把大纲、素材、截图和配图组织成可直接打开的 index.html deck。"
+      ],
+      "inputs_outputs": [
+        "输入：主题、大纲、受众、时长、风格选择、素材和图片约束。",
+        "输出：单文件 HTML PPT、图片目录约定、版式自检和本地预览建议。"
+      ],
+      "limitations": [
+        "不适合大段表格数据、培训课件或多人协作编辑。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/guizang-ppt-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\guizang-ppt-skill \"$env:USERPROFILE\\.codex\\skills\\guizang-ppt-skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/guizang-ppt-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R guizang-ppt-skill ~/.codex/skills/guizang-ppt-skill"
+        ]
+      },
+      "example_prompt": "Use guizang-ppt-skill to turn this outline into a Swiss-style web PPT for a 20-minute product talk.",
+      "page_url": "https://summerai.cc/skills/#guizang-ppt-skill",
+      "invocation": {
+        "codex": [
+          "请使用 guizang-ppt-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$guizang-ppt-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 guizang-ppt-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the guizang-ppt-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "nanobanana-ppt-skills",
+      "name": "NanoBanana-PPT-Skills",
+      "category": [
+        "office",
+        "design"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/NanoBanana-PPT-Skills",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/NanoBanana-PPT-Skills",
+      "summary": "基于文档内容生成 PPT 图片、转场视频和交互播放页，适合需要 AI 生成视觉素材的演示项目。",
+      "use_when": [
+        "用户想把文档自动变成高质量 PPT 图片或视频化展示。",
+        "需要 Nano Banana / Gemini 图像生成、可灵转场、FFmpeg 导出等完整链路。"
+      ],
+      "inputs_outputs": [
+        "输入：文档内容、风格选择、页数、Gemini API Key、可选视频生成凭证。",
+        "输出：PPT 图片、转场视频、交互播放页和导出视频。"
+      ],
+      "limitations": [
+        "依赖外部图像生成凭证，视频能力还需要额外凭证和 FFmpeg。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/NanoBanana-PPT-Skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\NanoBanana-PPT-Skills \"$env:USERPROFILE\\.codex\\skills\\NanoBanana-PPT-Skills\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/NanoBanana-PPT-Skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R NanoBanana-PPT-Skills ~/.codex/skills/NanoBanana-PPT-Skills"
+        ]
+      },
+      "example_prompt": "Use NanoBanana-PPT-Skills to generate a five-page visual deck from this document.",
+      "page_url": "https://summerai.cc/skills/#nanobanana-ppt-skills",
+      "invocation": {
+        "codex": [
+          "请使用 NanoBanana-PPT-Skills 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$NanoBanana-PPT-Skills <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 NanoBanana-PPT-Skills 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the NanoBanana-PPT-Skills skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "humanizer-zh",
+      "name": "humanizer-zh",
+      "category": [
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/Humanizer-zh",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/Humanizer-zh",
+      "summary": "识别并改写中文文本中的 AI 生成痕迹，让文章节奏、语气和观点更像真实作者。",
+      "use_when": [
+        "发布前去掉“AI 腔”、宣传腔、三段式套话和过度转折。",
+        "保留原意的同时增加更自然的节奏、具体感和作者声音。"
+      ],
+      "inputs_outputs": [
+        "输入：待编辑中文文本、目标语气、发布场景。",
+        "输出：自然化改写稿、问题模式说明和可继续迭代的编辑建议。"
+      ],
+      "limitations": [
+        "改善的是风格，不负责事实核验。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/Humanizer-zh.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Humanizer-zh \"$env:USERPROFILE\\.codex\\skills\\Humanizer-zh\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/Humanizer-zh.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Humanizer-zh ~/.codex/skills/Humanizer-zh"
+        ]
+      },
+      "example_prompt": "Use humanizer-zh to make this article sound less AI-written while keeping my original point.",
+      "page_url": "https://summerai.cc/skills/#humanizer-zh",
+      "invocation": {
+        "codex": [
+          "请使用 humanizer-zh 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$humanizer-zh <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 humanizer-zh 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the humanizer-zh skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "youtube-clipper",
+      "name": "youtube-clipper",
+      "category": [
+        "info",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/Youtube-clipper-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/Youtube-clipper-skill",
+      "summary": "下载 YouTube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。",
+      "use_when": [
+        "从长视频里切出可传播的短片段，尤其是访谈、教程、演讲。",
+        "需要字幕翻译、烧录和片段总结一条链路完成。"
+      ],
+      "inputs_outputs": [
+        "输入：YouTube URL、片段选择、字幕语言、字幕样式。",
+        "输出：视频片段、双语字幕、硬字幕视频和总结文案。"
+      ],
+      "limitations": [
+        "依赖 yt-dlp、FFmpeg/libass 和 Python 字幕处理依赖。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/Youtube-clipper-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Youtube-clipper-skill \"$env:USERPROFILE\\.codex\\skills\\Youtube-clipper-skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/Youtube-clipper-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Youtube-clipper-skill ~/.codex/skills/Youtube-clipper-skill"
+        ]
+      },
+      "example_prompt": "Use youtube-clipper to find the best short segments in this interview and create bilingual clips.",
+      "page_url": "https://summerai.cc/skills/#youtube-clipper",
+      "invocation": {
+        "codex": [
+          "请使用 youtube-clipper 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$youtube-clipper <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 youtube-clipper 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the youtube-clipper skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "youtube-bilingual-hardburn",
+      "name": "youtube-bilingual-hardburn",
+      "category": [
+        "info",
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "tengfei0114us",
+        "github_url": "https://github.com/tengfei0114us",
+        "avatar_url": "https://avatars.githubusercontent.com/u/271443298?v=4"
+      },
+      "source_repository": "https://github.com/tengfei0114us/youtube-bilingual-hardburn",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/tengfei0114us/youtube-bilingual-hardburn",
+      "summary": "把外语视频做成中英双语硬字幕版，重点解决 YouTube 自动字幕无标点、翻译行数错位和最终烧录校验。",
+      "use_when": [
+        "用户要把英文访谈、教程、演讲分享到小红书、微信、B 站等平台。",
+        "需要字幕在所有播放器里都可见，而不是可开关的软字幕。"
+      ],
+      "inputs_outputs": [
+        "输入：视频 URL 或视频文件、字幕源、字体和版式偏好。",
+        "输出：双语 .ass 字幕、测试帧、硬字幕 MP4、抽帧校验结果。"
+      ],
+      "limitations": [
+        "需要 yt-dlp、FFmpeg、Python，并严格做一行英文对应一行中文的校验。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/tengfei0114us/youtube-bilingual-hardburn.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\youtube-bilingual-hardburn \"$env:USERPROFILE\\.codex\\skills\\youtube-bilingual-hardburn\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/tengfei0114us/youtube-bilingual-hardburn.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R youtube-bilingual-hardburn ~/.codex/skills/youtube-bilingual-hardburn"
+        ]
+      },
+      "example_prompt": "Use youtube-bilingual-hardburn to make this English talk into a Chinese-English hardsub video.",
+      "page_url": "https://summerai.cc/skills/#youtube-bilingual-hardburn",
+      "invocation": {
+        "codex": [
+          "请使用 youtube-bilingual-hardburn 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$youtube-bilingual-hardburn <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 youtube-bilingual-hardburn 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the youtube-bilingual-hardburn skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "logo-generator",
+      "name": "logo-generator",
+      "category": [
+        "design",
+        "office"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/logo-generator-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/logo-generator-skill",
+      "summary": "为产品或品牌生成多组 SVG logo 方向，并制作带设计 rationale 的展示页面和高端样机图。",
+      "use_when": [
+        "新产品起名后需要快速探索 6 个以上 logo 方向。",
+        "需要 SVG、PNG 和不同背景风格的品牌展示图。"
+      ],
+      "inputs_outputs": [
+        "输入：品牌名、行业、核心概念、风格偏好、颜色偏好。",
+        "输出：SVG logo 变体、交互展示页、PNG 导出和展示图。"
+      ],
+      "limitations": [
+        "高端展示图生成需要外部图像生成凭证。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/logo-generator-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\logo-generator-skill \"$env:USERPROFILE\\.codex\\skills\\logo-generator-skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/logo-generator-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R logo-generator-skill ~/.codex/skills/logo-generator-skill"
+        ]
+      },
+      "example_prompt": "Use logo-generator to create six SVG logo directions for this AI product.",
+      "page_url": "https://summerai.cc/skills/#logo-generator",
+      "invocation": {
+        "codex": [
+          "请使用 logo-generator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$logo-generator <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 logo-generator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the logo-generator skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "devils-advocate",
+      "name": "devils-advocate",
+      "category": [
+        "product",
+        "research",
+        "dev"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "orange2ai",
+        "github_url": "https://github.com/orange2ai",
+        "avatar_url": "https://avatars.githubusercontent.com/u/77816124?v=4"
+      },
+      "source_repository": "https://github.com/orange2ai/devils-advocate-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/orange2ai/devils-advocate-skill",
+      "summary": "在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。",
+      "use_when": [
+        "技术方案 review、产品决策、定价策略、BP/pitch 打磨。",
+        "用户明确要求“挑刺”“帮我找漏洞”“challenge 一下”。"
+      ],
+      "inputs_outputs": [
+        "输入：方案、决策背景、约束、目标用户或评审对象。",
+        "输出：具体质疑、隐藏假设、失败场景和下一步要验证的问题。"
+      ],
+      "limitations": [
+        "适合主动触发，不适合在普通协作中突然切换成强质疑模式。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/orange2ai/devils-advocate-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\devils-advocate-skill \"$env:USERPROFILE\\.codex\\skills\\devils-advocate-skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/orange2ai/devils-advocate-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R devils-advocate-skill ~/.codex/skills/devils-advocate-skill"
+        ]
+      },
+      "example_prompt": "Use devils-advocate to challenge this product plan before I start building.",
+      "page_url": "https://summerai.cc/skills/#devils-advocate",
+      "invocation": {
+        "codex": [
+          "请使用 devils-advocate 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$devils-advocate <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 devils-advocate 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the devils-advocate skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "pm-skills",
+      "name": "pm-skills",
+      "category": [
+        "product",
+        "office",
+        "research"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/pm-skills",
+      "source_path": "README.md",
+      "source_url": "https://github.com/zephyrwang6/pm-skills",
+      "summary": "13 个产品经理 Claude Code skills，覆盖 PRD、需求评审、优先级、路线图、实验、埋点、竞品和复盘。",
+      "use_when": [
+        "产品经理想把高频文档和评审工作流交给 agent 预处理。",
+        "从模糊需求走到 PRD、评审问题、实验方案、埋点方案和复盘报告。"
+      ],
+      "inputs_outputs": [
+        "输入：目标、需求描述、资源约束、数据或截图。",
+        "输出：PRD、评审清单、优先级评分、路线图、实验和复盘文档。"
+      ],
+      "limitations": [
+        "它能产出工作文档，但是否值得做、如何说服团队仍需人判断。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/pm-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\pm-skills \"$env:USERPROFILE\\.codex\\skills\\pm-skills\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/pm-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R pm-skills ~/.codex/skills/pm-skills"
+        ]
+      },
+      "example_prompt": "Use pm-skills to turn this vague feature idea into a review-ready PRD and risk checklist.",
+      "page_url": "https://summerai.cc/skills/#pm-skills",
+      "invocation": {
+        "codex": [
+          "请使用 pm-skills 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$pm-skills <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 pm-skills 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the pm-skills skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "brand-design-md",
+      "name": "brand-design-md",
+      "category": [
+        "design",
+        "dev"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/brand-design-md",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/brand-design-md",
+      "summary": "根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 UI 代码上下文。",
+      "use_when": [
+        "用户说“Apple 风格”“Notion 那种感觉”“Stripe 极简风”。",
+        "需要把品牌设计语言映射成颜色、字体、布局和组件倾向。"
+      ],
+      "inputs_outputs": [
+        "输入：品牌名、混搭品牌需求、UI 目标、现有约束。",
+        "输出：品牌 slug 映射、DESIGN.md 上下文和 UI 生成建议。"
+      ],
+      "limitations": [
+        "运行时需要 npx getdesign@latest add <slug> 获取外部设计规范。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/brand-design-md.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\brand-design-md \"$env:USERPROFILE\\.codex\\skills\\brand-design-md\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/brand-design-md.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R brand-design-md ~/.codex/skills/brand-design-md"
+        ]
+      },
+      "example_prompt": "Use brand-design-md to make this dashboard feel like Stripe plus Linear.",
+      "page_url": "https://summerai.cc/skills/#brand-design-md",
+      "invocation": {
+        "codex": [
+          "请使用 brand-design-md 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$brand-design-md <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 brand-design-md 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the brand-design-md skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "career-skill-planner",
+      "name": "career-skill-planner",
+      "category": [
+        "product",
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/career.skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/career.skill",
+      "summary": "输入职业名称或 JD，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。",
+      "use_when": [
+        "用户想知道某个职业如何用 AI 提效，或要为岗位打造专属 skill 库。",
+        "从“我是设计师/运营/销售/律师”拆出可落地的 agent 工作流。"
+      ],
+      "inputs_outputs": [
+        "输入：职业、JD、核心输出物、最耗时的工作环节。",
+        "输出：工作流拆解、候选 skill 清单、制作提示词和实现逻辑。"
+      ],
+      "limitations": [
+        "职业名称太宽泛时可能需要先问一个定向问题。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/career.skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\career.skill \"$env:USERPROFILE\\.codex\\skills\\career.skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/career.skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R career.skill ~/.codex/skills/career.skill"
+        ]
+      },
+      "example_prompt": "Use career-skill-planner to design an AI skill library for a content operations manager.",
+      "page_url": "https://summerai.cc/skills/#career-skill-planner",
+      "invocation": {
+        "codex": [
+          "请使用 career-skill-planner 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$career-skill-planner <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 career-skill-planner 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the career-skill-planner skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "space-product-describer",
+      "name": "SPACE-product-describer",
+      "category": [
+        "product",
+        "writing",
+        "dev"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/pm-product-describer",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/pm-product-describer",
+      "summary": "用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。",
+      "use_when": [
+        "用户说“我想做一个产品/工具/应用”，但描述太笼统。",
+        "写 PRD 或做原型前，需要先补齐用户流程、场景、边界和切入建议。"
+      ],
+      "inputs_outputs": [
+        "输入：产品想法、目标用户、流程、约束、期望原型或代码产物。",
+        "输出：结构化产品描述、澄清问题和推荐切入角度。"
+      ],
+      "limitations": [
+        "已进入详细 PRD 阶段时，应切换到 PRD 类 skill。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/pm-product-describer.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\pm-product-describer \"$env:USERPROFILE\\.codex\\skills\\pm-product-describer\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/pm-product-describer.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R pm-product-describer ~/.codex/skills/pm-product-describer"
+        ]
+      },
+      "example_prompt": "Use SPACE-product-describer to turn this fuzzy app idea into a buildable product brief.",
+      "page_url": "https://summerai.cc/skills/#space-product-describer",
+      "invocation": {
+        "codex": [
+          "请使用 SPACE-product-describer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$SPACE-product-describer <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 SPACE-product-describer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the SPACE-product-describer skill to handle: <your task here>"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /tmp/
+Disallow: /output/
+Disallow: /.codepilot-uploads/
+
+Sitemap: https://summerai.cc/sitemap.xml

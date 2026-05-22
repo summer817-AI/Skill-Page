@@ -1,0 +1,597 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SummerAI Skill 推荐库</title>
+  <meta name="description" content="SummerAI 精选 AI agent skills 推荐库，收录来自 GitHub 的实用 agent skills，并提供完整来源、作者、安装命令和结构化 JSON。">
+  <link rel="canonical" href="https://summerai.cc/skills/">
+  <meta property="og:title" content="SummerAI Skill 推荐库">
+  <meta property="og:description" content="精选好用的 AI agent skills，包含用途、触发场景、输入输出、安装方法、作者和 GitHub 来源。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://summerai.cc/skills/">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"SummerAI Skill 推荐库","description":"面向 AI agent 的 GitHub skill 推荐目录。","url":"https://summerai.cc/skills/","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"aihot","url":"https://summerai.cc/skills/#aihot"},
+      {"@type":"ListItem","position":2,"name":"hv-analysis","url":"https://summerai.cc/skills/#hv-analysis"},
+      {"@type":"ListItem","position":3,"name":"khazix-writer","url":"https://summerai.cc/skills/#khazix-writer"},
+      {"@type":"ListItem","position":4,"name":"neat-freak","url":"https://summerai.cc/skills/#neat-freak"},
+      {"@type":"ListItem","position":5,"name":"guizang-ppt-skill","url":"https://summerai.cc/skills/#guizang-ppt-skill"},
+      {"@type":"ListItem","position":6,"name":"NanoBanana-PPT-Skills","url":"https://summerai.cc/skills/#nanobanana-ppt-skills"},
+      {"@type":"ListItem","position":7,"name":"humanizer-zh","url":"https://summerai.cc/skills/#humanizer-zh"},
+      {"@type":"ListItem","position":8,"name":"youtube-clipper","url":"https://summerai.cc/skills/#youtube-clipper"},
+      {"@type":"ListItem","position":9,"name":"youtube-bilingual-hardburn","url":"https://summerai.cc/skills/#youtube-bilingual-hardburn"},
+      {"@type":"ListItem","position":10,"name":"logo-generator","url":"https://summerai.cc/skills/#logo-generator"},
+      {"@type":"ListItem","position":11,"name":"devils-advocate","url":"https://summerai.cc/skills/#devils-advocate"},
+      {"@type":"ListItem","position":12,"name":"pm-skills","url":"https://summerai.cc/skills/#pm-skills"},
+      {"@type":"ListItem","position":13,"name":"brand-design-md","url":"https://summerai.cc/skills/#brand-design-md"},
+      {"@type":"ListItem","position":14,"name":"career-skill-planner","url":"https://summerai.cc/skills/#career-skill-planner"},
+      {"@type":"ListItem","position":15,"name":"SPACE-product-describer","url":"https://summerai.cc/skills/#space-product-describer"}
+  ]}
+  </script>
+  <style>:root{--bg:#f5f7fa;--panel:#ffffff;--panel-2:#ffffff;--ink:#1f2526;--muted:#5e6872;--line:#d8e0e7;--brand:#c84f35;--brand-2:#246a73;--brand-3:#5b4a18;--soft:#e8f5f4;--shadow:0 18px 48px rgba(31,37,38,.1)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(245,247,250,.98)),url("../assets/lobster-mascot.svg") no-repeat right 34px top 18px/min(34vw,260px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}a{color:var(--brand-2);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(1120px,calc(100% - 32px));margin:0 auto}header{padding:26px 0 18px;border-bottom:1px solid rgba(216,224,231,.86);background:rgba(255,255,255,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand img{width:42px;height:42px;object-fit:contain}.brand strong{display:block;font-size:17px;line-height:1.2}.brand span{display:block;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav-links a,.data-link{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--ink);background:rgba(255,255,255,.78);font-size:14px}main{padding:40px 0 64px}.intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:24px;align-items:stretch;margin-bottom:24px}.intro-copy{padding:30px 0 18px}h1{margin:0 0 14px;max-width:820px;font-size:clamp(34px,6vw,66px);line-height:1.04;letter-spacing:0}.lead{max-width:760px;margin:0;color:var(--muted);font-size:18px}.agent-box{align-self:end;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:var(--shadow)}.agent-box h2{margin:0 0 8px;font-size:18px;line-height:1.35}.agent-box p{margin:0 0 12px;color:var(--muted);font-size:14px}.agent-actions{display:flex;gap:8px;flex-wrap:wrap}.source-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:2px 0 22px;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.82)}.source-strip p{margin:0;color:var(--muted);font-size:14px}.authors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 24px}.author-card{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;min-width:0;display:grid;grid-template-columns:46px minmax(0,1fr);gap:10px;padding:12px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.86)}.author-card img{width:46px;height:46px;border-radius:8px;object-fit:cover;border:1px solid var(--line)}.author-card strong{display:block;margin:0 0 4px;font-size:15px;line-height:1.2;word-break:break-word;color:var(--brand-2)}.author-card small{display:block;margin:0;color:var(--muted);font-size:12px;line-height:1.45}.author-card[aria-pressed="true"]{border-color:var(--brand-2);background:#e8f5f4;box-shadow:0 0 0 2px rgba(36,106,115,.12)}.toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:12px;align-items:center;margin:24px 0}.search{width:100%;border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#fff;color:var(--ink);font:inherit}.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}button{appearance:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:#fff;color:var(--ink);font:inherit;cursor:pointer}button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.skill-card{display:flex;flex-direction:column;gap:12px;min-width:0;min-height:100%;background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:0 10px 26px rgba(31,37,38,.07)}.skill-title{display:flex;align-items:center;gap:12px}.skill-title img{width:44px;height:44px;border-radius:10px;object-fit:cover;border:1px solid var(--line);flex:0 0 auto}.skill-card h2{margin:0;font-size:22px;line-height:1.2;word-break:break-word}.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pill{display:inline-flex;align-items:center;min-height:28px;border-radius:999px;padding:4px 9px;background:var(--soft);color:#214f56;font-size:13px;border:1px solid #cfe3df}.meta>.pill{order:2}.meta>.level{order:0;background:#fff3d7;color:#6b4b00;border-color:#ead48d}.meta>.pill:first-child{order:1;background:#f3ecff;color:#4f3c7f;border-color:#d8c6ff}.meta>.pill:not(:first-child):not(.level):not(.source-pill){order:2;background:#e8f5f4;color:#214f56;border-color:#cfe3df}.source-pill{background:#eef1f3;color:#3f4b55;border-color:#d8e0e7}.meta>.source-pill:nth-last-child(2){order:3;background:#eaf1ff;color:#334e78;border-color:#ccd9f1}.meta>.source-pill:last-child{order:4;background:#edf7ed;color:#345f39;border-color:#cfe5cf}.summary{margin:0;color:var(--muted)}.section-title{margin:2px 0 0;color:var(--brand-3);font-weight:700;font-size:14px}ul{margin:0;padding-left:20px}li{margin:4px 0}code{border:1px solid var(--line);border-radius:6px;padding:1px 5px;background:#f7fafc;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:.92em}.install,.invoke{min-width:0;margin:6px 0 0;max-width:100%;overflow:auto;border:1px solid #cfd8df;border-radius:8px;background:#1f2526;color:#f4f7f8;padding:12px}.install code,.invoke code{display:block;padding:0;border:0;background:transparent;color:inherit;white-space:pre;font-size:12px;line-height:1.55}.source-url{margin:6px 0 0;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:13px}.empty{display:none;border:1px dashed var(--line);border-radius:8px;padding:28px;text-align:center;color:var(--muted);background:rgba(255,255,255,.7)}footer{padding:28px 0 42px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}@media(max-width:1040px){.authors{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){body{background-size:180px;background-position:right -36px top 92px}header{position:static}.nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.intro{grid-template-columns:1fr}.intro-copy{padding-top:14px}.source-strip{align-items:flex-start;flex-direction:column}.authors,.toolbar,.grid{grid-template-columns:1fr}.filters{justify-content:flex-start}}</style>
+  <style>
+    .brand strong{font-size:clamp(34px,6vw,66px);line-height:1.04;letter-spacing:0;color:var(--ink)}
+    h1{font-size:18px;line-height:1.35}
+  </style>
+</head>
+<body>
+  <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title"><div class="intro-copy"><h1 id="page-title">好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里收录来自 GitHub 的实用 AI agent skills。每个条目都写清楚用途、触发场景、输入输出、安装命令、作者和完整来源，方便人类选择，也方便搜索型 agent 直接引用。</p></div><aside class="agent-box" aria-label="Agent access"><h2>Agent 读取入口</h2><p>公开结构化数据在根目录，页面正文保留完整语义，避免只靠前端渲染。</p><div class="agent-actions"><a class="data-link" href="../skills.json">打开 JSON</a><a class="data-link" href="../llms.txt">打开 llms.txt</a></div></aside></section>
+    <section class="source-strip" aria-label="当前推荐来源"><p>当前只保留明确 GitHub 来源的外部推荐。已接入：KKKKhazix、op7418、zephyrwang6、orange2ai、tengfei0114us。</p><a class="data-link" href="https://github.com/topics/skill" rel="noopener noreferrer" target="_blank">继续在 GitHub 找 skill</a></section>
+    <section class="authors" aria-label="Skill 作者">
+      <button type="button" class="author-card" data-author="KKKKhazix" aria-pressed="false"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 的 GitHub 头像" loading="lazy"><span><strong>KKKKhazix</strong><small>把自己日常使用的 agent skills 按标准整理出来，偏实战、轻依赖，适合直接装进工作流。</small></span></button>
+      <button type="button" class="author-card" data-author="op7418" aria-pressed="false"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><span><strong>op7418 / 歸藏</strong><small>持续发布高完成度的 Claude/Codex skills，强项是 PPT、视频、设计生成和中文写作工具链。</small></span></button>
+      <button type="button" class="author-card" data-author="tengfei0114us" aria-pressed="false"><img src="https://avatars.githubusercontent.com/u/271443298?v=4" alt="tengfei0114us 的 GitHub 头像" loading="lazy"><span><strong>tengfei0114us</strong><small>专注把视频处理流程做成可复用 skill，尤其是 YouTube 字幕、翻译、硬字幕烧录。</small></span></button>
+      <button type="button" class="author-card" data-author="orange2ai" aria-pressed="false"><img src="https://avatars.githubusercontent.com/u/77816124?v=4" alt="orange2ai 的 GitHub 头像" loading="lazy"><span><strong>orange2ai</strong><small>偏思考与决策类 skill，把 agent 从“顺着说”拉回到能挑战方案的工作状态。</small></span></button>
+      <button type="button" class="author-card" data-author="zephyrwang6" aria-pressed="false"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 的 GitHub 头像" loading="lazy"><span><strong>zephyrwang6</strong><small>高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。</small></span></button>
+    </section>
+    <section class="toolbar" aria-label="筛选 skill"><input id="search" class="search" type="search" placeholder="搜索 skill 名称、作者、GitHub 来源、用途或关键词" aria-label="搜索 skill"><div class="filters" role="group" aria-label="分类筛选"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="office" aria-pressed="false">办公演示</button><button type="button" data-filter="writing" aria-pressed="false">文字处理</button><button type="button" data-filter="info" aria-pressed="false">信息抓取</button><button type="button" data-filter="design" aria-pressed="false">设计视觉</button><button type="button" data-filter="product" aria-pressed="false">产品PM</button><button type="button" data-filter="research" aria-pressed="false">研究分析</button><button type="button" data-filter="dev" aria-pressed="false">开发工作流</button></div></section>
+    <section id="skills" class="grid" aria-live="polite">
+      <article class="skill-card" id="aihot" data-category="info research" data-text="aihot AI 资讯 KKKKhazix https://github.com/KKKKhazix/khazix-skills info research">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 的 GitHub 头像" loading="lazy"><h2>aihot</h2></div>
+          <div class="meta">
+            <span class="pill">AI 资讯</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">信息抓取</span>
+            <span class="pill">研究分析</span>
+            <span class="pill source-pill">作者：KKKKhazix</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">让 agent 直接查询 AI HOT 的公开 API，生成中文 AI 资讯简报，不需要 API Key 或 MCP server。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户问“今天 AI 圈有什么”“最近 OpenAI/Anthropic/Google 发了什么”。</li><li>需要基于实时资讯生成日报、精选条目、公司或关键词动态。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：自然语言问题、日期、关键词、分类或时间窗口。</li><li>输出：中文 markdown 简报、精选条目、来源链接和摘要。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/KKKKhazix/khazix-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\khazix-skills\aihot &quot;$env:USERPROFILE\.codex\skills\aihot&quot;
+
+macOS / Linux
+git clone https://github.com/KKKKhazix/khazix-skills.git
+mkdir -p ~/.codex/skills
+cp -R khazix-skills/aihot ~/.codex/skills/aihot</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 aihot 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$aihot &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 aihot 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the aihot skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/aihot" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/aihot</a></p></div>
+      </article>
+
+      <article class="skill-card" id="hv-analysis" data-category="research product" data-text="hv-analysis 深度研究 KKKKhazix https://github.com/KKKKhazix/khazix-skills research product">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 的 GitHub 头像" loading="lazy"><h2>hv-analysis</h2></div>
+          <div class="meta">
+            <span class="pill">深度研究</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">研究分析</span>
+            <span class="pill">产品PM</span>
+            <span class="pill source-pill">作者：KKKKhazix</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 PDF 研究报告。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户说“研究一下”“调研一下”“帮我搞懂这个产品/公司/概念”。</li><li>写作、投资、产品判断前需要系统收集材料和竞品对比。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：研究对象、类型、关注点和研究动机。</li><li>输出：纵向故事、横向对比、交叉洞察和排版 PDF 报告。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/KKKKhazix/khazix-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\khazix-skills\hv-analysis &quot;$env:USERPROFILE\.codex\skills\hv-analysis&quot;
+
+macOS / Linux
+git clone https://github.com/KKKKhazix/khazix-skills.git
+mkdir -p ~/.codex/skills
+cp -R khazix-skills/hv-analysis ~/.codex/skills/hv-analysis</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 hv-analysis 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$hv-analysis &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 hv-analysis 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the hv-analysis skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis</a></p></div>
+      </article>
+
+      <article class="skill-card" id="khazix-writer" data-category="writing" data-text="khazix-writer 公众号长文 KKKKhazix https://github.com/KKKKhazix/khazix-skills writing">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 的 GitHub 头像" loading="lazy"><h2>khazix-writer</h2></div>
+          <div class="meta">
+            <span class="pill">公众号长文</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">文字处理</span>
+            <span class="pill source-pill">作者：KKKKhazix</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户要写公众号长文、续写文章，或把 PDF、brief、新闻链接扩成文章。</li><li>希望文章有明确个人口吻，而不是通用营销文案。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：素材、核心观点、个人经历、情绪节点和目标读者。</li><li>输出：公众号长文草稿、结构建议和四层风格自检。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/KKKKhazix/khazix-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\khazix-skills\khazix-writer &quot;$env:USERPROFILE\.codex\skills\khazix-writer&quot;
+
+macOS / Linux
+git clone https://github.com/KKKKhazix/khazix-skills.git
+mkdir -p ~/.codex/skills
+cp -R khazix-skills/khazix-writer ~/.codex/skills/khazix-writer</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 khazix-writer 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$khazix-writer &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 khazix-writer 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the khazix-writer skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer</a></p></div>
+      </article>
+
+      <article class="skill-card" id="neat-freak" data-category="dev" data-text="neat-freak 知识库收尾 KKKKhazix https://github.com/KKKKhazix/khazix-skills dev">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 的 GitHub 头像" loading="lazy"><h2>neat-freak</h2></div>
+          <div class="meta">
+            <span class="pill">知识库收尾</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">开发工作流</span>
+            <span class="pill source-pill">作者：KKKKhazix</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">会话结束后同步项目文档、AGENTS/CLAUDE 规则和 agent 记忆，防止知识体系腐烂。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户说“整理一下”“同步一下”“收尾”“更新记忆”或准备交接。</li><li>项目文档、README、规则文件和实际代码已经出现不一致。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：当前项目状态、近期改动、文档和规则文件。</li><li>输出：变更摘要、过期信息清理、文档/记忆同步建议或补丁。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/KKKKhazix/khazix-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\khazix-skills\neat-freak &quot;$env:USERPROFILE\.codex\skills\neat-freak&quot;
+
+macOS / Linux
+git clone https://github.com/KKKKhazix/khazix-skills.git
+mkdir -p ~/.codex/skills
+cp -R khazix-skills/neat-freak ~/.codex/skills/neat-freak</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 neat-freak 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$neat-freak &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 neat-freak 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the neat-freak skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak</a></p></div>
+      </article>
+
+      <article class="skill-card" id="guizang-ppt-skill" data-category="office design writing" data-text="guizang-ppt-skill 网页 PPT op7418 https://github.com/op7418/guizang-ppt-skill office design writing">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><h2>guizang-ppt-skill</h2></div>
+          <div class="meta">
+            <span class="pill">网页 PPT</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">办公演示</span>
+            <span class="pill">设计视觉</span>
+            <span class="pill">文字处理</span>
+            <span class="pill source-pill">作者：op7418</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">生成单文件横向翻页 HTML PPT，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户要做演讲、分享、发布会、demo day 或杂志风/瑞士风网页 PPT。</li><li>需要把大纲、素材、截图和配图组织成可直接打开的 index.html deck。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：主题、大纲、受众、时长、风格选择、素材和图片约束。</li><li>输出：单文件 HTML PPT、图片目录约定、版式自检和本地预览建议。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/op7418/guizang-ppt-skill.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\guizang-ppt-skill &quot;$env:USERPROFILE\.codex\skills\guizang-ppt-skill&quot;
+
+macOS / Linux
+git clone https://github.com/op7418/guizang-ppt-skill.git
+mkdir -p ~/.codex/skills
+cp -R guizang-ppt-skill ~/.codex/skills/guizang-ppt-skill</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 guizang-ppt-skill 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$guizang-ppt-skill &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 guizang-ppt-skill 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the guizang-ppt-skill skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/guizang-ppt-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/guizang-ppt-skill</a></p></div>
+      </article>
+
+      <article class="skill-card" id="nanobanana-ppt-skills" data-category="office design" data-text="NanoBanana-PPT-Skills AI PPT 图片/视频 op7418 https://github.com/op7418/NanoBanana-PPT-Skills office design">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><h2>NanoBanana-PPT-Skills</h2></div>
+          <div class="meta">
+            <span class="pill">AI PPT 图片/视频</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">办公演示</span>
+            <span class="pill">设计视觉</span>
+            <span class="pill source-pill">作者：op7418</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">基于文档内容生成 PPT 图片、转场视频和交互播放页，适合需要 AI 生成视觉素材的演示项目。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户想把文档自动变成高质量 PPT 图片或视频化展示。</li><li>需要 Nano Banana / Gemini 图像生成、可灵转场、FFmpeg 导出等完整链路。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：文档内容、风格选择、页数、Gemini API Key、可选视频生成凭证。</li><li>输出：PPT 图片、转场视频、交互播放页和导出视频。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/op7418/NanoBanana-PPT-Skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\NanoBanana-PPT-Skills &quot;$env:USERPROFILE\.codex\skills\NanoBanana-PPT-Skills&quot;
+
+macOS / Linux
+git clone https://github.com/op7418/NanoBanana-PPT-Skills.git
+mkdir -p ~/.codex/skills
+cp -R NanoBanana-PPT-Skills ~/.codex/skills/NanoBanana-PPT-Skills</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 NanoBanana-PPT-Skills 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$NanoBanana-PPT-Skills &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 NanoBanana-PPT-Skills 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the NanoBanana-PPT-Skills skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/NanoBanana-PPT-Skills" target="_blank" rel="noopener noreferrer">https://github.com/op7418/NanoBanana-PPT-Skills</a></p></div>
+      </article>
+
+      <article class="skill-card" id="humanizer-zh" data-category="writing" data-text="humanizer-zh 文字润色 op7418 https://github.com/op7418/Humanizer-zh writing">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><h2>humanizer-zh</h2></div>
+          <div class="meta">
+            <span class="pill">文字润色</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">文字处理</span>
+            <span class="pill source-pill">作者：op7418</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">识别并改写中文文本中的 AI 生成痕迹，让文章节奏、语气和观点更像真实作者。</p>
+        <div><p class="section-title">适合场景</p><ul><li>发布前去掉“AI 腔”、宣传腔、三段式套话和过度转折。</li><li>保留原意的同时增加更自然的节奏、具体感和作者声音。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：待编辑中文文本、目标语气、发布场景。</li><li>输出：自然化改写稿、问题模式说明和可继续迭代的编辑建议。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/op7418/Humanizer-zh.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\Humanizer-zh &quot;$env:USERPROFILE\.codex\skills\Humanizer-zh&quot;
+
+macOS / Linux
+git clone https://github.com/op7418/Humanizer-zh.git
+mkdir -p ~/.codex/skills
+cp -R Humanizer-zh ~/.codex/skills/Humanizer-zh</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 humanizer-zh 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$humanizer-zh &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 humanizer-zh 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the humanizer-zh skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/Humanizer-zh" target="_blank" rel="noopener noreferrer">https://github.com/op7418/Humanizer-zh</a></p></div>
+      </article>
+
+      <article class="skill-card" id="youtube-clipper" data-category="info writing" data-text="youtube-clipper 视频剪辑 op7418 https://github.com/op7418/Youtube-clipper-skill info writing">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><h2>youtube-clipper</h2></div>
+          <div class="meta">
+            <span class="pill">视频剪辑</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">信息抓取</span>
+            <span class="pill">文字处理</span>
+            <span class="pill source-pill">作者：op7418</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">下载 YouTube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。</p>
+        <div><p class="section-title">适合场景</p><ul><li>从长视频里切出可传播的短片段，尤其是访谈、教程、演讲。</li><li>需要字幕翻译、烧录和片段总结一条链路完成。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：YouTube URL、片段选择、字幕语言、字幕样式。</li><li>输出：视频片段、双语字幕、硬字幕视频和总结文案。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/op7418/Youtube-clipper-skill.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\Youtube-clipper-skill &quot;$env:USERPROFILE\.codex\skills\Youtube-clipper-skill&quot;
+
+macOS / Linux
+git clone https://github.com/op7418/Youtube-clipper-skill.git
+mkdir -p ~/.codex/skills
+cp -R Youtube-clipper-skill ~/.codex/skills/Youtube-clipper-skill</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 youtube-clipper 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$youtube-clipper &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 youtube-clipper 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the youtube-clipper skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/Youtube-clipper-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/Youtube-clipper-skill</a></p></div>
+      </article>
+
+      <article class="skill-card" id="youtube-bilingual-hardburn" data-category="info writing" data-text="youtube-bilingual-hardburn 双语硬字幕 tengfei0114us https://github.com/tengfei0114us/youtube-bilingual-hardburn info writing">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/271443298?v=4" alt="tengfei0114us 的 GitHub 头像" loading="lazy"><h2>youtube-bilingual-hardburn</h2></div>
+          <div class="meta">
+            <span class="pill">双语硬字幕</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">信息抓取</span>
+            <span class="pill">文字处理</span>
+            <span class="pill source-pill">作者：tengfei0114us</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">把外语视频做成中英双语硬字幕版，重点解决 YouTube 自动字幕无标点、翻译行数错位和最终烧录校验。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户要把英文访谈、教程、演讲分享到小红书、微信、B 站等平台。</li><li>需要字幕在所有播放器里都可见，而不是可开关的软字幕。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：视频 URL 或视频文件、字幕源、字体和版式偏好。</li><li>输出：双语 .ass 字幕、测试帧、硬字幕 MP4、抽帧校验结果。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/tengfei0114us/youtube-bilingual-hardburn.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\youtube-bilingual-hardburn &quot;$env:USERPROFILE\.codex\skills\youtube-bilingual-hardburn&quot;
+
+macOS / Linux
+git clone https://github.com/tengfei0114us/youtube-bilingual-hardburn.git
+mkdir -p ~/.codex/skills
+cp -R youtube-bilingual-hardburn ~/.codex/skills/youtube-bilingual-hardburn</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 youtube-bilingual-hardburn 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$youtube-bilingual-hardburn &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 youtube-bilingual-hardburn 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the youtube-bilingual-hardburn skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/tengfei0114us/youtube-bilingual-hardburn" target="_blank" rel="noopener noreferrer">https://github.com/tengfei0114us/youtube-bilingual-hardburn</a></p></div>
+      </article>
+
+      <article class="skill-card" id="logo-generator" data-category="design office" data-text="logo-generator Logo 设计 op7418 https://github.com/op7418/logo-generator-skill design office">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 的 GitHub 头像" loading="lazy"><h2>logo-generator</h2></div>
+          <div class="meta">
+            <span class="pill">Logo 设计</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">设计视觉</span>
+            <span class="pill">办公演示</span>
+            <span class="pill source-pill">作者：op7418</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">为产品或品牌生成多组 SVG logo 方向，并制作带设计 rationale 的展示页面和高端样机图。</p>
+        <div><p class="section-title">适合场景</p><ul><li>新产品起名后需要快速探索 6 个以上 logo 方向。</li><li>需要 SVG、PNG 和不同背景风格的品牌展示图。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：品牌名、行业、核心概念、风格偏好、颜色偏好。</li><li>输出：SVG logo 变体、交互展示页、PNG 导出和展示图。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/op7418/logo-generator-skill.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\logo-generator-skill &quot;$env:USERPROFILE\.codex\skills\logo-generator-skill&quot;
+
+macOS / Linux
+git clone https://github.com/op7418/logo-generator-skill.git
+mkdir -p ~/.codex/skills
+cp -R logo-generator-skill ~/.codex/skills/logo-generator-skill</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 logo-generator 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$logo-generator &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 logo-generator 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the logo-generator skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/logo-generator-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/logo-generator-skill</a></p></div>
+      </article>
+
+      <article class="skill-card" id="devils-advocate" data-category="product research dev" data-text="devils-advocate 方案挑刺 orange2ai https://github.com/orange2ai/devils-advocate-skill product research dev">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/77816124?v=4" alt="orange2ai 的 GitHub 头像" loading="lazy"><h2>devils-advocate</h2></div>
+          <div class="meta">
+            <span class="pill">方案挑刺</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">产品PM</span>
+            <span class="pill">研究分析</span>
+            <span class="pill">开发工作流</span>
+            <span class="pill source-pill">作者：orange2ai</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。</p>
+        <div><p class="section-title">适合场景</p><ul><li>技术方案 review、产品决策、定价策略、BP/pitch 打磨。</li><li>用户明确要求“挑刺”“帮我找漏洞”“challenge 一下”。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：方案、决策背景、约束、目标用户或评审对象。</li><li>输出：具体质疑、隐藏假设、失败场景和下一步要验证的问题。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/orange2ai/devils-advocate-skill.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\devils-advocate-skill &quot;$env:USERPROFILE\.codex\skills\devils-advocate-skill&quot;
+
+macOS / Linux
+git clone https://github.com/orange2ai/devils-advocate-skill.git
+mkdir -p ~/.codex/skills
+cp -R devils-advocate-skill ~/.codex/skills/devils-advocate-skill</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 devils-advocate 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$devils-advocate &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 devils-advocate 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the devils-advocate skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/orange2ai/devils-advocate-skill" target="_blank" rel="noopener noreferrer">https://github.com/orange2ai/devils-advocate-skill</a></p></div>
+      </article>
+
+      <article class="skill-card" id="pm-skills" data-category="product office research" data-text="pm-skills 产品经理套件 zephyrwang6 https://github.com/zephyrwang6/pm-skills product office research">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 的 GitHub 头像" loading="lazy"><h2>pm-skills</h2></div>
+          <div class="meta">
+            <span class="pill">产品经理套件</span>
+            <span class="pill level">推荐：高</span>
+            <span class="pill">产品PM</span>
+            <span class="pill">办公演示</span>
+            <span class="pill">研究分析</span>
+            <span class="pill source-pill">作者：zephyrwang6</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">13 个产品经理 Claude Code skills，覆盖 PRD、需求评审、优先级、路线图、实验、埋点、竞品和复盘。</p>
+        <div><p class="section-title">适合场景</p><ul><li>产品经理想把高频文档和评审工作流交给 agent 预处理。</li><li>从模糊需求走到 PRD、评审问题、实验方案、埋点方案和复盘报告。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：目标、需求描述、资源约束、数据或截图。</li><li>输出：PRD、评审清单、优先级评分、路线图、实验和复盘文档。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/zephyrwang6/pm-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\pm-skills &quot;$env:USERPROFILE\.codex\skills\pm-skills&quot;
+
+macOS / Linux
+git clone https://github.com/zephyrwang6/pm-skills.git
+mkdir -p ~/.codex/skills
+cp -R pm-skills ~/.codex/skills/pm-skills</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 pm-skills 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$pm-skills &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 pm-skills 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the pm-skills skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/pm-skills" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/pm-skills</a></p></div>
+      </article>
+
+      <article class="skill-card" id="brand-design-md" data-category="design dev" data-text="brand-design-md 品牌 UI 风格 zephyrwang6 https://github.com/zephyrwang6/brand-design-md design dev">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 的 GitHub 头像" loading="lazy"><h2>brand-design-md</h2></div>
+          <div class="meta">
+            <span class="pill">品牌 UI 风格</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">设计视觉</span>
+            <span class="pill">开发工作流</span>
+            <span class="pill source-pill">作者：zephyrwang6</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 UI 代码上下文。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户说“Apple 风格”“Notion 那种感觉”“Stripe 极简风”。</li><li>需要把品牌设计语言映射成颜色、字体、布局和组件倾向。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：品牌名、混搭品牌需求、UI 目标、现有约束。</li><li>输出：品牌 slug 映射、DESIGN.md 上下文和 UI 生成建议。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/zephyrwang6/brand-design-md.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\brand-design-md &quot;$env:USERPROFILE\.codex\skills\brand-design-md&quot;
+
+macOS / Linux
+git clone https://github.com/zephyrwang6/brand-design-md.git
+mkdir -p ~/.codex/skills
+cp -R brand-design-md ~/.codex/skills/brand-design-md</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 brand-design-md 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$brand-design-md &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 brand-design-md 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the brand-design-md skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/brand-design-md" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/brand-design-md</a></p></div>
+      </article>
+
+      <article class="skill-card" id="career-skill-planner" data-category="product research" data-text="career-skill-planner 职业 Skill 规划 zephyrwang6 https://github.com/zephyrwang6/career.skill product research">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 的 GitHub 头像" loading="lazy"><h2>career-skill-planner</h2></div>
+          <div class="meta">
+            <span class="pill">职业 Skill 规划</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">产品PM</span>
+            <span class="pill">研究分析</span>
+            <span class="pill source-pill">作者：zephyrwang6</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">输入职业名称或 JD，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户想知道某个职业如何用 AI 提效，或要为岗位打造专属 skill 库。</li><li>从“我是设计师/运营/销售/律师”拆出可落地的 agent 工作流。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：职业、JD、核心输出物、最耗时的工作环节。</li><li>输出：工作流拆解、候选 skill 清单、制作提示词和实现逻辑。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/zephyrwang6/career.skill.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\career.skill &quot;$env:USERPROFILE\.codex\skills\career.skill&quot;
+
+macOS / Linux
+git clone https://github.com/zephyrwang6/career.skill.git
+mkdir -p ~/.codex/skills
+cp -R career.skill ~/.codex/skills/career.skill</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 career-skill-planner 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$career-skill-planner &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 career-skill-planner 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the career-skill-planner skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/career.skill" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/career.skill</a></p></div>
+      </article>
+
+      <article class="skill-card" id="space-product-describer" data-category="product writing dev" data-text="SPACE-product-describer 产品描述 zephyrwang6 https://github.com/zephyrwang6/pm-product-describer product writing dev">
+        <div>
+          <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 的 GitHub 头像" loading="lazy"><h2>SPACE-product-describer</h2></div>
+          <div class="meta">
+            <span class="pill">产品描述</span>
+            <span class="pill level">推荐：中高</span>
+            <span class="pill">产品PM</span>
+            <span class="pill">文字处理</span>
+            <span class="pill">开发工作流</span>
+            <span class="pill source-pill">作者：zephyrwang6</span>
+            <span class="pill source-pill">来源：GitHub</span>
+          </div>
+        </div>
+        <p class="summary">用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户说“我想做一个产品/工具/应用”，但描述太笼统。</li><li>写 PRD 或做原型前，需要先补齐用户流程、场景、边界和切入建议。</li></ul></div>
+        <div><p class="section-title">输入输出</p><ul><li>输入：产品想法、目标用户、流程、约束、期望原型或代码产物。</li><li>输出：结构化产品描述、澄清问题和推荐切入角度。</li></ul></div>
+        <div><p class="section-title">安装方法</p><pre class="install"><code>Windows PowerShell
+git clone https://github.com/zephyrwang6/pm-product-describer.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\pm-product-describer &quot;$env:USERPROFILE\.codex\skills\pm-product-describer&quot;
+
+macOS / Linux
+git clone https://github.com/zephyrwang6/pm-product-describer.git
+mkdir -p ~/.codex/skills
+cp -R pm-product-describer ~/.codex/skills/pm-product-describer</code></pre></div>
+        <div><p class="section-title">调用指令</p><pre class="invoke"><code>Codex
+请使用 SPACE-product-describer 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+$SPACE-product-describer &lt;把你的任务写在这里&gt;
+
+Claude Code / Claw
+请使用 SPACE-product-describer 这个 skill，帮我处理：&lt;把你的任务写在这里&gt;
+Use the SPACE-product-describer skill to handle: &lt;your task here&gt;</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/pm-product-describer" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/pm-product-describer</a></p></div>
+      </article>
+    </section>
+    <div id="empty" class="empty">没有找到匹配的 skill。换个关键词试试。</div>
+  </main>
+  <footer><div class="shell">SummerAI Skill 推荐库 · 更新于 2026-05-22 · 公开页面可索引，内部凭证和私有数据不放入站点。</div></footer>
+  <script>
+    const searchInput=document.querySelector("#search");
+    const buttons=Array.from(document.querySelectorAll("[data-filter]"));
+    const authorButtons=Array.from(document.querySelectorAll("[data-author]"));
+    const cards=Array.from(document.querySelectorAll(".skill-card"));
+    const empty=document.querySelector("#empty");
+    let activeFilter="all";
+    let activeAuthor="all";
+    function normalize(value){return value.toLowerCase().trim()}
+    function applyFilters(){
+      const query=normalize(searchInput.value);
+      let visible=0;
+      cards.forEach((card)=>{
+        const category=card.dataset.category||"";
+        const haystack=normalize(card.innerText+" "+(card.dataset.text||""));
+        const filterMatch=activeFilter==="all"||category.includes(activeFilter);
+        const authorMatch=activeAuthor==="all"||haystack.includes(normalize(activeAuthor));
+        const searchMatch=!query||haystack.includes(query);
+        const show=filterMatch&&authorMatch&&searchMatch;
+        card.style.display=show?"":"none";
+        if(show)visible+=1;
+      });
+      empty.style.display=visible?"none":"block";
+    }
+    buttons.forEach((button)=>{button.addEventListener("click",()=>{activeFilter=button.dataset.filter;buttons.forEach((item)=>item.setAttribute("aria-pressed",String(item===button)));applyFilters()})});
+    authorButtons.forEach((button)=>{button.addEventListener("click",()=>{const next=button.dataset.author;activeAuthor=activeAuthor===next?"all":next;authorButtons.forEach((item)=>item.setAttribute("aria-pressed",String(activeAuthor!=="all"&&item===button)));applyFilters()})});
+    searchInput.addEventListener("input",applyFilters);
+  </script>
+</body>
+</html>
+
+

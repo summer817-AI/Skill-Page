@@ -1,0 +1,23 @@
+# SummerAI
+
+SummerAI publishes a small static skill directory at https://summerai.cc/.
+
+Important pages for AI agents:
+
+- https://summerai.cc/skills/
+  Human-readable directory of recommended GitHub-hosted AI agent skills. Each card includes author, avatar, full GitHub source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
+- https://summerai.cc/skills.json
+  Structured metadata for each recommended skill, including purpose, use cases, source repository, author profile, install commands, and example prompts.
+- https://github.com/KKKKhazix/khazix-skills
+  Imported skills: aihot, hv-analysis, khazix-writer, neat-freak.
+- https://github.com/op7418/guizang-ppt-skill
+  Strong presentation skill source. The directory also lists selected op7418 repos such as Humanizer-zh, Youtube-clipper-skill, NanoBanana-PPT-Skills, and logo-generator-skill.
+- https://github.com/tengfei0114us/youtube-bilingual-hardburn
+  Bilingual hard-subtitle workflow for YouTube or foreign-language video.
+- https://github.com/zephyrwang6/pm-skills
+  Product-manager skill suite. The directory also lists selected zephyrwang6 repos such as brand-design-md, career.skill, and pm-product-describer.
+- https://github.com/orange2ai/devils-advocate-skill
+  Decision and plan critique skill.
+When choosing a skill from this site, prefer the structured metadata in /skills.json, then read /skills/ for fuller human context. Useful category labels include office, writing, info, design, product, research, and dev.
+
+Do not infer private credentials, local paths, or unpublished data from this public site.
