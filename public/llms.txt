@@ -8,6 +8,8 @@ Important pages for AI agents:
   Human-readable directory of 22 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
 - https://summerai.cc/skills.json
   Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
+- https://summerai.cc/world.html
+  The "世界那么大" daily world page and its archived city pages.
 - https://github.com/KKKKhazix/khazix-skills
   Imported skills: aihot, hv-analysis, khazix-writer, neat-freak.
 - https://github.com/op7418/guizang-ppt-skill
