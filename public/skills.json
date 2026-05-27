@@ -1,7 +1,7 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-05-22",
-  "purpose": "A curated directory of practical GitHub-hosted AI agent skills, written for both humans and searchable agents.",
+  "updated_at": "2026-05-27",
+  "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
       "login": "KKKKhazix",
@@ -37,6 +37,41 @@
       "github_url": "https://github.com/zephyrwang6",
       "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4",
       "summary": "高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。"
+    },
+    {
+      "login": "anthropics",
+      "name": "Anthropic",
+      "github_url": "https://github.com/anthropics",
+      "avatar_url": "https://github.com/anthropics.png",
+      "summary": "官方 Skills 示例库，包含创建、评估和改进 skill 的方法论与参考实现。"
+    },
+    {
+      "login": "JZCreative",
+      "name": "JZCreative",
+      "github_url": "https://github.com/JZCreative",
+      "avatar_url": "https://github.com/JZCreative.png",
+      "summary": "专注把简历内容变成更可读、更适合投递的 HTML 视觉作品。"
+    },
+    {
+      "login": "LearnPrompt",
+      "name": "LearnPrompt",
+      "github_url": "https://github.com/LearnPrompt",
+      "avatar_url": "https://github.com/LearnPrompt.png",
+      "summary": "面向 AI 资讯源发现、筛选和静态页面发布的 Scout Skill。"
+    },
+    {
+      "login": "wanikua",
+      "name": "wanikua",
+      "github_url": "https://github.com/wanikua",
+      "avatar_url": "https://github.com/wanikua.png",
+      "summary": "OpenClaw 与多 Agent 协作方向的实验型 skill 作者，强调 IM 场景和角色编排。"
+    },
+    {
+      "login": "feishu-open-platform",
+      "name": "飞书开放平台",
+      "github_url": "https://open.feishu.cn/",
+      "avatar_url": "../assets/lobster-mascot.svg",
+      "summary": "飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。"
     }
   ],
   "source_repositories": [
@@ -99,6 +134,41 @@
       "name": "zephyrwang6/pm-product-describer",
       "url": "https://github.com/zephyrwang6/pm-product-describer",
       "author": "zephyrwang6"
+    },
+    {
+      "name": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "author": "anthropics"
+    },
+    {
+      "name": "op7418/Document-illustrator-skill",
+      "url": "https://github.com/op7418/Document-illustrator-skill",
+      "author": "op7418"
+    },
+    {
+      "name": "zephyrwang6/info-skill",
+      "url": "https://github.com/zephyrwang6/info-skill",
+      "author": "zephyrwang6"
+    },
+    {
+      "name": "JZCreative/HTML-resume-beautifier",
+      "url": "https://github.com/JZCreative/HTML-resume-beautifier",
+      "author": "JZCreative"
+    },
+    {
+      "name": "LearnPrompt/ai-news-radar",
+      "url": "https://github.com/LearnPrompt/ai-news-radar",
+      "author": "LearnPrompt"
+    },
+    {
+      "name": "wanikua/danghuangshang",
+      "url": "https://github.com/wanikua/danghuangshang",
+      "author": "wanikua"
+    },
+    {
+      "name": "飞书 CLI 官方安装指南",
+      "url": "https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md",
+      "author": "feishu-open-platform"
     }
   ],
   "agent_entrypoints": {
@@ -901,6 +971,383 @@
         "claude_code_or_claw": [
           "请使用 SPACE-product-describer 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the SPACE-product-describer skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "skill-creator",
+      "name": "skill-creator",
+      "category": [
+        "dev"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "anthropics",
+        "github_url": "https://github.com/anthropics",
+        "avatar_url": "https://github.com/anthropics.png"
+      },
+      "source_repository": "https://github.com/anthropics/skills",
+      "source_path": "skills/skill-creator/SKILL.md",
+      "source_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "summary": "Anthropic 官方 skill-creator，用来创建、改进和评估 agent skills，是学习 skill 写法的高可信参考。",
+      "use_when": [
+        "你要从零设计一个可复用 skill，或把已有提示词整理成标准 skill。",
+        "需要检查 skill 结构、说明、脚本和参考资料是否清楚。"
+      ],
+      "inputs_outputs": [
+        "输入：skill 目标、使用场景、现有草稿或目录。",
+        "输出：SKILL.md 结构、改进建议、评估结果和必要的配套文件。"
+      ],
+      "limitations": [
+        "偏方法论和模板，需要结合具体任务补充脚本、示例和测试。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/anthropics/skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\skills\\skills\\skill-creator \"$env:USERPROFILE\\.codex\\skills\\skill-creator\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/anthropics/skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R skills/skills/skill-creator ~/.codex/skills/skill-creator"
+        ]
+      },
+      "example_prompt": "请用 skill-creator 帮我把这个工作流整理成一个可复用的 skill。",
+      "page_url": "https://summerai.cc/skills/#skill-creator",
+      "invocation": {
+        "codex": [
+          "请使用 skill-creator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$skill-creator <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 skill-creator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the skill-creator skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "document-illustrator",
+      "name": "Document illustrator",
+      "category": [
+        "design",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/Document-illustrator-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/Document-illustrator-skill",
+      "summary": "为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。",
+      "use_when": [
+        "文章、Markdown 或说明文档需要一组主题明确的配图。",
+        "希望 agent 先理解文档结构，再给出视觉表达方案。"
+      ],
+      "inputs_outputs": [
+        "输入：文档内容、目标读者、风格偏好和使用场景。",
+        "输出：配图规划、生成提示词和落地素材建议。"
+      ],
+      "limitations": [
+        "需要 Gemini API Key 或图像生成能力，发布前仍要人工确认图片版权与准确性。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Document-illustrator-skill \"$env:USERPROFILE\\.codex\\skills\\document-illustrator\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Document-illustrator-skill ~/.codex/skills/document-illustrator"
+        ]
+      },
+      "example_prompt": "请用 document-illustrator 给这篇 1 万字长文设计 5 张配图。",
+      "page_url": "https://summerai.cc/skills/#document-illustrator",
+      "invocation": {
+        "codex": [
+          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$document-illustrator <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the document-illustrator skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "baoyu-url-to-markdown",
+      "name": "baoyu-url-to-markdown",
+      "category": [
+        "info",
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/info-skill",
+      "source_path": "baoyu-url-to-markdown/SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/info-skill/tree/main/baoyu-url-to-markdown",
+      "summary": "通过 Chrome CDP 把网页渲染后转成 Markdown，适合抓取动态网页、长文和需要登录后查看的页面内容。",
+      "use_when": [
+        "需要把网页内容保存成 Markdown，供后续总结、写作或归档。",
+        "页面依赖前端渲染，普通 HTTP 抓取拿不到完整正文。"
+      ],
+      "inputs_outputs": [
+        "输入：URL、等待策略和可选页面交互说明。",
+        "输出：清理后的 Markdown 内容。"
+      ],
+      "limitations": [
+        "会连接本地 Chrome CDP；处理登录页面时要注意 cookie、账号内容和隐私边界。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\info-skill\\baoyu-url-to-markdown \"$env:USERPROFILE\\.codex\\skills\\baoyu-url-to-markdown\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R info-skill/baoyu-url-to-markdown ~/.codex/skills/baoyu-url-to-markdown"
+        ]
+      },
+      "example_prompt": "请用 baoyu-url-to-markdown 把这个网页转换成 Markdown：<URL>",
+      "page_url": "https://summerai.cc/skills/#baoyu-url-to-markdown",
+      "invocation": {
+        "codex": [
+          "请使用 baoyu-url-to-markdown 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$baoyu-url-to-markdown <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 baoyu-url-to-markdown 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the baoyu-url-to-markdown skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "resume-beautifier",
+      "name": "HTML resume beautifier",
+      "category": [
+        "office",
+        "design",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "JZCreative",
+        "github_url": "https://github.com/JZCreative",
+        "avatar_url": "https://github.com/JZCreative.png"
+      },
+      "source_repository": "https://github.com/JZCreative/HTML-resume-beautifier",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/JZCreative/HTML-resume-beautifier",
+      "summary": "把简历内容整理成可投递、可导出 PNG/PDF 的 A4 HTML 作品，并包含隐私审计和版式检查流程。",
+      "use_when": [
+        "需要把中文或英文简历做成更美观的 HTML 页面。",
+        "希望先结构化简历信息，再生成适合打印或投递的版本。"
+      ],
+      "inputs_outputs": [
+        "输入：简历原文、目标岗位、隐私删减要求。",
+        "输出：A4 HTML 简历、主题样式、截图/导出建议和 PII 审计。"
+      ],
+      "limitations": [
+        "简历真实性和隐私删改必须人工确认，不应把身份证、电话等敏感信息公开上传。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/JZCreative/HTML-resume-beautifier.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\HTML-resume-beautifier \"$env:USERPROFILE\\.codex\\skills\\resume-beautifier\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/JZCreative/HTML-resume-beautifier.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R HTML-resume-beautifier ~/.codex/skills/resume-beautifier"
+        ]
+      },
+      "example_prompt": "请用 resume-beautifier 把我的简历整理成一页 A4 HTML，并先检查隐私信息。",
+      "page_url": "https://summerai.cc/skills/#resume-beautifier",
+      "invocation": {
+        "codex": [
+          "请使用 resume-beautifier 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$resume-beautifier <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 resume-beautifier 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the resume-beautifier skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "ai-news-radar",
+      "name": "ai-news-radar",
+      "category": [
+        "info",
+        "research",
+        "dev"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "LearnPrompt",
+        "github_url": "https://github.com/LearnPrompt",
+        "avatar_url": "https://github.com/LearnPrompt.png"
+      },
+      "source_repository": "https://github.com/LearnPrompt/ai-news-radar",
+      "source_path": "skills/ai-news-radar/SKILL.md",
+      "source_url": "https://github.com/LearnPrompt/ai-news-radar/tree/master/skills/ai-news-radar",
+      "summary": "用于收集、筛选和维护 AI/技术资讯源，能把 RSS、OPML、公开 feed 等来源整理成可发布的 AI 新闻雷达。",
+      "use_when": [
+        "要搭建或更新 AI 新闻源列表。",
+        "需要评估多个网站、RSS、OPML 或公开 feed 的质量和覆盖面。"
+      ],
+      "inputs_outputs": [
+        "输入：候选新闻源、主题范围、筛选标准。",
+        "输出：结构化来源清单、评分、去重结果和静态页面素材。"
+      ],
+      "limitations": [
+        "高级自动化可能用到 GitHub Secrets、X API 或 AgentMail；不要提交 token、cookies 或私人 OPML。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/LearnPrompt/ai-news-radar.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ai-news-radar\\skills\\ai-news-radar \"$env:USERPROFILE\\.codex\\skills\\ai-news-radar\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/LearnPrompt/ai-news-radar.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ai-news-radar/skills/ai-news-radar ~/.codex/skills/ai-news-radar"
+        ]
+      },
+      "example_prompt": "请用 ai-news-radar 帮我筛选一批 AI 新闻源，并按可信度排序。",
+      "page_url": "https://summerai.cc/skills/#ai-news-radar",
+      "invocation": {
+        "codex": [
+          "请使用 ai-news-radar 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ai-news-radar <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ai-news-radar 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ai-news-radar skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "ai-court",
+      "name": "ai-court",
+      "category": [
+        "dev",
+        "product"
+      ],
+      "recommendation_level": "medium",
+      "author": {
+        "login": "wanikua",
+        "github_url": "https://github.com/wanikua",
+        "avatar_url": "https://github.com/wanikua.png"
+      },
+      "source_repository": "https://github.com/wanikua/danghuangshang",
+      "source_path": "skills/ai-court-skill/SKILL.md",
+      "source_url": "https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill",
+      "summary": "把多个角色 agent 组织成“AI 朝堂”式辩论和决策流程，偏 OpenClaw 多智能体编排实验。",
+      "use_when": [
+        "想让多个角色围绕方案进行辩论、评审或决策。",
+        "已经准备好 Discord、飞书等 IM bot 配置，并愿意做本地调试。"
+      ],
+      "inputs_outputs": [
+        "输入：议题、角色设置、IM 配置/API Key 和 bot 连接信息。",
+        "输出：OpenClaw 配置、多 agent 讨论流程和运行步骤。"
+      ],
+      "limitations": [
+        "这是中等推荐的实验型 skill；会涉及 API Key、IM bot token 和 OpenClaw 配置，公开部署前要严格剔除凭证。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/wanikua/danghuangshang.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\danghuangshang\\skills\\ai-court-skill \"$env:USERPROFILE\\.codex\\skills\\ai-court\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/wanikua/danghuangshang.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R danghuangshang/skills/ai-court-skill ~/.codex/skills/ai-court"
+        ]
+      },
+      "example_prompt": "请用 ai-court 帮我为这个产品方案组织一轮多 Agent 评审。",
+      "page_url": "https://summerai.cc/skills/#ai-court",
+      "invocation": {
+        "codex": [
+          "请使用 ai-court 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ai-court <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ai-court 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ai-court skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "feishu-cli-skill",
+      "name": "飞书 CLI Skill",
+      "category": [
+        "office",
+        "dev"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "feishu-open-platform",
+        "github_url": "https://open.feishu.cn/",
+        "avatar_url": "../assets/lobster-mascot.svg"
+      },
+      "source_repository": "https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md",
+      "source_platform": "官方文档",
+      "source_path": "feishu-cli-installation-guide.md",
+      "source_url": "https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md",
+      "summary": "飞书官方 CLI 与 Agent Skill 安装指南，帮助 agent 通过 lark-cli 操作文档、表格、日历、消息等飞书能力。",
+      "use_when": [
+        "希望 agent 连接飞书/Lark 工作区。",
+        "需要安装 lark-cli、初始化配置、登录认证并验证可用性。"
+      ],
+      "inputs_outputs": [
+        "输入：飞书开发者应用信息、App ID/Secret 和登录账号。",
+        "输出：可用的 lark-cli 环境，以及可安装的飞书 Skill。"
+      ],
+      "limitations": [
+        "需要用户本地登录和授权；App Secret、token 等凭证不能写入公开仓库或页面。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npm install -g @larksuite/cli",
+          "npx -y skills add https://open.feishu.cn --skill -y",
+          "lark-cli config init --new",
+          "lark-cli auth login --recommend",
+          "lark-cli auth status"
+        ],
+        "macos_linux": [
+          "npm install -g @larksuite/cli",
+          "npx -y skills add https://open.feishu.cn --skill -y",
+          "lark-cli config init --new",
+          "lark-cli auth login --recommend",
+          "lark-cli auth status"
+        ]
+      },
+      "example_prompt": "请用 feishu-cli-skill 帮我检查飞书 CLI 是否已经能正常认证。",
+      "page_url": "https://summerai.cc/skills/#feishu-cli-skill",
+      "invocation": {
+        "codex": [
+          "请使用 feishu-cli-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$feishu-cli-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 feishu-cli-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the feishu-cli-skill skill to handle: <your task here>"
         ]
       }
     }

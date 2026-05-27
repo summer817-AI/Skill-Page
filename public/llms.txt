@@ -1,21 +1,31 @@
 # SummerAI
 
-SummerAI publishes a small static skill directory at https://summerai.cc/.
+SummerAI publishes a small static site at https://summerai.cc/.
 
 Important pages for AI agents:
 
 - https://summerai.cc/skills/
-  Human-readable directory of recommended GitHub-hosted AI agent skills. Each card includes author, avatar, full GitHub source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
+  Human-readable directory of 22 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
 - https://summerai.cc/skills.json
-  Structured metadata for each recommended skill, including purpose, use cases, source repository, author profile, install commands, and example prompts.
+  Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
 - https://github.com/KKKKhazix/khazix-skills
   Imported skills: aihot, hv-analysis, khazix-writer, neat-freak.
 - https://github.com/op7418/guizang-ppt-skill
-  Strong presentation skill source. The directory also lists selected op7418 repos such as Humanizer-zh, Youtube-clipper-skill, NanoBanana-PPT-Skills, and logo-generator-skill.
+  Strong presentation skill source. The directory also lists selected op7418 repos such as Humanizer-zh, Youtube-clipper-skill, NanoBanana-PPT-Skills, logo-generator-skill, and Document-illustrator-skill.
+- https://github.com/anthropics/skills
+  Officially backed Anthropic Skills examples, including skill-creator.
+- https://github.com/JZCreative/HTML-resume-beautifier
+  Resume-to-HTML skill with layout generation and PII audit workflow.
+- https://github.com/LearnPrompt/ai-news-radar
+  AI news source scouting and static radar workflow.
+- https://github.com/wanikua/danghuangshang
+  OpenClaw multi-agent experiment source; the directory includes ai-court as a medium-confidence candidate because it may require IM bot credentials and local configuration.
+- https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
+  Official Feishu/Lark CLI and Agent Skill installation guide.
 - https://github.com/tengfei0114us/youtube-bilingual-hardburn
   Bilingual hard-subtitle workflow for YouTube or foreign-language video.
 - https://github.com/zephyrwang6/pm-skills
-  Product-manager skill suite. The directory also lists selected zephyrwang6 repos such as brand-design-md, career.skill, and pm-product-describer.
+  Product-manager skill suite. The directory also lists selected zephyrwang6 repos such as brand-design-md, career.skill, pm-product-describer, and info-skill.
 - https://github.com/orange2ai/devils-advocate-skill
   Decision and plan critique skill.
 When choosing a skill from this site, prefer the structured metadata in /skills.json, then read /skills/ for fuller human context. Useful category labels include office, writing, info, design, product, research, and dev.
