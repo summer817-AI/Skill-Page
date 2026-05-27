@@ -70,7 +70,7 @@
       "login": "feishu-open-platform",
       "name": "飞书开放平台",
       "github_url": "https://open.feishu.cn/",
-      "avatar_url": "../assets/lobster-mascot.svg",
+      "avatar_url": "../assets/feishu-logo.svg",
       "summary": "飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。"
     }
   ],
@@ -1304,7 +1304,7 @@
       "author": {
         "login": "feishu-open-platform",
         "github_url": "https://open.feishu.cn/",
-        "avatar_url": "../assets/lobster-mascot.svg"
+        "avatar_url": "../assets/feishu-logo.svg"
       },
       "source_repository": "https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md",
       "source_platform": "官方文档",
