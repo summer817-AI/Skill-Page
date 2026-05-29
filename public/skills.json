@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-05-27",
+  "updated_at": "2026-05-29",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -72,6 +72,20 @@
       "github_url": "https://open.feishu.cn/",
       "avatar_url": "../assets/feishu-logo.svg",
       "summary": "飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。"
+    },
+    {
+      "login": "lijigang",
+      "name": "李继刚 / lijigang",
+      "github_url": "https://github.com/lijigang",
+      "avatar_url": "https://github.com/lijigang.png",
+      "summary": "把阅读、写作、论文、卡片和降秩思考整理成一组可复用 skills，风格强、结构清楚，适合内容生产和研究分析。"
+    },
+    {
+      "login": "alchaincyf",
+      "name": "花叔 / alchaincyf",
+      "github_url": "https://github.com/alchaincyf",
+      "avatar_url": "https://github.com/alchaincyf.png",
+      "summary": "维护 nuwa-skill，用来把人物或主题蒸馏成可运行的 perspective skill，适合构建思维顾问和作者视角。"
     }
   ],
   "source_repositories": [
@@ -169,6 +183,21 @@
       "name": "飞书 CLI 官方安装指南",
       "url": "https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md",
       "author": "feishu-open-platform"
+    },
+    {
+      "name": "op7418/guizang-social-card-skill",
+      "url": "https://github.com/op7418/guizang-social-card-skill",
+      "author": "op7418"
+    },
+    {
+      "name": "lijigang/ljg-skills",
+      "url": "https://github.com/lijigang/ljg-skills",
+      "author": "lijigang"
+    },
+    {
+      "name": "alchaincyf/nuwa-skill",
+      "url": "https://github.com/alchaincyf/nuwa-skill",
+      "author": "alchaincyf"
     }
   ],
   "agent_entrypoints": {
@@ -443,6 +472,61 @@
       }
     },
     {
+      "id": "guizang-social-card-skill",
+      "name": "guizang-social-card-skill",
+      "category": [
+        "design",
+        "writing",
+        "office"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/guizang-social-card-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/guizang-social-card-skill",
+      "summary": "归藏风格社交卡片与公众号封面生成 skill，可把文章、脚本、截图、产品说明或照片整理成小红书图文、轮播卡、公众号 21:9 + 1:1 封面。",
+      "use_when": [
+        "需要把长文、产品更新、教程或截图素材做成可发布的社交平台视觉卡片。",
+        "需要同时处理版式、标题压缩、截图呈现、图片叠字和平台比例，而不是只生成一张普通配图。"
+      ],
+      "inputs_outputs": [
+        "输入：文章、脚本、字幕、截图、照片、目标平台比例和风格偏好。",
+        "输出：HTML 卡片页面、导出的 PNG 图片、封面组合预览和 QA 检查建议。"
+      ],
+      "limitations": [
+        "依赖 Playwright 渲染；涉及网页取图或第三方图片时需要保留来源并人工确认版权。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/guizang-social-card-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\guizang-social-card-skill \"$env:USERPROFILE\\.codex\\skills\\guizang-social-card-skill\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/guizang-social-card-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R guizang-social-card-skill ~/.codex/skills/guizang-social-card-skill"
+        ]
+      },
+      "example_prompt": "请用 guizang-social-card-skill 把这篇文章做成 6 张小红书 3:4 图文卡片，并生成公众号封面。",
+      "page_url": "https://summerai.cc/skills/#guizang-social-card-skill",
+      "invocation": {
+        "codex": [
+          "请使用 guizang-social-card-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$guizang-social-card-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 guizang-social-card-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the guizang-social-card-skill skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "社交卡片"
+    },
+    {
       "id": "nanobanana-ppt-skills",
       "name": "NanoBanana-PPT-Skills",
       "category": [
@@ -705,6 +789,334 @@
           "Use the logo-generator skill to handle: <your task here>"
         ]
       }
+    },
+    {
+      "id": "document-illustrator",
+      "name": "Document illustrator",
+      "category": [
+        "design",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/Document-illustrator-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/Document-illustrator-skill",
+      "summary": "为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。",
+      "use_when": [
+        "文章、Markdown 或说明文档需要一组主题明确的配图。",
+        "希望 agent 先理解文档结构，再给出视觉表达方案。"
+      ],
+      "inputs_outputs": [
+        "输入：文档内容、目标读者、风格偏好和使用场景。",
+        "输出：配图规划、生成提示词和落地素材建议。"
+      ],
+      "limitations": [
+        "需要 Gemini API Key 或图像生成能力，发布前仍要人工确认图片版权与准确性。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Document-illustrator-skill \"$env:USERPROFILE\\.codex\\skills\\document-illustrator\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Document-illustrator-skill ~/.codex/skills/document-illustrator"
+        ]
+      },
+      "example_prompt": "请用 document-illustrator 给这篇 1 万字长文设计 5 张配图。",
+      "page_url": "https://summerai.cc/skills/#document-illustrator",
+      "invocation": {
+        "codex": [
+          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$document-illustrator <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the document-illustrator skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "ljg-paper",
+      "name": "ljg-paper",
+      "category": [
+        "research",
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skills",
+      "source_path": "skills/ljg-paper/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-paper",
+      "summary": "面向非学术读者的论文解读 skill，用一条连续故事线讲清论文主角、困境、旧路、转折、解法、结局和内核。",
+      "use_when": [
+        "用户给出 arXiv、论文 URL、PDF 或论文标题，希望听懂论文而不是看学术摘要。",
+        "需要把技术论文转成公众号、研究笔记或内部分享前的理解稿。"
+      ],
+      "inputs_outputs": [
+        "输入：论文链接、PDF、论文名或相关背景问题。",
+        "输出：结构化论文故事、核心问题、解法创新、局限和可继续追问的方向。"
+      ],
+      "limitations": [
+        "偏讲述与理解，不是严格同行评审；事实性结论仍应回到论文原文核对。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skills\\skills\\ljg-paper \"$env:USERPROFILE\\.codex\\skills\\ljg-paper\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skills/skills/ljg-paper ~/.codex/skills/ljg-paper"
+        ]
+      },
+      "example_prompt": "请用 ljg-paper 把这篇论文讲给一个非本领域的人听：<论文链接>",
+      "page_url": "https://summerai.cc/skills/#ljg-paper",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-paper 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-paper <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ljg-paper 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ljg-paper skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "论文解读"
+    },
+    {
+      "id": "ljg-card",
+      "name": "ljg-card",
+      "category": [
+        "design",
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skills",
+      "source_path": "skills/ljg-card/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-card",
+      "summary": "内容铸卡 skill，把文章、观点或笔记转成 PNG 视觉卡片，支持长图、信息图、多卡片、视觉笔记、漫画、白板和大字卡。",
+      "use_when": [
+        "需要把一段文字、读书笔记、论文解读或观点做成可分享图片。",
+        "想让 agent 同时处理信息结构、版式和截图导出。"
+      ],
+      "inputs_outputs": [
+        "输入：原始内容、目标卡片类型、输出风格和图片数量。",
+        "输出：HTML 渲染页、PNG 卡片或长图。"
+      ],
+      "limitations": [
+        "依赖 Playwright / Chromium 截图；视觉风格强，正式品牌场景需要人工微调。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skills\\skills\\ljg-card \"$env:USERPROFILE\\.codex\\skills\\ljg-card\"",
+          "Set-Location \"$env:USERPROFILE\\.codex\\skills\\ljg-card\"",
+          "npm install",
+          "npx playwright install chromium"
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skills/skills/ljg-card ~/.codex/skills/ljg-card",
+          "cd ~/.codex/skills/ljg-card",
+          "npm install",
+          "npx playwright install chromium"
+        ]
+      },
+      "example_prompt": "请用 ljg-card -i 把这段内容铸成一张信息图卡片。",
+      "page_url": "https://summerai.cc/skills/#ljg-card",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-card 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-card <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ljg-card 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ljg-card skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "内容铸卡"
+    },
+    {
+      "id": "ljg-plain",
+      "name": "ljg-plain",
+      "category": [
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skills",
+      "source_path": "skills/ljg-plain/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-plain",
+      "summary": "白话解释 skill，把复杂概念、文章或观点改写到聪明的 12 岁小孩也能真正懂。",
+      "use_when": [
+        "用户说“说人话”“白话解释”“帮我讲清楚这个概念”。",
+        "需要把专业内容改成更易懂、更自然的解释，而不是机械摘要。"
+      ],
+      "inputs_outputs": [
+        "输入：概念、文章片段、论文结论或难懂表达。",
+        "输出：白话解释、类比、例子和必要的结构图。"
+      ],
+      "limitations": [
+        "强调理解和表达，不适合需要严格保留术语密度的法律、医学或学术正式文本。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skills\\skills\\ljg-plain \"$env:USERPROFILE\\.codex\\skills\\ljg-plain\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skills/skills/ljg-plain ~/.codex/skills/ljg-plain"
+        ]
+      },
+      "example_prompt": "请用 ljg-plain 把这段话说人话：<内容>",
+      "page_url": "https://summerai.cc/skills/#ljg-plain",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-plain 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-plain <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ljg-plain 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ljg-plain skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "白话解释"
+    },
+    {
+      "id": "ljg-book",
+      "name": "ljg-book",
+      "category": [
+        "research",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skills",
+      "source_path": "skills/ljg-book/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-book",
+      "summary": "拆书 skill，用五件事抽出一本书的骨架：核心问题、基础假设、分析框架、核心观点和最后的精神内核。",
+      "use_when": [
+        "用户给出一本书名、目录、读书笔记或摘录，希望快速理解这本书到底在回答什么。",
+        "需要把读书内容压缩成研究笔记、分享提纲或选题判断。"
+      ],
+      "inputs_outputs": [
+        "输入：书名、书籍材料、章节摘录或读书笔记。",
+        "输出：书的核心结构、关键洞见、模型和可复用 takeaway。"
+      ],
+      "limitations": [
+        "不是逐章摘要；如果没有原书材料，会依赖公开信息或用户提供的片段，准确性需要标注边界。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skills\\skills\\ljg-book \"$env:USERPROFILE\\.codex\\skills\\ljg-book\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skills/skills/ljg-book ~/.codex/skills/ljg-book"
+        ]
+      },
+      "example_prompt": "请用 ljg-book 拆一下《复杂》这本书，重点看它的核心问题和分析框架。",
+      "page_url": "https://summerai.cc/skills/#ljg-book",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-book 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-book <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ljg-book 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ljg-book skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "拆书"
+    },
+    {
+      "id": "ljg-rank",
+      "name": "ljg-rank",
+      "category": [
+        "research",
+        "product"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skills",
+      "source_path": "skills/ljg-rank/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-rank",
+      "summary": "降秩引擎，给一个领域或现象，找出背后真正独立的几根生成器，帮助从复杂表象里抓住不可再少的结构。",
+      "use_when": [
+        "需要判断一个领域、产品、趋势或商业模式到底由哪些独立变量支撑。",
+        "用户说“本质是什么”“这个领域靠什么撑着”“帮我降秩”。"
+      ],
+      "inputs_outputs": [
+        "输入：领域、现象、产品类别或一组观察。",
+        "输出：生成器列表、解释力检验、反例和可操作判断。"
+      ],
+      "limitations": [
+        "偏思维框架和结构判断，不能替代实证调研；关键事实仍需另行验证。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skills\\skills\\ljg-rank \"$env:USERPROFILE\\.codex\\skills\\ljg-rank\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skills/skills/ljg-rank ~/.codex/skills/ljg-rank"
+        ]
+      },
+      "example_prompt": "请用 ljg-rank 分析一下 AI 编程工具这个领域真正的几根秩。",
+      "page_url": "https://summerai.cc/skills/#ljg-rank",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-rank 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-rank <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ljg-rank 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ljg-rank skill to handle: <your task here>"
+        ]
+      },
+      "topic_tag": "降秩分析"
     },
     {
       "id": "devils-advocate",
@@ -1027,57 +1439,59 @@
       }
     },
     {
-      "id": "document-illustrator",
-      "name": "Document illustrator",
+      "id": "huashu-nuwa",
+      "name": "huashu-nuwa",
       "category": [
-        "design",
+        "dev",
+        "research",
         "writing"
       ],
-      "recommendation_level": "medium-high",
+      "recommendation_level": "high",
       "author": {
-        "login": "op7418",
-        "github_url": "https://github.com/op7418",
-        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+        "login": "alchaincyf",
+        "github_url": "https://github.com/alchaincyf",
+        "avatar_url": "https://github.com/alchaincyf.png"
       },
-      "source_repository": "https://github.com/op7418/Document-illustrator-skill",
+      "source_repository": "https://github.com/alchaincyf/nuwa-skill",
       "source_path": "SKILL.md",
-      "source_url": "https://github.com/op7418/Document-illustrator-skill",
-      "summary": "为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。",
+      "source_url": "https://github.com/alchaincyf/nuwa-skill",
+      "summary": "女娲造人 skill，用于把人物、主题或模糊需求蒸馏成可运行的 perspective skill，自动组织调研、提炼心智模型和表达 DNA。",
       "use_when": [
-        "文章、Markdown 或说明文档需要一组主题明确的配图。",
-        "希望 agent 先理解文档结构，再给出视觉表达方案。"
+        "想从零创建某个人物/主题视角的 agent skill，例如“做一个费曼视角”“蒸馏某位作者”。",
+        "需要把本地语料、公开材料和调研结果整理成可复用的思维顾问。"
       ],
       "inputs_outputs": [
-        "输入：文档内容、目标读者、风格偏好和使用场景。",
-        "输出：配图规划、生成提示词和落地素材建议。"
+        "输入：人物名、主题、目标用途、本地语料或希望解决的问题。",
+        "输出：新 skill 目录、SKILL.md、研究材料、心智模型、决策启发式和诚实边界。"
       ],
       "limitations": [
-        "需要 Gemini API Key 或图像生成能力，发布前仍要人工确认图片版权与准确性。"
+        "会触发深度调研，耗时较长；人物 skill 容易过拟合公开表达，需标注来源质量和调研截止日期。"
       ],
       "install": {
         "windows_powershell": [
-          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "git clone https://github.com/alchaincyf/nuwa-skill.git",
           "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
-          "Copy-Item -Recurse .\\Document-illustrator-skill \"$env:USERPROFILE\\.codex\\skills\\document-illustrator\""
+          "Copy-Item -Recurse .\\nuwa-skill \"$env:USERPROFILE\\.codex\\skills\\huashu-nuwa\""
         ],
         "macos_linux": [
-          "git clone https://github.com/op7418/Document-illustrator-skill.git",
+          "git clone https://github.com/alchaincyf/nuwa-skill.git",
           "mkdir -p ~/.codex/skills",
-          "cp -R Document-illustrator-skill ~/.codex/skills/document-illustrator"
+          "cp -R nuwa-skill ~/.codex/skills/huashu-nuwa"
         ]
       },
-      "example_prompt": "请用 document-illustrator 给这篇 1 万字长文设计 5 张配图。",
-      "page_url": "https://summerai.cc/skills/#document-illustrator",
+      "example_prompt": "请用 huashu-nuwa 帮我蒸馏一个“费曼视角”的 perspective skill。",
+      "page_url": "https://summerai.cc/skills/#huashu-nuwa",
       "invocation": {
         "codex": [
-          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
-          "$document-illustrator <把你的任务写在这里>"
+          "请使用 huashu-nuwa 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$huashu-nuwa <把你的任务写在这里>"
         ],
         "claude_code_or_claw": [
-          "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
-          "Use the document-illustrator skill to handle: <your task here>"
+          "请使用 huashu-nuwa 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the huashu-nuwa skill to handle: <your task here>"
         ]
-      }
+      },
+      "topic_tag": "Skill 蒸馏"
     },
     {
       "id": "baoyu-url-to-markdown",

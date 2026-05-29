@@ -5,31 +5,56 @@ SummerAI publishes a small static site at https://summerai.cc/.
 Important pages for AI agents:
 
 - https://summerai.cc/skills/
-  Human-readable directory of 22 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
+  Human-readable directory of 29 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
 - https://summerai.cc/skills.json
   Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
 - https://summerai.cc/world.html
   The "世界那么大" daily world page and its archived city pages.
 - https://github.com/KKKKhazix/khazix-skills
-  Imported skills: aihot, hv-analysis, khazix-writer, neat-freak.
+  Source for KKKKhazix/khazix-skills.
 - https://github.com/op7418/guizang-ppt-skill
-  Strong presentation skill source. The directory also lists selected op7418 repos such as Humanizer-zh, Youtube-clipper-skill, NanoBanana-PPT-Skills, logo-generator-skill, and Document-illustrator-skill.
-- https://github.com/anthropics/skills
-  Officially backed Anthropic Skills examples, including skill-creator.
-- https://github.com/JZCreative/HTML-resume-beautifier
-  Resume-to-HTML skill with layout generation and PII audit workflow.
-- https://github.com/LearnPrompt/ai-news-radar
-  AI news source scouting and static radar workflow.
-- https://github.com/wanikua/danghuangshang
-  OpenClaw multi-agent experiment source; the directory includes ai-court as a medium-confidence candidate because it may require IM bot credentials and local configuration.
-- https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
-  Official Feishu/Lark CLI and Agent Skill installation guide.
+  Source for op7418/guizang-ppt-skill.
+- https://github.com/op7418/NanoBanana-PPT-Skills
+  Source for op7418/NanoBanana-PPT-Skills.
+- https://github.com/op7418/Humanizer-zh
+  Source for op7418/Humanizer-zh.
+- https://github.com/op7418/Youtube-clipper-skill
+  Source for op7418/Youtube-clipper-skill.
 - https://github.com/tengfei0114us/youtube-bilingual-hardburn
-  Bilingual hard-subtitle workflow for YouTube or foreign-language video.
-- https://github.com/zephyrwang6/pm-skills
-  Product-manager skill suite. The directory also lists selected zephyrwang6 repos such as brand-design-md, career.skill, pm-product-describer, and info-skill.
+  Source for tengfei0114us/youtube-bilingual-hardburn.
+- https://github.com/op7418/logo-generator-skill
+  Source for op7418/logo-generator-skill.
 - https://github.com/orange2ai/devils-advocate-skill
-  Decision and plan critique skill.
+  Source for orange2ai/devils-advocate-skill.
+- https://github.com/zephyrwang6/pm-skills
+  Source for zephyrwang6/pm-skills.
+- https://github.com/zephyrwang6/brand-design-md
+  Source for zephyrwang6/brand-design-md.
+- https://github.com/zephyrwang6/career.skill
+  Source for zephyrwang6/career.skill.
+- https://github.com/zephyrwang6/pm-product-describer
+  Source for zephyrwang6/pm-product-describer.
+- https://github.com/anthropics/skills
+  Source for anthropics/skills.
+- https://github.com/op7418/Document-illustrator-skill
+  Source for op7418/Document-illustrator-skill.
+- https://github.com/zephyrwang6/info-skill
+  Source for zephyrwang6/info-skill.
+- https://github.com/JZCreative/HTML-resume-beautifier
+  Source for JZCreative/HTML-resume-beautifier.
+- https://github.com/LearnPrompt/ai-news-radar
+  Source for LearnPrompt/ai-news-radar.
+- https://github.com/wanikua/danghuangshang
+  Source for wanikua/danghuangshang.
+- https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
+  Source for 飞书 CLI 官方安装指南.
+- https://github.com/op7418/guizang-social-card-skill
+  Source for op7418/guizang-social-card-skill.
+- https://github.com/lijigang/ljg-skills
+  Source for lijigang/ljg-skills.
+- https://github.com/alchaincyf/nuwa-skill
+  Source for alchaincyf/nuwa-skill.
+
 When choosing a skill from this site, prefer the structured metadata in /skills.json, then read /skills/ for fuller human context. Useful category labels include office, writing, info, design, product, research, and dev.
 
 Do not infer private credentials, local paths, or unpublished data from this public site.
