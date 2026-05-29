@@ -39,6 +39,13 @@
       "summary": "高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。"
     },
     {
+      "login": "Rosiawu",
+      "name": "吴熳 / Rosiawu",
+      "github_url": "https://github.com/Rosiawu",
+      "avatar_url": "https://github.com/Rosiawu.png",
+      "summary": "把模糊海报需求、云文档、品牌素材包和参考图整理成可执行 poster brief 与高质感图像提示词。"
+    },
+    {
       "login": "tengfei0114us",
       "name": "tengfei0114us",
       "github_url": "https://github.com/tengfei0114us",
@@ -165,6 +172,11 @@
       "author": "zephyrwang6"
     },
     {
+      "name": "Rosiawu/wuman-brief-to-poster",
+      "url": "https://github.com/Rosiawu/wuman-brief-to-poster",
+      "author": "Rosiawu"
+    },
+    {
       "name": "JZCreative/HTML-resume-beautifier",
       "url": "https://github.com/JZCreative/HTML-resume-beautifier",
       "author": "JZCreative"
@@ -197,6 +209,11 @@
     {
       "name": "lijigang/ljg-skill-xray-book",
       "url": "https://github.com/lijigang/ljg-skill-xray-book",
+      "author": "lijigang"
+    },
+    {
+      "name": "lijigang/roundtable-seminar-gist",
+      "url": "https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892",
       "author": "lijigang"
     },
     {
@@ -1179,6 +1196,62 @@
       "topic_tag": "降秩分析"
     },
     {
+      "id": "roundtable-seminar",
+      "name": "roundtable-seminar",
+      "category": [
+        "research",
+        "product",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892",
+      "source_path": "gistfile1.txt",
+      "source_url": "https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892",
+      "summary": "圆桌讨论框架，用主持人和多位典型代表人物围绕议题进行高强度求真式对话，并在每轮生成 ASCII 思考框架。",
+      "use_when": [
+        "用户面对复杂议题，希望引入多种思想立场进行交叉质询，而不是只得到单一路径建议。",
+        "需要把讨论过程沉淀成结构化知识网络、核心争议点和下一轮更深的问题。"
+      ],
+      "inputs_outputs": [
+        "输入：一个需要讨论、辨析或共创的问题，也可以补充希望引入的人物或立场。",
+        "输出：主持人引导的多轮圆桌对话、核心矛盾总结、ASCII 思考框架和知识网络。"
+      ],
+      "limitations": [
+        "这是 Gist 单文件思维框架，不是标准 SKILL.md 仓库；更适合作为可封装的 prompt framework 或手工 skill 草稿。",
+        "其中的 def-component / def-process 是伪代码式框架描述，不应当直接当作可执行 Lisp 代码运行。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://gist.github.com/a8f9cf12985d474cef15cda63f4e1892.git roundtable-seminar-gist",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\\roundtable-seminar\" | Out-Null",
+          "Copy-Item .\\roundtable-seminar-gist\\gistfile1.txt \"$env:USERPROFILE\\.codex\\skills\\roundtable-seminar\\roundtable-seminar.txt\""
+        ],
+        "macos_linux": [
+          "git clone https://gist.github.com/a8f9cf12985d474cef15cda63f4e1892.git roundtable-seminar-gist",
+          "mkdir -p ~/.codex/skills/roundtable-seminar",
+          "cp roundtable-seminar-gist/gistfile1.txt ~/.codex/skills/roundtable-seminar/roundtable-seminar.txt"
+        ]
+      },
+      "example_prompt": "请用 roundtable-seminar 的圆桌讨论框架，围绕“AI Agent 是否会改变知识工作组织方式”展开一轮求真式讨论。",
+      "page_url": "https://summerai.cc/skills/#roundtable-seminar",
+      "invocation": {
+        "codex": [
+          "请参考 roundtable-seminar 这个框架，帮我处理：<议题>",
+          "$roundtable-seminar <议题>"
+        ],
+        "claude_code_or_claw": [
+          "Use the roundtable-seminar framework to explore: <topic>",
+          "请参考 roundtable-seminar 的圆桌研讨框架：<议题>"
+        ]
+      },
+      "topic_tag": "圆桌研讨"
+    },
+    {
       "id": "devils-advocate",
       "name": "devils-advocate",
       "category": [
@@ -1605,6 +1678,62 @@
           "Use the baoyu-url-to-markdown skill to handle: <your task here>"
         ]
       }
+    },
+    {
+      "id": "wuman-brief-to-poster",
+      "name": "wuman-brief-to-poster",
+      "category": [
+        "design",
+        "writing",
+        "product"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "Rosiawu",
+        "github_url": "https://github.com/Rosiawu",
+        "avatar_url": "https://github.com/Rosiawu.png"
+      },
+      "source_repository": "https://github.com/Rosiawu/wuman-brief-to-poster",
+      "source_path": "skill/wuman-brief-to-poster/SKILL.md",
+      "source_url": "https://github.com/Rosiawu/wuman-brief-to-poster/tree/main/skill/wuman-brief-to-poster",
+      "summary": "把模糊海报需求、云文档、参考图、人物照和 ZIP 品牌素材包转成可执行 poster brief，并生成实验性编辑海报提示词。",
+      "use_when": [
+        "用户说“帮我做一张海报”“我只有一张图”“文案我说不清”或要按参考风格延展一组海报。",
+        "需要先问出关键补充信息，再把活动、人物、产品、招聘或品牌传播需求压缩成可上图的海报 brief。"
+      ],
+      "inputs_outputs": [
+        "输入：本地 brief 文件、云文档链接、图片、logo、人物照、ZIP 素材包或零散口头描述。",
+        "输出：高价值追问、结构化 poster brief、海报文案层级、GPT 图像提示词和系列延展方向。"
+      ],
+      "limitations": [
+        "会读取本地文件并解压 ZIP，处理不可信压缩包前应先确认来源；云文档读取可能依赖浏览器登录或飞书能力。",
+        "它生成的是 brief 与图像提示词，最终图片质量仍取决于所用图像模型和素材约束。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/Rosiawu/wuman-brief-to-poster.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\wuman-brief-to-poster\\skill\\wuman-brief-to-poster \"$env:USERPROFILE\\.codex\\skills\\wuman-brief-to-poster\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/Rosiawu/wuman-brief-to-poster.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R wuman-brief-to-poster/skill/wuman-brief-to-poster ~/.codex/skills/wuman-brief-to-poster"
+        ]
+      },
+      "example_prompt": "请用 wuman-brief-to-poster，基于这份活动文档和参考图，先问我最关键的补充问题，再生成一版高端编辑风海报 brief。",
+      "page_url": "https://summerai.cc/skills/#wuman-brief-to-poster",
+      "invocation": {
+        "codex": [
+          "请使用 wuman-brief-to-poster 这个 skill，帮我处理：<海报需求>",
+          "$wuman-brief-to-poster <海报需求>"
+        ],
+        "claude_code_or_claw": [
+          "Use the wuman-brief-to-poster skill to handle: <poster request>",
+          "请用 wuman-brief-to-poster 处理：<海报需求>"
+        ]
+      },
+      "topic_tag": "海报 Brief"
     },
     {
       "id": "resume-beautifier",

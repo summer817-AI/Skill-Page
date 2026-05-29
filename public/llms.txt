@@ -5,7 +5,7 @@ SummerAI publishes a small static site at https://summerai.cc/.
 Important pages for AI agents:
 
 - https://summerai.cc/skills/
-  Human-readable directory of 30 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
+  Human-readable directory of 32 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
 - https://summerai.cc/skills.json
   Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
 - https://summerai.cc/world.html
@@ -40,6 +40,8 @@ Important pages for AI agents:
   Source for op7418/Document-illustrator-skill.
 - https://github.com/zephyrwang6/info-skill
   Source for zephyrwang6/info-skill.
+- https://github.com/Rosiawu/wuman-brief-to-poster
+  Source for Rosiawu/wuman-brief-to-poster.
 - https://github.com/JZCreative/HTML-resume-beautifier
   Source for JZCreative/HTML-resume-beautifier.
 - https://github.com/LearnPrompt/ai-news-radar
@@ -54,6 +56,8 @@ Important pages for AI agents:
   Source for lijigang/ljg-skills.
 - https://github.com/lijigang/ljg-skill-xray-book
   Source for lijigang/ljg-skill-xray-book.
+- https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892
+  Source for lijigang/roundtable-seminar-gist.
 - https://github.com/alchaincyf/nuwa-skill
   Source for alchaincyf/nuwa-skill.
 
