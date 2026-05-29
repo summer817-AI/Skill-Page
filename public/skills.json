@@ -46,6 +46,13 @@
       "summary": "把模糊海报需求、云文档、品牌素材包和参考图整理成可执行 poster brief 与高质感图像提示词。"
     },
     {
+      "login": "FANzR-arch",
+      "name": "FANzR-arch",
+      "github_url": "https://github.com/FANzR-arch",
+      "avatar_url": "https://github.com/FANzR-arch.png",
+      "summary": "把八字、奇门遁甲、紫微斗数拆成可审计的工程化 skill，强调先问清口径、规则固定和风险边界。"
+    },
+    {
       "login": "tengfei0114us",
       "name": "tengfei0114us",
       "github_url": "https://github.com/tengfei0114us",
@@ -220,6 +227,12 @@
       "name": "alchaincyf/nuwa-skill",
       "url": "https://github.com/alchaincyf/nuwa-skill",
       "author": "alchaincyf"
+    },
+    {
+      "name": "FANzR-arch/Numerologist_skills",
+      "url": "https://github.com/FANzR-arch/Numerologist_skills",
+      "author": "FANzR-arch",
+      "trust_note": "传统术数工程化 skill 集合，代码范围清楚；推荐作为文化与结构化分析参考，避免替代现实专业决策。"
     }
   ],
   "agent_entrypoints": {
@@ -1951,6 +1964,337 @@
         "claude_code_or_claw": [
           "请使用 feishu-cli-skill 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the feishu-cli-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "bazi",
+      "name": "bazi",
+      "category": [
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "FANzR-arch",
+        "github_url": "https://github.com/FANzR-arch",
+        "avatar_url": "https://github.com/FANzR-arch.png"
+      },
+      "source_repository": "https://github.com/FANzR-arch/Numerologist_skills",
+      "source_path": "bazi/SKILL.md",
+      "source_url": "https://github.com/FANzR-arch/Numerologist_skills/tree/main/bazi",
+      "topic_tag": "八字",
+      "summary": "四柱八字排盘与解盘 skill，强调先确认出生信息、口径和现成盘面，再按规则做日主强弱、格局、十神、大运流年等结构化分析。",
+      "use_when": [
+        "用户明确提到八字、四柱、天干地支、日主、十神、大运流年或希望用八字体系分析。",
+        "需要把传统命理内容拆成可追问、可校验、可说明边界的结构化输出。"
+      ],
+      "inputs_outputs": [
+        "输入：出生日期、时间、性别、出生地/时区，或用户已有的排盘截图/盘面信息。",
+        "输出：排盘表格、日主强弱、格局、十神配置、大运流年和风险边界说明。"
+      ],
+      "limitations": [
+        "只能作为传统文化和自我观察参考，不构成医疗、法律、财务或现实决策建议。",
+        "出生时间、历法口径和现成盘面来源不清时，应先追问或标注不确定性。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Numerologist_skills\\bazi \"$env:USERPROFILE\\.codex\\skills\\bazi\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Numerologist_skills/bazi ~/.codex/skills/bazi"
+        ]
+      },
+      "example_prompt": "请用 bazi 分析这个八字盘，先确认口径和缺失信息，再给出结构化解读。",
+      "page_url": "https://summerai.cc/skills/#bazi",
+      "invocation": {
+        "codex": [
+          "请使用 bazi 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$bazi <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 bazi 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the bazi skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "qimen-dunjia",
+      "name": "qimen-dunjia",
+      "category": [
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "FANzR-arch",
+        "github_url": "https://github.com/FANzR-arch",
+        "avatar_url": "https://github.com/FANzR-arch.png"
+      },
+      "source_repository": "https://github.com/FANzR-arch/Numerologist_skills",
+      "source_path": "qimen-dunjia/SKILL.md",
+      "source_url": "https://github.com/FANzR-arch/Numerologist_skills/tree/main/qimen-dunjia",
+      "topic_tag": "奇门遁甲",
+      "summary": "奇门遁甲排盘、解盘、择时和方位判断 skill，先访谈确认问题、时间、地点和判断目标，再用 Python CLI 固定计算盘面。",
+      "use_when": [
+        "用户明确要求用奇门遁甲分析具体事项、择时、方位、趋吉避凶或学习奇门理论。",
+        "需要把“看一件事能不能成/何时动/往哪边走”这类问题转成结构化访谈和盘面计算。"
+      ],
+      "inputs_outputs": [
+        "输入：事项类型、目标、时间、地点/时区、规则集和用户想看的判断维度。",
+        "输出：标准化输入、固定计算结果、关键盘面字段、解释与现实风险提醒。"
+      ],
+      "limitations": [
+        "需要 Python 3.11+、lunar_python 和 tzdata；固定计算应以脚本输出为准。",
+        "高风险主题只能给文化参考和现实提醒，不能替代专业意见。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Numerologist_skills\\qimen-dunjia \"$env:USERPROFILE\\.codex\\skills\\qimen-dunjia\"",
+          "pip install -r .\\Numerologist_skills\\qimen-dunjia\\scripts\\requirements.txt"
+        ],
+        "macos_linux": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Numerologist_skills/qimen-dunjia ~/.codex/skills/qimen-dunjia",
+          "pip install -r Numerologist_skills/qimen-dunjia/scripts/requirements.txt"
+        ]
+      },
+      "example_prompt": "请用 qimen-dunjia 判断这件事是否适合本周启动，先问清事项、时间地点和判断目标。",
+      "page_url": "https://summerai.cc/skills/#qimen-dunjia",
+      "invocation": {
+        "codex": [
+          "请使用 qimen-dunjia 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$qimen-dunjia <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 qimen-dunjia 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the qimen-dunjia skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "ziwei-doushu",
+      "name": "ziwei-doushu",
+      "category": [
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "FANzR-arch",
+        "github_url": "https://github.com/FANzR-arch",
+        "avatar_url": "https://github.com/FANzR-arch.png"
+      },
+      "source_repository": "https://github.com/FANzR-arch/Numerologist_skills",
+      "source_path": "ziwei-doushu/SKILL.md",
+      "source_url": "https://github.com/FANzR-arch/Numerologist_skills/tree/main/ziwei-doushu",
+      "topic_tag": "紫微斗数",
+      "summary": "紫微斗数排盘与命盘解读 skill，围绕十二宫、主星、四化、大限流年和格局做结构化分析，并要求先确认口径。",
+      "use_when": [
+        "用户明确提到紫微斗数、命宫、十二宫、主星、四化、大限流年或希望用紫微体系看盘。",
+        "需要基于已有盘面或出生信息做宫位、星曜和主题维度解读。"
+      ],
+      "inputs_outputs": [
+        "输入：出生信息、性别、出生地/时区、排盘截图或现成命盘信息。",
+        "输出：十二宫结构、主星/辅星、四化、大限流年、格局判断和边界提醒。"
+      ],
+      "limitations": [
+        "属于传统文化视角，不替代医疗、法律、财务等专业建议。",
+        "子时换日、闰月归属、排盘软件口径不明时需要先确认。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\Numerologist_skills\\ziwei-doushu \"$env:USERPROFILE\\.codex\\skills\\ziwei-doushu\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/FANzR-arch/Numerologist_skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R Numerologist_skills/ziwei-doushu ~/.codex/skills/ziwei-doushu"
+        ]
+      },
+      "example_prompt": "请用 ziwei-doushu 解读这张紫微斗数命盘，先确认排盘口径和关键假设。",
+      "page_url": "https://summerai.cc/skills/#ziwei-doushu",
+      "invocation": {
+        "codex": [
+          "请使用 ziwei-doushu 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ziwei-doushu <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ziwei-doushu 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the ziwei-doushu skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "storage-analyzer",
+      "name": "storage-analyzer",
+      "category": [
+        "dev",
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "storage-analyzer/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/storage-analyzer",
+      "topic_tag": "磁盘清理",
+      "summary": "macOS / Windows 存储分析 skill，扫描磁盘占用、区分可自动清理/需人工判断/谨慎处理项目，并生成交互式 HTML 报告。",
+      "use_when": [
+        "电脑磁盘空间紧张，需要知道哪些目录、缓存、离线文件或项目依赖最占空间。",
+        "希望先拿到可审查报告，再决定是否打开文件夹、移到废纸篓或手动清理。"
+      ],
+      "inputs_outputs": [
+        "输入：要扫描的磁盘或用户目录、是否只生成静态报告、是否允许本地服务模式。",
+        "输出：占用排行、绿/黄/红风险分级、建议处置路径和 HTML 报告。"
+      ],
+      "limitations": [
+        "会扫描本机文件系统；默认应先只读生成报告，任何删除或移废纸篓动作都必须由用户确认。",
+        "带本地 localhost 服务和 token 的交互模式；Windows 路径和回收站动作需要额外核对。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\storage-analyzer \"$env:USERPROFILE\\.codex\\skills\\storage-analyzer\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/storage-analyzer ~/.codex/skills/storage-analyzer"
+        ]
+      },
+      "example_prompt": "请用 storage-analyzer 帮我分析电脑为什么快没空间了，只生成报告，不执行删除。",
+      "page_url": "https://summerai.cc/skills/#storage-analyzer",
+      "invocation": {
+        "codex": [
+          "请使用 storage-analyzer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$storage-analyzer <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 storage-analyzer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the storage-analyzer skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "youtube-transcript-cn",
+      "name": "youtube-transcript-cn",
+      "category": [
+        "info",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/info-skill",
+      "source_path": "youtube-transcript-cn/SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/info-skill/tree/main/youtube-transcript-cn",
+      "topic_tag": "YouTube 字幕",
+      "summary": "从 YouTube 链接提取可用字幕并整理成中文文字稿，支持自动字幕、手动字幕、时间戳和 Markdown/JSON 输出。",
+      "use_when": [
+        "需要把 YouTube 视频转成中文文字稿、摘要、笔记或引用材料。",
+        "需要保留时间戳，方便回看原视频或做进一步内容整理。"
+      ],
+      "inputs_outputs": [
+        "输入：YouTube 链接或 video id，可选语言、时间戳和输出格式。",
+        "输出：字幕文本、时间戳版本、Markdown 或 JSON 结构化结果。"
+      ],
+      "limitations": [
+        "只能处理有可用字幕或可提取字幕的视频；受网络和 YouTube 字幕可用性影响。",
+        "脚本会在缺依赖时尝试安装 youtube-transcript-api，运行前应明确同意安装依赖。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\info-skill\\youtube-transcript-cn \"$env:USERPROFILE\\.codex\\skills\\youtube-transcript-cn\"",
+          "pip install youtube-transcript-api"
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R info-skill/youtube-transcript-cn ~/.codex/skills/youtube-transcript-cn",
+          "pip install youtube-transcript-api"
+        ]
+      },
+      "example_prompt": "请用 youtube-transcript-cn 提取这个 YouTube 视频的中文字幕，并整理成带小标题的 Markdown。",
+      "page_url": "https://summerai.cc/skills/#youtube-transcript-cn",
+      "invocation": {
+        "codex": [
+          "请使用 youtube-transcript-cn 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$youtube-transcript-cn <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 youtube-transcript-cn 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the youtube-transcript-cn skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "rss-aggregator",
+      "name": "rss-aggregator",
+      "category": [
+        "info",
+        "research"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "zephyrwang6",
+        "github_url": "https://github.com/zephyrwang6",
+        "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4"
+      },
+      "source_repository": "https://github.com/zephyrwang6/info-skill",
+      "source_path": "rss-aggregator/SKILL.md",
+      "source_url": "https://github.com/zephyrwang6/info-skill/tree/main/rss-aggregator",
+      "topic_tag": "RSS 汇总",
+      "summary": "读取预设 OPML 订阅源，按时间窗口汇总最近更新并输出标题、作者、摘要、时间和链接。",
+      "use_when": [
+        "需要从一组技术、AI、产品或思想类 RSS 源里快速获取近几天更新。",
+        "希望把分散博客订阅整理成可继续筛选、写作或研究的线索清单。"
+      ],
+      "inputs_outputs": [
+        "输入：天数窗口和仓库内的 feeds.opml 订阅源。",
+        "输出：按来源汇总的更新条目、摘要、发布时间和原文链接。"
+      ],
+      "limitations": [
+        "依赖仓库里的 feeds.opml；结果质量取决于订阅源维护情况和 RSS 可用性。",
+        "运行脚本需要临时安装 feedparser，建议用 uv run --with feedparser 执行。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\info-skill\\rss-aggregator \"$env:USERPROFILE\\.codex\\skills\\rss-aggregator\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zephyrwang6/info-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R info-skill/rss-aggregator ~/.codex/skills/rss-aggregator"
+        ]
+      },
+      "example_prompt": "请用 rss-aggregator 汇总最近 3 天这些技术博客的更新，按值得阅读程度排序。",
+      "page_url": "https://summerai.cc/skills/#rss-aggregator",
+      "invocation": {
+        "codex": [
+          "请使用 rss-aggregator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$rss-aggregator <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 rss-aggregator 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the rss-aggregator skill to handle: <your task here>"
         ]
       }
     }

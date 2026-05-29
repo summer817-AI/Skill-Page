@@ -1,66 +1,432 @@
-# SummerAI
+# 好用Skill 推荐
 
-SummerAI publishes a small static site at https://summerai.cc/.
+A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Important pages for AI agents:
+Updated: 2026-05-29
+Site: https://summerai.cc/skills/
 
-- https://summerai.cc/skills/
-  Human-readable directory of 32 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
-- https://summerai.cc/skills.json
-  Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
-- https://summerai.cc/world.html
-  The 世界那么大 daily world page and its archived city pages.
-- https://github.com/KKKKhazix/khazix-skills
-  Source for KKKKhazix/khazix-skills.
-- https://github.com/op7418/guizang-ppt-skill
-  Source for op7418/guizang-ppt-skill.
-- https://github.com/op7418/NanoBanana-PPT-Skills
-  Source for op7418/NanoBanana-PPT-Skills.
-- https://github.com/op7418/Humanizer-zh
-  Source for op7418/Humanizer-zh.
-- https://github.com/op7418/Youtube-clipper-skill
-  Source for op7418/Youtube-clipper-skill.
-- https://github.com/tengfei0114us/youtube-bilingual-hardburn
-  Source for tengfei0114us/youtube-bilingual-hardburn.
-- https://github.com/op7418/logo-generator-skill
-  Source for op7418/logo-generator-skill.
-- https://github.com/orange2ai/devils-advocate-skill
-  Source for orange2ai/devils-advocate-skill.
-- https://github.com/zephyrwang6/pm-skills
-  Source for zephyrwang6/pm-skills.
-- https://github.com/zephyrwang6/brand-design-md
-  Source for zephyrwang6/brand-design-md.
-- https://github.com/zephyrwang6/career.skill
-  Source for zephyrwang6/career.skill.
-- https://github.com/zephyrwang6/pm-product-describer
-  Source for zephyrwang6/pm-product-describer.
-- https://github.com/anthropics/skills
-  Source for anthropics/skills.
-- https://github.com/op7418/Document-illustrator-skill
-  Source for op7418/Document-illustrator-skill.
-- https://github.com/zephyrwang6/info-skill
-  Source for zephyrwang6/info-skill.
-- https://github.com/Rosiawu/wuman-brief-to-poster
-  Source for Rosiawu/wuman-brief-to-poster.
-- https://github.com/JZCreative/HTML-resume-beautifier
-  Source for JZCreative/HTML-resume-beautifier.
-- https://github.com/LearnPrompt/ai-news-radar
-  Source for LearnPrompt/ai-news-radar.
-- https://github.com/wanikua/danghuangshang
-  Source for wanikua/danghuangshang.
-- https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
-  Source for 飞书 CLI 官方安装指南.
-- https://github.com/op7418/guizang-social-card-skill
-  Source for op7418/guizang-social-card-skill.
-- https://github.com/lijigang/ljg-skills
-  Source for lijigang/ljg-skills.
-- https://github.com/lijigang/ljg-skill-xray-book
-  Source for lijigang/ljg-skill-xray-book.
-- https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892
-  Source for lijigang/roundtable-seminar-gist.
-- https://github.com/alchaincyf/nuwa-skill
-  Source for alchaincyf/nuwa-skill.
+## 入选标准
+- 可安装：必须能定位到明确的 GitHub 仓库、官方文档或可复制安装入口。
+- 用途明确：说明适合场景、输入输出和调用示例。
+- 依赖透明：标注需要的脚本、CLI、包管理器、API 或账号依赖。
+- 风险可说明：写清楚权限边界、账号风险、平台限制和不适合场景。
 
-When choosing a skill from this site, prefer the structured metadata in /skills.json, then read /skills/ for fuller human context. Useful category labels include office, writing, info, design, product, research, and dev.
+## Skills
 
-Do not infer private credentials, local paths, or unpublished data from this public site.
+### aihot
+- id: aihot
+- author: KKKKhazix
+- category: info, research
+- recommendation: high
+- source: https://github.com/KKKKhazix/khazix-skills/tree/main/aihot
+- summary: 让 agent 直接查询 AI HOT 的公开 API，生成中文 AI 资讯简报，不需要 API Key 或 MCP server。
+- use_when: 用户问“今天 AI 圈有什么”“最近 OpenAI/Anthropic/Google 发了什么”。；需要基于实时资讯生成日报、精选条目、公司或关键词动态。
+- limitations: API 调用可能需要浏览器式 User-Agent；实时内容仍要看源站可用性。
+- invocation_example: Use aihot to check the most important AI updates from the past 24 hours.
+
+### hv-analysis
+- id: hv-analysis
+- author: KKKKhazix
+- category: research, product
+- recommendation: high
+- source: https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis
+- summary: 用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 PDF 研究报告。
+- use_when: 用户说“研究一下”“调研一下”“帮我搞懂这个产品/公司/概念”。；写作、投资、产品判断前需要系统收集材料和竞品对比。
+- limitations: 不适合简单名词解释或几句话摘要。
+- invocation_example: Use hv-analysis to deeply research this company and compare it with current competitors.
+
+### khazix-writer
+- id: khazix-writer
+- author: KKKKhazix
+- category: writing
+- recommendation: high
+- source: https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer
+- summary: 数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。
+- use_when: 用户要写公众号长文、续写文章，或把 PDF、brief、新闻链接扩成文章。；希望文章有明确个人口吻，而不是通用营销文案。
+- limitations: 不适合短社交帖或通用企业文案。
+- invocation_example: Use khazix-writer to turn this brief and my notes into a WeChat long article.
+
+### neat-freak
+- id: neat-freak
+- author: KKKKhazix
+- category: dev
+- recommendation: high
+- source: https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak
+- summary: 会话结束后同步项目文档、AGENTS/CLAUDE 规则和 agent 记忆，防止知识体系腐烂。
+- use_when: 用户说“整理一下”“同步一下”“收尾”“更新记忆”或准备交接。；项目文档、README、规则文件和实际代码已经出现不一致。
+- limitations: 需要避免把规则文件写成追加式流水账。
+- invocation_example: Use neat-freak to sync this project docs and memory after the current milestone.
+
+### guizang-ppt-skill
+- id: guizang-ppt-skill
+- author: op7418
+- category: office, design, writing
+- recommendation: high
+- source: https://github.com/op7418/guizang-ppt-skill
+- summary: 生成单文件横向翻页 HTML PPT，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。
+- use_when: 用户要做演讲、分享、发布会、demo day 或杂志风/瑞士风网页 PPT。；需要把大纲、素材、截图和配图组织成可直接打开的 index.html deck。
+- limitations: 不适合大段表格数据、培训课件或多人协作编辑。
+- invocation_example: Use guizang-ppt-skill to turn this outline into a Swiss-style web PPT for a 20-minute product talk.
+
+### guizang-social-card-skill
+- id: guizang-social-card-skill
+- author: op7418
+- category: design, writing, office
+- recommendation: high
+- source: https://github.com/op7418/guizang-social-card-skill
+- summary: 归藏风格社交卡片与公众号封面生成 skill，可把文章、脚本、截图、产品说明或照片整理成小红书图文、轮播卡、公众号 21:9 + 1:1 封面。
+- use_when: 需要把长文、产品更新、教程或截图素材做成可发布的社交平台视觉卡片。；需要同时处理版式、标题压缩、截图呈现、图片叠字和平台比例，而不是只生成一张普通配图。
+- limitations: 依赖 Playwright 渲染；涉及网页取图或第三方图片时需要保留来源并人工确认版权。
+- invocation_example: 请用 guizang-social-card-skill 把这篇文章做成 6 张小红书 3:4 图文卡片，并生成公众号封面。
+
+### NanoBanana-PPT-Skills
+- id: nanobanana-ppt-skills
+- author: op7418
+- category: office, design
+- recommendation: medium-high
+- source: https://github.com/op7418/NanoBanana-PPT-Skills
+- summary: 基于文档内容生成 PPT 图片、转场视频和交互播放页，适合需要 AI 生成视觉素材的演示项目。
+- use_when: 用户想把文档自动变成高质量 PPT 图片或视频化展示。；需要 Nano Banana / Gemini 图像生成、可灵转场、FFmpeg 导出等完整链路。
+- limitations: 依赖外部图像生成凭证，视频能力还需要额外凭证和 FFmpeg。
+- invocation_example: Use NanoBanana-PPT-Skills to generate a five-page visual deck from this document.
+
+### humanizer-zh
+- id: humanizer-zh
+- author: op7418
+- category: writing
+- recommendation: high
+- source: https://github.com/op7418/Humanizer-zh
+- summary: 识别并改写中文文本中的 AI 生成痕迹，让文章节奏、语气和观点更像真实作者。
+- use_when: 发布前去掉“AI 腔”、宣传腔、三段式套话和过度转折。；保留原意的同时增加更自然的节奏、具体感和作者声音。
+- limitations: 改善的是风格，不负责事实核验。
+- invocation_example: Use humanizer-zh to make this article sound less AI-written while keeping my original point.
+
+### youtube-clipper
+- id: youtube-clipper
+- author: op7418
+- category: info, writing
+- recommendation: medium-high
+- source: https://github.com/op7418/Youtube-clipper-skill
+- summary: 下载 YouTube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。
+- use_when: 从长视频里切出可传播的短片段，尤其是访谈、教程、演讲。；需要字幕翻译、烧录和片段总结一条链路完成。
+- limitations: 依赖 yt-dlp、FFmpeg/libass 和 Python 字幕处理依赖。
+- invocation_example: Use youtube-clipper to find the best short segments in this interview and create bilingual clips.
+
+### youtube-bilingual-hardburn
+- id: youtube-bilingual-hardburn
+- author: tengfei0114us
+- category: info, writing
+- recommendation: high
+- source: https://github.com/tengfei0114us/youtube-bilingual-hardburn
+- summary: 把外语视频做成中英双语硬字幕版，重点解决 YouTube 自动字幕无标点、翻译行数错位和最终烧录校验。
+- use_when: 用户要把英文访谈、教程、演讲分享到小红书、微信、B 站等平台。；需要字幕在所有播放器里都可见，而不是可开关的软字幕。
+- limitations: 需要 yt-dlp、FFmpeg、Python，并严格做一行英文对应一行中文的校验。
+- invocation_example: Use youtube-bilingual-hardburn to make this English talk into a Chinese-English hardsub video.
+
+### logo-generator
+- id: logo-generator
+- author: op7418
+- category: design, office
+- recommendation: medium-high
+- source: https://github.com/op7418/logo-generator-skill
+- summary: 为产品或品牌生成多组 SVG logo 方向，并制作带设计 rationale 的展示页面和高端样机图。
+- use_when: 新产品起名后需要快速探索 6 个以上 logo 方向。；需要 SVG、PNG 和不同背景风格的品牌展示图。
+- limitations: 高端展示图生成需要外部图像生成凭证。
+- invocation_example: Use logo-generator to create six SVG logo directions for this AI product.
+
+### Document illustrator
+- id: document-illustrator
+- author: op7418
+- category: design, writing
+- recommendation: medium-high
+- source: https://github.com/op7418/Document-illustrator-skill
+- summary: 为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。
+- use_when: 文章、Markdown 或说明文档需要一组主题明确的配图。；希望 agent 先理解文档结构，再给出视觉表达方案。
+- limitations: 需要 Gemini API Key 或图像生成能力，发布前仍要人工确认图片版权与准确性。
+- invocation_example: 请用 document-illustrator 给这篇 1 万字长文设计 5 张配图。
+
+### ljg-paper
+- id: ljg-paper
+- author: lijigang
+- category: research, writing
+- recommendation: high
+- source: https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-paper
+- summary: 面向非学术读者的论文解读 skill，用一条连续故事线讲清论文主角、困境、旧路、转折、解法、结局和内核。
+- use_when: 用户给出 arXiv、论文 URL、PDF 或论文标题，希望听懂论文而不是看学术摘要。；需要把技术论文转成公众号、研究笔记或内部分享前的理解稿。
+- limitations: 偏讲述与理解，不是严格同行评审；事实性结论仍应回到论文原文核对。
+- invocation_example: 请用 ljg-paper 把这篇论文讲给一个非本领域的人听：<论文链接>
+
+### ljg-card
+- id: ljg-card
+- author: lijigang
+- category: design, writing
+- recommendation: high
+- source: https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-card
+- summary: 内容铸卡 skill，把文章、观点或笔记转成 PNG 视觉卡片，支持长图、信息图、多卡片、视觉笔记、漫画、白板和大字卡。
+- use_when: 需要把一段文字、读书笔记、论文解读或观点做成可分享图片。；想让 agent 同时处理信息结构、版式和截图导出。
+- limitations: 依赖 Playwright / Chromium 截图；视觉风格强，正式品牌场景需要人工微调。
+- invocation_example: 请用 ljg-card -i 把这段内容铸成一张信息图卡片。
+
+### ljg-plain
+- id: ljg-plain
+- author: lijigang
+- category: writing
+- recommendation: medium-high
+- source: https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-plain
+- summary: 白话解释 skill，把复杂概念、文章或观点改写到聪明的 12 岁小孩也能真正懂。
+- use_when: 用户说“说人话”“白话解释”“帮我讲清楚这个概念”。；需要把专业内容改成更易懂、更自然的解释，而不是机械摘要。
+- limitations: 强调理解和表达，不适合需要严格保留术语密度的法律、医学或学术正式文本。
+- invocation_example: 请用 ljg-plain 把这段话说人话：<内容>
+
+### ljg-book
+- id: ljg-book
+- author: lijigang
+- category: research, writing
+- recommendation: medium-high
+- source: https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-book
+- summary: 拆书 skill，用五件事抽出一本书的骨架：核心问题、基础假设、分析框架、核心观点和最后的精神内核。
+- use_when: 用户给出一本书名、目录、读书笔记或摘录，希望快速理解这本书到底在回答什么。；需要把读书内容压缩成研究笔记、分享提纲或选题判断。
+- limitations: 不是逐章摘要；如果没有原书材料，会依赖公开信息或用户提供的片段，准确性需要标注边界。
+- invocation_example: 请用 ljg-book 拆一下《复杂》这本书，重点看它的核心问题和分析框架。
+
+### ljg-xray-book
+- id: ljg-xray-book
+- author: lijigang
+- category: research, writing
+- recommendation: high
+- source: https://github.com/lijigang/ljg-skill-xray-book/tree/main/skills/ljg-xray-book
+- summary: 深度拆书机，用 Epiplexity 原理和三轮认知压缩提取一本书的可学习结构，输出 Org-mode 报告和 ASCII 结构图。
+- use_when: 用户给出书名、书籍内容、目录、摘录或链接，希望做比普通摘要更深的结构化拆解。；需要从一本书里提炼核心问题、论证链、隐含假设、边界条件、跨域迁移和行动触发。
+- limitations: 默认会把报告写入本地 notes 目录，使用前应确认输出路径是否符合当前工作环境。；只有书名而没有原文时会依赖公开信息或搜索结果，事实准确性需要标注边界。
+- invocation_example: 请用 ljg-xray-book 深度拆解《思考，快与慢》，重点输出核心结构、隐含假设和行动触发。
+
+### ljg-rank
+- id: ljg-rank
+- author: lijigang
+- category: research, product
+- recommendation: medium-high
+- source: https://github.com/lijigang/ljg-skills/tree/master/skills/ljg-rank
+- summary: 降秩引擎，给一个领域或现象，找出背后真正独立的几根生成器，帮助从复杂表象里抓住不可再少的结构。
+- use_when: 需要判断一个领域、产品、趋势或商业模式到底由哪些独立变量支撑。；用户说“本质是什么”“这个领域靠什么撑着”“帮我降秩”。
+- limitations: 偏思维框架和结构判断，不能替代实证调研；关键事实仍需另行验证。
+- invocation_example: 请用 ljg-rank 分析一下 AI 编程工具这个领域真正的几根秩。
+
+### roundtable-seminar
+- id: roundtable-seminar
+- author: lijigang
+- category: research, product, writing
+- recommendation: medium-high
+- source: https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892
+- summary: 圆桌讨论框架，用主持人和多位典型代表人物围绕议题进行高强度求真式对话，并在每轮生成 ASCII 思考框架。
+- use_when: 用户面对复杂议题，希望引入多种思想立场进行交叉质询，而不是只得到单一路径建议。；需要把讨论过程沉淀成结构化知识网络、核心争议点和下一轮更深的问题。
+- limitations: 这是 Gist 单文件思维框架，不是标准 SKILL.md 仓库；更适合作为可封装的 prompt framework 或手工 skill 草稿。；其中的 def-component / def-process 是伪代码式框架描述，不应当直接当作可执行 Lisp 代码运行。
+- invocation_example: 请用 roundtable-seminar 的圆桌讨论框架，围绕“AI Agent 是否会改变知识工作组织方式”展开一轮求真式讨论。
+
+### devils-advocate
+- id: devils-advocate
+- author: orange2ai
+- category: product, research, dev
+- recommendation: high
+- source: https://github.com/orange2ai/devils-advocate-skill
+- summary: 在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。
+- use_when: 技术方案 review、产品决策、定价策略、BP/pitch 打磨。；用户明确要求“挑刺”“帮我找漏洞”“challenge 一下”。
+- limitations: 适合主动触发，不适合在普通协作中突然切换成强质疑模式。
+- invocation_example: Use devils-advocate to challenge this product plan before I start building.
+
+### pm-skills
+- id: pm-skills
+- author: zephyrwang6
+- category: product, office, research
+- recommendation: high
+- source: https://github.com/zephyrwang6/pm-skills
+- summary: 13 个产品经理 Claude Code skills，覆盖 PRD、需求评审、优先级、路线图、实验、埋点、竞品和复盘。
+- use_when: 产品经理想把高频文档和评审工作流交给 agent 预处理。；从模糊需求走到 PRD、评审问题、实验方案、埋点方案和复盘报告。
+- limitations: 它能产出工作文档，但是否值得做、如何说服团队仍需人判断。
+- invocation_example: Use pm-skills to turn this vague feature idea into a review-ready PRD and risk checklist.
+
+### brand-design-md
+- id: brand-design-md
+- author: zephyrwang6
+- category: design, dev
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/brand-design-md
+- summary: 根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 UI 代码上下文。
+- use_when: 用户说“Apple 风格”“Notion 那种感觉”“Stripe 极简风”。；需要把品牌设计语言映射成颜色、字体、布局和组件倾向。
+- limitations: 运行时需要 npx getdesign@latest add <slug> 获取外部设计规范。
+- invocation_example: Use brand-design-md to make this dashboard feel like Stripe plus Linear.
+
+### career-skill-planner
+- id: career-skill-planner
+- author: zephyrwang6
+- category: product, research
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/career.skill
+- summary: 输入职业名称或 JD，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。
+- use_when: 用户想知道某个职业如何用 AI 提效，或要为岗位打造专属 skill 库。；从“我是设计师/运营/销售/律师”拆出可落地的 agent 工作流。
+- limitations: 职业名称太宽泛时可能需要先问一个定向问题。
+- invocation_example: Use career-skill-planner to design an AI skill library for a content operations manager.
+
+### SPACE-product-describer
+- id: space-product-describer
+- author: zephyrwang6
+- category: product, writing, dev
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/pm-product-describer
+- summary: 用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。
+- use_when: 用户说“我想做一个产品/工具/应用”，但描述太笼统。；写 PRD 或做原型前，需要先补齐用户流程、场景、边界和切入建议。
+- limitations: 已进入详细 PRD 阶段时，应切换到 PRD 类 skill。
+- invocation_example: Use SPACE-product-describer to turn this fuzzy app idea into a buildable product brief.
+
+### skill-creator
+- id: skill-creator
+- author: anthropics
+- category: dev
+- recommendation: high
+- source: https://github.com/anthropics/skills/tree/main/skills/skill-creator
+- summary: Anthropic 官方 skill-creator，用来创建、改进和评估 agent skills，是学习 skill 写法的高可信参考。
+- use_when: 你要从零设计一个可复用 skill，或把已有提示词整理成标准 skill。；需要检查 skill 结构、说明、脚本和参考资料是否清楚。
+- limitations: 偏方法论和模板，需要结合具体任务补充脚本、示例和测试。
+- invocation_example: 请用 skill-creator 帮我把这个工作流整理成一个可复用的 skill。
+
+### huashu-nuwa
+- id: huashu-nuwa
+- author: alchaincyf
+- category: dev, research, writing
+- recommendation: high
+- source: https://github.com/alchaincyf/nuwa-skill
+- summary: 女娲造人 skill，用于把人物、主题或模糊需求蒸馏成可运行的 perspective skill，自动组织调研、提炼心智模型和表达 DNA。
+- use_when: 想从零创建某个人物/主题视角的 agent skill，例如“做一个费曼视角”“蒸馏某位作者”。；需要把本地语料、公开材料和调研结果整理成可复用的思维顾问。
+- limitations: 会触发深度调研，耗时较长；人物 skill 容易过拟合公开表达，需标注来源质量和调研截止日期。
+- invocation_example: 请用 huashu-nuwa 帮我蒸馏一个“费曼视角”的 perspective skill。
+
+### baoyu-url-to-markdown
+- id: baoyu-url-to-markdown
+- author: zephyrwang6
+- category: info, research
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/info-skill/tree/main/baoyu-url-to-markdown
+- summary: 通过 Chrome CDP 把网页渲染后转成 Markdown，适合抓取动态网页、长文和需要登录后查看的页面内容。
+- use_when: 需要把网页内容保存成 Markdown，供后续总结、写作或归档。；页面依赖前端渲染，普通 HTTP 抓取拿不到完整正文。
+- limitations: 会连接本地 Chrome CDP；处理登录页面时要注意 cookie、账号内容和隐私边界。
+- invocation_example: 请用 baoyu-url-to-markdown 把这个网页转换成 Markdown：<URL>
+
+### wuman-brief-to-poster
+- id: wuman-brief-to-poster
+- author: Rosiawu
+- category: design, writing, product
+- recommendation: high
+- source: https://github.com/Rosiawu/wuman-brief-to-poster/tree/main/skill/wuman-brief-to-poster
+- summary: 把模糊海报需求、云文档、参考图、人物照和 ZIP 品牌素材包转成可执行 poster brief，并生成实验性编辑海报提示词。
+- use_when: 用户说“帮我做一张海报”“我只有一张图”“文案我说不清”或要按参考风格延展一组海报。；需要先问出关键补充信息，再把活动、人物、产品、招聘或品牌传播需求压缩成可上图的海报 brief。
+- limitations: 会读取本地文件并解压 ZIP，处理不可信压缩包前应先确认来源；云文档读取可能依赖浏览器登录或飞书能力。；它生成的是 brief 与图像提示词，最终图片质量仍取决于所用图像模型和素材约束。
+- invocation_example: 请用 wuman-brief-to-poster，基于这份活动文档和参考图，先问我最关键的补充问题，再生成一版高端编辑风海报 brief。
+
+### HTML resume beautifier
+- id: resume-beautifier
+- author: JZCreative
+- category: office, design, writing
+- recommendation: medium-high
+- source: https://github.com/JZCreative/HTML-resume-beautifier
+- summary: 把简历内容整理成可投递、可导出 PNG/PDF 的 A4 HTML 作品，并包含隐私审计和版式检查流程。
+- use_when: 需要把中文或英文简历做成更美观的 HTML 页面。；希望先结构化简历信息，再生成适合打印或投递的版本。
+- limitations: 简历真实性和隐私删改必须人工确认，不应把身份证、电话等敏感信息公开上传。
+- invocation_example: 请用 resume-beautifier 把我的简历整理成一页 A4 HTML，并先检查隐私信息。
+
+### ai-news-radar
+- id: ai-news-radar
+- author: LearnPrompt
+- category: info, research, dev
+- recommendation: medium-high
+- source: https://github.com/LearnPrompt/ai-news-radar/tree/master/skills/ai-news-radar
+- summary: 用于收集、筛选和维护 AI/技术资讯源，能把 RSS、OPML、公开 feed 等来源整理成可发布的 AI 新闻雷达。
+- use_when: 要搭建或更新 AI 新闻源列表。；需要评估多个网站、RSS、OPML 或公开 feed 的质量和覆盖面。
+- limitations: 高级自动化可能用到 GitHub Secrets、X API 或 AgentMail；不要提交 token、cookies 或私人 OPML。
+- invocation_example: 请用 ai-news-radar 帮我筛选一批 AI 新闻源，并按可信度排序。
+
+### ai-court
+- id: ai-court
+- author: wanikua
+- category: dev, product
+- recommendation: medium
+- source: https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill
+- summary: 把多个角色 agent 组织成“AI 朝堂”式辩论和决策流程，偏 OpenClaw 多智能体编排实验。
+- use_when: 想让多个角色围绕方案进行辩论、评审或决策。；已经准备好 Discord、飞书等 IM bot 配置，并愿意做本地调试。
+- limitations: 这是中等推荐的实验型 skill；会涉及 API Key、IM bot token 和 OpenClaw 配置，公开部署前要严格剔除凭证。
+- invocation_example: 请用 ai-court 帮我为这个产品方案组织一轮多 Agent 评审。
+
+### 飞书 CLI Skill
+- id: feishu-cli-skill
+- author: feishu-open-platform
+- category: office, dev
+- recommendation: medium-high
+- source: https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md
+- summary: 飞书官方 CLI 与 Agent Skill 安装指南，帮助 agent 通过 lark-cli 操作文档、表格、日历、消息等飞书能力。
+- use_when: 希望 agent 连接飞书/Lark 工作区。；需要安装 lark-cli、初始化配置、登录认证并验证可用性。
+- limitations: 需要用户本地登录和授权；App Secret、token 等凭证不能写入公开仓库或页面。
+- invocation_example: 请用 feishu-cli-skill 帮我检查飞书 CLI 是否已经能正常认证。
+
+### bazi
+- id: bazi
+- author: FANzR-arch
+- category: research
+- recommendation: medium-high
+- source: https://github.com/FANzR-arch/Numerologist_skills/tree/main/bazi
+- summary: 四柱八字排盘与解盘 skill，强调先确认出生信息、口径和现成盘面，再按规则做日主强弱、格局、十神、大运流年等结构化分析。
+- use_when: 用户明确提到八字、四柱、天干地支、日主、十神、大运流年或希望用八字体系分析。；需要把传统命理内容拆成可追问、可校验、可说明边界的结构化输出。
+- limitations: 只能作为传统文化和自我观察参考，不构成医疗、法律、财务或现实决策建议。；出生时间、历法口径和现成盘面来源不清时，应先追问或标注不确定性。
+- invocation_example: 请用 bazi 分析这个八字盘，先确认口径和缺失信息，再给出结构化解读。
+
+### qimen-dunjia
+- id: qimen-dunjia
+- author: FANzR-arch
+- category: research
+- recommendation: medium-high
+- source: https://github.com/FANzR-arch/Numerologist_skills/tree/main/qimen-dunjia
+- summary: 奇门遁甲排盘、解盘、择时和方位判断 skill，先访谈确认问题、时间、地点和判断目标，再用 Python CLI 固定计算盘面。
+- use_when: 用户明确要求用奇门遁甲分析具体事项、择时、方位、趋吉避凶或学习奇门理论。；需要把“看一件事能不能成/何时动/往哪边走”这类问题转成结构化访谈和盘面计算。
+- limitations: 需要 Python 3.11+、lunar_python 和 tzdata；固定计算应以脚本输出为准。；高风险主题只能给文化参考和现实提醒，不能替代专业意见。
+- invocation_example: 请用 qimen-dunjia 判断这件事是否适合本周启动，先问清事项、时间地点和判断目标。
+
+### ziwei-doushu
+- id: ziwei-doushu
+- author: FANzR-arch
+- category: research
+- recommendation: medium-high
+- source: https://github.com/FANzR-arch/Numerologist_skills/tree/main/ziwei-doushu
+- summary: 紫微斗数排盘与命盘解读 skill，围绕十二宫、主星、四化、大限流年和格局做结构化分析，并要求先确认口径。
+- use_when: 用户明确提到紫微斗数、命宫、十二宫、主星、四化、大限流年或希望用紫微体系看盘。；需要基于已有盘面或出生信息做宫位、星曜和主题维度解读。
+- limitations: 属于传统文化视角，不替代医疗、法律、财务等专业建议。；子时换日、闰月归属、排盘软件口径不明时需要先确认。
+- invocation_example: 请用 ziwei-doushu 解读这张紫微斗数命盘，先确认排盘口径和关键假设。
+
+### storage-analyzer
+- id: storage-analyzer
+- author: KKKKhazix
+- category: dev, research
+- recommendation: medium-high
+- source: https://github.com/KKKKhazix/khazix-skills/tree/main/storage-analyzer
+- summary: macOS / Windows 存储分析 skill，扫描磁盘占用、区分可自动清理/需人工判断/谨慎处理项目，并生成交互式 HTML 报告。
+- use_when: 电脑磁盘空间紧张，需要知道哪些目录、缓存、离线文件或项目依赖最占空间。；希望先拿到可审查报告，再决定是否打开文件夹、移到废纸篓或手动清理。
+- limitations: 会扫描本机文件系统；默认应先只读生成报告，任何删除或移废纸篓动作都必须由用户确认。；带本地 localhost 服务和 token 的交互模式；Windows 路径和回收站动作需要额外核对。
+- invocation_example: 请用 storage-analyzer 帮我分析电脑为什么快没空间了，只生成报告，不执行删除。
+
+### youtube-transcript-cn
+- id: youtube-transcript-cn
+- author: zephyrwang6
+- category: info, writing
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/info-skill/tree/main/youtube-transcript-cn
+- summary: 从 YouTube 链接提取可用字幕并整理成中文文字稿，支持自动字幕、手动字幕、时间戳和 Markdown/JSON 输出。
+- use_when: 需要把 YouTube 视频转成中文文字稿、摘要、笔记或引用材料。；需要保留时间戳，方便回看原视频或做进一步内容整理。
+- limitations: 只能处理有可用字幕或可提取字幕的视频；受网络和 YouTube 字幕可用性影响。；脚本会在缺依赖时尝试安装 youtube-transcript-api，运行前应明确同意安装依赖。
+- invocation_example: 请用 youtube-transcript-cn 提取这个 YouTube 视频的中文字幕，并整理成带小标题的 Markdown。
+
+### rss-aggregator
+- id: rss-aggregator
+- author: zephyrwang6
+- category: info, research
+- recommendation: medium-high
+- source: https://github.com/zephyrwang6/info-skill/tree/main/rss-aggregator
+- summary: 读取预设 OPML 订阅源，按时间窗口汇总最近更新并输出标题、作者、摘要、时间和链接。
+- use_when: 需要从一组技术、AI、产品或思想类 RSS 源里快速获取近几天更新。；希望把分散博客订阅整理成可继续筛选、写作或研究的线索清单。
+- limitations: 依赖仓库里的 feeds.opml；结果质量取决于订阅源维护情况和 RSS 可用性。；运行脚本需要临时安装 feedparser，建议用 uv run --with feedparser 执行。
+- invocation_example: 请用 rss-aggregator 汇总最近 3 天这些技术博客的更新，按值得阅读程度排序。
