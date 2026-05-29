@@ -5,11 +5,11 @@ SummerAI publishes a small static site at https://summerai.cc/.
 Important pages for AI agents:
 
 - https://summerai.cc/skills/
-  Human-readable directory of 29 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
+  Human-readable directory of 30 recommended AI agent skills. Each card includes author, source platform, full source URL, categories, use cases, limitations, and install commands for Windows and macOS/Linux.
 - https://summerai.cc/skills.json
   Structured metadata for each recommended skill, including purpose, use cases, source repository or official document, author profile, install commands, and example prompts.
 - https://summerai.cc/world.html
-  The "世界那么大" daily world page and its archived city pages.
+  The 世界那么大 daily world page and its archived city pages.
 - https://github.com/KKKKhazix/khazix-skills
   Source for KKKKhazix/khazix-skills.
 - https://github.com/op7418/guizang-ppt-skill
@@ -52,6 +52,8 @@ Important pages for AI agents:
   Source for op7418/guizang-social-card-skill.
 - https://github.com/lijigang/ljg-skills
   Source for lijigang/ljg-skills.
+- https://github.com/lijigang/ljg-skill-xray-book
+  Source for lijigang/ljg-skill-xray-book.
 - https://github.com/alchaincyf/nuwa-skill
   Source for alchaincyf/nuwa-skill.
 

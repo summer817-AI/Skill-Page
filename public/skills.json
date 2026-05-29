@@ -18,6 +18,27 @@
       "summary": "持续发布高完成度的 Claude/Codex skills，强项是 PPT、视频、设计生成和中文写作工具链。"
     },
     {
+      "login": "lijigang",
+      "name": "李继刚 / lijigang",
+      "github_url": "https://github.com/lijigang",
+      "avatar_url": "https://github.com/lijigang.png",
+      "summary": "把阅读、写作、论文、卡片、拆书和降秩思考整理成一组可复用 skills，风格强、结构清楚，适合内容生产和研究分析。"
+    },
+    {
+      "login": "alchaincyf",
+      "name": "花叔 / alchaincyf",
+      "github_url": "https://github.com/alchaincyf",
+      "avatar_url": "https://github.com/alchaincyf.png",
+      "summary": "维护 nuwa-skill，用来把人物或主题蒸馏成可运行的 perspective skill，适合构建思维顾问和作者视角。"
+    },
+    {
+      "login": "zephyrwang6",
+      "name": "zephyrwang6",
+      "github_url": "https://github.com/zephyrwang6",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4",
+      "summary": "高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。"
+    },
+    {
       "login": "tengfei0114us",
       "name": "tengfei0114us",
       "github_url": "https://github.com/tengfei0114us",
@@ -30,13 +51,6 @@
       "github_url": "https://github.com/orange2ai",
       "avatar_url": "https://avatars.githubusercontent.com/u/77816124?v=4",
       "summary": "偏思考与决策类 skill，把 agent 从“顺着说”拉回到能挑战方案的工作状态。"
-    },
-    {
-      "login": "zephyrwang6",
-      "name": "zephyrwang6",
-      "github_url": "https://github.com/zephyrwang6",
-      "avatar_url": "https://avatars.githubusercontent.com/u/59302057?v=4",
-      "summary": "高产 skill 作者，覆盖产品经理、设计规范、职业工作流规划和产品描述等场景。"
     },
     {
       "login": "anthropics",
@@ -72,20 +86,6 @@
       "github_url": "https://open.feishu.cn/",
       "avatar_url": "../assets/feishu-logo.svg",
       "summary": "飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。"
-    },
-    {
-      "login": "lijigang",
-      "name": "李继刚 / lijigang",
-      "github_url": "https://github.com/lijigang",
-      "avatar_url": "https://github.com/lijigang.png",
-      "summary": "把阅读、写作、论文、卡片和降秩思考整理成一组可复用 skills，风格强、结构清楚，适合内容生产和研究分析。"
-    },
-    {
-      "login": "alchaincyf",
-      "name": "花叔 / alchaincyf",
-      "github_url": "https://github.com/alchaincyf",
-      "avatar_url": "https://github.com/alchaincyf.png",
-      "summary": "维护 nuwa-skill，用来把人物或主题蒸馏成可运行的 perspective skill，适合构建思维顾问和作者视角。"
     }
   ],
   "source_repositories": [
@@ -192,6 +192,11 @@
     {
       "name": "lijigang/ljg-skills",
       "url": "https://github.com/lijigang/ljg-skills",
+      "author": "lijigang"
+    },
+    {
+      "name": "lijigang/ljg-skill-xray-book",
+      "url": "https://github.com/lijigang/ljg-skill-xray-book",
       "author": "lijigang"
     },
     {
@@ -1063,6 +1068,61 @@
         ]
       },
       "topic_tag": "拆书"
+    },
+    {
+      "id": "ljg-xray-book",
+      "name": "ljg-xray-book",
+      "category": [
+        "research",
+        "writing"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "lijigang",
+        "github_url": "https://github.com/lijigang",
+        "avatar_url": "https://github.com/lijigang.png"
+      },
+      "source_repository": "https://github.com/lijigang/ljg-skill-xray-book",
+      "source_path": "skills/ljg-xray-book/SKILL.md",
+      "source_url": "https://github.com/lijigang/ljg-skill-xray-book/tree/main/skills/ljg-xray-book",
+      "summary": "深度拆书机，用 Epiplexity 原理和三轮认知压缩提取一本书的可学习结构，输出 Org-mode 报告和 ASCII 结构图。",
+      "use_when": [
+        "用户给出书名、书籍内容、目录、摘录或链接，希望做比普通摘要更深的结构化拆解。",
+        "需要从一本书里提炼核心问题、论证链、隐含假设、边界条件、跨域迁移和行动触发。"
+      ],
+      "inputs_outputs": [
+        "输入：书名、书籍原文片段、目录、读书笔记或相关链接。",
+        "输出：三轮认知压缩结果、餐巾纸公式、一句话、ASCII 草图和 Org-mode 结构报告。"
+      ],
+      "limitations": [
+        "默认会把报告写入本地 notes 目录，使用前应确认输出路径是否符合当前工作环境。",
+        "只有书名而没有原文时会依赖公开信息或搜索结果，事实准确性需要标注边界。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lijigang/ljg-skill-xray-book.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ljg-skill-xray-book\\skills\\ljg-xray-book \"$env:USERPROFILE\\.codex\\skills\\ljg-xray-book\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lijigang/ljg-skill-xray-book.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ljg-skill-xray-book/skills/ljg-xray-book ~/.codex/skills/ljg-xray-book"
+        ]
+      },
+      "example_prompt": "请用 ljg-xray-book 深度拆解《思考，快与慢》，重点输出核心结构、隐含假设和行动触发。",
+      "page_url": "https://summerai.cc/skills/#ljg-xray-book",
+      "invocation": {
+        "codex": [
+          "请使用 ljg-xray-book 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$ljg-xray-book <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "/ljg-xray-book <书名或书籍内容>",
+          "Use the ljg-xray-book skill to deeply x-ray: <book or excerpt>"
+        ]
+      },
+      "topic_tag": "深度拆书"
     },
     {
       "id": "ljg-rank",
