@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-05-29
+Updated: 2026-05-30
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -430,3 +430,25 @@ Site: https://summerai.cc/skills/
 - use_when: 需要从一组技术、AI、产品或思想类 RSS 源里快速获取近几天更新。；希望把分散博客订阅整理成可继续筛选、写作或研究的线索清单。
 - limitations: 依赖仓库里的 feeds.opml；结果质量取决于订阅源维护情况和 RSS 可用性。；运行脚本需要临时安装 feedparser，建议用 uv run --with feedparser 执行。
 - invocation_example: 请用 rss-aggregator 汇总最近 3 天这些技术博客的更新，按值得阅读程度排序。
+
+### qiushi-skill
+- id: qiushi-skill
+- author: HughYau
+- category: research, product, dev
+- recommendation: medium-high
+- source: https://github.com/HughYau/qiushi-skill
+- summary: 把调查研究、矛盾分析、集中力量、实践迭代、批评与复盘等方法整理成 11 个可组合的 agent skills，用于复杂问题拆解和长期任务推进。
+- use_when: 复杂任务同时存在信息缺口、优先级冲突、资源约束或长期推进问题，需要先判断该用哪套方法。；希望为 agent 增加调查研究、矛盾分析、复盘、自我批评和工作流编排能力。
+- limitations: Codex 安装会复制多个 skills 到用户或项目目录；Claude Code / Cursor 安装还可接入 SessionStart hook，使用前应确认安装范围。；仓库直接校验通过，但 npm 发布包缺少 docs 目录时有一条 README 本地链接测试失败，不影响核心 skills 运行。
+- invocation_example: 请用 qiushi-skill 先调查现状，再找出主要矛盾，给我一个分阶段推进方案。
+
+### skill-vetter
+- id: skill-vetter
+- author: spclaudehome
+- category: dev, research
+- recommendation: high
+- source: https://clawhub.ai/spclaudehome/skill-vetter
+- summary: 安装或运行陌生 agent skill 前的安全审查流程，检查来源、红旗模式、权限范围和风险等级，再决定是否安装。
+- use_when: 准备安装来自 GitHub、ClawHub 或其他来源的陌生 skill。；需要检查脚本是否读取凭据、访问浏览器会话、修改系统文件或向外部服务发送数据。
+- limitations: 它提供审查流程，不会自动保证第三方 skill 安全；仍需实际读取候选仓库文件。；页面显示 ClawHub 平台扫描通过，但安装前仍应核对当前版本内容。
+- invocation_example: 请先用 skill-vetter 审查这个 GitHub skill，列出权限、风险等级和是否建议安装。

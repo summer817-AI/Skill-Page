@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-05-29",
+  "updated_at": "2026-05-30",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -100,6 +100,20 @@
       "github_url": "https://open.feishu.cn/",
       "avatar_url": "../assets/feishu-logo.svg",
       "summary": "飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。"
+    },
+    {
+      "login": "HughYau",
+      "name": "HughYau",
+      "github_url": "https://github.com/HughYau",
+      "avatar_url": "https://github.com/HughYau.png",
+      "summary": "把调查研究、矛盾分析、集中力量、复盘与长期推进整理成可组合的方法论 skills，适合复杂任务拆解和阶段性推进。"
+    },
+    {
+      "login": "spclaudehome",
+      "name": "spclaudehome",
+      "github_url": "https://clawhub.ai/spclaudehome",
+      "avatar_url": "https://clawhub.ai/favicon.ico",
+      "summary": "在 ClawHub 发布安全审查型 skill，用红线、权限范围和风险分级流程筛选外部 agent skill。"
     }
   ],
   "source_repositories": [
@@ -233,6 +247,18 @@
       "url": "https://github.com/FANzR-arch/Numerologist_skills",
       "author": "FANzR-arch",
       "trust_note": "传统术数工程化 skill 集合，代码范围清楚；推荐作为文化与结构化分析参考，避免替代现实专业决策。"
+    },
+    {
+      "name": "HughYau/qiushi-skill",
+      "url": "https://github.com/HughYau/qiushi-skill",
+      "author": "HughYau",
+      "trust_note": "方法论 skill 集合；仓库校验通过。安装器会写入 agent skill 目录，Claude Code / Cursor 模式支持 SessionStart hook，安装前应确认范围。"
+    },
+    {
+      "name": "spclaudehome/skill-vetter",
+      "url": "https://clawhub.ai/spclaudehome/skill-vetter",
+      "author": "spclaudehome",
+      "trust_note": "ClawHub 页面显示安全审计通过；v1.0.0 为纯 SKILL.md 审查流程，无附带脚本。"
     }
   ],
   "agent_entrypoints": {
@@ -2295,6 +2321,111 @@
         "claude_code_or_claw": [
           "请使用 rss-aggregator 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the rss-aggregator skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "qiushi-skill",
+      "name": "qiushi-skill",
+      "category": [
+        "research",
+        "product",
+        "dev"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "HughYau",
+        "github_url": "https://github.com/HughYau",
+        "avatar_url": "https://github.com/HughYau.png"
+      },
+      "source_repository": "https://github.com/HughYau/qiushi-skill",
+      "source_path": "skills/",
+      "source_url": "https://github.com/HughYau/qiushi-skill",
+      "topic_tag": "求是方法论",
+      "summary": "把调查研究、矛盾分析、集中力量、实践迭代、批评与复盘等方法整理成 11 个可组合的 agent skills，用于复杂问题拆解和长期任务推进。",
+      "use_when": [
+        "复杂任务同时存在信息缺口、优先级冲突、资源约束或长期推进问题，需要先判断该用哪套方法。",
+        "希望为 agent 增加调查研究、矛盾分析、复盘、自我批评和工作流编排能力。"
+      ],
+      "inputs_outputs": [
+        "输入：当前问题、已知事实、约束、目标和希望推进的阶段。",
+        "输出：适用的方法 skill、结构化分析框架、行动顺序和验证方式。"
+      ],
+      "limitations": [
+        "Codex 安装会复制多个 skills 到用户或项目目录；Claude Code / Cursor 安装还可接入 SessionStart hook，使用前应确认安装范围。",
+        "仓库直接校验通过，但 npm 发布包缺少 docs 目录时有一条 README 本地链接测试失败，不影响核心 skills 运行。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx qiushi-skill install --target codex --scope user",
+          "npx qiushi-skill validate"
+        ],
+        "macos_linux": [
+          "npx qiushi-skill install --target codex --scope user",
+          "npx qiushi-skill validate"
+        ]
+      },
+      "example_prompt": "请用 qiushi-skill 先调查现状，再找出主要矛盾，给我一个分阶段推进方案。",
+      "page_url": "https://summerai.cc/skills/#qiushi-skill",
+      "invocation": {
+        "codex": [
+          "请使用 qiushi-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$qiushi-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 qiushi-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the qiushi-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "skill-vetter",
+      "name": "skill-vetter",
+      "category": [
+        "dev",
+        "research"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "spclaudehome",
+        "github_url": "https://clawhub.ai/spclaudehome",
+        "avatar_url": "https://clawhub.ai/favicon.ico"
+      },
+      "source_repository": "https://clawhub.ai/spclaudehome/skill-vetter",
+      "source_path": "SKILL.md",
+      "source_url": "https://clawhub.ai/spclaudehome/skill-vetter",
+      "topic_tag": "安全审查",
+      "summary": "安装或运行陌生 agent skill 前的安全审查流程，检查来源、红旗模式、权限范围和风险等级，再决定是否安装。",
+      "use_when": [
+        "准备安装来自 GitHub、ClawHub 或其他来源的陌生 skill。",
+        "需要检查脚本是否读取凭据、访问浏览器会话、修改系统文件或向外部服务发送数据。"
+      ],
+      "inputs_outputs": [
+        "输入：候选 skill 的来源地址、文件列表、脚本内容和依赖说明。",
+        "输出：红旗清单、所需权限、风险等级和安装建议。"
+      ],
+      "limitations": [
+        "它提供审查流程，不会自动保证第三方 skill 安全；仍需实际读取候选仓库文件。",
+        "页面显示 ClawHub 平台扫描通过，但安装前仍应核对当前版本内容。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "openclaw skills install skill-vetter"
+        ],
+        "macos_linux": [
+          "openclaw skills install skill-vetter"
+        ]
+      },
+      "example_prompt": "请先用 skill-vetter 审查这个 GitHub skill，列出权限、风险等级和是否建议安装。",
+      "page_url": "https://summerai.cc/skills/#skill-vetter",
+      "invocation": {
+        "codex": [
+          "请使用 skill-vetter 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$skill-vetter <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 skill-vetter 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the skill-vetter skill to handle: <your task here>"
         ]
       }
     }
