@@ -1,0 +1,24 @@
+{
+  "updated_at": "2026-06-03",
+  "basis": "weekly_source_link_clicks",
+  "note": "Bootstrap snapshot. Real source-link clicks have not been collected yet, so all counts start at 0.",
+  "authors": [
+    { "login": "KKKKhazix", "source_clicks": 0 },
+    { "login": "op7418", "source_clicks": 0 },
+    { "login": "lijigang", "source_clicks": 0 },
+    { "login": "alchaincyf", "source_clicks": 0 },
+    { "login": "zephyrwang6", "source_clicks": 0 },
+    { "login": "Rosiawu", "source_clicks": 0 },
+    { "login": "FANzR-arch", "source_clicks": 0 },
+    { "login": "tengfei0114us", "source_clicks": 0 },
+    { "login": "orange2ai", "source_clicks": 0 },
+    { "login": "anthropics", "source_clicks": 0 },
+    { "login": "JZCreative", "source_clicks": 0 },
+    { "login": "LearnPrompt", "source_clicks": 0 },
+    { "login": "wanikua", "source_clicks": 0 },
+    { "login": "feishu-open-platform", "source_clicks": 0 },
+    { "login": "HughYau", "source_clicks": 0 },
+    { "login": "spclaudehome", "source_clicks": 0 },
+    { "login": "joeseesun", "source_clicks": 0 }
+  ]
+}

@@ -4,6 +4,7 @@ import path from "node:path";
 const root = path.resolve(import.meta.dirname, "..");
 const publicDir = path.join(root, "public");
 const skillsPath = path.join(publicDir, "skills.json");
+const authorRankPath = path.join(publicDir, "author-rank.json");
 const htmlPath = path.join(publicDir, "skills", "index.html");
 const llmsPath = path.join(publicDir, "llms.txt");
 
@@ -26,6 +27,35 @@ const levelLabels = {
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
+}
+
+function readOptionalJson(file, fallback) {
+  if (!fs.existsSync(file)) return fallback;
+  return readJson(file);
+}
+
+function sortAuthorsByRank(authors, rankData) {
+  const rankItems = rankData?.authors || [];
+  const rankMap = new Map(rankItems.map((item, index) => [
+    item.login,
+    {
+      sourceClicks: Number(item.source_clicks || 0),
+      rankIndex: index
+    }
+  ]));
+
+  return [...(authors || [])].sort((a, b) => {
+    const ar = rankMap.get(a.login);
+    const br = rankMap.get(b.login);
+    const clickDiff = (br?.sourceClicks || 0) - (ar?.sourceClicks || 0);
+    if (clickDiff) return clickDiff;
+
+    const aRank = ar?.rankIndex ?? Number.MAX_SAFE_INTEGER;
+    const bRank = br?.rankIndex ?? Number.MAX_SAFE_INTEGER;
+    if (aRank !== bRank) return aRank - bRank;
+
+    return 0;
+  });
 }
 
 function escapeHtml(value) {
@@ -98,6 +128,8 @@ function extractStyles() {
 }
 
 function renderHtml(data) {
+  const authorRank = readOptionalJson(authorRankPath, { authors: [] });
+  const authors = sortAuthorsByRank(data.authors, authorRank);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -143,7 +175,7 @@ ${styles}
       <aside class="authors-panel">
         <div class="sidebar-title">作者仓库</div>
         <section class="authors" aria-label="作者仓库筛选">
-${data.authors.map(renderAuthor).join("\n")}
+${authors.map(renderAuthor).join("\n")}
         </section>
       </aside>
       <section class="skill-pane">
