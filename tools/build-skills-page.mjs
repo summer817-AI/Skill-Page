@@ -117,7 +117,7 @@ function renderSkill(skill) {
         <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>${codeBlock(skill.install?.windows_powershell)}</code></pre></div>
         <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>${codeBlock(skill.install?.macos_linux)}</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>${escapeHtml(skill.example_prompt)}</code></pre></div>
-        <div><p class="section-title">来源</p><p class="source-url"><a href="${escapeHtml(skillUrl(skill))}" target="_blank" rel="noopener noreferrer">${escapeHtml(skillUrl(skill))}</a></p></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="${escapeHtml(skillUrl(skill))}" target="_blank" rel="noopener noreferrer" data-author="${escapeHtml(skill.author?.login || "")}" data-skill-id="${escapeHtml(skill.id)}" data-source-url="${escapeHtml(skillUrl(skill))}">${escapeHtml(skillUrl(skill))}</a></p></div>
       </article>`;
 }
 
@@ -212,6 +212,19 @@ ${data.skills.map(renderSkill).join("\n")}
     search.addEventListener('input', applyFilters);
     filterButtons.forEach(btn => btn.addEventListener('click', () => { currentFilter = btn.dataset.filter; filterButtons.forEach(b => b.setAttribute('aria-pressed', String(b === btn))); applyFilters(); }));
     authorButtons.forEach(btn => btn.addEventListener('click', () => { currentAuthor = currentAuthor === btn.dataset.author ? '' : btn.dataset.author; authorButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.author === currentAuthor))); applyFilters(); }));
+    document.querySelectorAll('.source-link').forEach(link => link.addEventListener('click', () => {
+      const payload = {
+        author: link.dataset.author || '',
+        skill_id: link.dataset.skillId || '',
+        source_url: link.dataset.sourceUrl || link.href || ''
+      };
+      const body = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/api/track-source-click', new Blob([body], { type: 'application/json' }));
+      } else {
+        fetch('/api/track-source-click', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+      }
+    }));
   </script>
 </body>
 </html>
