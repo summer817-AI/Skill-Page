@@ -255,6 +255,36 @@
       "position": 40,
       "name": "skill-vetter",
       "url": "https://summerai.cc/skills/#skill-vetter"
+    },
+    {
+      "@type": "ListItem",
+      "position": 41,
+      "name": "qiaomu-skills",
+      "url": "https://summerai.cc/skills/#qiaomu-skills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 42,
+      "name": "qiaomu-writer",
+      "url": "https://summerai.cc/skills/#qiaomu-writer"
+    },
+    {
+      "@type": "ListItem",
+      "position": 43,
+      "name": "qiaomu-paper-interpreter",
+      "url": "https://summerai.cc/skills/#qiaomu-paper-interpreter"
+    },
+    {
+      "@type": "ListItem",
+      "position": 44,
+      "name": "qiaomu-info-card-designer",
+      "url": "https://summerai.cc/skills/#qiaomu-info-card-designer"
+    },
+    {
+      "@type": "ListItem",
+      "position": 45,
+      "name": "qiaomu-markdown-proxy",
+      "url": "https://summerai.cc/skills/#qiaomu-markdown-proxy"
     }
   ]
 }
@@ -268,7 +298,7 @@
 <body>
   <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
   <main class="shell">
-    <section class="source-strip"><p>当前收录 <strong>38</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
+    <section class="source-strip"><p>当前收录 <strong>45</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
     <section class="intro">
       <div class="intro-copy"><h1>好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里滚动收录经过人工筛选的实用 skill 来源：包括 GitHub 仓库、官方文档和可信候选。每个条目都保留来源、适用场景、限制和安装命令。</p></div>
       <aside class="agent-box"><h2>Agent 读取入口</h2><p>优先读取结构化数据，再进入页面查看完整说明。</p><div class="agent-actions"><a class="data-link" href="../skills.json">skills.json</a><a class="data-link" href="../llms.txt">llms.txt</a></div></aside>
@@ -293,12 +323,13 @@
       <button class="author-card" data-author="feishu-open-platform" aria-pressed="false"><img src="../assets/feishu-logo.svg" alt="飞书开放平台 头像" loading="lazy"><span><strong>飞书开放平台</strong><small>飞书官方文档来源，提供 lark-cli 与 Agent Skill 的安装和认证入口。</small></span></button>
       <button class="author-card" data-author="HughYau" aria-pressed="false"><img src="https://github.com/HughYau.png" alt="HughYau 头像" loading="lazy"><span><strong>HughYau</strong><small>把调查研究、矛盾分析、集中力量、复盘与长期推进整理成可组合的方法论 skills，适合复杂任务拆解和阶段性推进。</small></span></button>
       <button class="author-card" data-author="spclaudehome" aria-pressed="false"><img src="https://clawhub.ai/favicon.ico" alt="spclaudehome 头像" loading="lazy"><span><strong>spclaudehome</strong><small>在 ClawHub 发布安全审查型 skill，用红线、权限范围和风险分级流程筛选外部 agent skill。</small></span></button>
+      <button class="author-card" data-author="joeseesun" aria-pressed="false"><img src="https://github.com/joeseesun.png" alt="乔木 / joeseesun 头像" loading="lazy"><span><strong>乔木 / joeseesun</strong><small>把内容创作、论文解读、信息卡片、网页转 Markdown 等个人工作流整理成 qiaomu 系列 skills，并提供集合安装器。</small></span></button>
         </section>
       </aside>
       <section class="skill-pane">
-    <section class="toolbar"><div class="filters" aria-label="分类筛选"><button data-filter="all" aria-pressed="true">全部</button><button data-filter="office" aria-pressed="false">办公演示</button><button data-filter="writing" aria-pressed="false">文字处理</button><button data-filter="info" aria-pressed="false">信息获取</button><button data-filter="design" aria-pressed="false">设计视觉</button><button data-filter="product" aria-pressed="false">产品协作</button><button data-filter="research" aria-pressed="false">研究分析</button><button data-filter="dev" aria-pressed="false">开发工具</button></div><input class="search" type="search" placeholder="搜索 skill、作者、场景或来源" aria-label="搜索 skill"></section>
-    <section class="grid" aria-live="polite">
-      <article class="skill-card" id="aihot" data-category="info research" data-author="KKKKhazix" data-text="aihot 让 agent 直接查询 ai hot 的公开 api，生成中文 ai 资讯简报，不需要 api key 或 mcp server。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/aihot info research ">
+        <section class="toolbar"><div class="filters" aria-label="分类筛选"><button data-filter="all" aria-pressed="true">全部</button><button data-filter="office" aria-pressed="false">办公演示</button><button data-filter="writing" aria-pressed="false">文字处理</button><button data-filter="info" aria-pressed="false">信息获取</button><button data-filter="design" aria-pressed="false">设计视觉</button><button data-filter="product" aria-pressed="false">产品协作</button><button data-filter="research" aria-pressed="false">研究分析</button><button data-filter="dev" aria-pressed="false">开发工具</button></div><input class="search" type="search" placeholder="搜索 skill、作者、场景或来源" aria-label="搜索 skill"></section>
+        <section class="grid" aria-live="polite">
+      <article class="skill-card" id="aihot" data-category="info research" data-author="KKKKhazix" data-text="aihot 让 agent 直接查询 ai hot 的公开 api，生成中文 ai 资讯简报，不需要 api key 或 mcp server。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/aihot info research">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>aihot</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">信息获取</span><span class="pill">研究分析</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">让 agent 直接查询 AI HOT 的公开 API，生成中文 AI 资讯简报，不需要 API Key 或 MCP server。</p>
@@ -314,7 +345,7 @@ cp -R khazix-skills/aihot ~/.codex/skills/aihot</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use aihot to check the most important AI updates from the past 24 hours.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/aihot" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/aihot</a></p></div>
       </article>
-      <article class="skill-card" id="hv-analysis" data-category="research product" data-author="KKKKhazix" data-text="hv-analysis 用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 pdf 研究报告。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/hv-analysis research product ">
+      <article class="skill-card" id="hv-analysis" data-category="research product" data-author="KKKKhazix" data-text="hv-analysis 用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 pdf 研究报告。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/hv-analysis research product">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>hv-analysis</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">研究分析</span><span class="pill">产品协作</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">用纵向历史演变和横向同期对比研究产品、公司、概念、技术或人物，最终形成 PDF 研究报告。</p>
@@ -330,7 +361,7 @@ cp -R khazix-skills/hv-analysis ~/.codex/skills/hv-analysis</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use hv-analysis to deeply research this company and compare it with current competitors.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/hv-analysis</a></p></div>
       </article>
-      <article class="skill-card" id="khazix-writer" data-category="writing" data-author="KKKKhazix" data-text="khazix-writer 数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/khazix-writer writing ">
+      <article class="skill-card" id="khazix-writer" data-category="writing" data-author="KKKKhazix" data-text="khazix-writer 数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/khazix-writer writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>khazix-writer</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">文字处理</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">数字生命卡兹克的公众号长文写作 skill，强调真实经历、活人感、好奇心和强风格自检。</p>
@@ -346,7 +377,7 @@ cp -R khazix-skills/khazix-writer ~/.codex/skills/khazix-writer</code></pre></di
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use khazix-writer to turn this brief and my notes into a WeChat long article.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/khazix-writer</a></p></div>
       </article>
-      <article class="skill-card" id="neat-freak" data-category="dev" data-author="KKKKhazix" data-text="neat-freak 会话结束后同步项目文档、agents/claude 规则和 agent 记忆，防止知识体系腐烂。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/neat-freak dev ">
+      <article class="skill-card" id="neat-freak" data-category="dev" data-author="KKKKhazix" data-text="neat-freak 会话结束后同步项目文档、agents/claude 规则和 agent 记忆，防止知识体系腐烂。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/neat-freak dev">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>neat-freak</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">开发工具</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">会话结束后同步项目文档、AGENTS/CLAUDE 规则和 agent 记忆，防止知识体系腐烂。</p>
@@ -362,7 +393,7 @@ cp -R khazix-skills/neat-freak ~/.codex/skills/neat-freak</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use neat-freak to sync this project docs and memory after the current milestone.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak" target="_blank" rel="noopener noreferrer">https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak</a></p></div>
       </article>
-      <article class="skill-card" id="guizang-ppt-skill" data-category="office design writing" data-author="op7418" data-text="guizang-ppt-skill 生成单文件横向翻页 html ppt，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。 op7418 https://github.com/op7418/guizang-ppt-skill office design writing ">
+      <article class="skill-card" id="guizang-ppt-skill" data-category="office design writing" data-author="op7418" data-text="guizang-ppt-skill 生成单文件横向翻页 html ppt，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。 op7418 https://github.com/op7418/guizang-ppt-skill office design writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>guizang-ppt-skill</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">办公演示</span><span class="pill">设计视觉</span><span class="pill">文字处理</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">生成单文件横向翻页 HTML PPT，内置电子杂志风和瑞士国际主义两套模板，适合分享、发布会和高质感演示。</p>
@@ -394,7 +425,7 @@ cp -R guizang-social-card-skill ~/.codex/skills/guizang-social-card-skill</code>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 guizang-social-card-skill 把这篇文章做成 6 张小红书 3:4 图文卡片，并生成公众号封面。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/guizang-social-card-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/guizang-social-card-skill</a></p></div>
       </article>
-      <article class="skill-card" id="nanobanana-ppt-skills" data-category="office design" data-author="op7418" data-text="nanobanana-ppt-skills 基于文档内容生成 ppt 图片、转场视频和交互播放页，适合需要 ai 生成视觉素材的演示项目。 op7418 https://github.com/op7418/nanobanana-ppt-skills office design ">
+      <article class="skill-card" id="nanobanana-ppt-skills" data-category="office design" data-author="op7418" data-text="nanobanana-ppt-skills 基于文档内容生成 ppt 图片、转场视频和交互播放页，适合需要 ai 生成视觉素材的演示项目。 op7418 https://github.com/op7418/nanobanana-ppt-skills office design">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>NanoBanana-PPT-Skills</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">办公演示</span><span class="pill">设计视觉</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">基于文档内容生成 PPT 图片、转场视频和交互播放页，适合需要 AI 生成视觉素材的演示项目。</p>
@@ -410,7 +441,7 @@ cp -R NanoBanana-PPT-Skills ~/.codex/skills/NanoBanana-PPT-Skills</code></pre></
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use NanoBanana-PPT-Skills to generate a five-page visual deck from this document.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/NanoBanana-PPT-Skills" target="_blank" rel="noopener noreferrer">https://github.com/op7418/NanoBanana-PPT-Skills</a></p></div>
       </article>
-      <article class="skill-card" id="humanizer-zh" data-category="writing" data-author="op7418" data-text="humanizer-zh 识别并改写中文文本中的 ai 生成痕迹，让文章节奏、语气和观点更像真实作者。 op7418 https://github.com/op7418/humanizer-zh writing ">
+      <article class="skill-card" id="humanizer-zh" data-category="writing" data-author="op7418" data-text="humanizer-zh 识别并改写中文文本中的 ai 生成痕迹，让文章节奏、语气和观点更像真实作者。 op7418 https://github.com/op7418/humanizer-zh writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>humanizer-zh</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">文字处理</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">识别并改写中文文本中的 AI 生成痕迹，让文章节奏、语气和观点更像真实作者。</p>
@@ -426,7 +457,7 @@ cp -R Humanizer-zh ~/.codex/skills/Humanizer-zh</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use humanizer-zh to make this article sound less AI-written while keeping my original point.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/Humanizer-zh" target="_blank" rel="noopener noreferrer">https://github.com/op7418/Humanizer-zh</a></p></div>
       </article>
-      <article class="skill-card" id="youtube-clipper" data-category="info writing" data-author="op7418" data-text="youtube-clipper 下载 youtube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。 op7418 https://github.com/op7418/youtube-clipper-skill info writing ">
+      <article class="skill-card" id="youtube-clipper" data-category="info writing" data-author="op7418" data-text="youtube-clipper 下载 youtube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。 op7418 https://github.com/op7418/youtube-clipper-skill info writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>youtube-clipper</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">信息获取</span><span class="pill">文字处理</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">下载 YouTube 视频和字幕，分析章节，按用户选择剪辑片段，并生成双语字幕和总结文案。</p>
@@ -442,7 +473,7 @@ cp -R Youtube-clipper-skill ~/.codex/skills/Youtube-clipper-skill</code></pre></
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use youtube-clipper to find the best short segments in this interview and create bilingual clips.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/Youtube-clipper-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/Youtube-clipper-skill</a></p></div>
       </article>
-      <article class="skill-card" id="youtube-bilingual-hardburn" data-category="info writing" data-author="tengfei0114us" data-text="youtube-bilingual-hardburn 把外语视频做成中英双语硬字幕版，重点解决 youtube 自动字幕无标点、翻译行数错位和最终烧录校验。 tengfei0114us https://github.com/tengfei0114us/youtube-bilingual-hardburn info writing ">
+      <article class="skill-card" id="youtube-bilingual-hardburn" data-category="info writing" data-author="tengfei0114us" data-text="youtube-bilingual-hardburn 把外语视频做成中英双语硬字幕版，重点解决 youtube 自动字幕无标点、翻译行数错位和最终烧录校验。 tengfei0114us https://github.com/tengfei0114us/youtube-bilingual-hardburn info writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/271443298?v=4" alt="tengfei0114us 头像" loading="lazy"><h2>youtube-bilingual-hardburn</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">信息获取</span><span class="pill">文字处理</span><span class="pill source-pill">作者：tengfei0114us</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">把外语视频做成中英双语硬字幕版，重点解决 YouTube 自动字幕无标点、翻译行数错位和最终烧录校验。</p>
@@ -458,7 +489,7 @@ cp -R youtube-bilingual-hardburn ~/.codex/skills/youtube-bilingual-hardburn</cod
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use youtube-bilingual-hardburn to make this English talk into a Chinese-English hardsub video.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/tengfei0114us/youtube-bilingual-hardburn" target="_blank" rel="noopener noreferrer">https://github.com/tengfei0114us/youtube-bilingual-hardburn</a></p></div>
       </article>
-      <article class="skill-card" id="logo-generator" data-category="design office" data-author="op7418" data-text="logo-generator 为产品或品牌生成多组 svg logo 方向，并制作带设计 rationale 的展示页面和高端样机图。 op7418 https://github.com/op7418/logo-generator-skill design office ">
+      <article class="skill-card" id="logo-generator" data-category="design office" data-author="op7418" data-text="logo-generator 为产品或品牌生成多组 svg logo 方向，并制作带设计 rationale 的展示页面和高端样机图。 op7418 https://github.com/op7418/logo-generator-skill design office">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>logo-generator</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">设计视觉</span><span class="pill">办公演示</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">为产品或品牌生成多组 SVG logo 方向，并制作带设计 rationale 的展示页面和高端样机图。</p>
@@ -474,7 +505,7 @@ cp -R logo-generator-skill ~/.codex/skills/logo-generator-skill</code></pre></di
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use logo-generator to create six SVG logo directions for this AI product.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/op7418/logo-generator-skill" target="_blank" rel="noopener noreferrer">https://github.com/op7418/logo-generator-skill</a></p></div>
       </article>
-      <article class="skill-card" id="document-illustrator" data-category="design writing" data-author="op7418" data-text="document illustrator 为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。 op7418 https://github.com/op7418/document-illustrator-skill design writing ">
+      <article class="skill-card" id="document-illustrator" data-category="design writing" data-author="op7418" data-text="document illustrator 为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。 op7418 https://github.com/op7418/document-illustrator-skill design writing">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>Document illustrator</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">设计视觉</span><span class="pill">文字处理</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">为长文、文档或教程生成更贴合内容的配图方案，适合把纯文字材料做得更容易阅读和传播。</p>
@@ -594,7 +625,7 @@ cp -R ljg-skills/skills/ljg-rank ~/.codex/skills/ljg-rank</code></pre></div>
       </article>
       <article class="skill-card" id="roundtable-seminar" data-category="research product writing" data-author="lijigang" data-text="roundtable-seminar 圆桌讨论框架，用主持人和多位典型代表人物围绕议题进行高强度求真式对话，并在每轮生成 ascii 思考框架。 lijigang https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892 research product writing 圆桌研讨">
         <div class="skill-title"><img src="https://github.com/lijigang.png" alt="lijigang 头像" loading="lazy"><h2>roundtable-seminar</h2></div>
-        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">圆桌研讨</span><span class="pill">研究分析</span><span class="pill">产品协作</span><span class="pill">文字处理</span><span class="pill source-pill">作者：lijigang</span><span class="pill source-pill">来源：GitHub</span></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">圆桌研讨</span><span class="pill">研究分析</span><span class="pill">产品协作</span><span class="pill">文字处理</span><span class="pill source-pill">作者：lijigang</span><span class="pill source-pill">来源：Gist</span></div>
         <p class="summary">圆桌讨论框架，用主持人和多位典型代表人物围绕议题进行高强度求真式对话，并在每轮生成 ASCII 思考框架。</p>
         <div><p class="section-title">适合场景</p><ul><li>用户面对复杂议题，希望引入多种思想立场进行交叉质询，而不是只得到单一路径建议。</li><li>需要把讨论过程沉淀成结构化知识网络、核心争议点和下一轮更深的问题。</li></ul></div>
         <div><p class="section-title">输入 / 输出</p><ul><li>输入：一个需要讨论、辨析或共创的问题，也可以补充希望引入的人物或立场。</li><li>输出：主持人引导的多轮圆桌对话、核心矛盾总结、ASCII 思考框架和知识网络。</li></ul></div>
@@ -608,7 +639,7 @@ cp roundtable-seminar-gist/gistfile1.txt ~/.codex/skills/roundtable-seminar/roun
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 roundtable-seminar 的圆桌讨论框架，围绕“AI Agent 是否会改变知识工作组织方式”展开一轮求真式讨论。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892" target="_blank" rel="noopener noreferrer">https://gist.github.com/lijigang/a8f9cf12985d474cef15cda63f4e1892</a></p></div>
       </article>
-      <article class="skill-card" id="devils-advocate" data-category="product research dev" data-author="orange2ai" data-text="devils-advocate 在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。 orange2ai https://github.com/orange2ai/devils-advocate-skill product research dev ">
+      <article class="skill-card" id="devils-advocate" data-category="product research dev" data-author="orange2ai" data-text="devils-advocate 在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。 orange2ai https://github.com/orange2ai/devils-advocate-skill product research dev">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/77816124?v=4" alt="orange2ai 头像" loading="lazy"><h2>devils-advocate</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">产品协作</span><span class="pill">研究分析</span><span class="pill">开发工具</span><span class="pill source-pill">作者：orange2ai</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">在做决策、写方案、定需求前启动“泼冷水模式”，系统找隐含假设、脆弱点和会崩的地方。</p>
@@ -624,7 +655,7 @@ cp -R devils-advocate-skill ~/.codex/skills/devils-advocate-skill</code></pre></
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use devils-advocate to challenge this product plan before I start building.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/orange2ai/devils-advocate-skill" target="_blank" rel="noopener noreferrer">https://github.com/orange2ai/devils-advocate-skill</a></p></div>
       </article>
-      <article class="skill-card" id="pm-skills" data-category="product office research" data-author="zephyrwang6" data-text="pm-skills 13 个产品经理 claude code skills，覆盖 prd、需求评审、优先级、路线图、实验、埋点、竞品和复盘。 zephyrwang6 https://github.com/zephyrwang6/pm-skills product office research ">
+      <article class="skill-card" id="pm-skills" data-category="product office research" data-author="zephyrwang6" data-text="pm-skills 13 个产品经理 claude code skills，覆盖 prd、需求评审、优先级、路线图、实验、埋点、竞品和复盘。 zephyrwang6 https://github.com/zephyrwang6/pm-skills product office research">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 头像" loading="lazy"><h2>pm-skills</h2></div>
         <div class="meta"><span class="pill level">推荐：高</span><span class="pill">产品协作</span><span class="pill">办公演示</span><span class="pill">研究分析</span><span class="pill source-pill">作者：zephyrwang6</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">13 个产品经理 Claude Code skills，覆盖 PRD、需求评审、优先级、路线图、实验、埋点、竞品和复盘。</p>
@@ -640,7 +671,7 @@ cp -R pm-skills ~/.codex/skills/pm-skills</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use pm-skills to turn this vague feature idea into a review-ready PRD and risk checklist.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/pm-skills" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/pm-skills</a></p></div>
       </article>
-      <article class="skill-card" id="brand-design-md" data-category="design dev" data-author="zephyrwang6" data-text="brand-design-md 根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 ui 代码上下文。 zephyrwang6 https://github.com/zephyrwang6/brand-design-md design dev ">
+      <article class="skill-card" id="brand-design-md" data-category="design dev" data-author="zephyrwang6" data-text="brand-design-md 根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 ui 代码上下文。 zephyrwang6 https://github.com/zephyrwang6/brand-design-md design dev">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 头像" loading="lazy"><h2>brand-design-md</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">设计视觉</span><span class="pill">开发工具</span><span class="pill source-pill">作者：zephyrwang6</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">根据品牌名拉取 getdesign.md 设计规范，把“做成某品牌感觉”转成可执行的 UI 代码上下文。</p>
@@ -656,7 +687,7 @@ cp -R brand-design-md ~/.codex/skills/brand-design-md</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use brand-design-md to make this dashboard feel like Stripe plus Linear.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/brand-design-md" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/brand-design-md</a></p></div>
       </article>
-      <article class="skill-card" id="career-skill-planner" data-category="product research" data-author="zephyrwang6" data-text="career-skill-planner 输入职业名称或 jd，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。 zephyrwang6 https://github.com/zephyrwang6/career.skill product research ">
+      <article class="skill-card" id="career-skill-planner" data-category="product research" data-author="zephyrwang6" data-text="career-skill-planner 输入职业名称或 jd，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。 zephyrwang6 https://github.com/zephyrwang6/career.skill product research">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 头像" loading="lazy"><h2>career-skill-planner</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">产品协作</span><span class="pill">研究分析</span><span class="pill source-pill">作者：zephyrwang6</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">输入职业名称或 JD，拆解高频工作流，并输出每个工作流可制作成 skill 的提纲和提示词。</p>
@@ -672,7 +703,7 @@ cp -R career.skill ~/.codex/skills/career.skill</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use career-skill-planner to design an AI skill library for a content operations manager.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/career.skill" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/career.skill</a></p></div>
       </article>
-      <article class="skill-card" id="space-product-describer" data-category="product writing dev" data-author="zephyrwang6" data-text="space-product-describer 用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。 zephyrwang6 https://github.com/zephyrwang6/pm-product-describer product writing dev ">
+      <article class="skill-card" id="space-product-describer" data-category="product writing dev" data-author="zephyrwang6" data-text="space-product-describer 用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。 zephyrwang6 https://github.com/zephyrwang6/pm-product-describer product writing dev">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 头像" loading="lazy"><h2>SPACE-product-describer</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">产品协作</span><span class="pill">文字处理</span><span class="pill">开发工具</span><span class="pill source-pill">作者：zephyrwang6</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">用六维产品描述法把模糊产品想法变成 agent 或开发团队能直接动手的结构化描述。</p>
@@ -688,9 +719,9 @@ cp -R pm-product-describer ~/.codex/skills/pm-product-describer</code></pre></di
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>Use SPACE-product-describer to turn this fuzzy app idea into a buildable product brief.</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/zephyrwang6/pm-product-describer" target="_blank" rel="noopener noreferrer">https://github.com/zephyrwang6/pm-product-describer</a></p></div>
       </article>
-      <article class="skill-card" id="skill-creator" data-category="dev" data-author="anthropics" data-text="skill-creator anthropic 官方 skill-creator，用来创建、改进和评估 agent skills，是学习 skill 写法的高可信参考。 anthropics https://github.com/anthropics/skills/tree/main/skills/skill-creator dev ">
+      <article class="skill-card" id="skill-creator" data-category="dev" data-author="anthropics" data-text="skill-creator anthropic 官方 skill-creator，用来创建、改进和评估 agent skills，是学习 skill 写法的高可信参考。 anthropics https://github.com/anthropics/skills/tree/main/skills/skill-creator dev">
         <div class="skill-title"><img src="https://github.com/anthropics.png" alt="anthropics 头像" loading="lazy"><h2>skill-creator</h2></div>
-        <div class="meta"><span class="pill level">推荐：高</span><span class="pill">开发工具</span><span class="pill source-pill">作者：anthropics</span><span class="pill source-pill">来源：GitHub</span></div>
+        <div class="meta"><span class="pill level">推荐：高</span><span class="pill">开发工具</span><span class="pill source-pill">作者：anthropics</span><span class="pill source-pill">来源：官方文档</span></div>
         <p class="summary">Anthropic 官方 skill-creator，用来创建、改进和评估 agent skills，是学习 skill 写法的高可信参考。</p>
         <div><p class="section-title">适合场景</p><ul><li>你要从零设计一个可复用 skill，或把已有提示词整理成标准 skill。</li><li>需要检查 skill 结构、说明、脚本和参考资料是否清楚。</li></ul></div>
         <div><p class="section-title">输入 / 输出</p><ul><li>输入：skill 目标、使用场景、现有草稿或目录。</li><li>输出：SKILL.md 结构、改进建议、评估结果和必要的配套文件。</li></ul></div>
@@ -720,7 +751,7 @@ cp -R nuwa-skill ~/.codex/skills/huashu-nuwa</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 huashu-nuwa 帮我蒸馏一个“费曼视角”的 perspective skill。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/alchaincyf/nuwa-skill" target="_blank" rel="noopener noreferrer">https://github.com/alchaincyf/nuwa-skill</a></p></div>
       </article>
-      <article class="skill-card" id="baoyu-url-to-markdown" data-category="info research" data-author="zephyrwang6" data-text="baoyu-url-to-markdown 通过 chrome cdp 把网页渲染后转成 markdown，适合抓取动态网页、长文和需要登录后查看的页面内容。 zephyrwang6 https://github.com/zephyrwang6/info-skill/tree/main/baoyu-url-to-markdown info research ">
+      <article class="skill-card" id="baoyu-url-to-markdown" data-category="info research" data-author="zephyrwang6" data-text="baoyu-url-to-markdown 通过 chrome cdp 把网页渲染后转成 markdown，适合抓取动态网页、长文和需要登录后查看的页面内容。 zephyrwang6 https://github.com/zephyrwang6/info-skill/tree/main/baoyu-url-to-markdown info research">
         <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/59302057?v=4" alt="zephyrwang6 头像" loading="lazy"><h2>baoyu-url-to-markdown</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">信息获取</span><span class="pill">研究分析</span><span class="pill source-pill">作者：zephyrwang6</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">通过 Chrome CDP 把网页渲染后转成 Markdown，适合抓取动态网页、长文和需要登录后查看的页面内容。</p>
@@ -752,7 +783,7 @@ cp -R wuman-brief-to-poster/skill/wuman-brief-to-poster ~/.codex/skills/wuman-br
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 wuman-brief-to-poster，基于这份活动文档和参考图，先问我最关键的补充问题，再生成一版高端编辑风海报 brief。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/Rosiawu/wuman-brief-to-poster/tree/main/skill/wuman-brief-to-poster" target="_blank" rel="noopener noreferrer">https://github.com/Rosiawu/wuman-brief-to-poster/tree/main/skill/wuman-brief-to-poster</a></p></div>
       </article>
-      <article class="skill-card" id="resume-beautifier" data-category="office design writing" data-author="JZCreative" data-text="html resume beautifier 把简历内容整理成可投递、可导出 png/pdf 的 a4 html 作品，并包含隐私审计和版式检查流程。 jzcreative https://github.com/jzcreative/html-resume-beautifier office design writing ">
+      <article class="skill-card" id="resume-beautifier" data-category="office design writing" data-author="JZCreative" data-text="html resume beautifier 把简历内容整理成可投递、可导出 png/pdf 的 a4 html 作品，并包含隐私审计和版式检查流程。 jzcreative https://github.com/jzcreative/html-resume-beautifier office design writing">
         <div class="skill-title"><img src="https://github.com/JZCreative.png" alt="JZCreative 头像" loading="lazy"><h2>HTML resume beautifier</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">办公演示</span><span class="pill">设计视觉</span><span class="pill">文字处理</span><span class="pill source-pill">作者：JZCreative</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">把简历内容整理成可投递、可导出 PNG/PDF 的 A4 HTML 作品，并包含隐私审计和版式检查流程。</p>
@@ -768,7 +799,7 @@ cp -R HTML-resume-beautifier ~/.codex/skills/resume-beautifier</code></pre></div
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 resume-beautifier 把我的简历整理成一页 A4 HTML，并先检查隐私信息。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/JZCreative/HTML-resume-beautifier" target="_blank" rel="noopener noreferrer">https://github.com/JZCreative/HTML-resume-beautifier</a></p></div>
       </article>
-      <article class="skill-card" id="ai-news-radar" data-category="info research dev" data-author="LearnPrompt" data-text="ai-news-radar 用于收集、筛选和维护 ai/技术资讯源，能把 rss、opml、公开 feed 等来源整理成可发布的 ai 新闻雷达。 learnprompt https://github.com/learnprompt/ai-news-radar/tree/master/skills/ai-news-radar info research dev ">
+      <article class="skill-card" id="ai-news-radar" data-category="info research dev" data-author="LearnPrompt" data-text="ai-news-radar 用于收集、筛选和维护 ai/技术资讯源，能把 rss、opml、公开 feed 等来源整理成可发布的 ai 新闻雷达。 learnprompt https://github.com/learnprompt/ai-news-radar/tree/master/skills/ai-news-radar info research dev">
         <div class="skill-title"><img src="https://github.com/LearnPrompt.png" alt="LearnPrompt 头像" loading="lazy"><h2>ai-news-radar</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">信息获取</span><span class="pill">研究分析</span><span class="pill">开发工具</span><span class="pill source-pill">作者：LearnPrompt</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">用于收集、筛选和维护 AI/技术资讯源，能把 RSS、OPML、公开 feed 等来源整理成可发布的 AI 新闻雷达。</p>
@@ -784,7 +815,7 @@ cp -R ai-news-radar/skills/ai-news-radar ~/.codex/skills/ai-news-radar</code></p
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 ai-news-radar 帮我筛选一批 AI 新闻源，并按可信度排序。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/LearnPrompt/ai-news-radar/tree/master/skills/ai-news-radar" target="_blank" rel="noopener noreferrer">https://github.com/LearnPrompt/ai-news-radar/tree/master/skills/ai-news-radar</a></p></div>
       </article>
-      <article class="skill-card" id="ai-court" data-category="dev product" data-author="wanikua" data-text="ai-court 把多个角色 agent 组织成“ai 朝堂”式辩论和决策流程，偏 openclaw 多智能体编排实验。 wanikua https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill dev product ">
+      <article class="skill-card" id="ai-court" data-category="dev product" data-author="wanikua" data-text="ai-court 把多个角色 agent 组织成“ai 朝堂”式辩论和决策流程，偏 openclaw 多智能体编排实验。 wanikua https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill dev product">
         <div class="skill-title"><img src="https://github.com/wanikua.png" alt="wanikua 头像" loading="lazy"><h2>ai-court</h2></div>
         <div class="meta"><span class="pill level">推荐：中</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill source-pill">作者：wanikua</span><span class="pill source-pill">来源：GitHub</span></div>
         <p class="summary">把多个角色 agent 组织成“AI 朝堂”式辩论和决策流程，偏 OpenClaw 多智能体编排实验。</p>
@@ -800,7 +831,7 @@ cp -R danghuangshang/skills/ai-court-skill ~/.codex/skills/ai-court</code></pre>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 ai-court 帮我为这个产品方案组织一轮多 Agent 评审。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill" target="_blank" rel="noopener noreferrer">https://github.com/wanikua/danghuangshang/tree/main/skills/ai-court-skill</a></p></div>
       </article>
-      <article class="skill-card" id="feishu-cli-skill" data-category="office dev" data-author="feishu-open-platform" data-text="飞书 cli skill 飞书官方 cli 与 agent skill 安装指南，帮助 agent 通过 lark-cli 操作文档、表格、日历、消息等飞书能力。 feishu-open-platform https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md office dev ">
+      <article class="skill-card" id="feishu-cli-skill" data-category="office dev" data-author="feishu-open-platform" data-text="飞书 cli skill 飞书官方 cli 与 agent skill 安装指南，帮助 agent 通过 lark-cli 操作文档、表格、日历、消息等飞书能力。 feishu-open-platform https://open.feishu.cn/document/no_class/mcp-archive/feishu-cli-installation-guide.md office dev">
         <div class="skill-title"><img src="../assets/feishu-logo.svg" alt="feishu-open-platform 头像" loading="lazy"><h2>飞书 CLI Skill</h2></div>
         <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">办公演示</span><span class="pill">开发工具</span><span class="pill source-pill">作者：feishu-open-platform</span><span class="pill source-pill">来源：官方文档</span></div>
         <p class="summary">飞书官方 CLI 与 Agent Skill 安装指南，帮助 agent 通过 lark-cli 操作文档、表格、日历、消息等飞书能力。</p>
@@ -946,10 +977,74 @@ npx qiushi-skill validate</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请先用 skill-vetter 审查这个 GitHub skill，列出权限、风险等级和是否建议安装。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a href="https://clawhub.ai/spclaudehome/skill-vetter" target="_blank" rel="noopener noreferrer">https://clawhub.ai/spclaudehome/skill-vetter</a></p></div>
       </article>
-      <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>      </section>
+      <article class="skill-card" id="qiaomu-skills" data-category="dev product research" data-author="joeseesun" data-text="qiaomu-skills 乔木维护的 19 个 claude code skills 索引和批量安装器，可按内容创作、研究学习、设计媒体、生产力工具分类安装。 joeseesun https://github.com/joeseesun/qiaomu-skills dev product research 乔木合集">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-skills</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">乔木合集</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill">研究分析</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">乔木维护的 19 个 Claude Code skills 索引和批量安装器，可按内容创作、研究学习、设计媒体、生产力工具分类安装。</p>
+        <div><p class="section-title">适合场景</p><ul><li>想先浏览乔木系列 skills 的完整目录，再按分类或名称选择安装。</li><li>需要一次性安装内容创作、论文解读、信息卡片、网页抓取等多个乔木工作流。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：想安装的分类、具体 skill 名称或 all。</li><li>输出：可安装的 qiaomu skill 清单、批量安装命令和 dry-run 预览结果。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>安装脚本会批量调用 npx skills add joeseesun/&lt;skill&gt; 并写入 ~/.claude/skills；运行前应先用 --dry-run 预览范围。</li><li>Windows 需要 Git Bash、WSL 或其他 bash-compatible shell 来运行 install.sh；不同子 skill 的外部依赖和账号/API 要分别确认。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-skills
+bash &quot;$env:USERPROFILE/.claude/skills/qiaomu-skills/scripts/install.sh&quot; --dry-run all</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-skills
+~/.claude/skills/qiaomu-skills/scripts/install.sh --dry-run all</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-skills 列出乔木的所有 skill，并帮我 dry-run 安装 research 分类。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/joeseesun/qiaomu-skills" target="_blank" rel="noopener noreferrer">https://github.com/joeseesun/qiaomu-skills</a></p></div>
+      </article>
+      <article class="skill-card" id="qiaomu-writer" data-category="writing design" data-author="joeseesun" data-text="qiaomu-writer 带联网研究、乔木风格写作、ai 配图和自我改进流程的长文创作 skill，强调完整交付和配图失败时的降级处理。 joeseesun https://github.com/joeseesun/qiaomu-writer writing design 乔木写作">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-writer</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">乔木写作</span><span class="pill">文字处理</span><span class="pill">设计视觉</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">带联网研究、乔木风格写作、AI 配图和自我改进流程的长文创作 skill，强调完整交付和配图失败时的降级处理。</p>
+        <div><p class="section-title">适合场景</p><ul><li>需要围绕一个主题联网搜索后写成公众号或长文，并希望保留乔木式对话感。</li><li>希望把用户修改过的文章反向提炼成可复用写作规则。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：主题、素材、改写要求、是否需要搜索和配图。</li><li>输出：完整 Markdown 长文、图片提示词或已插入图片的文章，以及写作规则更新建议。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>研究模式依赖 WebSearch；配图依赖 Seedream MCP/API，失败时应降级为纯文字文章。</li><li>默认写入作者个人知识库路径，安装后应先改成自己的输出目录，避免误写到不存在或不适合的本地路径。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-writer</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-writer</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-writer 联网搜索最近的 AI 编程工具变化，写一篇乔木风格公众号文章，可以配图但失败不要中断。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/joeseesun/qiaomu-writer" target="_blank" rel="noopener noreferrer">https://github.com/joeseesun/qiaomu-writer</a></p></div>
+      </article>
+      <article class="skill-card" id="qiaomu-paper-interpreter" data-category="research writing" data-author="joeseesun" data-text="qiaomu-paper-interpreter 把 arxiv 论文、pdf 或论文页面转换成面向中文读者的对话式长文解读，包含源码提取、图表处理和最终 markdown 文章整理。 joeseesun https://github.com/joeseesun/qiaomu-paper-interpreter research writing 论文解读">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-paper-interpreter</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">论文解读</span><span class="pill">研究分析</span><span class="pill">文字处理</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">把 arXiv 论文、PDF 或论文页面转换成面向中文读者的对话式长文解读，包含源码提取、图表处理和最终 Markdown 文章整理。</p>
+        <div><p class="section-title">适合场景</p><ul><li>需要把 arXiv 论文读成有故事线、有背景解释的中文文章。</li><li>希望自动抓取论文源码/PDF、提取图表，再生成可继续编辑的解读稿。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：arXiv URL/ID、PDF 链接或论文材料。</li><li>输出：论文元数据、提取文本、图表清单、中文解读 Markdown 和可选配图。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>会访问 arXiv 下载 e-print 或 PDF，并可能调用 markitdown、Poppler、ImageMagick、Pillow 等本地工具。</li><li>可选图片生成依赖环境变量和外部服务；论文事实、发布日期和引用应以 arXiv/API 或原文为准，不要让模型猜。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-paper-interpreter</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-paper-interpreter</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-paper-interpreter 解读这篇 arXiv 论文，保留发布日期、图表和关键贡献，不要编造实验结果。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/joeseesun/qiaomu-paper-interpreter" target="_blank" rel="noopener noreferrer">https://github.com/joeseesun/qiaomu-paper-interpreter</a></p></div>
+      </article>
+      <article class="skill-card" id="qiaomu-info-card-designer" data-category="design writing info" data-author="joeseesun" data-text="qiaomu-info-card-designer 将文本、url 或论文内容设计成杂志质感 html 信息卡，并用 playwright 自动截图输出适合社交平台发布的 png。 joeseesun https://github.com/joeseesun/qiaomu-info-card-designer design writing info 信息卡片">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-info-card-designer</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">信息卡片</span><span class="pill">设计视觉</span><span class="pill">文字处理</span><span class="pill">信息获取</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">将文本、URL 或论文内容设计成杂志质感 HTML 信息卡，并用 Playwright 自动截图输出适合社交平台发布的 PNG。</p>
+        <div><p class="section-title">适合场景</p><ul><li>想把一段观点、文章链接、论文要点或产品信息做成高质感信息卡。</li><li>需要自动处理长卡片拆分、中文字体、图表和截图导出。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：文本、URL、主题、目标宽度或平台比例。</li><li>输出：HTML 信息卡、PNG 截图，必要时输出多张切分后的长图。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>依赖 Playwright Python、Chromium、Pillow 和 NumPy；仓库还包含较大的中文字体资源。</li><li>抓取 URL 时可能使用 r.jina.ai、defuddle.md 或无头浏览器；发布前要确认内容来源、版权和是否出现模型补写。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-info-card-designer</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-info-card-designer</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-info-card-designer 把这篇文章做成 480 宽的信息卡，只使用原文事实并导出 PNG。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/joeseesun/qiaomu-info-card-designer" target="_blank" rel="noopener noreferrer">https://github.com/joeseesun/qiaomu-info-card-designer</a></p></div>
+      </article>
+      <article class="skill-card" id="qiaomu-markdown-proxy" data-category="info dev research" data-author="joeseesun" data-text="qiaomu-markdown-proxy 把 url、公众号、飞书文档、pdf 或普通网页转换成干净 markdown，内置代理级联、公众号 playwright 抓取和飞书 api 脚本。 joeseesun https://github.com/joeseesun/qiaomu-markdown-proxy info dev research 网页转 markdown">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-markdown-proxy</h2></div>
+        <div class="meta"><span class="pill level">推荐：中</span><span class="pill">网页转 Markdown</span><span class="pill">信息获取</span><span class="pill">开发工具</span><span class="pill">研究分析</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">把 URL、公众号、飞书文档、PDF 或普通网页转换成干净 Markdown，内置代理级联、公众号 Playwright 抓取和飞书 API 脚本。</p>
+        <div><p class="section-title">适合场景</p><ul><li>用户丢来一个链接，希望先可靠抓取正文再交给其他 skill 分析或写作。</li><li>需要处理普通网页、X/Twitter、公众号、飞书/Lark 文档或 PDF 的 Markdown 化。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：URL、本地 PDF 路径、可选代理地址或飞书文档链接。</li><li>输出：带标题、作者、来源和正文的 Markdown。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>普通网页会调用 r.jina.ai、defuddle.md 或 agent-fetch；公众号需要 Playwright，PDF 需要 marker-pdf、pdftotext 或 pypdf。</li><li>飞书/Lark 抓取需要 FEISHU_APP_ID、FEISHU_APP_SECRET 和只读权限；不要把凭据写入公开仓库或页面。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-markdown-proxy</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-markdown-proxy</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-markdown-proxy 抓取这个链接，转成 Markdown 后保留标题、作者、日期和来源 URL。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a href="https://github.com/joeseesun/qiaomu-markdown-proxy" target="_blank" rel="noopener noreferrer">https://github.com/joeseesun/qiaomu-markdown-proxy</a></p></div>
+      </article>
+          <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>
+        </section>
+      </section>
     </div>
   </main>
-  <footer><div class="shell">最后更新：2026-05-30 · 共 40 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
+  <footer><div class="shell">最后更新：2026-06-03 · 共 45 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
   <script>
     const search = document.querySelector('.search');
     const cards = [...document.querySelectorAll('.skill-card')];
