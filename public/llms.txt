@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-06-03
+Updated: 2026-06-13
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -507,3 +507,36 @@ Site: https://summerai.cc/skills/
 - use_when: 用户丢来一个链接，希望先可靠抓取正文再交给其他 skill 分析或写作。；需要处理普通网页、X/Twitter、公众号、飞书/Lark 文档或 PDF 的 Markdown 化。
 - limitations: 普通网页会调用 r.jina.ai、defuddle.md 或 agent-fetch；公众号需要 Playwright，PDF 需要 marker-pdf、pdftotext 或 pypdf。；飞书/Lark 抓取需要 FEISHU_APP_ID、FEISHU_APP_SECRET 和只读权限；不要把凭据写入公开仓库或页面。
 - invocation_example: 请用 qiaomu-markdown-proxy 抓取这个链接，转成 Markdown 后保留标题、作者、日期和来源 URL。
+
+### renwei-writing
+- id: renwei-writing
+- author: orange2ai
+- category: writing, humanizer
+- recommendation: medium-high
+- source: https://github.com/orange2ai/renwei-writing
+- summary: 面向改稿、润色和精简的中文写作 skill，核心是保住作者的位置、代价和手迹，避免把文字改成顺滑但没有人的 AI 腔。
+- use_when: 用户拿来自己写的文案、公众号段落、口述稿或草稿，希望 AI 帮忙打磨但不要抹掉个人语气。；已经生成或改写过一版文本，用户反馈“AI 味太重”“没有人味儿”“不像我说的话”。
+- limitations: 更适合处理已有作者位置的文本；如果原文完全缺少素材或立场，它不会替用户凭空制造个人经历。；许可证说明开源和个人使用免费，闭源商业使用需要查看仓库 LICENSE.md 中的商业授权条款。
+- invocation_example: 请用 renwei-writing 帮我润色这段公众号开头，只清理卡顿和啰嗦的地方，不要把我的语气改得更像 AI。
+
+### concept-explainer
+- id: concept-explainer
+- author: rongrongwr
+- category: research, info, writing
+- recommendation: medium-high
+- source: https://github.com/rongrongwr/concept-explainer
+- summary: 用于快速搞懂陌生概念的结构化解释 skill，会先搜索和交叉验证一手来源，再输出易读的框架、误区、疑问和信息来源。
+- use_when: 需要理解医学、技术、科学、历史或专业术语等陌生概念，而不是只要一句定义。；面对互相冲突的说法时，希望先知道哪些是共识、哪些存在争议、哪些还要自己确认。
+- limitations: 医学、法律、金融等高风险主题只能辅助建立判断框架，最终仍要咨询专业人士或官方来源。；PDF 生成依赖 Python markdown 包和本机 Chrome/Chromium/Edge；安装后需按 INSTALL.md 配好依赖。
+- invocation_example: 请用 concept-explainer 帮我搞懂猫咪糖尿病，区分医学共识、争议点和我需要向兽医确认的问题。
+
+### luban
+- id: luban-skill
+- author: LearnPrompt
+- category: dev, product, research
+- recommendation: high
+- source: https://github.com/LearnPrompt/luban-skill/tree/main/skills/luban
+- summary: 把一个能自用的 skill 打磨成可理解、可安装、可传播、可验证的公共资产，覆盖定位挑战、同行对标、评分、改写和 showcase。
+- use_when: 已经有一个 SKILL.md 或 skill 仓库，想发布到 GitHub、ClawHub、skills.sh、Tessl 或自己的目录页。；想系统体检一个 skill 为什么没人装、README 首屏不清楚、缺少实测证据或安装路径太重。
+- limitations: 会联网搜索 GitHub、ClawHub、skills.sh、Tessl 等同类项目；运行前应确认允许外部搜索和仓库读取。；适合优化已有 skill，不适合从零创建新 skill；如果要从零创建，应先用 skill-creator 类工具产出初版。
+- invocation_example: 请用 luban 帮我体检这个 SKILL.md，判断它为什么不适合公开发布，并给出最小一轮可验证改写方案。

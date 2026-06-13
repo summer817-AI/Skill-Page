@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-06-03",
+  "updated_at": "2026-06-13",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -121,6 +121,13 @@
       "github_url": "https://github.com/joeseesun",
       "avatar_url": "https://github.com/joeseesun.png",
       "summary": "把内容创作、论文解读、信息卡片、网页转 Markdown 等个人工作流整理成 qiaomu 系列 skills，并提供集合安装器。"
+    },
+    {
+      "login": "rongrongwr",
+      "name": "rongrongwr",
+      "github_url": "https://github.com/rongrongwr",
+      "avatar_url": "https://github.com/rongrongwr.png",
+      "summary": "把陌生概念解释、权威来源筛选和结构化报告沉淀成跨平台 skill，适合先搭判断框架再做决策。"
     }
   ],
   "source_repositories": [
@@ -296,6 +303,24 @@
       "url": "https://github.com/joeseesun/qiaomu-markdown-proxy",
       "author": "joeseesun",
       "trust_note": "URL/PDF/飞书/公众号转 Markdown 工具；凭据、代理和无头浏览器依赖需要显式说明。"
+    },
+    {
+      "name": "orange2ai/renwei-writing",
+      "url": "https://github.com/orange2ai/renwei-writing",
+      "author": "orange2ai",
+      "trust_note": "文章《人味儿写作心法.skill 发布啦》推荐；仓库包含 SKILL.md、README、LICENSE 和改稿检查 references。"
+    },
+    {
+      "name": "rongrongwr/concept-explainer",
+      "url": "https://github.com/rongrongwr/concept-explainer",
+      "author": "rongrongwr",
+      "trust_note": "文章《爱猫确诊糖尿病，我靠一个Skill，从慌乱到心里有底》推荐；仓库包含 SKILL.md、INSTALL.md、MIT LICENSE 和 PDF 转换脚本。"
+    },
+    {
+      "name": "LearnPrompt/luban-skill",
+      "url": "https://github.com/LearnPrompt/luban-skill",
+      "author": "LearnPrompt",
+      "trust_note": "文章《开源「鲁班」Skill，Claude Fable 5下线前我最想跑通的工作流！》推荐；仓库包含 skills/luban/SKILL.md、README、MIT LICENSE 和实战案例。"
     }
   ],
   "agent_entrypoints": {
@@ -2723,6 +2748,175 @@
         "claude_code_or_claw": [
           "请使用 qiaomu-markdown-proxy 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the qiaomu-markdown-proxy skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "renwei-writing",
+      "name": "renwei-writing",
+      "category": [
+        "writing",
+        "humanizer"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "orange2ai",
+        "github_url": "https://github.com/orange2ai",
+        "avatar_url": "https://avatars.githubusercontent.com/u/77816124?v=4"
+      },
+      "source_repository": "https://github.com/orange2ai/renwei-writing",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/orange2ai/renwei-writing",
+      "topic_tag": "写作润色",
+      "summary": "面向改稿、润色和精简的中文写作 skill，核心是保住作者的位置、代价和手迹，避免把文字改成顺滑但没有人的 AI 腔。",
+      "use_when": [
+        "用户拿来自己写的文案、公众号段落、口述稿或草稿，希望 AI 帮忙打磨但不要抹掉个人语气。",
+        "已经生成或改写过一版文本，用户反馈“AI 味太重”“没有人味儿”“不像我说的话”。"
+      ],
+      "inputs_outputs": [
+        "输入：原文、改稿目标、保留语气或修改幅度要求。",
+        "输出：尽量少动的修改稿、逐处改动理由和改后 AI 味儿检查结果。"
+      ],
+      "limitations": [
+        "更适合处理已有作者位置的文本；如果原文完全缺少素材或立场，它不会替用户凭空制造个人经历。",
+        "许可证说明开源和个人使用免费，闭源商业使用需要查看仓库 LICENSE.md 中的商业授权条款。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/orange2ai/renwei-writing.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\renwei-writing \"$env:USERPROFILE\\.codex\\skills\\renwei-writing\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/orange2ai/renwei-writing.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R renwei-writing ~/.codex/skills/renwei-writing"
+        ]
+      },
+      "example_prompt": "请用 renwei-writing 帮我润色这段公众号开头，只清理卡顿和啰嗦的地方，不要把我的语气改得更像 AI。",
+      "page_url": "https://summerai.cc/skills/#renwei-writing",
+      "invocation": {
+        "codex": [
+          "请使用 renwei-writing 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$renwei-writing <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 renwei-writing 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the renwei-writing skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "concept-explainer",
+      "name": "concept-explainer",
+      "category": [
+        "research",
+        "info",
+        "writing"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "rongrongwr",
+        "github_url": "https://github.com/rongrongwr",
+        "avatar_url": "https://github.com/rongrongwr.png"
+      },
+      "source_repository": "https://github.com/rongrongwr/concept-explainer",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/rongrongwr/concept-explainer",
+      "topic_tag": "概念解释",
+      "summary": "用于快速搞懂陌生概念的结构化解释 skill，会先搜索和交叉验证一手来源，再输出易读的框架、误区、疑问和信息来源。",
+      "use_when": [
+        "需要理解医学、技术、科学、历史或专业术语等陌生概念，而不是只要一句定义。",
+        "面对互相冲突的说法时，希望先知道哪些是共识、哪些存在争议、哪些还要自己确认。"
+      ],
+      "inputs_outputs": [
+        "输入：一个概念、问题背景、理解深度或目标读者。",
+        "输出：结构化解释文档，可选生成排版 PDF 报告，并列出参考来源。"
+      ],
+      "limitations": [
+        "医学、法律、金融等高风险主题只能辅助建立判断框架，最终仍要咨询专业人士或官方来源。",
+        "PDF 生成依赖 Python markdown 包和本机 Chrome/Chromium/Edge；安装后需按 INSTALL.md 配好依赖。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/rongrongwr/concept-explainer.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\concept-explainer \"$env:USERPROFILE\\.codex\\skills\\concept-explainer\"",
+          "pip install markdown"
+        ],
+        "macos_linux": [
+          "git clone https://github.com/rongrongwr/concept-explainer.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R concept-explainer ~/.codex/skills/concept-explainer",
+          "pip install markdown"
+        ]
+      },
+      "example_prompt": "请用 concept-explainer 帮我搞懂猫咪糖尿病，区分医学共识、争议点和我需要向兽医确认的问题。",
+      "page_url": "https://summerai.cc/skills/#concept-explainer",
+      "invocation": {
+        "codex": [
+          "请使用 concept-explainer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$concept-explainer <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 concept-explainer 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the concept-explainer skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "luban-skill",
+      "name": "luban",
+      "category": [
+        "dev",
+        "product",
+        "research"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "LearnPrompt",
+        "github_url": "https://github.com/LearnPrompt",
+        "avatar_url": "https://github.com/LearnPrompt.png"
+      },
+      "source_repository": "https://github.com/LearnPrompt/luban-skill",
+      "source_path": "skills/luban/SKILL.md",
+      "source_url": "https://github.com/LearnPrompt/luban-skill/tree/main/skills/luban",
+      "topic_tag": "Skill 打磨",
+      "summary": "把一个能自用的 skill 打磨成可理解、可安装、可传播、可验证的公共资产，覆盖定位挑战、同行对标、评分、改写和 showcase。",
+      "use_when": [
+        "已经有一个 SKILL.md 或 skill 仓库，想发布到 GitHub、ClawHub、skills.sh、Tessl 或自己的目录页。",
+        "想系统体检一个 skill 为什么没人装、README 首屏不清楚、缺少实测证据或安装路径太重。"
+      ],
+      "inputs_outputs": [
+        "输入：目标 skill 目录、GitHub 仓库、SKILL.md 正文、对标项目或发布平台目标。",
+        "输出：《Skill 打磨报告》、同行对标表、评分表、可替换改写片段和可截图的出师证书结果卡。"
+      ],
+      "limitations": [
+        "会联网搜索 GitHub、ClawHub、skills.sh、Tessl 等同类项目；运行前应确认允许外部搜索和仓库读取。",
+        "适合优化已有 skill，不适合从零创建新 skill；如果要从零创建，应先用 skill-creator 类工具产出初版。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/LearnPrompt/luban-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\luban-skill\\skills\\luban \"$env:USERPROFILE\\.codex\\skills\\luban\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/LearnPrompt/luban-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R luban-skill/skills/luban ~/.codex/skills/luban"
+        ]
+      },
+      "example_prompt": "请用 luban 帮我体检这个 SKILL.md，判断它为什么不适合公开发布，并给出最小一轮可验证改写方案。",
+      "page_url": "https://summerai.cc/skills/#luban-skill",
+      "invocation": {
+        "codex": [
+          "请使用 luban 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$luban <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 luban 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the luban skill to handle: <your task here>"
         ]
       }
     }
