@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-06-13
+Updated: 2026-06-18
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -540,3 +540,14 @@ Site: https://summerai.cc/skills/
 - use_when: 已经有一个 SKILL.md 或 skill 仓库，想发布到 GitHub、ClawHub、skills.sh、Tessl 或自己的目录页。；想系统体检一个 skill 为什么没人装、README 首屏不清楚、缺少实测证据或安装路径太重。
 - limitations: 会联网搜索 GitHub、ClawHub、skills.sh、Tessl 等同类项目；运行前应确认允许外部搜索和仓库读取。；适合优化已有 skill，不适合从零创建新 skill；如果要从零创建，应先用 skill-creator 类工具产出初版。
 - invocation_example: 请用 luban 帮我体检这个 SKILL.md，判断它为什么不适合公开发布，并给出最小一轮可验证改写方案。
+
+### html-deck-export
+- id: html-deck-export
+- author: summer817-AI
+- category: office, design, dev
+- recommendation: medium-high
+- source: https://github.com/summer817-AI/summer-html-deck-export
+- summary: 把本地 HTML 演示稿、路演预览稿或画册式 web PPT 导出为 16:9 PDF 和可编辑文字 PPTX，并拆出底图、蒙版和图层素材。
+- use_when: 已经用 HTML/CSS 做好展示页、招商画册或 web PPT，希望快速转成可展示的 PDF。；需要把 HTML 页面转成 PowerPoint，同时保留底图、蒙版和顶层文字框，方便后续人工编辑。
+- limitations: PPTX 的文字框来自浏览器 DOM 坐标抽取，适合后期编辑；最终视觉保真度仍以 Playwright 渲染的 PDF 为准。；依赖 Python、Playwright/Chromium、Pillow、BeautifulSoup、python-pptx 和 pypdf；HTML 结构差异较大时需要扩展文本选择器。
+- invocation_example: 请用 html-deck-export 把这个 HTML 路演预览稿导出成 16:9 PDF 和可编辑文字 PPTX，并保留底图、蒙版和图层素材。
