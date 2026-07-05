@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-06-18",
+  "updated_at": "2026-07-05",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -29,7 +29,28 @@
       "name": "花叔 / alchaincyf",
       "github_url": "https://github.com/alchaincyf",
       "avatar_url": "https://github.com/alchaincyf.png",
-      "summary": "维护 nuwa-skill，用来把人物或主题蒸馏成可运行的 perspective skill，适合构建思维顾问和作者视角。"
+      "summary": "维护 nuwa-skill 与 huashu-design，擅长把人物思维、HTML 原型、幻灯片、动画和视觉评审整理成可复用工作流。"
+    },
+    {
+      "login": "zarazhangrui",
+      "name": "Zara Zhang / zarazhangrui",
+      "github_url": "https://github.com/zarazhangrui",
+      "avatar_url": "https://github.com/zarazhangrui.png",
+      "summary": "用固定 16:9 舞台、视觉探索和浏览器交互，把演示文稿做成动画丰富、可直接分享的单文件 HTML。"
+    },
+    {
+      "login": "lewislulu",
+      "name": "lewislulu",
+      "github_url": "https://github.com/lewislulu",
+      "avatar_url": "https://github.com/lewislulu.png",
+      "summary": "维护模板驱动的 HTML PPT Studio，覆盖主题、版式、动画、演讲者视图和逐字稿工作流。"
+    },
+    {
+      "login": "JimLiu",
+      "name": "宝玉 / JimLiu",
+      "github_url": "https://github.com/JimLiu",
+      "avatar_url": "https://github.com/JimLiu.png",
+      "summary": "持续维护 baoyu-skills，把图像生成、幻灯片、文章配图和内容发布流程封装成跨 Agent skills。"
     },
     {
       "login": "zephyrwang6",
@@ -262,6 +283,30 @@
       "name": "alchaincyf/nuwa-skill",
       "url": "https://github.com/alchaincyf/nuwa-skill",
       "author": "alchaincyf"
+    },
+    {
+      "name": "zarazhangrui/frontend-slides",
+      "url": "https://github.com/zarazhangrui/frontend-slides",
+      "author": "zarazhangrui",
+      "trust_note": "仓库包含根目录 SKILL.md、MIT LICENSE、PPTX 提取与可选 PDF/部署脚本；已审查代码结构和脚本语法，部署会产生外部写入，需用户明确确认。"
+    },
+    {
+      "name": "lewislulu/html-ppt-skill",
+      "url": "https://github.com/lewislulu/html-ppt-skill",
+      "author": "lewislulu",
+      "trust_note": "仓库包含根目录 SKILL.md、MIT LICENSE、静态主题/模板/动画资源和渲染脚本；核心产物无需构建，PNG 渲染脚本默认使用 macOS Chrome 路径。"
+    },
+    {
+      "name": "alchaincyf/huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "author": "alchaincyf",
+      "trust_note": "仓库包含根目录 SKILL.md、MIT LICENSE、设计参考与 16 个辅助脚本；已审查脚本语法，高级导出、语音和视频能力需额外工具或凭据。"
+    },
+    {
+      "name": "JimLiu/baoyu-skills:baoyu-slide-deck",
+      "url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck",
+      "author": "JimLiu",
+      "trust_note": "baoyu-skills 中的独立子 skill，包含 SKILL.md、参考资料及 PPTX/PDF 合并脚本；需要可用的位图生成后端与 Bun/npx，输出 PPTX 为图片型页面。"
     },
     {
       "name": "FANzR-arch/Numerologist_skills",
@@ -2930,6 +2975,229 @@
         "claude_code_or_claw": [
           "请使用 luban 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the luban skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "frontend-slides",
+      "name": "frontend-slides",
+      "category": [
+        "office",
+        "design",
+        "dev"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "zarazhangrui",
+        "github_url": "https://github.com/zarazhangrui",
+        "avatar_url": "https://github.com/zarazhangrui.png"
+      },
+      "source_repository": "https://github.com/zarazhangrui/frontend-slides",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/zarazhangrui/frontend-slides",
+      "topic_tag": "动态 HTML 演示",
+      "summary": "从零制作或把 PPTX 转成动画丰富的单文件 HTML 演示稿，采用固定 1920×1080 舞台，并支持浏览器内编辑、键盘导航和视觉风格探索。",
+      "use_when": [
+        "需要为演讲、路演或产品发布制作高质感、可直接在浏览器播放的 16:9 演示稿。",
+        "希望把现有 PPT/PPTX 的文字和图片提取出来，重构为更适合网页分享和动画展示的 deck。"
+      ],
+      "inputs_outputs": [
+        "输入：主题或大纲、受众、演示时长、阅读型/演讲型密度、风格偏好，以及可选 PPTX 和图片素材。",
+        "输出：内联 CSS/JavaScript 的单文件 HTML deck；可选导出 PDF 或部署到 Vercel。"
+      ],
+      "limitations": [
+        "核心 HTML 零构建依赖，但 PPTX 提取需要 Python/python-pptx，PDF 导出会安装 Playwright/Chromium。",
+        "Vercel 部署脚本可能全局安装 CLI、触发登录并写入外部平台；只有用户明确要求部署时才应执行。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/zarazhangrui/frontend-slides.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\frontend-slides \"$env:USERPROFILE\\.codex\\skills\\frontend-slides\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/zarazhangrui/frontend-slides.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R frontend-slides ~/.codex/skills/frontend-slides"
+        ]
+      },
+      "example_prompt": "请用 frontend-slides 把这份产品发布大纲做成 12 页、固定 16:9、动画克制但有记忆点的单文件 HTML 演示稿。",
+      "page_url": "https://summerai.cc/skills/#frontend-slides",
+      "invocation": {
+        "codex": [
+          "请使用 frontend-slides 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$frontend-slides <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 frontend-slides 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the frontend-slides skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "html-ppt",
+      "name": "html-ppt",
+      "category": [
+        "office",
+        "design"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "lewislulu",
+        "github_url": "https://github.com/lewislulu",
+        "avatar_url": "https://github.com/lewislulu.png"
+      },
+      "source_repository": "https://github.com/lewislulu/html-ppt-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/lewislulu/html-ppt-skill",
+      "topic_tag": "模板化 HTML PPT",
+      "summary": "模板驱动的静态 HTML PPT Studio，内置 36 套主题、31 种单页版式、完整 deck 模板、CSS/Canvas 动画，以及带逐字稿和计时器的演讲者模式。",
+      "use_when": [
+        "需要快速把文字、周报、技术分享、课程、小红书内容或融资材料组织成可键盘播放的网页幻灯片。",
+        "需要演讲者视图，在副屏查看当前页、下一页、逐字稿、计时器和拖拽式提示卡片。"
+      ],
+      "inputs_outputs": [
+        "输入：内容、大致页数、受众、主题或模板选择，以及可选的每页讲稿。",
+        "输出：静态 HTML/CSS/JavaScript deck，可选通过无头 Chrome 渲染为 PNG。"
+      ],
+      "limitations": [
+        "主要交付物是 HTML，不直接生成可编辑 PowerPoint；CDN 字体在离线环境下可能回退到本机字体。",
+        "仓库的 render.sh 默认写死 macOS Google Chrome 路径，Windows/Linux 导出 PNG 时需要调整浏览器路径或改用自己的渲染流程。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/lewislulu/html-ppt-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\html-ppt-skill \"$env:USERPROFILE\\.codex\\skills\\html-ppt\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/lewislulu/html-ppt-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R html-ppt-skill ~/.codex/skills/html-ppt"
+        ]
+      },
+      "example_prompt": "请用 html-ppt 做一份 10 页的技术分享，使用 tokyo-night 主题，并为每页写 150 到 250 字的演讲者逐字稿。",
+      "page_url": "https://summerai.cc/skills/#html-ppt",
+      "invocation": {
+        "codex": [
+          "请使用 html-ppt 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$html-ppt <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 html-ppt 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the html-ppt skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "huashu-design",
+      "name": "huashu-design",
+      "category": [
+        "design",
+        "product",
+        "office",
+        "dev"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "alchaincyf",
+        "github_url": "https://github.com/alchaincyf",
+        "avatar_url": "https://github.com/alchaincyf.png"
+      },
+      "source_repository": "https://github.com/alchaincyf/huashu-design",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/alchaincyf/huashu-design",
+      "topic_tag": "HTML 视觉设计",
+      "summary": "以 HTML 为媒介完成高保真交互原型、1920×1080 幻灯片、动画、信息可视化和专家评审；需求模糊时先提供三种差异化设计方向。",
+      "use_when": [
+        "需要制作可点击的产品原型、视觉方案对比、HTML 幻灯片、动画 Demo、信息图或设计评审。",
+        "用户只说“做个好看的”，希望 Agent 先结合品牌资产和内置风格库给出可视化方向，再落地成作品。"
+      ],
+      "inputs_outputs": [
+        "输入：目标媒介、内容、受众、品牌或产品事实、现有设计系统/截图/素材，以及交付格式。",
+        "输出：高保真 HTML 作品和设计说明；按任务可选导出 PDF、PPTX、MP4 或 GIF。"
+      ],
+      "limitations": [
+        "适合视觉设计和高保真原型，不适合生产级 Web App、SEO 网站或需要后端的动态系统。",
+        "高级导出可能依赖 Playwright、Chromium、ffmpeg、PPTX 工具或 TTS 服务；语音服务需用户自行提供 API 凭据，PPTX 可编辑性为尽力而为。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/alchaincyf/huashu-design.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\huashu-design \"$env:USERPROFILE\\.codex\\skills\\huashu-design\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/alchaincyf/huashu-design.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R huashu-design ~/.codex/skills/huashu-design"
+        ]
+      },
+      "example_prompt": "请用 huashu-design 为这个 AI 硬件产品做三种差异明显的发布会视觉方向，确认方向后产出一套 1920×1080 HTML 幻灯片。",
+      "page_url": "https://summerai.cc/skills/#huashu-design",
+      "invocation": {
+        "codex": [
+          "请使用 huashu-design 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$huashu-design <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 huashu-design 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the huashu-design skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "baoyu-slide-deck",
+      "name": "baoyu-slide-deck",
+      "category": [
+        "office",
+        "design"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "JimLiu",
+        "github_url": "https://github.com/JimLiu",
+        "avatar_url": "https://github.com/JimLiu.png"
+      },
+      "source_repository": "https://github.com/JimLiu/baoyu-skills",
+      "source_path": "skills/baoyu-slide-deck/SKILL.md",
+      "source_url": "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck",
+      "topic_tag": "图片型幻灯片",
+      "summary": "先把内容整理成带视觉说明的幻灯片大纲和逐页提示词，再调用位图生成后端制作整页图片，最终合并为适合阅读和分享的 PPTX 或 PDF。",
+      "use_when": [
+        "需要视觉统一、适合异步阅读或社交分享的图片型 slide deck，并希望保留每页生成提示词便于复现。",
+        "当前 Agent 已有 imagegen、GenerateImage 或其他位图生成能力，希望批量生成整页视觉而不是手工编写 HTML。"
+      ],
+      "inputs_outputs": [
+        "输入：主题或原始文档、目标读者、页数、语言、视觉风格、宽高比和可选参考图片。",
+        "输出：大纲、逐页 Markdown 提示词、PNG/JPG 幻灯片，以及合并后的 PPTX/PDF。"
+      ],
+      "limitations": [
+        "必须具备可用的位图生成后端；生成前默认需要用户确认风格、受众、页数、语言和后端。",
+        "合并后的 PPTX 每页是整张图片，文字和图表不可直接编辑；合并脚本依赖 Bun，或通过 npx -y bun 运行。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/JimLiu/baoyu-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\baoyu-skills\\skills\\baoyu-slide-deck \"$env:USERPROFILE\\.codex\\skills\\baoyu-slide-deck\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/JimLiu/baoyu-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R baoyu-skills/skills/baoyu-slide-deck ~/.codex/skills/baoyu-slide-deck"
+        ]
+      },
+      "example_prompt": "请用 baoyu-slide-deck 把这份行业报告做成 12 页、16:9、适合异步阅读的图片型幻灯片；先给我确认大纲和视觉风格。",
+      "page_url": "https://summerai.cc/skills/#baoyu-slide-deck",
+      "invocation": {
+        "codex": [
+          "请使用 baoyu-slide-deck 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$baoyu-slide-deck <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 baoyu-slide-deck 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the baoyu-slide-deck skill to handle: <your task here>"
         ]
       }
     },

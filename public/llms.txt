@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-06-18
+Updated: 2026-07-05
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -540,6 +540,50 @@ Site: https://summerai.cc/skills/
 - use_when: 已经有一个 SKILL.md 或 skill 仓库，想发布到 GitHub、ClawHub、skills.sh、Tessl 或自己的目录页。；想系统体检一个 skill 为什么没人装、README 首屏不清楚、缺少实测证据或安装路径太重。
 - limitations: 会联网搜索 GitHub、ClawHub、skills.sh、Tessl 等同类项目；运行前应确认允许外部搜索和仓库读取。；适合优化已有 skill，不适合从零创建新 skill；如果要从零创建，应先用 skill-creator 类工具产出初版。
 - invocation_example: 请用 luban 帮我体检这个 SKILL.md，判断它为什么不适合公开发布，并给出最小一轮可验证改写方案。
+
+### frontend-slides
+- id: frontend-slides
+- author: zarazhangrui
+- category: office, design, dev
+- recommendation: high
+- source: https://github.com/zarazhangrui/frontend-slides
+- summary: 从零制作或把 PPTX 转成动画丰富的单文件 HTML 演示稿，采用固定 1920×1080 舞台，并支持浏览器内编辑、键盘导航和视觉风格探索。
+- use_when: 需要为演讲、路演或产品发布制作高质感、可直接在浏览器播放的 16:9 演示稿。；希望把现有 PPT/PPTX 的文字和图片提取出来，重构为更适合网页分享和动画展示的 deck。
+- limitations: 核心 HTML 零构建依赖，但 PPTX 提取需要 Python/python-pptx，PDF 导出会安装 Playwright/Chromium。；Vercel 部署脚本可能全局安装 CLI、触发登录并写入外部平台；只有用户明确要求部署时才应执行。
+- invocation_example: 请用 frontend-slides 把这份产品发布大纲做成 12 页、固定 16:9、动画克制但有记忆点的单文件 HTML 演示稿。
+
+### html-ppt
+- id: html-ppt
+- author: lewislulu
+- category: office, design
+- recommendation: high
+- source: https://github.com/lewislulu/html-ppt-skill
+- summary: 模板驱动的静态 HTML PPT Studio，内置 36 套主题、31 种单页版式、完整 deck 模板、CSS/Canvas 动画，以及带逐字稿和计时器的演讲者模式。
+- use_when: 需要快速把文字、周报、技术分享、课程、小红书内容或融资材料组织成可键盘播放的网页幻灯片。；需要演讲者视图，在副屏查看当前页、下一页、逐字稿、计时器和拖拽式提示卡片。
+- limitations: 主要交付物是 HTML，不直接生成可编辑 PowerPoint；CDN 字体在离线环境下可能回退到本机字体。；仓库的 render.sh 默认写死 macOS Google Chrome 路径，Windows/Linux 导出 PNG 时需要调整浏览器路径或改用自己的渲染流程。
+- invocation_example: 请用 html-ppt 做一份 10 页的技术分享，使用 tokyo-night 主题，并为每页写 150 到 250 字的演讲者逐字稿。
+
+### huashu-design
+- id: huashu-design
+- author: alchaincyf
+- category: design, product, office, dev
+- recommendation: high
+- source: https://github.com/alchaincyf/huashu-design
+- summary: 以 HTML 为媒介完成高保真交互原型、1920×1080 幻灯片、动画、信息可视化和专家评审；需求模糊时先提供三种差异化设计方向。
+- use_when: 需要制作可点击的产品原型、视觉方案对比、HTML 幻灯片、动画 Demo、信息图或设计评审。；用户只说“做个好看的”，希望 Agent 先结合品牌资产和内置风格库给出可视化方向，再落地成作品。
+- limitations: 适合视觉设计和高保真原型，不适合生产级 Web App、SEO 网站或需要后端的动态系统。；高级导出可能依赖 Playwright、Chromium、ffmpeg、PPTX 工具或 TTS 服务；语音服务需用户自行提供 API 凭据，PPTX 可编辑性为尽力而为。
+- invocation_example: 请用 huashu-design 为这个 AI 硬件产品做三种差异明显的发布会视觉方向，确认方向后产出一套 1920×1080 HTML 幻灯片。
+
+### baoyu-slide-deck
+- id: baoyu-slide-deck
+- author: JimLiu
+- category: office, design
+- recommendation: medium-high
+- source: https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-slide-deck
+- summary: 先把内容整理成带视觉说明的幻灯片大纲和逐页提示词，再调用位图生成后端制作整页图片，最终合并为适合阅读和分享的 PPTX 或 PDF。
+- use_when: 需要视觉统一、适合异步阅读或社交分享的图片型 slide deck，并希望保留每页生成提示词便于复现。；当前 Agent 已有 imagegen、GenerateImage 或其他位图生成能力，希望批量生成整页视觉而不是手工编写 HTML。
+- limitations: 必须具备可用的位图生成后端；生成前默认需要用户确认风格、受众、页数、语言和后端。；合并后的 PPTX 每页是整张图片，文字和图表不可直接编辑；合并脚本依赖 Bun，或通过 npx -y bun 运行。
+- invocation_example: 请用 baoyu-slide-deck 把这份行业报告做成 12 页、16:9、适合异步阅读的图片型幻灯片；先给我确认大纲和视觉风格。
 
 ### html-deck-export
 - id: html-deck-export
