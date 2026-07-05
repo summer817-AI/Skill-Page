@@ -193,7 +193,7 @@ ${data.skills.map(renderSkill).join("\n")}
     const cards = [...document.querySelectorAll('.skill-card')];
     const empty = document.querySelector('.empty');
     const filterButtons = [...document.querySelectorAll('[data-filter]')];
-    const authorButtons = [...document.querySelectorAll('[data-author]')];
+    const authorButtons = [...document.querySelectorAll('.author-card[data-author]')];
     let currentFilter = 'all';
     let currentAuthor = '';
     function applyFilters() {
