@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-07-05",
+  "updated_at": "2026-07-08",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -379,6 +379,12 @@
       "url": "https://github.com/summer817-AI/summer-html-deck-export",
       "author": "summer817-AI",
       "trust_note": "从滨海湾 AI 眼镜产业园路演稿项目沉淀的 HTML deck 导出 skill；仓库包含 SKILL.md、Codex UI metadata 和 Python 导出脚本。"
+    },
+    {
+      "name": "op7418/guizang-material-illustration",
+      "url": "https://github.com/op7418/guizang-material-illustration",
+      "author": "op7418",
+      "trust_note": "归藏材质插画 skill；根目录包含 SKILL.md、README、PRODUCT、HANDOFF、agents/openai.yaml、assets/prompt-template.md 和完整 references 检查清单。"
     }
   ],
   "agent_entrypoints": {
@@ -3258,6 +3264,60 @@
         "claude_code_or_claw": [
           "请使用 html-deck-export 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the html-deck-export skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "guizang-material-illustration",
+      "name": "guizang-material-illustration",
+      "category": [
+        "design",
+        "writing",
+        "office"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "op7418",
+        "github_url": "https://github.com/op7418",
+        "avatar_url": "https://avatars.githubusercontent.com/u/13505770?v=4"
+      },
+      "source_repository": "https://github.com/op7418/guizang-material-illustration",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/op7418/guizang-material-illustration",
+      "topic_tag": "材质插画",
+      "summary": "归藏风格材质插画 skill，可把文章、笔记、图表截图、产品概念、工作汇报和教学材料转成带中文标签的解释图、图表美化图或中心配图资产。",
+      "use_when": [
+        "需要给文章、PPT、文档、社交卡片或教学材料生成一张能讲清楚意思的中心配图，而不是普通装饰图。",
+        "需要把抽象概念、流程、机制、系统关系、工作汇报或冷门知识点画成带短中文标签的材质化图解。",
+        "需要从图表截图、表格或指标列表中抽取语义，重新生成更适合传播的材质化图表。"
+      ],
+      "inputs_outputs": [
+        "输入：文章/笔记/产品说明/截图/图表数据/教学材料/人文主题，以及可选目标比例或配套卡片/PPT 场景。",
+        "输出：图像生成提示词计划、生成后的 raster 图片路径、必要的参考信息说明和 QA 检查结论。"
+      ],
+      "limitations": [
+        "依赖 imagegen、GPT-Image 或其他图像生成能力；没有可用图像工具时只能产出提示词和构图计划。",
+        "生僻概念、品牌、科学装置或历史文化物件需要先查参考信息；参考只用于事实和稳定视觉线索，不应抄袭外部图片风格。",
+        "图表重画必须保留原始数值、坐标、单位和类别顺序；图内中文标签、裁切和数据错误时应重新生成。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx skills add https://github.com/op7418/guizang-material-illustration --skill guizang-material-illustration"
+        ],
+        "macos_linux": [
+          "npx skills add https://github.com/op7418/guizang-material-illustration --skill guizang-material-illustration"
+        ]
+      },
+      "example_prompt": "请用 guizang-material-illustration 把这段产品说明做成一张带中文标签的机制图，主体要适合放进公众号卡片中间。",
+      "page_url": "https://summerai.cc/skills/#guizang-material-illustration",
+      "invocation": {
+        "codex": [
+          "请使用 guizang-material-illustration 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$guizang-material-illustration <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 guizang-material-illustration 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the guizang-material-illustration skill to handle: <your task here>"
         ]
       }
     }

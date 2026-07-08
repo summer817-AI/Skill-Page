@@ -333,6 +333,12 @@
       "position": 53,
       "name": "html-deck-export",
       "url": "https://summerai.cc/skills/#html-deck-export"
+    },
+    {
+      "@type": "ListItem",
+      "position": 54,
+      "name": "guizang-material-illustration",
+      "url": "https://summerai.cc/skills/#guizang-material-illustration"
     }
   ]
 }
@@ -346,7 +352,7 @@
 <body>
   <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
   <main class="shell">
-    <section class="source-strip"><p>当前收录 <strong>53</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
+    <section class="source-strip"><p>当前收录 <strong>54</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
     <section class="intro">
       <div class="intro-copy"><h1>好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里滚动收录经过人工筛选的实用 skill 来源：包括 GitHub 仓库、官方文档和可信候选。每个条目都保留来源、适用场景、限制和安装命令。</p></div>
       <aside class="agent-box"><h2>Agent 读取入口</h2><p>优先读取结构化数据，再进入页面查看完整说明。</p><div class="agent-actions"><a class="data-link" href="../skills.json">skills.json</a><a class="data-link" href="../llms.txt">llms.txt</a></div></aside>
@@ -1226,12 +1232,24 @@ python -m playwright install chromium</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 html-deck-export 把这个 HTML 路演预览稿导出成 16:9 PDF 和可编辑文字 PPTX，并保留底图、蒙版和图层素材。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/summer817-AI/summer-html-deck-export" target="_blank" rel="noopener noreferrer" data-author="summer817-AI" data-skill-id="html-deck-export" data-source-url="https://github.com/summer817-AI/summer-html-deck-export">https://github.com/summer817-AI/summer-html-deck-export</a></p></div>
       </article>
+      <article class="skill-card" id="guizang-material-illustration" data-category="design writing office" data-author="op7418" data-text="guizang-material-illustration 归藏风格材质插画 skill，可把文章、笔记、图表截图、产品概念、工作汇报和教学材料转成带中文标签的解释图、图表美化图或中心配图资产。 op7418 https://github.com/op7418/guizang-material-illustration design writing office 材质插画">
+        <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/13505770?v=4" alt="op7418 头像" loading="lazy"><h2>guizang-material-illustration</h2></div>
+        <div class="meta"><span class="pill level">推荐：高</span><span class="pill">材质插画</span><span class="pill">设计视觉</span><span class="pill">文字处理</span><span class="pill">办公演示</span><span class="pill source-pill">作者：op7418</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">归藏风格材质插画 skill，可把文章、笔记、图表截图、产品概念、工作汇报和教学材料转成带中文标签的解释图、图表美化图或中心配图资产。</p>
+        <div><p class="section-title">适合场景</p><ul><li>需要给文章、PPT、文档、社交卡片或教学材料生成一张能讲清楚意思的中心配图，而不是普通装饰图。</li><li>需要把抽象概念、流程、机制、系统关系、工作汇报或冷门知识点画成带短中文标签的材质化图解。</li><li>需要从图表截图、表格或指标列表中抽取语义，重新生成更适合传播的材质化图表。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：文章/笔记/产品说明/截图/图表数据/教学材料/人文主题，以及可选目标比例或配套卡片/PPT 场景。</li><li>输出：图像生成提示词计划、生成后的 raster 图片路径、必要的参考信息说明和 QA 检查结论。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>依赖 imagegen、GPT-Image 或其他图像生成能力；没有可用图像工具时只能产出提示词和构图计划。</li><li>生僻概念、品牌、科学装置或历史文化物件需要先查参考信息；参考只用于事实和稳定视觉线索，不应抄袭外部图片风格。</li><li>图表重画必须保留原始数值、坐标、单位和类别顺序；图内中文标签、裁切和数据错误时应重新生成。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add https://github.com/op7418/guizang-material-illustration --skill guizang-material-illustration</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add https://github.com/op7418/guizang-material-illustration --skill guizang-material-illustration</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 guizang-material-illustration 把这段产品说明做成一张带中文标签的机制图，主体要适合放进公众号卡片中间。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/op7418/guizang-material-illustration" target="_blank" rel="noopener noreferrer" data-author="op7418" data-skill-id="guizang-material-illustration" data-source-url="https://github.com/op7418/guizang-material-illustration">https://github.com/op7418/guizang-material-illustration</a></p></div>
+      </article>
           <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>
         </section>
       </section>
     </div>
   </main>
-  <footer><div class="shell">最后更新：2026-07-05 · 共 53 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
+  <footer><div class="shell">最后更新：2026-07-08 · 共 54 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
   <script>
     const search = document.querySelector('.search');
     const cards = [...document.querySelectorAll('.skill-card')];

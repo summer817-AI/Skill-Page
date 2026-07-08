@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-07-05
+Updated: 2026-07-08
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -595,3 +595,14 @@ Site: https://summerai.cc/skills/
 - use_when: 已经用 HTML/CSS 做好展示页、招商画册或 web PPT，希望快速转成可展示的 PDF。；需要把 HTML 页面转成 PowerPoint，同时保留底图、蒙版和顶层文字框，方便后续人工编辑。
 - limitations: PPTX 的文字框来自浏览器 DOM 坐标抽取，适合后期编辑；最终视觉保真度仍以 Playwright 渲染的 PDF 为准。；依赖 Python、Playwright/Chromium、Pillow、BeautifulSoup、python-pptx 和 pypdf；HTML 结构差异较大时需要扩展文本选择器。
 - invocation_example: 请用 html-deck-export 把这个 HTML 路演预览稿导出成 16:9 PDF 和可编辑文字 PPTX，并保留底图、蒙版和图层素材。
+
+### guizang-material-illustration
+- id: guizang-material-illustration
+- author: op7418
+- category: design, writing, office
+- recommendation: high
+- source: https://github.com/op7418/guizang-material-illustration
+- summary: 归藏风格材质插画 skill，可把文章、笔记、图表截图、产品概念、工作汇报和教学材料转成带中文标签的解释图、图表美化图或中心配图资产。
+- use_when: 需要给文章、PPT、文档、社交卡片或教学材料生成一张能讲清楚意思的中心配图，而不是普通装饰图。；需要把抽象概念、流程、机制、系统关系、工作汇报或冷门知识点画成带短中文标签的材质化图解。；需要从图表截图、表格或指标列表中抽取语义，重新生成更适合传播的材质化图表。
+- limitations: 依赖 imagegen、GPT-Image 或其他图像生成能力；没有可用图像工具时只能产出提示词和构图计划。；生僻概念、品牌、科学装置或历史文化物件需要先查参考信息；参考只用于事实和稳定视觉线索，不应抄袭外部图片风格。；图表重画必须保留原始数值、坐标、单位和类别顺序；图内中文标签、裁切和数据错误时应重新生成。
+- invocation_example: 请用 guizang-material-illustration 把这段产品说明做成一张带中文标签的机制图，主体要适合放进公众号卡片中间。
