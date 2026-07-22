@@ -1,246 +1,509 @@
 <!doctype html><html lang='zh-CN'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>葡萄牙·波尔图 Porto | 世界那么大，我想去看看</title><style>
 :root{
-  /* ── 调色板变量 ── */
-  --bg:#110e1a;          /* 深靛紫，比原来的蓝黑更有温度 */
-  --card:#1e1728;        /* 卡片底色：偏紫的深色，不再是冷蓝 */
-  --muted:#b09fcc;       /* 辅助文字：从冷灰蓝改为薰衣草灰 */
-  --text:#f5eedc;        /* 正文：暖白，带一点奶黄，告别冰冷的 #edf5ff */
-  --accent:#ff9f6b;      /* 主强调色：珊瑚橙，温暖活泼 */
-  --accent-2:#ffd166;    /* 次强调色：琥珀黄，旅行感 */
-  --accent-3:#7edcb5;    /* 三号强调色：薄荷绿，清新不刺眼 */
-  --line:rgba(255,220,180,.10); /* 边框线：暖调透明 */
+  --paper:#f7f2e6;
+  --paper-dark:#ece4d4;
+  --paper-shadow:#d9d0bf;
+  --ink:#3a3a3a;
+  --ink-light:#5c5c5c;
+  --accent:#8a2c3b;
+  --accent-warm:#d86a3a;
+  --highlight:#ffe08a;
+  --river:#4a7c9b;
+  --portugal-green:#006600;
+  --portugal-red:#da020e;
+  --tape:rgba(255,255,255,.55);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
-  /* 背景：多色极光渐变，加入珊瑚/紫/薄荷暖调，不再是单调蓝 */
+  font-family:Georgia,"Noto Serif SC","PingFang SC","Microsoft YaHei",serif;
+  color:var(--ink);
   background:
-    radial-gradient(ellipse 120% 55% at 15% 0%,  rgba(255,120,80,.13)  0%, transparent 60%),
-    radial-gradient(ellipse 90%  50% at 85% 5%,  rgba(126,220,181,.11) 0%, transparent 55%),
-    radial-gradient(ellipse 70%  40% at 50% 2%,  rgba(200,140,255,.09) 0%, transparent 50%),
-    linear-gradient(175deg,#1a1428 0%,#110e1a 45%,#0d0b14 100%);
+    radial-gradient(circle at 20% 10%, rgba(210,190,160,.22) 0%, transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(180,160,140,.18) 0%, transparent 30%),
+    repeating-linear-gradient(90deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    repeating-linear-gradient(0deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    var(--paper);
   background-attachment:fixed;
-  color:var(--text)
+  line-height:1.75;
 }
 body.modal-open{overflow:hidden}
-.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 60px}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 70px}
 
-/* ── 卡片：用不透明背景替代毛玻璃，省去 backdrop-filter 开销 ── */
-.card{
-  background:linear-gradient(160deg,rgba(36,26,50,.97) 0%,rgba(26,18,38,.99) 100%);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
+/* 返回链接 */
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--ink-light);text-decoration:none;font-size:14px;
+  border-bottom:1px dashed var(--paper-shadow);padding-bottom:2px
+}
+.back-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* 明信片标题区 */
+.postcard-header{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 18px;
   margin-top:14px;
-  box-shadow:0 8px 28px rgba(0,0,0,.22)  /* 简化：从多层 shadow 减到单层 */
+  box-shadow:0 10px 30px rgba(80,60,40,.12), inset 0 0 60px rgba(200,180,150,.12);
+  transform:rotate(-.5deg)
+}
+.stamp{
+  position:absolute;top:18px;right:18px;
+  width:76px;height:96px;
+  border:1px solid var(--paper-shadow);
+  background:linear-gradient(135deg,#fff 0%,#f4f0e8 100%);
+  box-shadow:2px 3px 8px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:12px;color:var(--ink-light)
+}
+.stamp:before{
+  content:'';position:absolute;inset:4px;
+  border:1px dashed var(--paper-shadow);pointer-events:none
+}
+.stamp-flag{width:42px;height:28px;border:1px solid rgba(0,0,0,.15);display:flex;overflow:hidden;border-radius:2px}
+.stamp-flag .g{background:var(--portugal-green);flex:1;position:relative}
+.stamp-flag .g:after{
+  content:'';position:absolute;left:50%;top:50%;transform:translate(-30%,-50%);
+  width:10px;height:10px;border-radius:50%;background:#ffd700;border:1px solid rgba(0,0,0,.12)
+}
+.stamp-flag .r{background:var(--portugal-red);flex:1.5}
+.stamp-text{margin-top:2px;font-size:10px;letter-spacing:.04em}
+
+.postcard-line{
+  height:1px;background:repeating-linear-gradient(90deg,var(--paper-shadow) 0,var(--paper-shadow) 6px,transparent 6px,transparent 10px);
+  margin:14px 0 10px
 }
 
-.title{margin:6px 0 10px;font-size:30px;line-height:1.35}
-.sub{color:var(--muted);font-size:14px;line-height:1.7}
-.date{font-size:13px;color:var(--muted);letter-spacing:.03em}
+.city-meta{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px
+}
+.date{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:15px;color:var(--ink-light)}
+.random-pill{
+  font-size:12px;padding:3px 10px;border-radius:999px;
+  background:var(--highlight);color:var(--ink);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive
+}
+.city-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:6px 0 4px}
+.city-title .cn{font-size:34px;font-weight:700;letter-spacing:.02em}
+.city-title .en{font-size:18px;color:var(--ink-light);font-style:italic}
+.country-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;padding:4px 10px;border-radius:999px;
+  background:#fff;border:1px solid var(--paper-shadow);
+  box-shadow:1px 2px 5px rgba(0,0,0,.06)
+}
+.flag-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--portugal-green) 50%,var(--portugal-red) 50%)}
 
-/* 正文行：从冷蓝 #d8e7ff 换成暖白 */
-.line{margin:10px 0;line-height:1.95;color:#ede0c8;font-size:18px;word-break:break-word}
-h3{font-size:22px;line-height:1.5;margin:22px 0 8px}
-
-/* 标签：从蓝调改为珊瑚暖调 */
-.tag{display:inline-block;font-size:12px;color:#ffcfab;background:rgba(255,130,80,.14);border:1px solid rgba(255,130,80,.28);padding:4px 8px;border-radius:999px}
-a{color:var(--accent-3);text-decoration:none}
-a:hover{text-decoration:underline;color:var(--accent)}
-
-/* ── story 区块：从纯蓝换为偏暖紫 ── */
-.story{
-  max-width:960px;margin:14px auto 6px;
-  background:linear-gradient(160deg,#241832 0%,#1e1430 100%);
-  border:1px solid rgba(255,180,120,.14);
-  border-radius:22px;padding:18px
+/* 明信片主图 */
+.hero-card{
+  position:relative;
+  margin-top:24px;
+  padding:12px 12px 44px 12px;
+  background:#fff;
+  border:1px solid var(--paper-shadow);
+  box-shadow:0 14px 38px rgba(60,45,30,.14);
+  transform:rotate(.5deg)
+}
+.hero-card img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.hero-caption{
+  position:absolute;bottom:10px;left:0;right:0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:16px;color:var(--ink-light)
+}
+.map-wrapper{position:relative;width:100%}
+.map-wrapper img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.mood-note{
+  margin:24px auto 0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:18px;color:var(--accent-warm);line-height:1.85;
+  padding:12px 20px;background:rgba(255,255,255,.55);border-radius:8px;
+  border:1px dashed var(--paper-shadow)
 }
 
-/* ── illus 引用框：从科技蓝换为珊瑚→薰衣草渐变 ── */
-.illus{
-  margin-top:0;
-  background:linear-gradient(135deg,#8b3a6e,#c05a3a);  /* 默认：玫瑰→珊瑚 */
-  border:0;border-radius:18px;padding:18px;
+/* 手账分块 */
+.journal-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px
+}
+@media (max-width:720px){.journal-grid{grid-template-columns:1fr}}
+
+.paper-note{
+  position:relative;
+  background:#fffef8;
+  border:1px solid var(--paper-shadow);
+  border-radius:3px;
+  padding:20px 22px;
+  box-shadow:3px 5px 14px rgba(70,55,35,.10);
+  transform:rotate(-.4deg)
+}
+.paper-note:nth-child(2n){transform:rotate(.5deg);background:#fffdf5}
+.paper-note:nth-child(3){transform:rotate(.3deg);background:#fffef8}
+.paper-note:nth-child(4){transform:rotate(-.3deg);background:#fffdf5}
+.paper-note .tape{
+  position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:90px;height:24px;background:var(--tape);
+  opacity:.85;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 5px rgba(0,0,0,.06)
+}
+.paper-note h3{
+  margin:0 0 12px;font-size:20px;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  color:var(--accent);font-weight:700
+}
+.paper-note p{
+  margin:0 0 10px;font-size:16px;line-height:1.8;color:var(--ink)
+}
+.paper-note ul{margin:8px 0 0;padding-left:1.2em}
+.paper-note li{margin:6px 0;font-size:15.5px;line-height:1.7}
+
+.section-icon{
+  display:inline-flex;vertical-align:middle;margin-right:6px;font-size:22px
+}
+
+/* 旅行日记 */
+.diary{
+  margin-top:30px;
+  background:linear-gradient(180deg,#fffdf8 0%,#fff9ef 100%);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
   position:relative;overflow:hidden
 }
-.illus:after{
-  content:'';position:absolute;right:-40px;top:-40px;
-  width:160px;height:160px;border-radius:50%;
-  background:rgba(255,255,255,.07)   /* 稍微降低光晕不透明度 */
+.diary:before{
+  content:'';position:absolute;left:36px;top:0;bottom:0;width:1px;
+  background:repeating-linear-gradient(180deg,var(--paper-shadow) 0,var(--paper-shadow) 8px,transparent 8px,transparent 16px)
 }
-.quote{font-size:21px;line-height:1.85;color:#fff5e8;margin:0;max-width:33em;position:relative;z-index:1}
-.badge{
-  display:inline-block;margin-top:12px;
-  background:rgba(0,0,0,.22);color:#ffe0c0;
-  border:1px solid rgba(255,210,160,.30);
-  padding:4px 10px;border-radius:999px;font-size:12px;position:relative;z-index:1
+.diary-header{
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;z-index:1
+}
+.avatar{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#ffe0bd 0%,#ffcdb0 100%);
+  border:2px solid #fff;box-shadow:2px 3px 8px rgba(0,0,0,.12);
+  position:relative;overflow:hidden
+}
+.avatar:before{
+  content:'';position:absolute;top:8px;left:14px;width:28px;height:28px;border-radius:50%;
+  background:#5c4033
+}
+.avatar:after{
+  content:'';position:absolute;top:20px;left:10px;width:36px;height:24px;border-radius:50% 50% 40% 40%;
+  background:#5c4033
+}
+.avatar-hair{
+  position:absolute;top:4px;left:12px;width:32px;height:18px;border-radius:50% 50% 0 0;background:#3e2b22
+}
+.avatar-face{
+  position:absolute;top:24px;left:18px;width:20px;height:14px;border-radius:0 0 50% 50%;
+  background:#ffe0bd;z-index:2
+}
+.avatar-face:before,.avatar-face:after{
+  content:'';position:absolute;top:6px;width:3px;height:3px;border-radius:50%;background:#3a3a3a
+}
+.avatar-face:before{left:4px}.avatar-face:after{right:4px}
+.avatar-mouth{
+  position:absolute;top:10px;left:7px;width:6px;height:3px;border-radius:0 0 50% 50%;
+  border-bottom:2px solid #c45a5a;border-left:2px solid transparent;border-right:2px solid transparent
+}
+.diary-title{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:22px;color:var(--accent);margin:0}
+.diary-date{font-size:13px;color:var(--ink-light);margin-top:2px}
+.diary-body{
+  position:relative;z-index:1;padding-left:70px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:17.5px;line-height:1.95;color:var(--ink)
+}
+@media (max-width:720px){.diary-body{padding-left:0;padding-top:12px}}
+
+/* 导览手记 */
+.guide-notes{
+  margin-top:30px;
+  background:#fffdf5;
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
+  position:relative;
+  background-image:
+    linear-gradient(90deg, transparent 39px, rgba(138,44,59,.18) 39px, rgba(138,44,59,.18) 41px, transparent 41px),
+    linear-gradient(var(--paper-shadow) 1px, transparent 1px);
+  background-size:100% 32px;
+  background-position:0 0
+}
+.guide-notes h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-meta{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-bottom:16px
+}
+@media (max-width:720px){.guide-meta{grid-template-columns:1fr}}
+.guide-meta .row{font-size:15px;color:var(--ink-light)}
+.guide-meta .row strong{color:var(--ink);display:inline-block;min-width:5em}
+.guide-slogan{
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:18px;color:var(--accent);
+  margin:12px 0 16px;padding:10px 14px;background:rgba(255,255,255,.6);
+  border:1px dashed var(--paper-shadow);border-radius:6px;display:inline-block
+}
+.guide-list{padding-left:1.3em;margin:0}
+.guide-list li{margin:8px 0;font-size:16px;line-height:1.7}
+.circle-pick{
+  display:inline-block;padding:2px 10px;border-radius:999px;
+  background:var(--highlight);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:14px;
+  color:var(--ink);margin:12px 6px 0 0
+}
+.circle-pick.red{background:var(--accent);color:#fff}
+
+/* 涂鸦 */
+.doodle{position:absolute;pointer-events:none}
+.doodle-barrel{right:32px;top:28px;width:40px;height:48px;opacity:.75}
+.doodle-tile{right:86px;bottom:34px;width:44px;height:44px;opacity:.65}
+.doodle-bridge{left:28px;bottom:22px;width:50px;height:34px;opacity:.55}
+
+/* 宝丽来照片 */
+.polaroid-strip{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:30px
+}
+.polaroid{
+  position:relative;
+  background:#fff;padding:10px 10px 34px 10px;border:1px solid var(--paper-shadow);
+  box-shadow:4px 8px 20px rgba(70,55,35,.18);transform:rotate(-3deg);
+  width:min(46%,320px);min-width:200px;
+  transition:transform .2s ease, z-index .2s ease
+}
+.polaroid:hover{transform:rotate(0deg) scale(1.03);z-index:10}
+.polaroid:nth-child(1){transform:rotate(-4deg);margin-right:-35px;z-index:1}
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:20px;z-index:2}
+.polaroid:nth-child(3){transform:rotate(-3deg);margin-left:-35px;z-index:3}
+.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#f0ede6;border:1px solid rgba(0,0,0,.06);cursor:zoom-in}
+.polaroid figcaption{
+  text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:13px;color:var(--ink-light);margin-top:8px
 }
 
-.reading{max-width:960px;margin:10px auto 0;background:transparent;border:0;padding:2px 2px}
-.reading .line{color:#ede0c8}
-.overview-list{display:grid;gap:14px}
-.card-intro{margin:12px 0 0;color:#e8d8b8;line-height:1.85;font-size:16px}
-
-/* 城市标题：英文从冷蓝换为暖沙色 */
-.city-title{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
-.city-title .cn{font-weight:700}
-.city-title .en{font-size:.8em;color:#d4b896;letter-spacing:.04em}
-/* 国家徽章：从蓝调改为琥珀暖调 */
-.city-title .country{
-  font-size:.52em;color:#ffd48a;
-  background:rgba(255,200,100,.12);
-  border:1px solid rgba(255,200,100,.24);
-  padding:4px 10px;border-radius:999px
-}
-.city-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-/* 随机数标签保留琥珀色，稍微提亮 */
-.city-meta .random-pill{
-  font-size:12px;padding:4px 10px;border-radius:999px;
-  background:rgba(255,196,100,.14);color:#ffd98a;
-  border:1px solid rgba(255,196,100,.26)
-}
-
-/* narrative 叙述区：暖紫调 */
-.narrative{
-  margin-top:16px;padding:16px 18px;border-radius:16px;
-  background:rgba(30,15,35,.32);
-  border:1px solid rgba(255,180,120,.10)
-}
-.narrative h3{margin-top:0}
-.narrative p{margin:12px 0;line-height:1.95;color:#ede0c8;font-size:17px}
-
-/* 指南区：从深蓝改为深紫暖调 */
+/* 游玩指南 */
 .guide{
-  max-width:960px;margin:16px auto 6px;
-  background:rgba(28,18,40,.55);
-  border:1px solid rgba(255,180,120,.16);
-  border-radius:16px;padding:16px
+  margin-top:32px;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px;
+  box-shadow:3px 6px 18px rgba(70,55,35,.10)
 }
-.guide h3{margin-top:0}
-.guide-intro{margin:8px 0 14px;color:#e8d8b8;line-height:1.9;font-size:16px}
-.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-/* 指南格子：从蓝调改为暖紫深色 */
+.guide h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
 .guide-item{
-  padding:14px;border-radius:14px;
-  background:rgba(40,24,55,.75);
-  border:1px solid rgba(200,160,240,.12)
+  background:#fffef8;border:1px solid var(--paper-shadow);border-radius:8px;
+  padding:14px;box-shadow:2px 3px 8px rgba(0,0,0,.05)
 }
-.guide-item strong{display:block;margin-bottom:6px;font-size:15px;color:#f5eedc}
-.guide-item span{display:block;line-height:1.8;color:#ddd0bb;font-size:15px}
+.guide-item strong{display:block;margin-bottom:6px;font-size:15px;color:var(--accent);font-family:"Bradley Hand","Comic Sans MS",cursive}
+.guide-item span{display:block;line-height:1.7;color:var(--ink);font-size:15px}
+@media (max-width:720px){.guide-grid{grid-template-columns:1fr}}
 
-/* 图片网格 */
-.grid{max-width:960px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px auto 0}
-.figure-card{margin:0;padding:0}
-.figure-card button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
-.grid img{
-  width:100%;height:260px;object-fit:cover;
-  border-radius:14px;
-  border:1px solid rgba(255,200,150,.10);
-  box-shadow:0 6px 18px rgba(0,0,0,.22); /* 简化 shadow */
-  transition:transform .22s ease,box-shadow .22s ease
-}
-.figure-card button:hover img{transform:translateY(-2px) scale(1.01);box-shadow:0 12px 24px rgba(0,0,0,.28)}
-.figure-card figcaption{margin-top:8px}
-
-/* 分页区：从冷蓝改为暖紫深色 */
+/* 分页 */
 .pagination-shell{
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;
-  margin-top:22px;padding:14px 16px;border-radius:16px;
-  background:rgba(22,14,32,.72);
-  border:1px solid rgba(255,180,120,.12)
+  margin-top:30px;padding:14px 16px;border-radius:8px;
+  background:rgba(255,255,255,.55);border:1px dashed var(--paper-shadow)
 }
-.pagination-info{color:#ddd0bb;font-size:14px}
+.pagination-info{color:var(--ink-light);font-size:14px}
 .pagination-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-/* 分页按钮：从蓝调改为暖紫调 */
 .page-btn,.page-select{
-  border:1px solid rgba(200,140,255,.22);
-  background:#2d1e42;color:#f0e4cc;
-  border-radius:10px;padding:8px 12px;font-size:14px
+  border:1px solid var(--paper-shadow);background:#fff;color:var(--ink);
+  border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer;text-decoration:none
 }
 .page-btn[disabled]{opacity:.45;cursor:not-allowed}
-/* 激活按钮：用珊瑚橙渐变替代蓝色 */
-.page-btn.is-active{
-  background:linear-gradient(135deg,#c2523a,#e07a40);
-  border-color:#d96040;color:#fff
-}
-.page-btn:not([disabled]){cursor:pointer}
-.page-jump{display:flex;align-items:center;gap:8px;color:#d4b896;font-size:14px}
-.hero-note{margin-top:8px;max-width:760px}
-.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:6px}
+.page-btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.page-jump{display:flex;align-items:center;gap:8px;color:var(--ink-light);font-size:14px}
 
-/* 模态框：稍微提亮背景遮罩（不要太死黑） */
-.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(8,4,14,.90);padding:24px}
+/* 模态框 */
+.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(60,50,40,.85);padding:24px}
 .modal.is-open{display:flex;justify-content:center;align-items:center}
-.modal-dialog{position:relative;max-width:min(1120px,96vw);max-height:92vh}
-.modal-image{display:block;max-width:100%;max-height:78vh;object-fit:contain;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
-.modal-caption{margin-top:12px;color:#f5eedc;line-height:1.8;font-size:15px;text-align:center}
+.modal-dialog{position:relative;max-width:min(920px,96vw);max-height:92vh;background:var(--paper);padding:12px;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-image{display:block;max-width:100%;max-height:74vh;object-fit:contain;border:1px solid rgba(0,0,0,.08)}
+.modal-caption{margin-top:12px;color:var(--ink-light);line-height:1.7;font-size:15px;text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive}
 .modal-close{
-  position:absolute;top:-14px;right:-14px;
-  width:42px;height:42px;border-radius:999px;
-  border:1px solid rgba(255,220,180,.22);
-  background:rgba(30,14,40,.92);
-  color:#f5eedc;font-size:24px;cursor:pointer
+  position:absolute;top:-18px;right:-18px;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--paper-shadow);background:#fff;
+  color:var(--ink);font-size:24px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2)
 }
 .hidden{display:none !important}
 
-@media (max-width:900px){
-  .grid,.guide-grid{grid-template-columns:1fr}
-  .title{font-size:26px}
-  .line,.narrative p{font-size:17px}
-  .story{padding:14px}
+@media (max-width:720px){
+  .wrap{padding:20px 12px 50px}
+  .postcard-header{padding:18px 16px 14px;transform:none}
+  .stamp{position:static;margin:0 0 12px auto;width:64px;height:82px}
+  .city-title .cn{font-size:26px}
+  .city-title .en{font-size:15px}
+  .hero-card{padding:8px 8px 36px 8px;transform:none}
+  .hero-caption{font-size:14px}
+  .mood-note{font-size:16px;padding:10px 14px}
+  .paper-note{padding:16px 18px;transform:none !important}
+  .paper-note h3{font-size:18px}
+  .paper-note p,.paper-note li{font-size:15px}
+  .diary{padding:18px 16px 20px}
+  .diary:before{display:none}
+  .diary-header{gap:12px}
+  .diary-body{font-size:16px}
+  .guide-notes{padding:18px 16px;background-image:none}
+  .guide{padding:18px 16px}
+  .polaroid{width:80%;min-width:220px;margin:0 0 18px !important;transform:rotate(-1deg) !important}
+  .polaroid:nth-child(1){margin-right:0 !important}
+  .polaroid:nth-child(2){margin-top:0 !important}
+  .polaroid:nth-child(3){margin-left:0 !important}
   .pagination-shell{align-items:flex-start}
-  .city-title{flex-direction:column;gap:6px;align-items:flex-start}
-  .grid img{height:240px}
 }
 </style></head>
 <body><main class='wrap'>
   <p><a class='back-link' href='../world.html'>← 返回总览</a></p>
-  <article class='card'>
+
+  <article class='postcard-header'>
+    <div class='stamp' aria-hidden='true'>
+      <div class='stamp-flag'><div class='g'></div><div class='r'></div></div>
+      <span class='stamp-text'>Portugal</span>
+    </div>
     <div class='city-meta'>
       <div class='date'>2026-03-14</div>
       <span class='random-pill'>随机数 153</span>
+      <span class='country-badge'><span class='flag-dot'></span>葡萄牙 Portugal</span>
     </div>
-    <h1 class='title'><span class='city-title'><span class='country'>葡萄牙</span><span class='cn'>波尔图</span><span class='en'>Porto</span></span></h1>
-    <p class='tag'>World-1000</p>
-    <section class='story' style="background:linear-gradient(180deg,#1b3550 0%,#1f3f5e 100%)">
-      <div class='illus' style="background:linear-gradient(135deg,#2b5a87,#3b78aa)">
-        <p class='quote'>🌍 “河岸山城，慢节奏但故事感很强。”</p>
-        <span class='badge'>一句话城市插画感</span>
-      </div>
-      <section class='narrative'><h3>导游开场白</h3><p>波尔图这座城，最讨人喜欢的地方，是它不会急着证明自己。你走进去，先看见的是街道、建筑、河岸或广场；再走一会儿，才慢慢意识到，原来Porto的气质早就藏在这些细枝末节里。</p><p>我很喜欢把这样的城市讲成一段陪伴式的散步，而不是任务清单。你也许会因为一个著名景点走来，但真正想带你记住的，是从那个景点离开以后，波尔图还在继续发生的生活感。</p></section>
-      <section class='reading'>
-        <h3>历史一瞥</h3><p class='line'>如果你第一次来，我会先把时间拨慢一点：波尔图沿杜罗河发展，老城与酒文化共同塑造了城市气质。别急着记年份，先记住这座城是怎么把旧时光留在街面上的。在波尔图，这不是标准答案式的介绍，更像我想拉着你边走边讲的一段路。</p><h3>值得参观</h3><p class='line'>真要带你走，我不会把它安排成赶路清单，而是会这样展开：路易一世大桥、里贝拉老城、圣本托车站是首刷必去。这些地方之所以值得去，不只是因为出名，而是它们真的能把城市性格讲明白。在波尔图，这不是标准答案式的介绍，更像我想拉着你边走边讲的一段路。</p><h3>建筑与风景</h3><p class='line'>这座城最迷人的地方，往往在抬头和转身之间：橙色屋顶、蓝白瓷砖和河面反光让城市画面感很强。你会发现它的美不是孤零零一个地标，而是整座城一起配合出来的。在波尔图，这不是标准答案式的介绍，更像我想拉着你边走边讲的一段路。</p><h3>有趣见闻</h3><p class='line'>等你不再盯着地图的时候，真正有意思的细节才会冒出来：很多人来拍景，最后却被慢生活治愈。旅行里最难忘的，常常就是这种不在攻略首页上的瞬间。在波尔图，这不是标准答案式的介绍，更像我想拉着你边走边讲的一段路。</p>
-        <h3>今日重点提示</h3>
-        <p class='line'>关键词：历史、晚风和酒香。</p>
-      </section>
-      <section class='guide'><h3>游玩指南</h3><p class='guide-intro'>如果把波尔图交给我来带，我会把它走成一种有呼吸感的节奏。不拼命塞景点，也不故作深沉，就尽量把好看的、好吃的、舒服的和需要提前避开的，都在真正用得上的位置告诉你。</p><div class='guide-grid'><div class='guide-item'><strong>最佳季节</strong><span>四季都能去，但春秋最舒服，走路也最有耐心。</span></div><div class='guide-item'><strong>建议天数</strong><span>给它 3 天，能看见地标，也能留出一段属于自己的闲逛。</span></div><div class='guide-item'><strong>经典路线</strong><span>第一天看核心地标，第二天进街区和馆舍，第三天留给回头路与临时心动。</span></div><div class='guide-item'><strong>交通建议</strong><span>进城先靠轨道交通，市内尽量多步行，城市会因此多给你一点表情。</span></div><div class='guide-item'><strong>预算参考</strong><span>按舒服但不过分铺张的节奏准备，会更从容。</span></div><div class='guide-item'><strong>避坑提醒</strong><span>热门点位先预约，营业时间提前看，别把好心情浪费在排队上。</span></div><div class='guide-item'><strong>必吃清单</strong><span>别只盯着榜单，去本地人排队但不喧哗的小店，往往更真。</span></div><div class='guide-item'><strong>拍照点位</strong><span>别怕留白，等光线、等转角、等一个人刚好走进画面。</span></div></div></section>
-      <section class='grid'>
-            <figure class='figure-card'>
-              <button type='button' data-lightbox-trigger data-image-src='../assets/world/2026-03-14-porto/01-dom-luis-bridge.jpg' data-image-caption='路易一世大桥与杜罗河景' aria-label='放大查看图片 1'>
-                <img src='../assets/world/2026-03-14-porto/01-dom-luis-bridge.jpg' alt='路易一世大桥与杜罗河景'>
-              </button>
-              <figcaption class='sub'>路易一世大桥与杜罗河景</figcaption>
-            </figure>
-            
-            <figure class='figure-card'>
-              <button type='button' data-lightbox-trigger data-image-src='../assets/world/2026-03-14-porto/02-ribeira-old-town.jpg' data-image-caption='里贝拉老城与彩色立面' aria-label='放大查看图片 2'>
-                <img src='../assets/world/2026-03-14-porto/02-ribeira-old-town.jpg' alt='里贝拉老城与彩色立面'>
-              </button>
-              <figcaption class='sub'>里贝拉老城与彩色立面</figcaption>
-            </figure>
-            
-            <figure class='figure-card'>
-              <button type='button' data-lightbox-trigger data-image-src='../assets/world/2026-03-14-porto/03-sao-bento-station.jpg' data-image-caption='圣本托车站瓷砖壁画' aria-label='放大查看图片 3'>
-                <img src='../assets/world/2026-03-14-porto/03-sao-bento-station.jpg' alt='圣本托车站瓷砖壁画'>
-              </button>
-              <figcaption class='sub'>圣本托车站瓷砖壁画</figcaption>
-            </figure>
-            </section>
-    </section>
+    <h1 class='city-title'><span class='cn'>波尔图</span><span class='en'>Porto</span></h1>
+    <div class='postcard-line'></div>
+    <p class='sub' style='margin:0;color:var(--ink-light);font-size:15px'>World-1000 · 杜罗河畔的一页慢生活</p>
   </article>
+
+  <section class='hero-card' style='transform:rotate(-.4deg);margin-top:24px'>
+    <div class='map-wrapper'>
+      <img src='../assets/world/2026-03-14-porto/04-alice-guide-map.png' alt='Porto guide map' data-lightbox data-caption="Alice's Porto Guide Map">
+    </div>
+    <span class='hero-caption'>Alice's Porto Adventure · 导游手记</span>
+  </section>
+
+  <p class='mood-note'>河岸山城，慢节奏但故事感很强。</p>
+
+  <div class='journal-grid'>
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📜</span>历史一瞥</h3>
+      <p>公元前已有凯尔特人定居，罗马人在此建港，中世纪因港口贸易繁荣。18 世纪波特酒贸易让英国酒商大量涌入，老城沿杜罗河生长成今天的模样。1996 年里贝拉被联合国教科文组织列为世界文化遗产。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📍</span>值得参观</h3>
+      <ul>
+        <li><strong>路易一世大桥</strong>：双层铁桥，Eiffel 学生设计，上层走地铁、下层走汽车。</li>
+        <li><strong>里贝拉老城</strong>：彩色立面沿石阶而下，直到河边。</li>
+        <li><strong>圣本托车站</strong>：2 万多块蓝白 azulejo 瓷砖拼出葡萄牙历史与田园风光。</li>
+        <li><strong>莱罗书店</strong>：新哥特式旋转楼梯， reportedly 启发了《哈利·波特》。</li>
+        <li><strong>教士塔</strong>：爬 225 级台阶，俯瞰满城橙色屋顶。</li>
+      </ul>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>🏠</span>建筑与风景</h3>
+      <p>波尔图的颜色来自橙色屋顶、蓝白瓷砖和杜罗河水的反光。老城不是平的，街道像台阶一样上下交错，转角常藏着一面瓷砖墙或一家小酒馆。</p>
+      <p>傍晚坐在河边，看桥上的灯一盏盏亮起来，水面把颜色揉碎成金色波纹。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>💡</span>有趣见闻</h3>
+      <p>Port 葡萄酒其实以城市命名，而非相反。酒窖在河对岸的加亚新城，英国人把这里变成甜酒贸易中心。</p>
+      <p>本地三明治 Francesinha 层层堆叠肉、香肠和奶酪，浇上啤酒番茄酱，号称“小女孩”却极扎实。</p>
+    </section>
+  </div>
+
+  <section class='diary'>
+    <div class='diary-header'>
+      <div class='avatar' aria-hidden='true'><div class='avatar-hair'></div><div class='avatar-face'><div class='avatar-mouth'></div></div></div>
+      <div>
+        <h2 class='diary-title'>Alice 的旅行日记</h2>
+        <div class='diary-date'>2026.03.14 · 波尔图</div>
+      </div>
+    </div>
+    <div class='diary-body'>
+      <p>今天波尔图的阳光是温的，不像南欧其他城市那样急着把人晒透。我坐在杜罗河边的石墙上，腿悬空晃着，看河水把两岸的橙色屋顶一一倒映过去。对岸的酒窖飘来淡淡的橡木桶气味，混着河边咖啡香。</p>
+      <p>一位卖艺人拉起手风琴，旋律顺着石阶往下滚。我没听懂歌词，但几个当地人跟着哼，其中一位老爷爷还端起咖啡杯向我举了举。我笑着回敬，像他一样慢慢喝。</p>
+      <p>傍晚爬教士塔时，风把头发吹到脑后。满城屋顶在夕阳里变成蜜糖色，大桥的轮廓像一条生锈的项链横在河上。我翻开地图，用笔把今天去过的地方圈了出来。波尔图不用赶，它自己会把故事讲给你听。</p>
+    </div>
+  </section>
+
+  <section class='guide-notes'>
+    <h3><span class='section-icon'>📝</span>导览手记</h3>
+    <div class='guide-meta'>
+      <div class='row'><strong>景区</strong>波尔图 Porto</div>
+      <div class='row'><strong>位置</strong>葡萄牙 · 杜罗河入海口</div>
+      <div class='row'><strong>季节</strong>4 月—6 月 / 9 月—10 月</div>
+      <div class='row'><strong>关键词</strong>杜罗河、波特酒、老城墙、慢生活</div>
+    </div>
+    <p class='guide-slogan'>在波尔图，最好的行程就是不要排得太满。</p>
+    <ol class='guide-list'>
+      <li><strong>杜罗河日落：</strong>傍晚在里贝拉或加亚新城河岸找一处石阶坐下。</li>
+      <li><strong>瓷砖之路：</strong>圣本托车站、圣伊尔德丰索教堂，蓝白 azulejo 是城市底色。</li>
+      <li><strong>波特酒窖：</strong>过河参加酒窖 tour，带一杯 Ruby 或 Tawny 到露台喝。</li>
+    </ol>
+    <div>
+      <span class='circle-pick red'>推荐：波特酒品鉴</span>
+      <span class='circle-pick red'>推荐：莱罗书店</span>
+      <span class='circle-pick'>穿舒服的鞋</span>
+    </div>
+
+    <svg class='doodle doodle-barrel' viewBox='0 0 40 48' aria-hidden='true'><rect x='6' y='8' width='28' height='32' rx='4' fill='#8a2c3b'/><rect x='6' y='14' width='28' height='4' fill='#6a202c'/><rect x='6' y='30' width='28' height='4' fill='#6a202c'/><circle cx='20' cy='14' r='5' fill='#f7f2e6'/><path d='M20 11 L20 17 M17 14 L23 14' stroke='#8a2c3b' stroke-width='2'/></svg>
+    <svg class='doodle doodle-tile' viewBox='0 0 44 44' aria-hidden='true'><rect x='2' y='2' width='40' height='40' rx='2' fill='#4a7c9b' stroke='#3a3a3a' stroke-width='1'/><circle cx='22' cy='16' r='8' fill='#f7f2e6'/><path d='M10 30 Q22 22 34 30' fill='none' stroke='#f7f2e6' stroke-width='2'/></svg>
+    <svg class='doodle doodle-bridge' viewBox='0 0 50 34' aria-hidden='true'><path d='M2 32 L48 32' stroke='#3a3a3a' stroke-width='2' fill='none'/><path d='M5 32 Q25 2 45 32' fill='none' stroke='#8a2c3b' stroke-width='3'/><line x1='25' y1='8' x2='25' y2='32' stroke='#3a3a3a' stroke-width='2'/></svg>
+  </section>
+
+  <div class='polaroid-strip'>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-03-14-porto/01-dom-luis-bridge.jpg' alt='路易一世大桥' data-lightbox data-caption='路易一世大桥 Dom Luís I Bridge'>
+      <figcaption>路易一世大桥 Dom Luís I Bridge</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-03-14-porto/02-ribeira-old-town.jpg' alt='里贝拉老城' data-lightbox data-caption='里贝拉老城 Ribeira Old Town'>
+      <figcaption>里贝拉老城 Ribeira Old Town</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-03-14-porto/03-sao-bento-station.jpg' alt='圣本托车站' data-lightbox data-caption='圣本托车站 São Bento Station'>
+      <figcaption>圣本托车站 São Bento Station</figcaption>
+    </figure>
+  </div>
+
+  <section class='guide'>
+    <h3><span class='section-icon'>🎒</span>游玩指南</h3>
+    <div class='guide-grid'>
+      <div class='guide-item'><strong>最佳季节</strong><span>春末和初秋最舒服，4 月—6 月、9 月—10 月，光线柔和、游客适中。</span></div>
+      <div class='guide-item'><strong>建议天数</strong><span>市区 2 天足够，加一天去杜罗河谷酒庄，节奏会更从容。</span></div>
+      <div class='guide-item'><strong>交通</strong><span>从里斯本乘 Alfa Pendular 约 2 小时 50 分；市区坡多，建议穿舒适鞋，多步行。</span></div>
+      <div class='guide-item'><strong>必吃</strong><span>Francesinha、烤鳕鱼、Pastel de Nata 蛋挞，配一杯波特酒。</span></div>
+      <div class='guide-item'><strong>预算</strong><span>餐厅人均 15–30 欧元；酒窖 tour 约 15–25 欧元；书店门票约 5 欧元。</span></div>
+      <div class='guide-item'><strong>避坑</strong><span>莱罗书店需提前订票；老城坡陡，雨天石阶滑；夏天中午烈日照桥面无遮挡。</span></div>
+    </div>
+  </section>
+
+  <div class='pagination-shell'>
+    <div class='pagination-info'>世界那么大，我想去看看</div>
+    <div class='pagination-controls'>
+      <a class='page-btn' href='2026-03-13-valletta.html'>← 上一页</a>
+      <a class='page-btn is-active' href='2026-03-14-porto.html'>1</a>
+      <a class='page-btn' href='2026-03-15-edinburgh.html'>下一页 →</a>
+    </div>
+  </div>
 </main>
+
 <div id='imageModal' class='modal' aria-hidden='true'>
   <div class='modal-dialog'>
     <button type='button' id='modalClose' class='modal-close' aria-label='关闭'>×</button>
@@ -272,25 +535,20 @@ a:hover{text-decoration:underline;color:var(--accent)}
     document.body.classList.remove('modal-open');
   }
 
-  document.querySelectorAll('[data-lightbox-trigger]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      openModal(button.getAttribute('data-image-src'), button.getAttribute('data-image-caption'));
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function () {
+      openModal(el.src, el.getAttribute('data-caption'));
     });
   });
 
   modalClose.addEventListener('click', closeModal);
   modal.addEventListener('click', function (event) {
-    if (!dialog.contains(event.target)) {
-      closeModal();
-    }
+    if (!dialog.contains(event.target)) closeModal();
   });
-  dialog.addEventListener('click', function (event) {
-    event.stopPropagation();
-  });
+  dialog.addEventListener('click', function (event) { event.stopPropagation(); });
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
+    if (event.key === 'Escape') closeModal();
   });
 })();
 </script>
