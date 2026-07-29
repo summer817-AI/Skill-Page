@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-07-08",
+  "updated_at": "2026-07-29",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -385,6 +385,12 @@
       "url": "https://github.com/op7418/guizang-material-illustration",
       "author": "op7418",
       "trust_note": "归藏材质插画 skill；根目录包含 SKILL.md、README、PRODUCT、HANDOFF、agents/openai.yaml、assets/prompt-template.md 和完整 references 检查清单。"
+    },
+    {
+      "name": "joeseesun/qiaomu-goal-meta-skill",
+      "url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+      "author": "joeseesun",
+      "trust_note": "已审查 SKILL.md、README、MIT LICENSE、references、agents/interface.yaml 与本地 goal linter；linter 只读取传入文本，不联网或写入系统目录。"
     }
   ],
   "agent_entrypoints": {
@@ -3318,6 +3324,112 @@
         "claude_code_or_claw": [
           "请使用 guizang-material-illustration 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the guizang-material-illustration skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "leader",
+      "name": "leader",
+      "category": [
+        "dev",
+        "product"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/khazix-skills",
+      "source_path": "leader/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/khazix-skills/tree/main/leader",
+      "topic_tag": "任务书",
+      "summary": "把一句模糊想法拆成可由 agent 独立执行的任务书，先调研，再写清边界、验收、防作弊和断点续跑。",
+      "use_when": [
+        "要把复杂项目、现有仓库改造或多步骤需求交给 agent 持续执行。",
+        "需要先核对真实命令和基线，再定义白名单、验收方式或多 agent 分工。"
+      ],
+      "inputs_outputs": [
+        "输入：目标想法、项目上下文、已知约束和必要的取舍偏好。",
+        "输出：一份可直接粘贴到 /goal 的任务书，包含任务分型、实测前提、边界、验收和暂停机制。"
+      ],
+      "limitations": [
+        "它生成任务书，不替代执行；任务书中的命令、基线数字和仓库事实仍应先实际核对。",
+        "单条任务书要求控制在 /goal 可承载的字符范围内；范围过大时应拆成独立目标，而不是硬塞进一条指令。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\khazix-skills\\leader \"$env:USERPROFILE\\.codex\\skills\\leader\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/khazix-skills.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R khazix-skills/leader ~/.codex/skills/leader"
+        ]
+      },
+      "example_prompt": "请用 leader 把“为现有项目补齐移动端登录页并完成可复现验收”拆成一份可直接交给执行 agent 的任务书。",
+      "page_url": "https://summerai.cc/skills/#leader",
+      "invocation": {
+        "codex": [
+          "请使用 leader 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$leader <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 leader 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the leader skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "qiaomu-goal-meta-skill",
+      "name": "qiaomu-goal-meta-skill",
+      "category": [
+        "dev",
+        "product"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "joeseesun",
+        "github_url": "https://github.com/joeseesun",
+        "avatar_url": "https://github.com/joeseesun.png"
+      },
+      "source_repository": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+      "topic_tag": "目标指令",
+      "summary": "把模糊或复杂任务收敛成可直接复制的 /goal，补齐验证、约束、写入边界、迭代、完成和暂停条件。",
+      "use_when": [
+        "想快速把“做个 App”“修一下问题”等模糊需求写成清晰、可验证的 Codex /goal。",
+        "需要给中文用户一份保守默认的推荐执行版，并同时保留英文兼容镜像或少量可选调整。"
+      ],
+      "inputs_outputs": [
+        "输入：自然语言需求、已知项目上下文、风险边界和想要的交付结果。",
+        "输出：可直接复制的 /goal，包含验证、约束、边界、迭代策略、完成条件与暂停条件。"
+      ],
+      "limitations": [
+        "它只生成目标指令，不会默认执行目标本身；要执行仍需用户明确发起后续任务。",
+        "未知仓库命令或专业领域规则时应先做发现，不应把模型猜测写成验收事实；可选 linter 需 Python。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx skills add joeseesun/qiaomu-goal-meta-skill"
+        ],
+        "macos_linux": [
+          "npx skills add joeseesun/qiaomu-goal-meta-skill"
+        ]
+      },
+      "example_prompt": "请用 qiaomu-goal-meta-skill 把“优化现有后台首页的首屏信息层级”写成一条带验证和暂停条件的 Codex /goal。",
+      "page_url": "https://summerai.cc/skills/#qiaomu-goal-meta-skill",
+      "invocation": {
+        "codex": [
+          "请使用 qiaomu-goal-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$qiaomu-goal-meta-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 qiaomu-goal-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the qiaomu-goal-meta-skill skill to handle: <your task here>"
         ]
       }
     }

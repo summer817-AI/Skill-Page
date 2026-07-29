@@ -339,6 +339,18 @@
       "position": 54,
       "name": "guizang-material-illustration",
       "url": "https://summerai.cc/skills/#guizang-material-illustration"
+    },
+    {
+      "@type": "ListItem",
+      "position": 55,
+      "name": "leader",
+      "url": "https://summerai.cc/skills/#leader"
+    },
+    {
+      "@type": "ListItem",
+      "position": 56,
+      "name": "qiaomu-goal-meta-skill",
+      "url": "https://summerai.cc/skills/#qiaomu-goal-meta-skill"
     }
   ]
 }
@@ -352,7 +364,7 @@
 <body>
   <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
   <main class="shell">
-    <section class="source-strip"><p>当前收录 <strong>54</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
+    <section class="source-strip"><p>当前收录 <strong>56</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
     <section class="intro">
       <div class="intro-copy"><h1>好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里滚动收录经过人工筛选的实用 skill 来源：包括 GitHub 仓库、官方文档和可信候选。每个条目都保留来源、适用场景、限制和安装命令。</p></div>
       <aside class="agent-box"><h2>Agent 读取入口</h2><p>优先读取结构化数据，再进入页面查看完整说明。</p><div class="agent-actions"><a class="data-link" href="../skills.json">skills.json</a><a class="data-link" href="../llms.txt">llms.txt</a></div></aside>
@@ -1244,12 +1256,40 @@ python -m playwright install chromium</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 guizang-material-illustration 把这段产品说明做成一张带中文标签的机制图，主体要适合放进公众号卡片中间。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/op7418/guizang-material-illustration" target="_blank" rel="noopener noreferrer" data-author="op7418" data-skill-id="guizang-material-illustration" data-source-url="https://github.com/op7418/guizang-material-illustration">https://github.com/op7418/guizang-material-illustration</a></p></div>
       </article>
+      <article class="skill-card" id="leader" data-category="dev product" data-author="KKKKhazix" data-text="leader 把一句模糊想法拆成可由 agent 独立执行的任务书，先调研，再写清边界、验收、防作弊和断点续跑。 kkkkhazix https://github.com/kkkkhazix/khazix-skills/tree/main/leader dev product 任务书">
+        <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>leader</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">任务书</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">把一句模糊想法拆成可由 agent 独立执行的任务书，先调研，再写清边界、验收、防作弊和断点续跑。</p>
+        <div><p class="section-title">适合场景</p><ul><li>要把复杂项目、现有仓库改造或多步骤需求交给 agent 持续执行。</li><li>需要先核对真实命令和基线，再定义白名单、验收方式或多 agent 分工。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：目标想法、项目上下文、已知约束和必要的取舍偏好。</li><li>输出：一份可直接粘贴到 /goal 的任务书，包含任务分型、实测前提、边界、验收和暂停机制。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>它生成任务书，不替代执行；任务书中的命令、基线数字和仓库事实仍应先实际核对。</li><li>单条任务书要求控制在 /goal 可承载的字符范围内；范围过大时应拆成独立目标，而不是硬塞进一条指令。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>git clone https://github.com/KKKKhazix/khazix-skills.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\khazix-skills\leader &quot;$env:USERPROFILE\.codex\skills\leader&quot;</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>git clone https://github.com/KKKKhazix/khazix-skills.git
+mkdir -p ~/.codex/skills
+cp -R khazix-skills/leader ~/.codex/skills/leader</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 leader 把“为现有项目补齐移动端登录页并完成可复现验收”拆成一份可直接交给执行 agent 的任务书。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/KKKKhazix/khazix-skills/tree/main/leader" target="_blank" rel="noopener noreferrer" data-author="KKKKhazix" data-skill-id="leader" data-source-url="https://github.com/KKKKhazix/khazix-skills/tree/main/leader">https://github.com/KKKKhazix/khazix-skills/tree/main/leader</a></p></div>
+      </article>
+      <article class="skill-card" id="qiaomu-goal-meta-skill" data-category="dev product" data-author="joeseesun" data-text="qiaomu-goal-meta-skill 把模糊或复杂任务收敛成可直接复制的 /goal，补齐验证、约束、写入边界、迭代、完成和暂停条件。 joeseesun https://github.com/joeseesun/qiaomu-goal-meta-skill dev product 目标指令">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-goal-meta-skill</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">目标指令</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">把模糊或复杂任务收敛成可直接复制的 /goal，补齐验证、约束、写入边界、迭代、完成和暂停条件。</p>
+        <div><p class="section-title">适合场景</p><ul><li>想快速把“做个 App”“修一下问题”等模糊需求写成清晰、可验证的 Codex /goal。</li><li>需要给中文用户一份保守默认的推荐执行版，并同时保留英文兼容镜像或少量可选调整。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：自然语言需求、已知项目上下文、风险边界和想要的交付结果。</li><li>输出：可直接复制的 /goal，包含验证、约束、边界、迭代策略、完成条件与暂停条件。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>它只生成目标指令，不会默认执行目标本身；要执行仍需用户明确发起后续任务。</li><li>未知仓库命令或专业领域规则时应先做发现，不应把模型猜测写成验收事实；可选 linter 需 Python。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-goal-meta-skill</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-goal-meta-skill</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-goal-meta-skill 把“优化现有后台首页的首屏信息层级”写成一条带验证和暂停条件的 Codex /goal。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/joeseesun/qiaomu-goal-meta-skill" target="_blank" rel="noopener noreferrer" data-author="joeseesun" data-skill-id="qiaomu-goal-meta-skill" data-source-url="https://github.com/joeseesun/qiaomu-goal-meta-skill">https://github.com/joeseesun/qiaomu-goal-meta-skill</a></p></div>
+      </article>
           <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>
         </section>
       </section>
     </div>
   </main>
-  <footer><div class="shell">最后更新：2026-07-08 · 共 54 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
+  <footer><div class="shell">最后更新：2026-07-29 · 共 56 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
   <script>
     const search = document.querySelector('.search');
     const cards = [...document.querySelectorAll('.skill-card')];
