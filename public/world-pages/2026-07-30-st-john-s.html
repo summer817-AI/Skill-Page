@@ -1,0 +1,569 @@
+<!doctype html><html lang='zh-CN'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>加拿大·圣约翰斯 St. John's | 世界那么大，我想去看看</title><link rel='icon' href='data:,'><style>
+:root{
+  --paper:#f7f2e6;
+  --paper-dark:#ece4d4;
+  --paper-shadow:#d9d0bf;
+  --ink:#3a3a3a;
+  --ink-light:#5c5c5c;
+  --accent:#d85c5c;
+  --accent-warm:#e07a40;
+  --highlight:#ffe08a;
+  --chile-blue:#0039a6;
+  --chile-red:#d52b1e;
+  --tape:rgba(255,255,255,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Georgia,"Noto Serif SC","PingFang SC","Microsoft YaHei",serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(210,190,160,.22) 0%, transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(180,160,140,.18) 0%, transparent 30%),
+    repeating-linear-gradient(90deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    repeating-linear-gradient(0deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    var(--paper);
+  background-attachment:fixed;
+  line-height:1.75;
+}
+body.modal-open{overflow:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 70px}
+
+/* 返回链接 */
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--ink-light);text-decoration:none;font-size:14px;
+  border-bottom:1px dashed var(--paper-shadow);padding-bottom:2px
+}
+.back-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* 明信片标题区 */
+.postcard-header{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 18px;
+  margin-top:14px;
+  box-shadow:0 10px 30px rgba(80,60,40,.12), inset 0 0 60px rgba(200,180,150,.12);
+  transform:rotate(-.6deg)
+}
+.stamp{
+  position:absolute;top:18px;right:18px;
+  width:76px;height:96px;
+  border:1px solid var(--paper-shadow);
+  background:linear-gradient(135deg,#fff 0%,#f4f0e8 100%);
+  box-shadow:2px 3px 8px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:12px;color:var(--ink-light)
+}
+.stamp:before{
+  content:'';position:absolute;inset:4px;
+  border:1px dashed var(--paper-shadow);pointer-events:none
+}
+.stamp-emoji{font-size:34px;line-height:1}
+.stamp-text{margin-top:2px;font-size:10px;letter-spacing:.04em}
+
+.postcard-line{
+  height:1px;background:repeating-linear-gradient(90deg,var(--paper-shadow) 0,var(--paper-shadow) 6px,transparent 6px,transparent 10px);
+  margin:14px 0 10px
+}
+
+.city-meta{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px
+}
+.date{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:15px;color:var(--ink-light)}
+.random-pill{
+  font-size:12px;padding:3px 10px;border-radius:999px;
+  background:var(--highlight);color:var(--ink);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive
+}
+.city-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:6px 0 4px}
+.city-title .cn{font-size:34px;font-weight:700;letter-spacing:.02em}
+.city-title .en{font-size:18px;color:var(--ink-light);font-style:italic}
+.country-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;padding:4px 10px;border-radius:999px;
+  background:#fff;border:1px solid var(--paper-shadow);
+  box-shadow:1px 2px 5px rgba(0,0,0,.06)
+}
+.flag-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,#d52b1e 0 25%,#fff 25% 75%,#d52b1e 75%)}
+
+/* 明信片主图 */
+.hero-card{
+  position:relative;
+  margin-top:24px;
+  padding:12px 12px 44px 12px;
+  background:#fff;
+  border:1px solid var(--paper-shadow);
+  box-shadow:0 14px 38px rgba(60,45,30,.14);
+  transform:rotate(.4deg)
+}
+.hero-card img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.hero-caption{
+  position:absolute;bottom:10px;left:0;right:0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:16px;color:var(--ink-light)
+}
+.ai-disclosure{
+  margin:14px auto 0;padding:9px 14px;max-width:900px;text-align:center;
+  border:1px dashed #c9bca7;background:rgba(255,255,255,.58);
+  color:var(--ink-light);font-size:13px;line-height:1.6
+}
+.diary .ai-disclosure{margin:4px 0 12px;text-align:left;background:transparent;padding:0;border:0;font-size:12px}
+/* 地图悬浮标签 */
+.map-wrapper{position:relative;width:100%}
+.map-wrapper img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.map-pin{
+  position:absolute;display:flex;align-items:center;gap:5px;
+  background:rgba(255,253,245,.94);padding:4px 9px;border-radius:999px;
+  box-shadow:1px 2px 8px rgba(70,55,35,.22);
+  font-size:12.5px;color:var(--ink);white-space:nowrap;
+  pointer-events:none;transform:translate(-50%,-50%)
+}
+.map-pin.right{transform:translate(-100%,-50%);flex-direction:row-reverse}
+.map-pin .pin-num{
+  display:flex;align-items:center;justify-content:center;
+  width:20px;height:20px;background:#c45a45;color:#fff;border-radius:50%;
+  font-size:11px;font-weight:700;flex-shrink:0
+}
+@media (max-width:720px){
+  .map-pin{font-size:10px;padding:3px 6px}
+  .map-pin .pin-num{width:16px;height:16px;font-size:9px}
+}
+.mood-note{
+  margin:24px auto 0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:18px;color:var(--accent-warm);line-height:1.85;
+  padding:12px 20px;background:rgba(255,255,255,.55);border-radius:8px;
+  border:1px dashed var(--paper-shadow)
+}
+
+/* 手账分块 */
+.journal-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px
+}
+@media (max-width:720px){.journal-grid{grid-template-columns:1fr}}
+
+.paper-note{
+  position:relative;
+  background:#fffef8;
+  border:1px solid var(--paper-shadow);
+  border-radius:3px;
+  padding:20px 22px;
+  box-shadow:3px 5px 14px rgba(70,55,35,.10);
+  transform:rotate(-.4deg)
+}
+.paper-note:nth-child(2n){transform:rotate(.5deg);background:#fffdf5}
+.paper-note .tape{
+  position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:90px;height:24px;background:var(--tape);
+  opacity:.85;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 5px rgba(0,0,0,.06)
+}
+.paper-note h3{
+  margin:0 0 12px;font-size:20px;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  color:var(--accent);font-weight:700
+}
+.paper-note p{
+  margin:0 0 10px;font-size:16px;line-height:1.8;color:var(--ink)
+}
+.paper-note ul{margin:8px 0 0;padding-left:1.2em}
+.paper-note li{margin:6px 0;font-size:15.5px;line-height:1.7}
+
+.section-icon{
+  display:inline-flex;vertical-align:middle;margin-right:6px;font-size:22px
+}
+
+/* 旅行日记 */
+.diary{
+  margin-top:30px;
+  background:linear-gradient(180deg,#fffdf8 0%,#fff9ef 100%);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
+  position:relative;overflow:hidden
+}
+.diary:before{
+  content:'';position:absolute;left:36px;top:0;bottom:0;width:1px;
+  background:repeating-linear-gradient(180deg,var(--paper-shadow) 0,var(--paper-shadow) 8px,transparent 8px,transparent 16px)
+}
+.diary-header{
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;z-index:1
+}
+.avatar{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#ffe0bd 0%,#ffcdb0 100%);
+  border:2px solid #fff;box-shadow:2px 3px 8px rgba(0,0,0,.12);
+  position:relative;overflow:hidden
+}
+.avatar:before{
+  content:'';position:absolute;top:8px;left:14px;width:28px;height:28px;border-radius:50%;
+  background:#5c4033
+}
+.avatar:after{
+  content:'';position:absolute;top:20px;left:10px;width:36px;height:24px;border-radius:50% 50% 40% 40%;
+  background:#5c4033
+}
+.avatar-hair{
+  position:absolute;top:4px;left:12px;width:32px;height:18px;border-radius:50% 50% 0 0;background:#3e2b22
+}
+.avatar-face{
+  position:absolute;top:24px;left:18px;width:20px;height:14px;border-radius:0 0 50% 50%;
+  background:#ffe0bd;z-index:2
+}
+.avatar-face:before,.avatar-face:after{
+  content:'';position:absolute;top:6px;width:3px;height:3px;border-radius:50%;background:#3a3a3a
+}
+.avatar-face:before{left:4px}.avatar-face:after{right:4px}
+.avatar-mouth{
+  position:absolute;top:10px;left:7px;width:6px;height:3px;border-radius:0 0 50% 50%;
+  border-bottom:2px solid #c45a5a;border-left:2px solid transparent;border-right:2px solid transparent
+}
+.diary-title{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:22px;color:var(--accent);margin:0}
+.diary-date{font-size:13px;color:var(--ink-light);margin-top:2px}
+.diary-body{
+  position:relative;z-index:1;padding-left:70px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:17.5px;line-height:1.95;color:var(--ink)
+}
+@media (max-width:720px){.diary-body{padding-left:0;padding-top:12px}}
+
+/* 导览手记 */
+.guide-notes{
+  margin-top:30px;
+  background:#fffdf5;
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
+  position:relative;
+  background-image:
+    linear-gradient(90deg, transparent 39px, rgba(216,92,92,.18) 39px, rgba(216,92,92,.18) 41px, transparent 41px),
+    linear-gradient(var(--paper-shadow) 1px, transparent 1px);
+  background-size:100% 32px;
+  background-position:0 0
+}
+.guide-notes h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-meta{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-bottom:16px
+}
+@media (max-width:720px){.guide-meta{grid-template-columns:1fr}}
+.guide-meta .row{font-size:15px;color:var(--ink-light)}
+.guide-meta .row strong{color:var(--ink);display:inline-block;min-width:5em}
+.guide-slogan{
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:18px;color:var(--accent);
+  margin:12px 0 16px;padding:10px 14px;background:rgba(255,255,255,.6);
+  border:1px dashed var(--paper-shadow);border-radius:6px;display:inline-block
+}
+.guide-list{padding-left:1.3em;margin:0}
+.guide-list li{margin:8px 0;font-size:16px;line-height:1.7}
+.circle-pick{
+  display:inline-block;padding:2px 10px;border-radius:999px;
+  background:var(--highlight);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:14px;
+  color:var(--ink);margin:12px 6px 0 0
+}
+.circle-pick.red{background:var(--accent);color:#fff}
+
+/* 涂鸦 */
+.doodle{position:absolute;pointer-events:none}
+.doodle-penguin{right:28px;top:22px;width:42px;height:52px;opacity:.75}
+.doodle-sail{right:86px;bottom:30px;width:48px;height:44px;opacity:.65}
+.doodle-star{left:28px;bottom:22px;width:34px;height:34px;opacity:.55}
+
+/* 宝丽来照片 */
+.polaroid-strip{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:30px
+}
+.polaroid{
+  position:relative;
+  background:#fff;padding:10px 10px 34px 10px;border:1px solid var(--paper-shadow);
+  box-shadow:4px 8px 20px rgba(70,55,35,.18);transform:rotate(-3deg);
+  width:min(46%,320px);min-width:200px;
+  transition:transform .2s ease, z-index .2s ease
+}
+.polaroid:hover{transform:rotate(0deg) scale(1.03);z-index:10}
+.polaroid:nth-child(1){transform:rotate(-4deg);margin-right:-35px;z-index:1}
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:20px;z-index:2}
+.polaroid:nth-child(3){transform:rotate(-3deg);margin-left:-35px;z-index:3}
+.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#f0ede6;border:1px solid rgba(0,0,0,.06)}
+.polaroid figcaption{
+  text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:13px;color:var(--ink-light);margin-top:8px
+}
+
+/* 游玩指南 */
+.guide{
+  margin-top:32px;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px;
+  box-shadow:3px 6px 18px rgba(70,55,35,.10)
+}
+.guide h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+.guide-item{
+  background:#fffef8;border:1px solid var(--paper-shadow);border-radius:8px;
+  padding:14px;box-shadow:2px 3px 8px rgba(0,0,0,.05)
+}
+.guide-item strong{display:block;margin-bottom:6px;font-size:15px;color:var(--accent);font-family:"Bradley Hand","Comic Sans MS",cursive}
+.guide-item span{display:block;line-height:1.7;color:var(--ink);font-size:15px}
+@media (max-width:720px){.guide-grid{grid-template-columns:1fr}}
+
+/* 分页 */
+.pagination-shell{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;
+  margin-top:30px;padding:14px 16px;border-radius:8px;
+  background:rgba(255,255,255,.55);border:1px dashed var(--paper-shadow)
+}
+.pagination-info{color:var(--ink-light);font-size:14px}
+.pagination-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.page-btn,.page-select{
+  border:1px solid var(--paper-shadow);background:#fff;color:var(--ink);
+  border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer
+}
+.page-btn[disabled]{opacity:.45;cursor:not-allowed}
+.page-btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.page-jump{display:flex;align-items:center;gap:8px;color:var(--ink-light);font-size:14px}
+
+/* 模态框 */
+.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(60,50,40,.85);padding:24px}
+.modal.is-open{display:flex;justify-content:center;align-items:center}
+.modal-dialog{position:relative;max-width:min(920px,96vw);max-height:92vh;background:var(--paper);padding:12px;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-image{display:block;max-width:100%;max-height:74vh;object-fit:contain;border:1px solid rgba(0,0,0,.08)}
+.modal-caption{margin-top:12px;color:var(--ink-light);line-height:1.7;font-size:15px;text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive}
+.modal-close{
+  position:absolute;top:-18px;right:-18px;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--paper-shadow);background:#fff;
+  color:var(--ink);font-size:24px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2)
+}
+.hidden{display:none !important}
+
+@media (max-width:720px){
+  .wrap{padding:20px 12px 50px}
+  .postcard-header{padding:18px 16px 14px;transform:none}
+  .stamp{position:static;margin:0 0 12px auto;width:64px;height:82px}
+  .city-title .cn{font-size:26px}
+  .city-title .en{font-size:15px}
+  .hero-card{padding:8px 8px 36px 8px;transform:none}
+  .hero-caption{font-size:14px}
+  .mood-note{font-size:16px;padding:10px 14px}
+  .paper-note{padding:16px 18px;transform:none !important}
+  .paper-note h3{font-size:18px}
+  .paper-note p,.paper-note li{font-size:15px}
+  .diary{padding:18px 16px 20px}
+  .diary:before{display:none}
+  .diary-header{gap:12px}
+  .diary-body{font-size:16px}
+  .guide-notes{padding:18px 16px;background-image:none}
+  .guide{padding:18px 16px}
+  .polaroid{width:80%;min-width:220px;margin:0 0 18px !important;transform:rotate(-1deg) !important}
+  .polaroid:nth-child(1){margin-right:0 !important}
+  .polaroid:nth-child(2){margin-top:0 !important}
+  .polaroid:nth-child(3){margin-left:0 !important}
+  .pagination-shell{align-items:flex-start}
+}
+</style></head>
+<body><main class='wrap'>
+  <p><a class='back-link' href='../world.html'>← 返回总览</a></p>
+
+  <article class='postcard-header'>
+    <div class='stamp' aria-hidden='true'>
+      <div class='stamp-emoji'>🇨🇦</div>
+      <span class='stamp-text'>Canada</span>
+    </div>
+    <div class='city-meta'>
+      <div class='date'>2026-07-30</div>
+      <span class='random-pill'>随机数 2338</span>
+      <span class='country-badge'><span class='flag-dot'></span>加拿大 Canada</span>
+    </div>
+    <h1 class='city-title'><span class='cn'>圣约翰斯</span><span class='en'>St. John's</span></h1>
+    <div class='postcard-line'></div>
+    <p class='sub' style='margin:0;color:var(--ink-light);font-size:15px'>World-1000 · 北大西洋港口的彩屋与信号山</p>
+  </article>
+
+  <section class='hero-card' style='transform:rotate(-.4deg);margin-top:24px'>
+    <div class='map-wrapper'>
+      <img src='../assets/world/2026-07-30-st-john-s/04-alice-guide-map.png' alt='Alice 的圣约翰斯 AI 插画导览图' data-lightbox data-caption='Alice’s St. John’s Adventure · AI illustrated guide'>
+    </div>
+    <span class='hero-caption'>Alice's St. John's Adventure · 插画导览</span>
+  </section>
+  <p class='ai-disclosure'>AI 插画导览图，仅作氛围展示；地标位置与路线请以官方地图为准。</p>
+
+  <p class='mood-note'>北大西洋从狭窄港口吹进来，Signal Hill、坡地彩屋与 Quidi Vidi 小港，把圣约翰斯的防务、通信和渔业记忆压在同一条海岸线上。</p>
+
+  <div class='journal-grid'>
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📜</span>历史一瞥</h3>
+      <p>十六世纪初，欧洲渔民已开始使用这座有遮蔽的港口；十七世纪初出现永久居民。码头、鱼栈和仓库沿港口北岸展开，连接它们的小径后来成为 Water Street。</p>
+      <p>圣约翰斯在 1816、1846 和 1892 年经历大火后重建。1901 年，马可尼在 Signal Hill 收到首个跨大西洋无线信号；今日山顶的 Cabot Tower 建于 1897 至 1901 年。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📍</span>值得参观</h3>
+      <ul>
+        <li><strong>Signal Hill 与 Cabot Tower</strong>：山体守住港口入口 The Narrows，既保留防务遗迹，也记录通信史。</li>
+        <li><strong>The Battery</strong>：陡坡、贴着岩壁的彩色房屋和海岸步道，把市中心与 Signal Hill 连在一起。</li>
+        <li><strong>The Rooms</strong>：纽芬兰与拉布拉多省的博物馆、艺术馆和档案馆合设于此。</li>
+        <li><strong>Quidi Vidi</strong>：城中的小村落，渔港、水边建筑与岩坡集中在一处。</li>
+        <li><strong>Cape Spear</strong>：从市区驾车约二十分钟，可看 1836 年灯塔与开阔海岸。</li>
+      </ul>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>🏠</span>建筑与风景</h3>
+      <p>市中心沿港口展开，街道窄而多坡，传统排屋、商铺和公共建筑层层抬升；Signal Hill 与 Southside Hills 从两侧框住港口。</p>
+      <p>“Jellybean Row”并不是一条正式街名。彩色木屋分布在市中心多条街上，Gower Street 只是最容易连片看到这种城市色彩的地点之一。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>💡</span>有趣见闻</h3>
+      <p>圣约翰斯市政府的历史时间线把 Water Street 称为北美最古老的商业街；它的早期路径来自港口码头、鱼栈与仓库之间的通行线。</p>
+      <p>George Street 以酒吧和现场音乐集中闻名，Water Street 与 Duckworth Street 则构成市中心主要商业走廊。所谓“Jellybean Row”也不是单一街区，而是对全城彩色排屋景观的通俗说法。</p>
+    </section>
+  </div>
+
+  <section class='diary'>
+    <div class='diary-header'>
+      <div class='avatar' aria-hidden='true'><div class='avatar-hair'></div><div class='avatar-face'><div class='avatar-mouth'></div></div></div>
+      <div>
+        <h2 class='diary-title'>Alice 的旅行日记</h2>
+        <div class='diary-date'>2026.07.30 · 圣约翰斯</div>
+        <p class='ai-disclosure'>AI 虚拟导游的想象旅行手记；人物互动与现场感受为基于公开资料的文学化想象，不作为事实依据。</p>
+      </div>
+    </div>
+    <div class='diary-body'>
+      <p>我把防水外套的帽绳系紧，沿着港口慢慢往 The Battery 走。海风一阵阵钻进袖口，彩色木屋在阴天里反而更亮。爬到 Signal Hill 时，我想象一位牵狗经过的本地人朝我点点头，又继续迎风走远。望远镜里，The Narrows 像一道窄门，白浪在岩脚碎开。下午我绕到 Quidi Vidi，看小船在水面轻轻晃，手里那杯热饮很快凉掉。风把路旁的小旗吹得啪啪响，我在本子上画了一条歪歪扭扭的海岸线。回程经过 Gower Street，我还是停下来数了好几遍颜色，最后承认自己根本数不清。</p>
+    </div>
+  </section>
+
+  <section class='guide-notes'>
+    <h3><span class='section-icon'>📝</span>导览手记</h3>
+    <div class='guide-meta'>
+      <div class='row'><strong>城市</strong>圣约翰斯 St. John's</div>
+      <div class='row'><strong>位置</strong>加拿大 · 纽芬兰岛东部</div>
+      <div class='row'><strong>季节</strong>6 — 8 月优先，海边天气多变</div>
+      <div class='row'><strong>坐标</strong>47.56494°N, 52.70931°W</div>
+    </div>
+    <p class='guide-slogan'>从 Water Street 走上 Signal Hill，再把彩屋、港口和大西洋放进同一页手账。</p>
+    <ol class='guide-list'>
+      <li><strong>港口与山：</strong>The Narrows 把外海、港湾和 Signal Hill 的防务位置讲得很直观。</li>
+      <li><strong>城市颜色：</strong>彩色木屋散落在多条坡街，不必寻找一条虚构的“Jellybean Row”。</li>
+      <li><strong>留出弹性：</strong>海风、低云与降雨会改变步道和远景，把 Cape Spear 放在可调整的半天。</li>
+    </ol>
+    <div>
+      <span class='circle-pick red'>Signal Hill</span>
+      <span class='circle-pick red'>Quidi Vidi</span>
+      <span class='circle-pick'>防水外层</span>
+    </div>
+  </section>
+
+  <div class='polaroid-strip'>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-30-st-john-s/01-signal-hill-cabot-tower.jpg' alt='夕阳下俯瞰 Signal Hill、Cabot Tower 与圣约翰斯港' data-lightbox data-caption='夕阳下的 Signal Hill、Cabot Tower 与圣约翰斯港 · Signal Hill & Cabot Tower'>
+      <figcaption>Signal Hill 与 Cabot Tower · Harbour View</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-30-st-john-s/02-gower-street-rowhouses.jpg' alt='Gower Street 沿坡排列的彩色木质排屋' data-lightbox data-caption='Gower Street 彩色木质排屋 · Colourful Row Houses'>
+      <figcaption>Gower Street 彩色排屋 · Colourful Row Houses</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-30-st-john-s/03-quidi-vidi-harbour.jpg' alt='Quidi Vidi 小港、水边建筑与两侧岩坡' data-lightbox data-caption='Quidi Vidi 小港与岩坡 · Fishing Harbour'>
+      <figcaption>Quidi Vidi 小港 · Fishing Harbour</figcaption>
+    </figure>
+  </div>
+
+  <section class='guide'>
+    <h3><span class='section-icon'>🎒</span>游玩指南</h3>
+    <div class='guide-grid'>
+      <div class='guide-item'><strong>最佳季节</strong><span>若想兼顾步行和海上观察，可优先 6 至 8 月；鲸类、冰山与徒步各有季节窗口，自然景观每年会波动。</span></div>
+      <div class='guide-item'><strong>建议天数</strong><span>建议 2 至 3 天：一天走港口与 Signal Hill，一天看 The Rooms、Gower Street 和 Quidi Vidi，再留半天去 Cape Spear。</span></div>
+      <div class='guide-item'><strong>经典路线</strong><span>Water Street → Gower Street → The Rooms → The Battery → Signal Hill；第二天去 Quidi Vidi。</span></div>
+      <div class='guide-item'><strong>交通建议</strong><span>市中心适合步行但坡度陡；Metrobus、出租车和租车均可用，Cape Spear 等外围点位更适合驾车或正规行程。</span></div>
+      <div class='guide-item'><strong>预算参考</strong><span>Water Street、Gower Street 与多数街景步行无需门票；为场馆、交通和海上行程另留预算，票价出发前查官方页面。</span></div>
+      <div class='guide-item'><strong>避坑提醒</strong><span>海边天气变化快，穿防水外层并留改期余量；悬崖和步道只走开放区域，场馆与步道通告当天再核对。</span></div>
+      <div class='guide-item'><strong>必吃清单</strong><span>可从鳕鱼炸鱼薯条、鳕鱼舌和本地海鲜中选一两样；供应与过敏原以店家当天菜单为准。</span></div>
+      <div class='guide-item'><strong>拍照点位</strong><span>Signal Hill 拍 The Narrows 与港口，Gower Street 拍彩色排屋，Quidi Vidi 拍小港与岩壁；拍居民先征得同意。</span></div>
+    </div>
+  </section>
+
+  <div class='pagination-shell'>
+    <div class='pagination-info'>世界那么大，我想去看看</div>
+    <div class='pagination-controls'>
+      <a class='page-btn' href='2026-07-29-paramaribo.html'>← 上一页</a>
+      <a class='page-btn is-active' href='2026-07-30-st-john-s.html'>11</a>
+      <span class='page-btn' aria-disabled='true'>下一页 →</span>
+    </div>
+  </div>
+</main>
+
+<div id='imageModal' class='modal' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <button type='button' id='modalClose' class='modal-close' aria-label='关闭'>×</button>
+    <img class='modal-image' id='modalImage' alt=''>
+    <p class='modal-caption' id='modalCaption'></p>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('imageModal');
+  var modalImage = document.getElementById('modalImage');
+  var modalCaption = document.getElementById('modalCaption');
+  var modalClose = document.getElementById('modalClose');
+  var dialog = modal.querySelector('.modal-dialog');
+
+  function openModal(src, caption) {
+    modalImage.src = src;
+    modalImage.alt = caption || '';
+    modalCaption.textContent = caption || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImage.src = '';
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function () {
+      openModal(el.src, el.getAttribute('data-caption'));
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (event) {
+    if (!dialog.contains(event.target)) closeModal();
+  });
+  dialog.addEventListener('click', function (event) { event.stopPropagation(); });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeModal();
+  });
+})();
+</script>
+</body></html>

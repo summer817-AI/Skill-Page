@@ -1,0 +1,569 @@
+<!doctype html><html lang='zh-CN'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>苏里南·帕拉马里博 Paramaribo | 世界那么大，我想去看看</title><link rel='icon' href='data:,'><style>
+:root{
+  --paper:#f7f2e6;
+  --paper-dark:#ece4d4;
+  --paper-shadow:#d9d0bf;
+  --ink:#3a3a3a;
+  --ink-light:#5c5c5c;
+  --accent:#d85c5c;
+  --accent-warm:#e07a40;
+  --highlight:#ffe08a;
+  --chile-blue:#0039a6;
+  --chile-red:#d52b1e;
+  --tape:rgba(255,255,255,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Georgia,"Noto Serif SC","PingFang SC","Microsoft YaHei",serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(210,190,160,.22) 0%, transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(180,160,140,.18) 0%, transparent 30%),
+    repeating-linear-gradient(90deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    repeating-linear-gradient(0deg,transparent 0,transparent 1px,rgba(0,0,0,.015) 1px,rgba(0,0,0,.015) 2px),
+    var(--paper);
+  background-attachment:fixed;
+  line-height:1.75;
+}
+body.modal-open{overflow:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 16px 70px}
+
+/* 返回链接 */
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--ink-light);text-decoration:none;font-size:14px;
+  border-bottom:1px dashed var(--paper-shadow);padding-bottom:2px
+}
+.back-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* 明信片标题区 */
+.postcard-header{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 18px;
+  margin-top:14px;
+  box-shadow:0 10px 30px rgba(80,60,40,.12), inset 0 0 60px rgba(200,180,150,.12);
+  transform:rotate(-.6deg)
+}
+.stamp{
+  position:absolute;top:18px;right:18px;
+  width:76px;height:96px;
+  border:1px solid var(--paper-shadow);
+  background:linear-gradient(135deg,#fff 0%,#f4f0e8 100%);
+  box-shadow:2px 3px 8px rgba(0,0,0,.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:12px;color:var(--ink-light)
+}
+.stamp:before{
+  content:'';position:absolute;inset:4px;
+  border:1px dashed var(--paper-shadow);pointer-events:none
+}
+.stamp-emoji{font-size:34px;line-height:1}
+.stamp-text{margin-top:2px;font-size:10px;letter-spacing:.04em}
+
+.postcard-line{
+  height:1px;background:repeating-linear-gradient(90deg,var(--paper-shadow) 0,var(--paper-shadow) 6px,transparent 6px,transparent 10px);
+  margin:14px 0 10px
+}
+
+.city-meta{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px
+}
+.date{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:15px;color:var(--ink-light)}
+.random-pill{
+  font-size:12px;padding:3px 10px;border-radius:999px;
+  background:var(--highlight);color:var(--ink);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive
+}
+.city-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:6px 0 4px}
+.city-title .cn{font-size:34px;font-weight:700;letter-spacing:.02em}
+.city-title .en{font-size:18px;color:var(--ink-light);font-style:italic}
+.country-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;padding:4px 10px;border-radius:999px;
+  background:#fff;border:1px solid var(--paper-shadow);
+  box-shadow:1px 2px 5px rgba(0,0,0,.06)
+}
+.flag-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(180deg,#377e3f 0 20%,#fff 20% 33%,#b40a2d 33% 67%,#fff 67% 80%,#377e3f 80%)}
+
+/* 明信片主图 */
+.hero-card{
+  position:relative;
+  margin-top:24px;
+  padding:12px 12px 44px 12px;
+  background:#fff;
+  border:1px solid var(--paper-shadow);
+  box-shadow:0 14px 38px rgba(60,45,30,.14);
+  transform:rotate(.4deg)
+}
+.hero-card img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.hero-caption{
+  position:absolute;bottom:10px;left:0;right:0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:16px;color:var(--ink-light)
+}
+.ai-disclosure{
+  margin:14px auto 0;padding:9px 14px;max-width:900px;text-align:center;
+  border:1px dashed #c9bca7;background:rgba(255,255,255,.58);
+  color:var(--ink-light);font-size:13px;line-height:1.6
+}
+.diary .ai-disclosure{margin:4px 0 12px;text-align:left;background:transparent;padding:0;border:0;font-size:12px}
+/* 地图悬浮标签 */
+.map-wrapper{position:relative;width:100%}
+.map-wrapper img{
+  display:block;width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid rgba(0,0,0,.08);background:#f0ede6
+}
+.map-pin{
+  position:absolute;display:flex;align-items:center;gap:5px;
+  background:rgba(255,253,245,.94);padding:4px 9px;border-radius:999px;
+  box-shadow:1px 2px 8px rgba(70,55,35,.22);
+  font-size:12.5px;color:var(--ink);white-space:nowrap;
+  pointer-events:none;transform:translate(-50%,-50%)
+}
+.map-pin.right{transform:translate(-100%,-50%);flex-direction:row-reverse}
+.map-pin .pin-num{
+  display:flex;align-items:center;justify-content:center;
+  width:20px;height:20px;background:#c45a45;color:#fff;border-radius:50%;
+  font-size:11px;font-weight:700;flex-shrink:0
+}
+@media (max-width:720px){
+  .map-pin{font-size:10px;padding:3px 6px}
+  .map-pin .pin-num{width:16px;height:16px;font-size:9px}
+}
+.mood-note{
+  margin:24px auto 0;text-align:center;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:18px;color:var(--accent-warm);line-height:1.85;
+  padding:12px 20px;background:rgba(255,255,255,.55);border-radius:8px;
+  border:1px dashed var(--paper-shadow)
+}
+
+/* 手账分块 */
+.journal-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px
+}
+@media (max-width:720px){.journal-grid{grid-template-columns:1fr}}
+
+.paper-note{
+  position:relative;
+  background:#fffef8;
+  border:1px solid var(--paper-shadow);
+  border-radius:3px;
+  padding:20px 22px;
+  box-shadow:3px 5px 14px rgba(70,55,35,.10);
+  transform:rotate(-.4deg)
+}
+.paper-note:nth-child(2n){transform:rotate(.5deg);background:#fffdf5}
+.paper-note .tape{
+  position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:90px;height:24px;background:var(--tape);
+  opacity:.85;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 5px rgba(0,0,0,.06)
+}
+.paper-note h3{
+  margin:0 0 12px;font-size:20px;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  color:var(--accent);font-weight:700
+}
+.paper-note p{
+  margin:0 0 10px;font-size:16px;line-height:1.8;color:var(--ink)
+}
+.paper-note ul{margin:8px 0 0;padding-left:1.2em}
+.paper-note li{margin:6px 0;font-size:15.5px;line-height:1.7}
+
+.section-icon{
+  display:inline-flex;vertical-align:middle;margin-right:6px;font-size:22px
+}
+
+/* 旅行日记 */
+.diary{
+  margin-top:30px;
+  background:linear-gradient(180deg,#fffdf8 0%,#fff9ef 100%);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px 24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
+  position:relative;overflow:hidden
+}
+.diary:before{
+  content:'';position:absolute;left:36px;top:0;bottom:0;width:1px;
+  background:repeating-linear-gradient(180deg,var(--paper-shadow) 0,var(--paper-shadow) 8px,transparent 8px,transparent 16px)
+}
+.diary-header{
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;z-index:1
+}
+.avatar{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#ffe0bd 0%,#ffcdb0 100%);
+  border:2px solid #fff;box-shadow:2px 3px 8px rgba(0,0,0,.12);
+  position:relative;overflow:hidden
+}
+.avatar:before{
+  content:'';position:absolute;top:8px;left:14px;width:28px;height:28px;border-radius:50%;
+  background:#5c4033
+}
+.avatar:after{
+  content:'';position:absolute;top:20px;left:10px;width:36px;height:24px;border-radius:50% 50% 40% 40%;
+  background:#5c4033
+}
+.avatar-hair{
+  position:absolute;top:4px;left:12px;width:32px;height:18px;border-radius:50% 50% 0 0;background:#3e2b22
+}
+.avatar-face{
+  position:absolute;top:24px;left:18px;width:20px;height:14px;border-radius:0 0 50% 50%;
+  background:#ffe0bd;z-index:2
+}
+.avatar-face:before,.avatar-face:after{
+  content:'';position:absolute;top:6px;width:3px;height:3px;border-radius:50%;background:#3a3a3a
+}
+.avatar-face:before{left:4px}.avatar-face:after{right:4px}
+.avatar-mouth{
+  position:absolute;top:10px;left:7px;width:6px;height:3px;border-radius:0 0 50% 50%;
+  border-bottom:2px solid #c45a5a;border-left:2px solid transparent;border-right:2px solid transparent
+}
+.diary-title{font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:22px;color:var(--accent);margin:0}
+.diary-date{font-size:13px;color:var(--ink-light);margin-top:2px}
+.diary-body{
+  position:relative;z-index:1;padding-left:70px;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:17.5px;line-height:1.95;color:var(--ink)
+}
+@media (max-width:720px){.diary-body{padding-left:0;padding-top:12px}}
+
+/* 导览手记 */
+.guide-notes{
+  margin-top:30px;
+  background:#fffdf5;
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:24px;
+  box-shadow:4px 8px 22px rgba(70,55,35,.12);
+  position:relative;
+  background-image:
+    linear-gradient(90deg, transparent 39px, rgba(216,92,92,.18) 39px, rgba(216,92,92,.18) 41px, transparent 41px),
+    linear-gradient(var(--paper-shadow) 1px, transparent 1px);
+  background-size:100% 32px;
+  background-position:0 0
+}
+.guide-notes h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-meta{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin-bottom:16px
+}
+@media (max-width:720px){.guide-meta{grid-template-columns:1fr}}
+.guide-meta .row{font-size:15px;color:var(--ink-light)}
+.guide-meta .row strong{color:var(--ink);display:inline-block;min-width:5em}
+.guide-slogan{
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:18px;color:var(--accent);
+  margin:12px 0 16px;padding:10px 14px;background:rgba(255,255,255,.6);
+  border:1px dashed var(--paper-shadow);border-radius:6px;display:inline-block
+}
+.guide-list{padding-left:1.3em;margin:0}
+.guide-list li{margin:8px 0;font-size:16px;line-height:1.7}
+.circle-pick{
+  display:inline-block;padding:2px 10px;border-radius:999px;
+  background:var(--highlight);border:1px solid rgba(0,0,0,.08);
+  font-family:"Bradley Hand","Comic Sans MS",cursive;font-size:14px;
+  color:var(--ink);margin:12px 6px 0 0
+}
+.circle-pick.red{background:var(--accent);color:#fff}
+
+/* 涂鸦 */
+.doodle{position:absolute;pointer-events:none}
+.doodle-penguin{right:28px;top:22px;width:42px;height:52px;opacity:.75}
+.doodle-sail{right:86px;bottom:30px;width:48px;height:44px;opacity:.65}
+.doodle-star{left:28px;bottom:22px;width:34px;height:34px;opacity:.55}
+
+/* 宝丽来照片 */
+.polaroid-strip{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:30px
+}
+.polaroid{
+  position:relative;
+  background:#fff;padding:10px 10px 34px 10px;border:1px solid var(--paper-shadow);
+  box-shadow:4px 8px 20px rgba(70,55,35,.18);transform:rotate(-3deg);
+  width:min(46%,320px);min-width:200px;
+  transition:transform .2s ease, z-index .2s ease
+}
+.polaroid:hover{transform:rotate(0deg) scale(1.03);z-index:10}
+.polaroid:nth-child(1){transform:rotate(-4deg);margin-right:-35px;z-index:1}
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:20px;z-index:2}
+.polaroid:nth-child(3){transform:rotate(-3deg);margin-left:-35px;z-index:3}
+.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#f0ede6;border:1px solid rgba(0,0,0,.06)}
+.polaroid figcaption{
+  text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive;
+  font-size:13px;color:var(--ink-light);margin-top:8px
+}
+
+/* 游玩指南 */
+.guide{
+  margin-top:32px;
+  background:var(--paper);
+  border:1px solid var(--paper-shadow);
+  border-radius:4px;
+  padding:22px 24px;
+  box-shadow:3px 6px 18px rgba(70,55,35,.10)
+}
+.guide h3{
+  margin:0 0 16px;font-size:22px;font-family:"Bradley Hand","Comic Sans MS",cursive;color:var(--accent-warm)
+}
+.guide-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+.guide-item{
+  background:#fffef8;border:1px solid var(--paper-shadow);border-radius:8px;
+  padding:14px;box-shadow:2px 3px 8px rgba(0,0,0,.05)
+}
+.guide-item strong{display:block;margin-bottom:6px;font-size:15px;color:var(--accent);font-family:"Bradley Hand","Comic Sans MS",cursive}
+.guide-item span{display:block;line-height:1.7;color:var(--ink);font-size:15px}
+@media (max-width:720px){.guide-grid{grid-template-columns:1fr}}
+
+/* 分页 */
+.pagination-shell{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;
+  margin-top:30px;padding:14px 16px;border-radius:8px;
+  background:rgba(255,255,255,.55);border:1px dashed var(--paper-shadow)
+}
+.pagination-info{color:var(--ink-light);font-size:14px}
+.pagination-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.page-btn,.page-select{
+  border:1px solid var(--paper-shadow);background:#fff;color:var(--ink);
+  border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer
+}
+.page-btn[disabled]{opacity:.45;cursor:not-allowed}
+.page-btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.page-jump{display:flex;align-items:center;gap:8px;color:var(--ink-light);font-size:14px}
+
+/* 模态框 */
+.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(60,50,40,.85);padding:24px}
+.modal.is-open{display:flex;justify-content:center;align-items:center}
+.modal-dialog{position:relative;max-width:min(920px,96vw);max-height:92vh;background:var(--paper);padding:12px;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-image{display:block;max-width:100%;max-height:74vh;object-fit:contain;border:1px solid rgba(0,0,0,.08)}
+.modal-caption{margin-top:12px;color:var(--ink-light);line-height:1.7;font-size:15px;text-align:center;font-family:"Bradley Hand","Comic Sans MS",cursive}
+.modal-close{
+  position:absolute;top:-18px;right:-18px;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--paper-shadow);background:#fff;
+  color:var(--ink);font-size:24px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2)
+}
+.hidden{display:none !important}
+
+@media (max-width:720px){
+  .wrap{padding:20px 12px 50px}
+  .postcard-header{padding:18px 16px 14px;transform:none}
+  .stamp{position:static;margin:0 0 12px auto;width:64px;height:82px}
+  .city-title .cn{font-size:26px}
+  .city-title .en{font-size:15px}
+  .hero-card{padding:8px 8px 36px 8px;transform:none}
+  .hero-caption{font-size:14px}
+  .mood-note{font-size:16px;padding:10px 14px}
+  .paper-note{padding:16px 18px;transform:none !important}
+  .paper-note h3{font-size:18px}
+  .paper-note p,.paper-note li{font-size:15px}
+  .diary{padding:18px 16px 20px}
+  .diary:before{display:none}
+  .diary-header{gap:12px}
+  .diary-body{font-size:16px}
+  .guide-notes{padding:18px 16px;background-image:none}
+  .guide{padding:18px 16px}
+  .polaroid{width:80%;min-width:220px;margin:0 0 18px !important;transform:rotate(-1deg) !important}
+  .polaroid:nth-child(1){margin-right:0 !important}
+  .polaroid:nth-child(2){margin-top:0 !important}
+  .polaroid:nth-child(3){margin-left:0 !important}
+  .pagination-shell{align-items:flex-start}
+}
+</style></head>
+<body><main class='wrap'>
+  <p><a class='back-link' href='../world.html'>← 返回总览</a></p>
+
+  <article class='postcard-header'>
+    <div class='stamp' aria-hidden='true'>
+      <div class='stamp-emoji'>🇸🇷</div>
+      <span class='stamp-text'>Suriname</span>
+    </div>
+    <div class='city-meta'>
+      <div class='date'>2026-07-29</div>
+      <span class='random-pill'>随机数 4138</span>
+      <span class='country-badge'><span class='flag-dot'></span>苏里南 Suriname</span>
+    </div>
+    <h1 class='city-title'><span class='cn'>帕拉马里博</span><span class='en'>Paramaribo</span></h1>
+    <div class='postcard-line'></div>
+    <p class='sub' style='margin:0;color:var(--ink-light);font-size:15px'>World-1000 · 苏里南河边的木城</p>
+  </article>
+
+  <section class='hero-card' style='transform:rotate(-.4deg);margin-top:24px'>
+    <div class='map-wrapper'>
+      <img src='../assets/world/2026-07-29-paramaribo/04-alice-guide-map.png' alt='Alice 的帕拉马里博 AI 插画导览图' data-lightbox data-caption='Alice’s Paramaribo Adventure · AI illustrated guide'>
+    </div>
+    <span class='hero-caption'>Alice's Paramaribo Adventure · 插画导览</span>
+  </section>
+  <p class='ai-disclosure'>AI 插画导览图，仅作氛围展示；地标位置与路线请以官方地图为准。</p>
+
+  <p class='mood-note'>苏里南河边，白色木屋、红砖堡垒与相邻的宗教建筑，把帕拉马里博几百年的城市层次排在一条步行线上。</p>
+
+  <div class='journal-grid'>
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📜</span>历史一瞥</h3>
+      <p>帕拉马里博历史内城形成于十七、十八世纪的荷兰殖民时期。城市自 1683 年起沿热兰迪亚堡向西北铺开，街道借用贝壳沙脊形成的天然高地，随后又凭荷兰工程技术向北侧湿地扩展。</p>
+      <p>2002 年，联合国教科文组织以文化遗产标准（ii）和（iv）将历史内城列入《世界遗产名录》，强调这里把欧洲建筑与施工方法同南美本地材料、手艺和环境结合成独特的城市形态。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>📍</span>值得参观</h3>
+      <ul>
+        <li><strong>Waterkant</strong>：沿苏里南河展开的历史水岸，可从河对岸看见连续的木构与砖构公共建筑。</li>
+        <li><strong>热兰迪亚堡</strong>：位于城市早期扩展轴线的起点，现为苏里南博物馆所在地。</li>
+        <li><strong>独立广场与棕榈园</strong>：总统府面向广场，棕榈园就在建筑后方。</li>
+        <li><strong>木构主教座堂</strong>：十九世纪哥特复兴建筑，双塔是老城醒目的垂直线条。</li>
+        <li><strong>Keizerstraat</strong>：清真寺与 Neveh Shalom 犹太会堂相邻而立。</li>
+      </ul>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>🏠</span>建筑与风景</h3>
+      <p>老城保留网格街道、宽阔林荫路与开放空间。许多建筑把荷兰式比例和立面，同热带地区常用的木材、通风方式与本地施工手艺放在一起。</p>
+      <p>Waterkant 的低层天际线、总统府的石木混合结构、木构主教座堂与热兰迪亚堡的砖墙，让城市的不同年代可以在步行范围内彼此对照。</p>
+    </section>
+
+    <section class='paper-note'>
+      <div class='tape'></div>
+      <h3><span class='section-icon'>💡</span>有趣见闻</h3>
+      <p>当地旅游资料把帕拉马里博描述为由原住民、非洲、印度、爪哇、华人、黎巴嫩与荷兰影响共同塑造的城市；这种并置也出现在餐桌上，从苏里南本地菜到爪哇、印度与华人餐食都能在城里找到。</p>
+      <p>Keizerstraat 上，清真寺与 Neveh Shalom 犹太会堂相邻而立。它不是一段虚构的“偶遇”，而是可以由城市街景与图片文件页共同核验的真实空间关系。</p>
+    </section>
+  </div>
+
+  <section class='diary'>
+    <div class='diary-header'>
+      <div class='avatar' aria-hidden='true'><div class='avatar-hair'></div><div class='avatar-face'><div class='avatar-mouth'></div></div></div>
+      <div>
+        <h2 class='diary-title'>Alice 的旅行日记</h2>
+        <div class='diary-date'>2026.07.29 · 帕拉马里博</div>
+        <p class='ai-disclosure'>AI 虚拟导游的想象旅行手记；人物互动与现场感受为基于公开资料的文学化想象，不作为事实依据。</p>
+      </div>
+    </div>
+    <div class='diary-body'>
+      <p>我把自行车从 Waterkant 慢慢骑向老城。雨刚停，河面是带一点泥金的褐色，木屋檐下还在滴水。经过棕红色的热兰迪亚堡时，我放慢脚步，风里混着湿树叶和河水的气味。转进 Keizerstraat，我想象一位推着水果车的阿姨朝我笑，提醒我前面路口靠左走。清真寺的圆顶和白色犹太会堂同时落进视线，那一刻城市的多种语言像自行车铃一样轻轻碰在一起。傍晚我在 Waka Pasi 停车，手里是一杯凉饮，鞋边又落下几滴短雨。</p>
+    </div>
+  </section>
+
+  <section class='guide-notes'>
+    <h3><span class='section-icon'>📝</span>导览手记</h3>
+    <div class='guide-meta'>
+      <div class='row'><strong>城市</strong>帕拉马里博 Paramaribo</div>
+      <div class='row'><strong>位置</strong>苏里南 · 苏里南河西岸</div>
+      <div class='row'><strong>季节</strong>8 月中 — 12 月中较干时段</div>
+      <div class='row'><strong>坐标</strong>5.86638°N, 55.16682°W</div>
+    </div>
+    <p class='guide-slogan'>从 Waterkant 出发，步行读完木屋、堡垒、广场与相邻的宗教建筑。</p>
+    <ol class='guide-list'>
+      <li><strong>世界遗产内城：</strong>保留十七、十八世纪形成的街道格局与低层城市尺度。</li>
+      <li><strong>石、砖与木：</strong>热兰迪亚堡、总统府与木构教堂把不同材料并排摆在老城里。</li>
+      <li><strong>多元城市：</strong>餐食、宗教建筑与街区共同呈现多种文化影响。</li>
+    </ol>
+    <div>
+      <span class='circle-pick red'>Waterkant</span>
+      <span class='circle-pick red'>Fort Zeelandia</span>
+      <span class='circle-pick'>雨具随身</span>
+    </div>
+  </section>
+
+  <div class='polaroid-strip'>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-29-paramaribo/01-waterkant.jpg' alt='苏里南河对岸望向 Waterkant 历史水岸' data-lightbox data-caption='苏里南河对岸望向 Waterkant 历史水岸 · Waterkant heritage waterfront'>
+      <figcaption>Waterkant 历史水岸 · Heritage Waterfront</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-29-paramaribo/02-fort-zeelandia.jpg' alt='帕拉马里博热兰迪亚堡' data-lightbox data-caption='热兰迪亚堡 · Fort Zeelandia'>
+      <figcaption>热兰迪亚堡 · Fort Zeelandia</figcaption>
+    </figure>
+    <figure class='polaroid'>
+      <img src='../assets/world/2026-07-29-paramaribo/03-synagogue-mosque.jpg' alt='相邻的 Keizerstraat 清真寺与 Neveh Shalom 犹太会堂' data-lightbox data-caption='Keizerstraat 清真寺与 Neveh Shalom 犹太会堂 · Mosque & Synagogue'>
+      <figcaption>清真寺与犹太会堂 · Mosque & Synagogue</figcaption>
+    </figure>
+  </div>
+
+  <section class='guide'>
+    <h3><span class='section-icon'>🎒</span>游玩指南</h3>
+    <div class='guide-grid'>
+      <div class='guide-item'><strong>最佳季节</strong><span>通常优先 8 月中至 12 月中较干时段；热带阵雨仍可能突然出现，出门前查看当天降雨。</span></div>
+      <div class='guide-item'><strong>建议天数</strong><span>建议 2 天：一天完整步行历史内城，另一天留给博物馆、市场和城市饮食。</span></div>
+      <div class='guide-item'><strong>经典路线</strong><span>Waterkant → 热兰迪亚堡 → 独立广场 → 棕榈园 → 木构主教座堂 → Keizerstraat。</span></div>
+      <div class='guide-item'><strong>交通建议</strong><span>老城适合步行或骑车；苏里南靠左行驶，部分道路没有自行车道，骑车不要并排。</span></div>
+      <div class='guide-item'><strong>预算参考</strong><span>河岸、广场与街道步行无需门票；为博物馆、导览和出租车另留预算。现金使用广泛，但不要携带过多。</span></div>
+      <div class='guide-item'><strong>避坑提醒</strong><span>开放时间提前核对；雨后留意积水，夜间避开昏暗僻静街巷并优先乘正规出租车。</span></div>
+      <div class='guide-item'><strong>必吃清单</strong><span>从苏里南、爪哇、印度与华人餐食中各选一顿；不熟悉本地辣椒时让店家把 sambal 分开放。</span></div>
+      <div class='guide-item'><strong>拍照点位</strong><span>Waterkant 河岸全景、热兰迪亚堡砖墙、相邻清真寺与犹太会堂；拍摄当地人前先征得同意。</span></div>
+    </div>
+  </section>
+
+  <div class='pagination-shell'>
+    <div class='pagination-info'>世界那么大，我想去看看</div>
+    <div class='pagination-controls'>
+      <a class='page-btn' href='2026-04-19-punta-arenas.html'>← 上一页</a>
+      <a class='page-btn is-active' href='2026-07-29-paramaribo.html'>10</a>
+      <a class='page-btn' href='2026-07-30-st-john-s.html'>下一页 →</a>
+    </div>
+  </div>
+</main>
+
+<div id='imageModal' class='modal' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <button type='button' id='modalClose' class='modal-close' aria-label='关闭'>×</button>
+    <img class='modal-image' id='modalImage' alt=''>
+    <p class='modal-caption' id='modalCaption'></p>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('imageModal');
+  var modalImage = document.getElementById('modalImage');
+  var modalCaption = document.getElementById('modalCaption');
+  var modalClose = document.getElementById('modalClose');
+  var dialog = modal.querySelector('.modal-dialog');
+
+  function openModal(src, caption) {
+    modalImage.src = src;
+    modalImage.alt = caption || '';
+    modalCaption.textContent = caption || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImage.src = '';
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('[data-lightbox]').forEach(function (el) {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function () {
+      openModal(el.src, el.getAttribute('data-caption'));
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (event) {
+    if (!dialog.contains(event.target)) closeModal();
+  });
+  dialog.addEventListener('click', function (event) { event.stopPropagation(); });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeModal();
+  });
+})();
+</script>
+</body></html>

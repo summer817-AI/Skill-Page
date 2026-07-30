@@ -1,0 +1,70 @@
+{
+  "entry_id": "2026-07-29-paramaribo",
+  "real_photos": [
+    {
+      "file": "01-waterkant.jpg",
+      "caption_zh": "苏里南河对岸望向 Waterkant 历史水岸",
+      "caption_en": "Waterkant heritage waterfront from the Suriname River",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Waterkant_Paramaribo_with_the_Unesco_Heritage_Buildings.jpg",
+      "source_file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Waterkant%20Paramaribo%20with%20the%20Unesco%20Heritage%20Buildings.jpg",
+      "author": "Rafaeljantz",
+      "license": "CC BY-SA 4.0",
+      "downloaded_at": "2026-07-29",
+      "sha256": "C8269F9D990A79E1272C28A43196BF2B948C7C5469F7AC36ECD063B7696B426A",
+      "width": 1920,
+      "height": 837,
+      "bytes": 386308,
+      "visual_target": "Waterkant riverfront panorama",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页坐标、标题与画面均指向 Paramaribo Waterkant；画面可见河岸历史建筑。"
+      }
+    },
+    {
+      "file": "02-fort-zeelandia.jpg",
+      "caption_zh": "帕拉马里博热兰迪亚堡的红砖墙与内院建筑",
+      "caption_en": "Brick walls and inner buildings of Fort Zeelandia",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Paramaribo_Fort_Zeelandia.jpg",
+      "source_file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paramaribo%20Fort%20Zeelandia.jpg",
+      "author": "WBSAM",
+      "license": "CC BY-SA 4.0",
+      "downloaded_at": "2026-07-29",
+      "sha256": "DDCDE67FC125DD096F8BCBF4A30383512863DBD05CA0DED29A939E35B57FD1EA",
+      "width": 1920,
+      "height": 1440,
+      "bytes": 972577,
+      "visual_target": "Fort Zeelandia exterior",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页标注 Suriname monument ID APO 001，并提供 Paramaribo 坐标；画面为堡垒外墙。"
+      }
+    },
+    {
+      "file": "03-synagogue-mosque.jpg",
+      "caption_zh": "Keizerstraat 清真寺与 Neveh Shalom 犹太会堂相邻而立",
+      "caption_en": "Keizerstraat Mosque beside Neveh Shalom Synagogue",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Paramaribo_synagogue_and_mosque.JPG",
+      "source_file_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paramaribo%20synagogue%20and%20mosque.JPG",
+      "author": "Mark Ahsmann",
+      "license": "CC BY-SA 3.0",
+      "downloaded_at": "2026-07-29",
+      "sha256": "86085F44B530A6BB27E18C95CA93010C90B831153B6D603D29599DB22079FBAF",
+      "width": 1920,
+      "height": 1440,
+      "bytes": 668103,
+      "visual_target": "adjacent mosque and synagogue",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页明确说明画面是 Paramaribo 的 mosque and synagogue；两座建筑均完整可见。"
+      }
+    }
+  ],
+  "alice_guide": {
+    "file": "04-alice-guide-map.png",
+    "ai_generated": true,
+    "pose": "Alice 骑薄荷绿复古自行车沿 Waterkant 前行，双手握车把，三分之二侧身视角",
+    "sha256": "C55F0947C9741BDA99EE7C84CD45306B77130D5991C2FCA4D0445F7EB806ADF6",
+    "bytes": 3203641,
+    "disclosure": "AI 插画导览图，仅作氛围展示；地标位置与路线请以官方地图为准。"
+  }
+}

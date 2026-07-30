@@ -6,6 +6,138 @@
   },
   "entries": [
     {
+      "id": "2026-07-30-st-john-s",
+      "date": "2026-07-30",
+      "geoname_id": 6324733,
+      "random_no": 2338,
+      "city": "加拿大·圣约翰斯 St. John's",
+      "one_liner": "北大西洋从狭窄港口吹进来，Signal Hill、坡地彩屋与 Quidi Vidi 小港，把圣约翰斯的防务、通信和渔业记忆压在同一条海岸线上。",
+      "coordinates": {
+        "lat": 47.56494,
+        "lng": -52.70931
+      },
+      "sections": [
+        {
+          "title": "历史一瞥",
+          "content": "十六世纪初，欧洲渔民已开始使用这座有遮蔽的港口，十七世纪初出现永久居民。码头、鱼栈和仓库间的小径后来成为Water Street。圣约翰斯在1816、1846和1892年经历大火后重建；1901年，马可尼在Signal Hill收到首个跨大西洋无线信号。"
+        },
+        {
+          "title": "值得参观",
+          "content": "Signal Hill与Cabot Tower、The Battery、The Rooms、Quidi Vidi和Cape Spear可以分成市内步行线与近郊半日线，分别观察港口、防务通信史、彩色坡街和大西洋海岸。"
+        },
+        {
+          "title": "建筑与风景",
+          "content": "市中心沿港口展开，街道窄而多坡，传统排屋、商铺和公共建筑层层抬升。彩色木屋分布在多条街上，所谓“Jellybean Row”并不是一条正式街名。"
+        },
+        {
+          "title": "有趣见闻",
+          "content": "圣约翰斯市政府把Water Street称为北美最古老的商业街；George Street以酒吧和现场音乐集中闻名，Water Street与Duckworth Street则构成市中心主要商业走廊。"
+        }
+      ],
+      "today_tip": "关键词：Signal Hill、彩色坡街、Quidi Vidi小港。",
+      "guide": {
+        "best_season": "若想兼顾步行和海上观察，可优先6至8月；鲸类、冰山与徒步各有季节窗口，自然景观每年会波动。",
+        "days": "建议2至3天：一天走港口与Signal Hill，一天看The Rooms、Gower Street和Quidi Vidi，再留半天到一天去Cape Spear。",
+        "route": "Water Street→Gower Street→The Rooms→The Battery→Signal Hill；第二天去Quidi Vidi，天气稳定时再安排Cape Spear。",
+        "transport": "市中心适合步行但坡度陡；Metrobus、出租车和租车均可用。Cape Spear等外围点位更适合驾车或参加正规行程。",
+        "budget": "Water Street、Gower Street与多数街景步行无需门票；为场馆、交通和海上行程另留预算，具体票价出发前查官方页面。",
+        "pitfalls": "海边天气变化快，穿防水外层并给Signal Hill、Cape Spear留改期余量；悬崖和步道只走开放区域，场馆与步道通告当天再核对。",
+        "food": "可从鳕鱼炸鱼薯条、鳕鱼舌和本地海鲜中选一两样；供应与过敏原以店家当天菜单为准。",
+        "photo_spots": "Signal Hill拍The Narrows与港口，Gower Street拍彩色排屋，Quidi Vidi拍小港与岩壁；拍居民先征得同意。"
+      },
+      "images": [
+        {
+          "url": "../assets/world/2026-07-30-st-john-s/01-signal-hill-cabot-tower.jpg",
+          "caption": "Signal Hill与Cabot Tower"
+        },
+        {
+          "url": "../assets/world/2026-07-30-st-john-s/02-gower-street-rowhouses.jpg",
+          "caption": "Gower Street彩色排屋"
+        },
+        {
+          "url": "../assets/world/2026-07-30-st-john-s/03-quidi-vidi-harbour.jpg",
+          "caption": "Quidi Vidi小港"
+        }
+      ],
+      "sources": [
+        "https://www.stjohns.ca/about-st-johns/history-and-archives/historical-timeline/",
+        "https://www.stjohns.ca/about-st-johns/neighbourhoods/neighbourhood-profiles/",
+        "https://parks.canada.ca/lhn-nhs/nl/signalhill/info",
+        "https://www.newfoundlandlabrador.com/destinations/st-johns",
+        "https://therooms.ca/",
+        "https://parks.canada.ca/lhn-nhs/nl/spear/info",
+        "https://destinationstjohns.com/plan-your-trip/getting-here-and-around/",
+        "https://www.newfoundlandlabrador.com/travel-trade",
+        "https://destinationstjohns.com/row-houses-character/",
+        "https://destinationstjohns.com/10-places-things-to-photograph-in-st-johns/",
+        "https://destinationstjohns.com/culinary-scene/",
+        "https://destinationstjohns.com/st-johns-photo-opps/"
+      ]
+    },
+    {
+      "id": "2026-07-29-paramaribo",
+      "date": "2026-07-29",
+      "geoname_id": 3383330,
+      "random_no": 4138,
+      "city": "苏里南·帕拉马里博 Paramaribo",
+      "one_liner": "苏里南河边，白色木屋、红砖堡垒与相邻的宗教建筑，把帕拉马里博几百年的城市层次排在一条步行线上。",
+      "coordinates": {
+        "lat": 5.86638,
+        "lng": -55.16682
+      },
+      "sections": [
+        {
+          "title": "历史一瞥",
+          "content": "帕拉马里博历史内城形成于十七、十八世纪的荷兰殖民时期。城市自1683年起沿热兰迪亚堡向西北铺开。2002年，联合国教科文组织将历史内城列入《世界遗产名录》，强调这里把欧洲建筑与施工方法同南美本地材料、手艺和环境结合成独特的城市形态。"
+        },
+        {
+          "title": "值得参观",
+          "content": "Waterkant、热兰迪亚堡、独立广场与棕榈园、木构圣彼得与圣保罗主教座堂，以及Keizerstraat上相邻的清真寺与Neveh Shalom犹太会堂，可以串成一条老城步行线。"
+        },
+        {
+          "title": "建筑与风景",
+          "content": "老城保留网格街道、宽阔林荫路与开放空间。Waterkant的低层天际线、总统府的石木混合结构、木构主教座堂与热兰迪亚堡的砖墙，让城市的不同年代在步行范围内彼此对照。"
+        },
+        {
+          "title": "有趣见闻",
+          "content": "当地旅游资料把帕拉马里博描述为由原住民、非洲、印度、爪哇、华人、黎巴嫩与荷兰影响共同塑造的城市；这种并置也出现在餐桌与宗教建筑上。"
+        }
+      ],
+      "today_tip": "关键词：世界遗产木城、苏里南河岸、相邻的清真寺与犹太会堂。",
+      "guide": {
+        "best_season": "通常优先8月中至12月中较干时段；热带阵雨仍可能突然出现，出门前查看当天降雨。",
+        "days": "建议2天：一天完整步行历史内城，另一天留给博物馆、市场和城市饮食。",
+        "route": "Waterkant→热兰迪亚堡→独立广场→棕榈园→木构主教座堂→Keizerstraat。",
+        "transport": "历史内城适合步行或骑车；苏里南靠左行驶，部分道路没有自行车道，骑车不要并排。",
+        "budget": "河岸、广场与街道步行本身无需门票；为博物馆、导览和出租车另留预算。当地现金使用广泛，但不要随身携带过多现金。",
+        "pitfalls": "博物馆与宗教场所开放时间出发前再核对；雨后留意积水，夜间避开昏暗僻静街巷并优先乘正规出租车。",
+        "food": "可从苏里南、爪哇、印度与华人餐食中各选一顿；不熟悉本地辣椒时让店家把sambal分开放。",
+        "photo_spots": "Waterkant河岸全景、热兰迪亚堡砖墙、相邻清真寺与犹太会堂；拍摄当地人前先征得同意。"
+      },
+      "images": [
+        {
+          "url": "../assets/world/2026-07-29-paramaribo/01-waterkant.jpg",
+          "caption": "Waterkant历史水岸"
+        },
+        {
+          "url": "../assets/world/2026-07-29-paramaribo/02-fort-zeelandia.jpg",
+          "caption": "热兰迪亚堡"
+        },
+        {
+          "url": "../assets/world/2026-07-29-paramaribo/03-synagogue-mosque.jpg",
+          "caption": "Keizerstraat清真寺与Neveh Shalom犹太会堂"
+        }
+      ],
+      "sources": [
+        "https://whc.unesco.org/en/list/940/",
+        "https://whc.unesco.org/en/decisions/936/",
+        "https://suriname.travel/paramaribo/",
+        "https://suriname.travel/tips-voor-travelers-dos-and-donts/",
+        "https://en.wikivoyage.org/wiki/Paramaribo",
+        "https://gov.sr/wp-content/uploads/2024/10/Suriname-National-Adaptation-Plan-NAP.pdf"
+      ]
+    },
+    {
       "id": "2026-04-19-punta-arenas",
       "date": "2026-04-19",
       "geoname_id": null,

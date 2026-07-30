@@ -1,0 +1,70 @@
+{
+  "entry_id": "2026-07-30-st-john-s",
+  "real_photos": [
+    {
+      "file": "01-signal-hill-cabot-tower.jpg",
+      "caption_zh": "夕阳下俯瞰 Signal Hill、Cabot Tower 与圣约翰斯港",
+      "caption_en": "Aerial view of Signal Hill, Cabot Tower and St. John's harbour at sunset",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Signal_Hill,_St._John%27s,_Newfoundland_at_sunset_by_photographer_Erik_Mclean_of_Introspective_Design.jpg",
+      "source_file_url": "https://commons.wikimedia.org/w/thumb.php?f=Aerial_view_of_Signal_Hill,_St._John%27s,_Newfoundland_at_sunset_by_photographer_Erik_Mclean_of_Introspective_Design.jpg&w=1600",
+      "author": "Erikallen920 / Erik Mclean, Introspective Design",
+      "license": "CC BY-SA 4.0",
+      "downloaded_at": "2026-07-30",
+      "sha256": "12D0ABE0A5DDCA8A218C2E304747A918C624CD5311A11B004D54F7A550321C85",
+      "width": 1600,
+      "height": 1200,
+      "bytes": 447295,
+      "visual_target": "Signal Hill, Cabot Tower and harbour aerial",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页明确标注 Signal Hill、Cabot Tower 与 St. John's；画面可见山顶塔楼、港口、城市与大西洋海岸。"
+      }
+    },
+    {
+      "file": "02-gower-street-rowhouses.jpg",
+      "caption_zh": "Gower Street 沿坡排列的彩色木质排屋",
+      "caption_en": "Colourful wooden row houses along Gower Street",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Houses_on_Gower_Street_(1).jpg",
+      "source_file_url": "https://commons.wikimedia.org/w/thumb.php?f=Houses_on_Gower_Street_%281%29.jpg&w=1920",
+      "author": "Emmanuel Milou",
+      "license": "CC BY-SA 2.0",
+      "downloaded_at": "2026-07-30",
+      "sha256": "BDDA923E998292063D3AA34F8925760092479F31BDF2E505C3E7C197237F9AC8",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 609152,
+      "visual_target": "Gower Street colourful row houses",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页地点与标题均为 Gower Street；画面是沿街连续排列的彩色木质排屋，与 Signal Hill 航拍对象不同。"
+      }
+    },
+    {
+      "file": "03-quidi-vidi-harbour.jpg",
+      "caption_zh": "Quidi Vidi 小港、水边建筑与两侧岩坡",
+      "caption_en": "Quidi Vidi harbour, waterfront buildings and rocky slopes",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Quidi_Vidi_2.jpg",
+      "source_file_url": "https://commons.wikimedia.org/w/thumb.php?f=Quidi_Vidi_2.jpg&w=1920",
+      "author": "Qwexcxewq",
+      "license": "CC BY 4.0",
+      "downloaded_at": "2026-07-30",
+      "sha256": "159A915AF54AAB509E6EA5BFA14D80C735BFEBB8AED1715B72DF351C54613CCB",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 495854,
+      "visual_target": "Quidi Vidi fishing harbour",
+      "visual_check": {
+        "status": "pass",
+        "notes": "文件页标题与画面均指向 Quidi Vidi；画面可见港水、船、码头建筑和岩坡，与前两张对象不重复。"
+      }
+    }
+  ],
+  "alice_guide": {
+    "file": "04-alice-guide-map.png",
+    "ai_generated": true,
+    "pose": "Alice 坐在旧旅行箱上，双手举望远镜，三分之二侧身位于右下；穿黄色防风外套、青绿色针织帽与铁锈红长裤",
+    "sha256": "1CEAA533747E3C79BC6E173AE936A8F8C4C29051CBB38903D921A34C09267234",
+    "bytes": 3109583,
+    "disclosure": "AI 插画导览图，仅作氛围展示；地标位置与路线请以官方地图为准。"
+  }
+}
