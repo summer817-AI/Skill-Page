@@ -351,6 +351,24 @@
       "position": 56,
       "name": "qiaomu-goal-meta-skill",
       "url": "https://summerai.cc/skills/#qiaomu-goal-meta-skill"
+    },
+    {
+      "@type": "ListItem",
+      "position": 57,
+      "name": "qiaomu-meta-skill",
+      "url": "https://summerai.cc/skills/#qiaomu-meta-skill"
+    },
+    {
+      "@type": "ListItem",
+      "position": 58,
+      "name": "Yao Meta Skill",
+      "url": "https://summerai.cc/skills/#yao-meta-skill"
+    },
+    {
+      "@type": "ListItem",
+      "position": 59,
+      "name": "Human Writing",
+      "url": "https://summerai.cc/skills/#human-writing"
     }
   ]
 }
@@ -364,7 +382,7 @@
 <body>
   <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
   <main class="shell">
-    <section class="source-strip"><p>当前收录 <strong>56</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
+    <section class="source-strip"><p>当前收录 <strong>59</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
     <section class="intro">
       <div class="intro-copy"><h1>好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里滚动收录经过人工筛选的实用 skill 来源：包括 GitHub 仓库、官方文档和可信候选。每个条目都保留来源、适用场景、限制和安装命令。</p></div>
       <aside class="agent-box"><h2>Agent 读取入口</h2><p>优先读取结构化数据，再进入页面查看完整说明。</p><div class="agent-actions"><a class="data-link" href="../skills.json">skills.json</a><a class="data-link" href="../llms.txt">llms.txt</a></div></aside>
@@ -395,6 +413,7 @@
       <button class="author-card" data-author="JimLiu" aria-pressed="false"><img src="https://github.com/JimLiu.png" alt="宝玉 / JimLiu 头像" loading="lazy"><span><strong>宝玉 / JimLiu</strong><small>持续维护 baoyu-skills，把图像生成、幻灯片、文章配图和内容发布流程封装成跨 Agent skills。</small></span></button>
       <button class="author-card" data-author="rongrongwr" aria-pressed="false"><img src="https://github.com/rongrongwr.png" alt="rongrongwr 头像" loading="lazy"><span><strong>rongrongwr</strong><small>把陌生概念解释、权威来源筛选和结构化报告沉淀成跨平台 skill，适合先搭判断框架再做决策。</small></span></button>
       <button class="author-card" data-author="summer817-AI" aria-pressed="false"><img src="https://github.com/summer817-AI.png" alt="SummerAI / summer817-AI 头像" loading="lazy"><span><strong>SummerAI / summer817-AI</strong><small>围绕真实项目工作流沉淀 Codex skills，偏演示文档、PPT/PDF 转换、内容生产和本地自动化。</small></span></button>
+      <button class="author-card" data-author="yaojingang" aria-pressed="false"><img src="https://github.com/yaojingang.png" alt="Yao Team / yaojingang 头像" loading="lazy"><span><strong>Yao Team / yaojingang</strong><small>维护 Yao Meta Skill，把 Skill 创建扩展为包含 Skill IR、多端编译、评测、治理、发布门禁和持续迭代的工程系统。</small></span></button>
         </section>
       </aside>
       <section class="skill-pane">
@@ -1284,12 +1303,52 @@ cp -R khazix-skills/leader ~/.codex/skills/leader</code></pre></div>
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-goal-meta-skill 把“优化现有后台首页的首屏信息层级”写成一条带验证和暂停条件的 Codex /goal。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/joeseesun/qiaomu-goal-meta-skill" target="_blank" rel="noopener noreferrer" data-author="joeseesun" data-skill-id="qiaomu-goal-meta-skill" data-source-url="https://github.com/joeseesun/qiaomu-goal-meta-skill">https://github.com/joeseesun/qiaomu-goal-meta-skill</a></p></div>
       </article>
+      <article class="skill-card" id="qiaomu-meta-skill" data-category="dev product" data-author="joeseesun" data-text="qiaomu-meta-skill 乔木的 skill 创建与发布元工作流：先研究同类方案，再完成边界设计、触发评测、安全检查、readme、pr、release 和干净安装验证。 joeseesun https://github.com/joeseesun/qiaomu-meta-skill dev product skill 创建发布">
+        <div class="skill-title"><img src="https://github.com/joeseesun.png" alt="joeseesun 头像" loading="lazy"><h2>qiaomu-meta-skill</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">Skill 创建发布</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill source-pill">作者：joeseesun</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">乔木的 Skill 创建与发布元工作流：先研究同类方案，再完成边界设计、触发评测、安全检查、README、PR、Release 和干净安装验证。</p>
+        <div><p class="section-title">适合场景</p><ul><li>要把提示词、SOP、聊天记录、脚本或模糊想法整理成可复用、可公开安装的 Agent Skill。</li><li>要改进已有 Skill 的触发边界、证据、结构和发布流程，并希望把检索、评测与 GitHub 发布串成一套闭环。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：工作流、Prompt、SOP、旧 Skill、脚本、目标用户、边界和是否发布。</li><li>输出：Skill 包、同类研究记录、触发评测、验证报告，以及在明确授权时生成的 PR、Release 和安装证据。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>比一次性写 SKILL.md 更重；普通总结、翻译、文档或无需复用的任务不适合使用。</li><li>正式发布会调用 npx、Git 和 GitHub CLI，并可能创建仓库、分支、PR、合并、Release 与本地同步，必须先确认账号、网络和外部写入权限。</li><li>默认采用 qiaomu 命名、版权和 Profile 资源；用于其他作者或团队时要明确更换所有者与品牌默认值。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-meta-skill</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx skills add joeseesun/qiaomu-meta-skill</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 qiaomu-meta-skill 把这套客户访谈 SOP 做成可复用 Skill；先研究同类方案，完成触发评测和安全检查，但先不要发布。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/joeseesun/qiaomu-meta-skill" target="_blank" rel="noopener noreferrer" data-author="joeseesun" data-skill-id="qiaomu-meta-skill" data-source-url="https://github.com/joeseesun/qiaomu-meta-skill">https://github.com/joeseesun/qiaomu-meta-skill</a></p></div>
+      </article>
+      <article class="skill-card" id="yao-meta-skill" data-category="dev product" data-author="yaojingang" data-text="yao meta skill 姚老师原版元 skill，把重复工作流工程化为可治理的 skill 资产，覆盖 skill ir、多端编译、触发与输出评测、review studio、打包、信任检查和 skillops 迭代。 yaojingang https://github.com/yaojingang/yao-meta-skill dev product skill os">
+        <div class="skill-title"><img src="https://github.com/yaojingang.png" alt="yaojingang 头像" loading="lazy"><h2>Yao Meta Skill</h2></div>
+        <div class="meta"><span class="pill level">推荐：高</span><span class="pill">Skill OS</span><span class="pill">开发工具</span><span class="pill">产品协作</span><span class="pill source-pill">作者：yaojingang</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">姚老师原版元 Skill，把重复工作流工程化为可治理的 Skill 资产，覆盖 Skill IR、多端编译、触发与输出评测、Review Studio、打包、信任检查和 SkillOps 迭代。</p>
+        <div><p class="section-title">适合场景</p><ul><li>要把个人工作流升级成团队长期维护的 Skill，并明确输入输出、权限、回滚、所有者和复审周期。</li><li>需要对 Skill 做跨平台打包、触发与输出评测、治理审计、安装模拟、发布证据或持续漂移跟踪。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：工作流、Prompt、SOP、脚本或已有 Skill，以及目标平台、成熟度、风险和发布要求。</li><li>输出：Skill 包、Skill IR、平台适配产物、评测与治理报告、Review Studio 页面、发行包和迭代证据。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>工程体系很完整但体量较大，仓库含 155 个 Python 脚本；轻量个人 Skill 或一次性任务可能不值得启用完整门禁。</li><li>本地开发建议 Python 3.11；部分命令会写报告、生成包、运行子进程或访问 GitHub/模型服务，执行前应核对具体命令、权限、凭据和输出路径。</li><li>仓库将当前状态定位为可做 beta 与外部测试，更强的 world-class 声明仍明确依赖尚待补齐的外部和人工证据。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx -y skills add yaojingang/yao-meta-skill -a codex -g -y</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx -y skills add yaojingang/yao-meta-skill -a codex -g -y</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 yao-meta-skill 把这套发布复盘流程做成团队可维护的 Skill，并补齐 Skill IR、触发评测、信任检查和安装模拟。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/yaojingang/yao-meta-skill" target="_blank" rel="noopener noreferrer" data-author="yaojingang" data-skill-id="yao-meta-skill" data-source-url="https://github.com/yaojingang/yao-meta-skill">https://github.com/yaojingang/yao-meta-skill</a></p></div>
+      </article>
+      <article class="skill-card" id="human-writing" data-category="writing humanizer" data-author="KKKKhazix" data-text="human writing 通用中文创作与改稿 skill，先检查现实材料或虚构行动是否站得住，再处理段落推进、自然中文韵律和模型腔清理。 kkkkhazix https://github.com/kkkkhazix/human-writing/tree/main/human-writing writing humanizer 活人感写作">
+        <div class="skill-title"><img src="https://avatars.githubusercontent.com/u/239590580?v=4" alt="KKKKhazix 头像" loading="lazy"><h2>Human Writing</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">活人感写作</span><span class="pill">文字处理</span><span class="pill">humanizer</span><span class="pill source-pill">作者：KKKKhazix</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">通用中文创作与改稿 Skill，先检查现实材料或虚构行动是否站得住，再处理段落推进、自然中文韵律和模型腔清理。</p>
+        <div><p class="section-title">适合场景</p><ul><li>要写或重写知乎回答、论坛长帖、公众号文章、博客、人物故事、行业解读、教程、评测、口播或演讲稿。</li><li>要创作小说、故事和对白，或清理空泛机构腔、营销腔和常见 AI 句式，同时保留事实与人物因果。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：写作主题、事实材料或虚构授权、目标文体、受众、篇幅和必须保留的信息。</li><li>输出：材料边界清楚、段落持续推进的中文成稿；长稿还可用附带脚本检查硬禁令和常见模型化形状。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>现实长文材料不足时会先研究、最多追问三个问题或主动缩短，不会用虚构案例和重复解释硬凑字数。</li><li>成稿规则会强制避开冒号、破折号、多类翻案句及一批黑话，风格约束很强；必须保留原始引文、特定标点或品牌句式时要提前声明例外。</li><li>检查脚本只负责发现规则命中和可疑形状，不会核验事实，也不会自动替用户改文。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>git clone https://github.com/KKKKhazix/human-writing.git
+New-Item -ItemType Directory -Force &quot;$env:USERPROFILE\.codex\skills&quot; | Out-Null
+Copy-Item -Recurse .\human-writing\human-writing &quot;$env:USERPROFILE\.codex\skills\human-writing&quot;</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>git clone https://github.com/KKKKhazix/human-writing.git
+mkdir -p ~/.codex/skills
+cp -R human-writing/human-writing ~/.codex/skills/human-writing</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/KKKKhazix/human-writing/tree/main/human-writing" target="_blank" rel="noopener noreferrer" data-author="KKKKhazix" data-skill-id="human-writing" data-source-url="https://github.com/KKKKhazix/human-writing/tree/main/human-writing">https://github.com/KKKKhazix/human-writing/tree/main/human-writing</a></p></div>
+      </article>
           <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>
         </section>
       </section>
     </div>
   </main>
-  <footer><div class="shell">最后更新：2026-07-29 · 共 56 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
+  <footer><div class="shell">最后更新：2026-08-05 · 共 59 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
   <script>
     const search = document.querySelector('.search');
     const cards = [...document.querySelectorAll('.skill-card')];

@@ -1,6 +1,6 @@
 {
   "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-08-05",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -156,6 +156,13 @@
       "github_url": "https://github.com/summer817-AI",
       "avatar_url": "https://github.com/summer817-AI.png",
       "summary": "围绕真实项目工作流沉淀 Codex skills，偏演示文档、PPT/PDF 转换、内容生产和本地自动化。"
+    },
+    {
+      "login": "yaojingang",
+      "name": "Yao Team / yaojingang",
+      "github_url": "https://github.com/yaojingang",
+      "avatar_url": "https://github.com/yaojingang.png",
+      "summary": "维护 Yao Meta Skill，把 Skill 创建扩展为包含 Skill IR、多端编译、评测、治理、发布门禁和持续迭代的工程系统。"
     }
   ],
   "source_repositories": [
@@ -391,6 +398,24 @@
       "url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
       "author": "joeseesun",
       "trust_note": "已审查 SKILL.md、README、MIT LICENSE、references、agents/interface.yaml 与本地 goal linter；linter 只读取传入文本，不联网或写入系统目录。"
+    },
+    {
+      "name": "joeseesun/qiaomu-meta-skill",
+      "url": "https://github.com/joeseesun/qiaomu-meta-skill",
+      "author": "joeseesun",
+      "trust_note": "已审查根目录 SKILL.md、README、MIT LICENSE、manifest、references 与 scripts；本地校验无失败或警告。发布器会调用 npx、Git 和 GitHub CLI，并可创建仓库、分支、PR、合并、Release 及本地同步，只应在用户明确授权发布后运行。"
+    },
+    {
+      "name": "yaojingang/yao-meta-skill",
+      "url": "https://github.com/yaojingang/yao-meta-skill",
+      "author": "yaojingang",
+      "trust_note": "已审查根目录 SKILL.md、README、MIT LICENSE、manifest、脚本清单与仓库安全报告；validate、lint、governance 和 resource-boundary 均通过。仓库含 155 个 Python 脚本，部分会写文件、启动子进程或访问网络，运行前应按具体命令核对权限和输出目录。"
+    },
+    {
+      "name": "KKKKhazix/human-writing",
+      "url": "https://github.com/KKKKhazix/human-writing",
+      "author": "KKKKhazix",
+      "trust_note": "已审查 README、双层 MIT LICENSE、human-writing/SKILL.md、references、OpenAI 接口元数据和检查脚本；脚本只读取指定稿件并报告命中的写作规则，实际文本冒烟测试通过。"
     }
   ],
   "agent_entrypoints": {
@@ -3430,6 +3455,166 @@
         "claude_code_or_claw": [
           "请使用 qiaomu-goal-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the qiaomu-goal-meta-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "qiaomu-meta-skill",
+      "name": "qiaomu-meta-skill",
+      "category": [
+        "dev",
+        "product"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "joeseesun",
+        "github_url": "https://github.com/joeseesun",
+        "avatar_url": "https://github.com/joeseesun.png"
+      },
+      "source_repository": "https://github.com/joeseesun/qiaomu-meta-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/joeseesun/qiaomu-meta-skill",
+      "topic_tag": "Skill 创建发布",
+      "summary": "乔木的 Skill 创建与发布元工作流：先研究同类方案，再完成边界设计、触发评测、安全检查、README、PR、Release 和干净安装验证。",
+      "use_when": [
+        "要把提示词、SOP、聊天记录、脚本或模糊想法整理成可复用、可公开安装的 Agent Skill。",
+        "要改进已有 Skill 的触发边界、证据、结构和发布流程，并希望把检索、评测与 GitHub 发布串成一套闭环。"
+      ],
+      "inputs_outputs": [
+        "输入：工作流、Prompt、SOP、旧 Skill、脚本、目标用户、边界和是否发布。",
+        "输出：Skill 包、同类研究记录、触发评测、验证报告，以及在明确授权时生成的 PR、Release 和安装证据。"
+      ],
+      "limitations": [
+        "比一次性写 SKILL.md 更重；普通总结、翻译、文档或无需复用的任务不适合使用。",
+        "正式发布会调用 npx、Git 和 GitHub CLI，并可能创建仓库、分支、PR、合并、Release 与本地同步，必须先确认账号、网络和外部写入权限。",
+        "默认采用 qiaomu 命名、版权和 Profile 资源；用于其他作者或团队时要明确更换所有者与品牌默认值。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx skills add joeseesun/qiaomu-meta-skill"
+        ],
+        "macos_linux": [
+          "npx skills add joeseesun/qiaomu-meta-skill"
+        ]
+      },
+      "example_prompt": "请用 qiaomu-meta-skill 把这套客户访谈 SOP 做成可复用 Skill；先研究同类方案，完成触发评测和安全检查，但先不要发布。",
+      "page_url": "https://summerai.cc/skills/#qiaomu-meta-skill",
+      "invocation": {
+        "codex": [
+          "请使用 qiaomu-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$qiaomu-meta-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 qiaomu-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the qiaomu-meta-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "yao-meta-skill",
+      "name": "Yao Meta Skill",
+      "category": [
+        "dev",
+        "product"
+      ],
+      "recommendation_level": "high",
+      "author": {
+        "login": "yaojingang",
+        "github_url": "https://github.com/yaojingang",
+        "avatar_url": "https://github.com/yaojingang.png"
+      },
+      "source_repository": "https://github.com/yaojingang/yao-meta-skill",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/yaojingang/yao-meta-skill",
+      "topic_tag": "Skill OS",
+      "summary": "姚老师原版元 Skill，把重复工作流工程化为可治理的 Skill 资产，覆盖 Skill IR、多端编译、触发与输出评测、Review Studio、打包、信任检查和 SkillOps 迭代。",
+      "use_when": [
+        "要把个人工作流升级成团队长期维护的 Skill，并明确输入输出、权限、回滚、所有者和复审周期。",
+        "需要对 Skill 做跨平台打包、触发与输出评测、治理审计、安装模拟、发布证据或持续漂移跟踪。"
+      ],
+      "inputs_outputs": [
+        "输入：工作流、Prompt、SOP、脚本或已有 Skill，以及目标平台、成熟度、风险和发布要求。",
+        "输出：Skill 包、Skill IR、平台适配产物、评测与治理报告、Review Studio 页面、发行包和迭代证据。"
+      ],
+      "limitations": [
+        "工程体系很完整但体量较大，仓库含 155 个 Python 脚本；轻量个人 Skill 或一次性任务可能不值得启用完整门禁。",
+        "本地开发建议 Python 3.11；部分命令会写报告、生成包、运行子进程或访问 GitHub/模型服务，执行前应核对具体命令、权限、凭据和输出路径。",
+        "仓库将当前状态定位为可做 beta 与外部测试，更强的 world-class 声明仍明确依赖尚待补齐的外部和人工证据。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx -y skills add yaojingang/yao-meta-skill -a codex -g -y"
+        ],
+        "macos_linux": [
+          "npx -y skills add yaojingang/yao-meta-skill -a codex -g -y"
+        ]
+      },
+      "example_prompt": "请用 yao-meta-skill 把这套发布复盘流程做成团队可维护的 Skill，并补齐 Skill IR、触发评测、信任检查和安装模拟。",
+      "page_url": "https://summerai.cc/skills/#yao-meta-skill",
+      "invocation": {
+        "codex": [
+          "请使用 yao-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$yao-meta-skill <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 yao-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the yao-meta-skill skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "human-writing",
+      "name": "Human Writing",
+      "category": [
+        "writing",
+        "humanizer"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/human-writing",
+      "source_path": "human-writing/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/human-writing/tree/main/human-writing",
+      "topic_tag": "活人感写作",
+      "summary": "通用中文创作与改稿 Skill，先检查现实材料或虚构行动是否站得住，再处理段落推进、自然中文韵律和模型腔清理。",
+      "use_when": [
+        "要写或重写知乎回答、论坛长帖、公众号文章、博客、人物故事、行业解读、教程、评测、口播或演讲稿。",
+        "要创作小说、故事和对白，或清理空泛机构腔、营销腔和常见 AI 句式，同时保留事实与人物因果。"
+      ],
+      "inputs_outputs": [
+        "输入：写作主题、事实材料或虚构授权、目标文体、受众、篇幅和必须保留的信息。",
+        "输出：材料边界清楚、段落持续推进的中文成稿；长稿还可用附带脚本检查硬禁令和常见模型化形状。"
+      ],
+      "limitations": [
+        "现实长文材料不足时会先研究、最多追问三个问题或主动缩短，不会用虚构案例和重复解释硬凑字数。",
+        "成稿规则会强制避开冒号、破折号、多类翻案句及一批黑话，风格约束很强；必须保留原始引文、特定标点或品牌句式时要提前声明例外。",
+        "检查脚本只负责发现规则命中和可疑形状，不会核验事实，也不会自动替用户改文。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/human-writing.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\human-writing\\human-writing \"$env:USERPROFILE\\.codex\\skills\\human-writing\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/human-writing.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R human-writing/human-writing ~/.codex/skills/human-writing"
+        ]
+      },
+      "example_prompt": "请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。",
+      "page_url": "https://summerai.cc/skills/#human-writing",
+      "invocation": {
+        "codex": [
+          "请使用 human-writing 这个 skill，帮我处理：<把你的任务写在这里>",
+          "$human-writing <把你的任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 human-writing 这个 skill，帮我处理：<把你的任务写在这里>",
+          "Use the human-writing skill to handle: <your task here>"
         ]
       }
     }

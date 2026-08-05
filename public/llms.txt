@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-07-29
+Updated: 2026-08-05
 Site: https://summerai.cc/skills/
 
 ## 入选标准
@@ -628,3 +628,36 @@ Site: https://summerai.cc/skills/
 - use_when: 想快速把“做个 App”“修一下问题”等模糊需求写成清晰、可验证的 Codex /goal。；需要给中文用户一份保守默认的推荐执行版，并同时保留英文兼容镜像或少量可选调整。
 - limitations: 它只生成目标指令，不会默认执行目标本身；要执行仍需用户明确发起后续任务。；未知仓库命令或专业领域规则时应先做发现，不应把模型猜测写成验收事实；可选 linter 需 Python。
 - invocation_example: 请用 qiaomu-goal-meta-skill 把“优化现有后台首页的首屏信息层级”写成一条带验证和暂停条件的 Codex /goal。
+
+### qiaomu-meta-skill
+- id: qiaomu-meta-skill
+- author: joeseesun
+- category: dev, product
+- recommendation: medium-high
+- source: https://github.com/joeseesun/qiaomu-meta-skill
+- summary: 乔木的 Skill 创建与发布元工作流：先研究同类方案，再完成边界设计、触发评测、安全检查、README、PR、Release 和干净安装验证。
+- use_when: 要把提示词、SOP、聊天记录、脚本或模糊想法整理成可复用、可公开安装的 Agent Skill。；要改进已有 Skill 的触发边界、证据、结构和发布流程，并希望把检索、评测与 GitHub 发布串成一套闭环。
+- limitations: 比一次性写 SKILL.md 更重；普通总结、翻译、文档或无需复用的任务不适合使用。；正式发布会调用 npx、Git 和 GitHub CLI，并可能创建仓库、分支、PR、合并、Release 与本地同步，必须先确认账号、网络和外部写入权限。；默认采用 qiaomu 命名、版权和 Profile 资源；用于其他作者或团队时要明确更换所有者与品牌默认值。
+- invocation_example: 请用 qiaomu-meta-skill 把这套客户访谈 SOP 做成可复用 Skill；先研究同类方案，完成触发评测和安全检查，但先不要发布。
+
+### Yao Meta Skill
+- id: yao-meta-skill
+- author: yaojingang
+- category: dev, product
+- recommendation: high
+- source: https://github.com/yaojingang/yao-meta-skill
+- summary: 姚老师原版元 Skill，把重复工作流工程化为可治理的 Skill 资产，覆盖 Skill IR、多端编译、触发与输出评测、Review Studio、打包、信任检查和 SkillOps 迭代。
+- use_when: 要把个人工作流升级成团队长期维护的 Skill，并明确输入输出、权限、回滚、所有者和复审周期。；需要对 Skill 做跨平台打包、触发与输出评测、治理审计、安装模拟、发布证据或持续漂移跟踪。
+- limitations: 工程体系很完整但体量较大，仓库含 155 个 Python 脚本；轻量个人 Skill 或一次性任务可能不值得启用完整门禁。；本地开发建议 Python 3.11；部分命令会写报告、生成包、运行子进程或访问 GitHub/模型服务，执行前应核对具体命令、权限、凭据和输出路径。；仓库将当前状态定位为可做 beta 与外部测试，更强的 world-class 声明仍明确依赖尚待补齐的外部和人工证据。
+- invocation_example: 请用 yao-meta-skill 把这套发布复盘流程做成团队可维护的 Skill，并补齐 Skill IR、触发评测、信任检查和安装模拟。
+
+### Human Writing
+- id: human-writing
+- author: KKKKhazix
+- category: writing, humanizer
+- recommendation: medium-high
+- source: https://github.com/KKKKhazix/human-writing/tree/main/human-writing
+- summary: 通用中文创作与改稿 Skill，先检查现实材料或虚构行动是否站得住，再处理段落推进、自然中文韵律和模型腔清理。
+- use_when: 要写或重写知乎回答、论坛长帖、公众号文章、博客、人物故事、行业解读、教程、评测、口播或演讲稿。；要创作小说、故事和对白，或清理空泛机构腔、营销腔和常见 AI 句式，同时保留事实与人物因果。
+- limitations: 现实长文材料不足时会先研究、最多追问三个问题或主动缩短，不会用虚构案例和重复解释硬凑字数。；成稿规则会强制避开冒号、破折号、多类翻案句及一批黑话，风格约束很强；必须保留原始引文、特定标点或品牌句式时要提前声明例外。；检查脚本只负责发现规则命中和可疑形状，不会核验事实，也不会自动替用户改文。
+- invocation_example: 请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。
