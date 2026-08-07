@@ -2,8 +2,8 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-08-05
-Site: https://summerai.cc/skills/
+Updated: 2026-08-07
+Site: https://skills.summerai.cc/
 
 ## 入选标准
 - 可安装：必须能定位到明确的 GitHub 仓库、官方文档或可复制安装入口。

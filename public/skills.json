@@ -1,6 +1,6 @@
 {
-  "site": "https://summerai.cc/skills/",
-  "updated_at": "2026-08-05",
+  "site": "https://skills.summerai.cc/",
+  "updated_at": "2026-08-07",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -419,10 +419,10 @@
     }
   ],
   "agent_entrypoints": {
-    "html": "https://summerai.cc/skills/",
-    "json": "https://summerai.cc/skills.json",
-    "llms": "https://summerai.cc/llms.txt",
-    "sitemap": "https://summerai.cc/sitemap.xml"
+    "html": "https://skills.summerai.cc/",
+    "json": "https://skills.summerai.cc/skills.json",
+    "llms": "https://skills.summerai.cc/llms.txt",
+    "sitemap": "https://skills.summerai.cc/skills-sitemap.xml"
   },
   "skills": [
     {
@@ -466,7 +466,7 @@
         ]
       },
       "example_prompt": "Use aihot to check the most important AI updates from the past 24 hours.",
-      "page_url": "https://summerai.cc/skills/#aihot",
+      "page_url": "https://skills.summerai.cc/#aihot",
       "invocation": {
         "codex": [
           "请使用 aihot 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -519,7 +519,7 @@
         ]
       },
       "example_prompt": "Use hv-analysis to deeply research this company and compare it with current competitors.",
-      "page_url": "https://summerai.cc/skills/#hv-analysis",
+      "page_url": "https://skills.summerai.cc/#hv-analysis",
       "invocation": {
         "codex": [
           "请使用 hv-analysis 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -571,7 +571,7 @@
         ]
       },
       "example_prompt": "Use khazix-writer to turn this brief and my notes into a WeChat long article.",
-      "page_url": "https://summerai.cc/skills/#khazix-writer",
+      "page_url": "https://skills.summerai.cc/#khazix-writer",
       "invocation": {
         "codex": [
           "请使用 khazix-writer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -623,7 +623,7 @@
         ]
       },
       "example_prompt": "Use neat-freak to sync this project docs and memory after the current milestone.",
-      "page_url": "https://summerai.cc/skills/#neat-freak",
+      "page_url": "https://skills.summerai.cc/#neat-freak",
       "invocation": {
         "codex": [
           "请使用 neat-freak 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -677,7 +677,7 @@
         ]
       },
       "example_prompt": "Use guizang-ppt-skill to turn this outline into a Swiss-style web PPT for a 20-minute product talk.",
-      "page_url": "https://summerai.cc/skills/#guizang-ppt-skill",
+      "page_url": "https://skills.summerai.cc/#guizang-ppt-skill",
       "invocation": {
         "codex": [
           "请使用 guizang-ppt-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -731,7 +731,7 @@
         ]
       },
       "example_prompt": "请用 guizang-social-card-skill 把这篇文章做成 6 张小红书 3:4 图文卡片，并生成公众号封面。",
-      "page_url": "https://summerai.cc/skills/#guizang-social-card-skill",
+      "page_url": "https://skills.summerai.cc/#guizang-social-card-skill",
       "invocation": {
         "codex": [
           "请使用 guizang-social-card-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -785,7 +785,7 @@
         ]
       },
       "example_prompt": "Use NanoBanana-PPT-Skills to generate a five-page visual deck from this document.",
-      "page_url": "https://summerai.cc/skills/#nanobanana-ppt-skills",
+      "page_url": "https://skills.summerai.cc/#nanobanana-ppt-skills",
       "invocation": {
         "codex": [
           "请使用 NanoBanana-PPT-Skills 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -837,7 +837,7 @@
         ]
       },
       "example_prompt": "Use humanizer-zh to make this article sound less AI-written while keeping my original point.",
-      "page_url": "https://summerai.cc/skills/#humanizer-zh",
+      "page_url": "https://skills.summerai.cc/#humanizer-zh",
       "invocation": {
         "codex": [
           "请使用 humanizer-zh 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -890,7 +890,7 @@
         ]
       },
       "example_prompt": "Use youtube-clipper to find the best short segments in this interview and create bilingual clips.",
-      "page_url": "https://summerai.cc/skills/#youtube-clipper",
+      "page_url": "https://skills.summerai.cc/#youtube-clipper",
       "invocation": {
         "codex": [
           "请使用 youtube-clipper 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -943,7 +943,7 @@
         ]
       },
       "example_prompt": "Use youtube-bilingual-hardburn to make this English talk into a Chinese-English hardsub video.",
-      "page_url": "https://summerai.cc/skills/#youtube-bilingual-hardburn",
+      "page_url": "https://skills.summerai.cc/#youtube-bilingual-hardburn",
       "invocation": {
         "codex": [
           "请使用 youtube-bilingual-hardburn 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -996,7 +996,7 @@
         ]
       },
       "example_prompt": "Use logo-generator to create six SVG logo directions for this AI product.",
-      "page_url": "https://summerai.cc/skills/#logo-generator",
+      "page_url": "https://skills.summerai.cc/#logo-generator",
       "invocation": {
         "codex": [
           "请使用 logo-generator 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1049,7 +1049,7 @@
         ]
       },
       "example_prompt": "请用 document-illustrator 给这篇 1 万字长文设计 5 张配图。",
-      "page_url": "https://summerai.cc/skills/#document-illustrator",
+      "page_url": "https://skills.summerai.cc/#document-illustrator",
       "invocation": {
         "codex": [
           "请使用 document-illustrator 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1102,7 +1102,7 @@
         ]
       },
       "example_prompt": "请用 ljg-paper 把这篇论文讲给一个非本领域的人听：<论文链接>",
-      "page_url": "https://summerai.cc/skills/#ljg-paper",
+      "page_url": "https://skills.summerai.cc/#ljg-paper",
       "invocation": {
         "codex": [
           "请使用 ljg-paper 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1162,7 +1162,7 @@
         ]
       },
       "example_prompt": "请用 ljg-card -i 把这段内容铸成一张信息图卡片。",
-      "page_url": "https://summerai.cc/skills/#ljg-card",
+      "page_url": "https://skills.summerai.cc/#ljg-card",
       "invocation": {
         "codex": [
           "请使用 ljg-card 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1215,7 +1215,7 @@
         ]
       },
       "example_prompt": "请用 ljg-plain 把这段话说人话：<内容>",
-      "page_url": "https://summerai.cc/skills/#ljg-plain",
+      "page_url": "https://skills.summerai.cc/#ljg-plain",
       "invocation": {
         "codex": [
           "请使用 ljg-plain 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1269,7 +1269,7 @@
         ]
       },
       "example_prompt": "请用 ljg-book 拆一下《复杂》这本书，重点看它的核心问题和分析框架。",
-      "page_url": "https://summerai.cc/skills/#ljg-book",
+      "page_url": "https://skills.summerai.cc/#ljg-book",
       "invocation": {
         "codex": [
           "请使用 ljg-book 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1324,7 +1324,7 @@
         ]
       },
       "example_prompt": "请用 ljg-xray-book 深度拆解《思考，快与慢》，重点输出核心结构、隐含假设和行动触发。",
-      "page_url": "https://summerai.cc/skills/#ljg-xray-book",
+      "page_url": "https://skills.summerai.cc/#ljg-xray-book",
       "invocation": {
         "codex": [
           "请使用 ljg-xray-book 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1378,7 +1378,7 @@
         ]
       },
       "example_prompt": "请用 ljg-rank 分析一下 AI 编程工具这个领域真正的几根秩。",
-      "page_url": "https://summerai.cc/skills/#ljg-rank",
+      "page_url": "https://skills.summerai.cc/#ljg-rank",
       "invocation": {
         "codex": [
           "请使用 ljg-rank 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1434,7 +1434,7 @@
         ]
       },
       "example_prompt": "请用 roundtable-seminar 的圆桌讨论框架，围绕“AI Agent 是否会改变知识工作组织方式”展开一轮求真式讨论。",
-      "page_url": "https://summerai.cc/skills/#roundtable-seminar",
+      "page_url": "https://skills.summerai.cc/#roundtable-seminar",
       "invocation": {
         "codex": [
           "请参考 roundtable-seminar 这个框架，帮我处理：<议题>",
@@ -1489,7 +1489,7 @@
         ]
       },
       "example_prompt": "Use devils-advocate to challenge this product plan before I start building.",
-      "page_url": "https://summerai.cc/skills/#devils-advocate",
+      "page_url": "https://skills.summerai.cc/#devils-advocate",
       "invocation": {
         "codex": [
           "请使用 devils-advocate 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1543,7 +1543,7 @@
         ]
       },
       "example_prompt": "Use pm-skills to turn this vague feature idea into a review-ready PRD and risk checklist.",
-      "page_url": "https://summerai.cc/skills/#pm-skills",
+      "page_url": "https://skills.summerai.cc/#pm-skills",
       "invocation": {
         "codex": [
           "请使用 pm-skills 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1596,7 +1596,7 @@
         ]
       },
       "example_prompt": "Use brand-design-md to make this dashboard feel like Stripe plus Linear.",
-      "page_url": "https://summerai.cc/skills/#brand-design-md",
+      "page_url": "https://skills.summerai.cc/#brand-design-md",
       "invocation": {
         "codex": [
           "请使用 brand-design-md 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1649,7 +1649,7 @@
         ]
       },
       "example_prompt": "Use career-skill-planner to design an AI skill library for a content operations manager.",
-      "page_url": "https://summerai.cc/skills/#career-skill-planner",
+      "page_url": "https://skills.summerai.cc/#career-skill-planner",
       "invocation": {
         "codex": [
           "请使用 career-skill-planner 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1703,7 +1703,7 @@
         ]
       },
       "example_prompt": "Use SPACE-product-describer to turn this fuzzy app idea into a buildable product brief.",
-      "page_url": "https://summerai.cc/skills/#space-product-describer",
+      "page_url": "https://skills.summerai.cc/#space-product-describer",
       "invocation": {
         "codex": [
           "请使用 SPACE-product-describer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1755,7 +1755,7 @@
         ]
       },
       "example_prompt": "请用 skill-creator 帮我把这个工作流整理成一个可复用的 skill。",
-      "page_url": "https://summerai.cc/skills/#skill-creator",
+      "page_url": "https://skills.summerai.cc/#skill-creator",
       "invocation": {
         "codex": [
           "请使用 skill-creator 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1809,7 +1809,7 @@
         ]
       },
       "example_prompt": "请用 huashu-nuwa 帮我蒸馏一个“费曼视角”的 perspective skill。",
-      "page_url": "https://summerai.cc/skills/#huashu-nuwa",
+      "page_url": "https://skills.summerai.cc/#huashu-nuwa",
       "invocation": {
         "codex": [
           "请使用 huashu-nuwa 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1863,7 +1863,7 @@
         ]
       },
       "example_prompt": "请用 baoyu-url-to-markdown 把这个网页转换成 Markdown：<URL>",
-      "page_url": "https://summerai.cc/skills/#baoyu-url-to-markdown",
+      "page_url": "https://skills.summerai.cc/#baoyu-url-to-markdown",
       "invocation": {
         "codex": [
           "请使用 baoyu-url-to-markdown 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -1918,7 +1918,7 @@
         ]
       },
       "example_prompt": "请用 wuman-brief-to-poster，基于这份活动文档和参考图，先问我最关键的补充问题，再生成一版高端编辑风海报 brief。",
-      "page_url": "https://summerai.cc/skills/#wuman-brief-to-poster",
+      "page_url": "https://skills.summerai.cc/#wuman-brief-to-poster",
       "invocation": {
         "codex": [
           "请使用 wuman-brief-to-poster 这个 skill，帮我处理：<海报需求>",
@@ -1973,7 +1973,7 @@
         ]
       },
       "example_prompt": "请用 resume-beautifier 把我的简历整理成一页 A4 HTML，并先检查隐私信息。",
-      "page_url": "https://summerai.cc/skills/#resume-beautifier",
+      "page_url": "https://skills.summerai.cc/#resume-beautifier",
       "invocation": {
         "codex": [
           "请使用 resume-beautifier 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2027,7 +2027,7 @@
         ]
       },
       "example_prompt": "请用 ai-news-radar 帮我筛选一批 AI 新闻源，并按可信度排序。",
-      "page_url": "https://summerai.cc/skills/#ai-news-radar",
+      "page_url": "https://skills.summerai.cc/#ai-news-radar",
       "invocation": {
         "codex": [
           "请使用 ai-news-radar 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2080,7 +2080,7 @@
         ]
       },
       "example_prompt": "请用 ai-court 帮我为这个产品方案组织一轮多 Agent 评审。",
-      "page_url": "https://summerai.cc/skills/#ai-court",
+      "page_url": "https://skills.summerai.cc/#ai-court",
       "invocation": {
         "codex": [
           "请使用 ai-court 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2138,7 +2138,7 @@
         ]
       },
       "example_prompt": "请用 feishu-cli-skill 帮我检查飞书 CLI 是否已经能正常认证。",
-      "page_url": "https://summerai.cc/skills/#feishu-cli-skill",
+      "page_url": "https://skills.summerai.cc/#feishu-cli-skill",
       "invocation": {
         "codex": [
           "请使用 feishu-cli-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2192,7 +2192,7 @@
         ]
       },
       "example_prompt": "请用 bazi 分析这个八字盘，先确认口径和缺失信息，再给出结构化解读。",
-      "page_url": "https://summerai.cc/skills/#bazi",
+      "page_url": "https://skills.summerai.cc/#bazi",
       "invocation": {
         "codex": [
           "请使用 bazi 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2248,7 +2248,7 @@
         ]
       },
       "example_prompt": "请用 qimen-dunjia 判断这件事是否适合本周启动，先问清事项、时间地点和判断目标。",
-      "page_url": "https://summerai.cc/skills/#qimen-dunjia",
+      "page_url": "https://skills.summerai.cc/#qimen-dunjia",
       "invocation": {
         "codex": [
           "请使用 qimen-dunjia 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2302,7 +2302,7 @@
         ]
       },
       "example_prompt": "请用 ziwei-doushu 解读这张紫微斗数命盘，先确认排盘口径和关键假设。",
-      "page_url": "https://summerai.cc/skills/#ziwei-doushu",
+      "page_url": "https://skills.summerai.cc/#ziwei-doushu",
       "invocation": {
         "codex": [
           "请使用 ziwei-doushu 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2357,7 +2357,7 @@
         ]
       },
       "example_prompt": "请用 storage-analyzer 帮我分析电脑为什么快没空间了，只生成报告，不执行删除。",
-      "page_url": "https://summerai.cc/skills/#storage-analyzer",
+      "page_url": "https://skills.summerai.cc/#storage-analyzer",
       "invocation": {
         "codex": [
           "请使用 storage-analyzer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2414,7 +2414,7 @@
         ]
       },
       "example_prompt": "请用 youtube-transcript-cn 提取这个 YouTube 视频的中文字幕，并整理成带小标题的 Markdown。",
-      "page_url": "https://summerai.cc/skills/#youtube-transcript-cn",
+      "page_url": "https://skills.summerai.cc/#youtube-transcript-cn",
       "invocation": {
         "codex": [
           "请使用 youtube-transcript-cn 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2469,7 +2469,7 @@
         ]
       },
       "example_prompt": "请用 rss-aggregator 汇总最近 3 天这些技术博客的更新，按值得阅读程度排序。",
-      "page_url": "https://summerai.cc/skills/#rss-aggregator",
+      "page_url": "https://skills.summerai.cc/#rss-aggregator",
       "invocation": {
         "codex": [
           "请使用 rss-aggregator 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2523,7 +2523,7 @@
         ]
       },
       "example_prompt": "请用 qiushi-skill 先调查现状，再找出主要矛盾，给我一个分阶段推进方案。",
-      "page_url": "https://summerai.cc/skills/#qiushi-skill",
+      "page_url": "https://skills.summerai.cc/#qiushi-skill",
       "invocation": {
         "codex": [
           "请使用 qiushi-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2574,7 +2574,7 @@
         ]
       },
       "example_prompt": "请先用 skill-vetter 审查这个 GitHub skill，列出权限、风险等级和是否建议安装。",
-      "page_url": "https://summerai.cc/skills/#skill-vetter",
+      "page_url": "https://skills.summerai.cc/#skill-vetter",
       "invocation": {
         "codex": [
           "请使用 skill-vetter 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2628,7 +2628,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-skills 列出乔木的所有 skill，并帮我 dry-run 安装 research 分类。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-skills",
+      "page_url": "https://skills.summerai.cc/#qiaomu-skills",
       "invocation": {
         "codex": [
           "请使用 qiaomu-skills 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2679,7 +2679,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-writer 联网搜索最近的 AI 编程工具变化，写一篇乔木风格公众号文章，可以配图但失败不要中断。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-writer",
+      "page_url": "https://skills.summerai.cc/#qiaomu-writer",
       "invocation": {
         "codex": [
           "请使用 qiaomu-writer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2730,7 +2730,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-paper-interpreter 解读这篇 arXiv 论文，保留发布日期、图表和关键贡献，不要编造实验结果。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-paper-interpreter",
+      "page_url": "https://skills.summerai.cc/#qiaomu-paper-interpreter",
       "invocation": {
         "codex": [
           "请使用 qiaomu-paper-interpreter 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2782,7 +2782,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-info-card-designer 把这篇文章做成 480 宽的信息卡，只使用原文事实并导出 PNG。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-info-card-designer",
+      "page_url": "https://skills.summerai.cc/#qiaomu-info-card-designer",
       "invocation": {
         "codex": [
           "请使用 qiaomu-info-card-designer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2834,7 +2834,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-markdown-proxy 抓取这个链接，转成 Markdown 后保留标题、作者、日期和来源 URL。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-markdown-proxy",
+      "page_url": "https://skills.summerai.cc/#qiaomu-markdown-proxy",
       "invocation": {
         "codex": [
           "请使用 qiaomu-markdown-proxy 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2889,7 +2889,7 @@
         ]
       },
       "example_prompt": "请用 renwei-writing 帮我润色这段公众号开头，只清理卡顿和啰嗦的地方，不要把我的语气改得更像 AI。",
-      "page_url": "https://summerai.cc/skills/#renwei-writing",
+      "page_url": "https://skills.summerai.cc/#renwei-writing",
       "invocation": {
         "codex": [
           "请使用 renwei-writing 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -2947,7 +2947,7 @@
         ]
       },
       "example_prompt": "请用 concept-explainer 帮我搞懂猫咪糖尿病，区分医学共识、争议点和我需要向兽医确认的问题。",
-      "page_url": "https://summerai.cc/skills/#concept-explainer",
+      "page_url": "https://skills.summerai.cc/#concept-explainer",
       "invocation": {
         "codex": [
           "请使用 concept-explainer 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3003,7 +3003,7 @@
         ]
       },
       "example_prompt": "请用 luban 帮我体检这个 SKILL.md，判断它为什么不适合公开发布，并给出最小一轮可验证改写方案。",
-      "page_url": "https://summerai.cc/skills/#luban-skill",
+      "page_url": "https://skills.summerai.cc/#luban-skill",
       "invocation": {
         "codex": [
           "请使用 luban 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3059,7 +3059,7 @@
         ]
       },
       "example_prompt": "请用 frontend-slides 把这份产品发布大纲做成 12 页、固定 16:9、动画克制但有记忆点的单文件 HTML 演示稿。",
-      "page_url": "https://summerai.cc/skills/#frontend-slides",
+      "page_url": "https://skills.summerai.cc/#frontend-slides",
       "invocation": {
         "codex": [
           "请使用 frontend-slides 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3114,7 +3114,7 @@
         ]
       },
       "example_prompt": "请用 html-ppt 做一份 10 页的技术分享，使用 tokyo-night 主题，并为每页写 150 到 250 字的演讲者逐字稿。",
-      "page_url": "https://summerai.cc/skills/#html-ppt",
+      "page_url": "https://skills.summerai.cc/#html-ppt",
       "invocation": {
         "codex": [
           "请使用 html-ppt 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3171,7 +3171,7 @@
         ]
       },
       "example_prompt": "请用 huashu-design 为这个 AI 硬件产品做三种差异明显的发布会视觉方向，确认方向后产出一套 1920×1080 HTML 幻灯片。",
-      "page_url": "https://summerai.cc/skills/#huashu-design",
+      "page_url": "https://skills.summerai.cc/#huashu-design",
       "invocation": {
         "codex": [
           "请使用 huashu-design 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3226,7 +3226,7 @@
         ]
       },
       "example_prompt": "请用 baoyu-slide-deck 把这份行业报告做成 12 页、16:9、适合异步阅读的图片型幻灯片；先给我确认大纲和视觉风格。",
-      "page_url": "https://summerai.cc/skills/#baoyu-slide-deck",
+      "page_url": "https://skills.summerai.cc/#baoyu-slide-deck",
       "invocation": {
         "codex": [
           "请使用 baoyu-slide-deck 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3286,7 +3286,7 @@
         ]
       },
       "example_prompt": "请用 html-deck-export 把这个 HTML 路演预览稿导出成 16:9 PDF 和可编辑文字 PPTX，并保留底图、蒙版和图层素材。",
-      "page_url": "https://summerai.cc/skills/#html-deck-export",
+      "page_url": "https://skills.summerai.cc/#html-deck-export",
       "invocation": {
         "codex": [
           "请使用 html-deck-export 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3340,7 +3340,7 @@
         ]
       },
       "example_prompt": "请用 guizang-material-illustration 把这段产品说明做成一张带中文标签的机制图，主体要适合放进公众号卡片中间。",
-      "page_url": "https://summerai.cc/skills/#guizang-material-illustration",
+      "page_url": "https://skills.summerai.cc/#guizang-material-illustration",
       "invocation": {
         "codex": [
           "请使用 guizang-material-illustration 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3395,7 +3395,7 @@
         ]
       },
       "example_prompt": "请用 leader 把“为现有项目补齐移动端登录页并完成可复现验收”拆成一份可直接交给执行 agent 的任务书。",
-      "page_url": "https://summerai.cc/skills/#leader",
+      "page_url": "https://skills.summerai.cc/#leader",
       "invocation": {
         "codex": [
           "请使用 leader 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3446,7 +3446,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-goal-meta-skill 把“优化现有后台首页的首屏信息层级”写成一条带验证和暂停条件的 Codex /goal。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-goal-meta-skill",
+      "page_url": "https://skills.summerai.cc/#qiaomu-goal-meta-skill",
       "invocation": {
         "codex": [
           "请使用 qiaomu-goal-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3498,7 +3498,7 @@
         ]
       },
       "example_prompt": "请用 qiaomu-meta-skill 把这套客户访谈 SOP 做成可复用 Skill；先研究同类方案，完成触发评测和安全检查，但先不要发布。",
-      "page_url": "https://summerai.cc/skills/#qiaomu-meta-skill",
+      "page_url": "https://skills.summerai.cc/#qiaomu-meta-skill",
       "invocation": {
         "codex": [
           "请使用 qiaomu-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3550,7 +3550,7 @@
         ]
       },
       "example_prompt": "请用 yao-meta-skill 把这套发布复盘流程做成团队可维护的 Skill，并补齐 Skill IR、触发评测、信任检查和安装模拟。",
-      "page_url": "https://summerai.cc/skills/#yao-meta-skill",
+      "page_url": "https://skills.summerai.cc/#yao-meta-skill",
       "invocation": {
         "codex": [
           "请使用 yao-meta-skill 这个 skill，帮我处理：<把你的任务写在这里>",
@@ -3606,7 +3606,7 @@
         ]
       },
       "example_prompt": "请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。",
-      "page_url": "https://summerai.cc/skills/#human-writing",
+      "page_url": "https://skills.summerai.cc/#human-writing",
       "invocation": {
         "codex": [
           "请使用 human-writing 这个 skill，帮我处理：<把你的任务写在这里>",

@@ -7,6 +7,7 @@ const skillsPath = path.join(publicDir, "skills.json");
 const authorRankPath = path.join(publicDir, "author-rank.json");
 const htmlPath = path.join(publicDir, "skills", "index.html");
 const llmsPath = path.join(publicDir, "llms.txt");
+const skillsSiteUrl = "https://skills.summerai.cc/";
 
 const categoryLabels = {
   office: "办公演示",
@@ -138,7 +139,7 @@ function renderHtml(data) {
       "@type": "ListItem",
       position: index + 1,
       name: skill.name,
-      url: `https://summerai.cc/skills/#${skill.id}`
+      url: `${skillsSiteUrl}#${skill.id}`
     }))
   };
   const filters = Object.entries(categoryLabels)
@@ -153,11 +154,11 @@ function renderHtml(data) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>好用Skill 推荐</title>
   <meta name="description" content="精选好用的 AI agent skills，面向人类阅读，也方便 agent 检索、安装和调用。">
-  <link rel="canonical" href="https://summerai.cc/skills/">
+  <link rel="canonical" href="${skillsSiteUrl}">
   <meta property="og:title" content="好用Skill 推荐">
   <meta property="og:description" content="精选好用的 AI agent skills，包含 GitHub 仓库、官方文档来源、安装命令和调用示例。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://summerai.cc/skills/">
+  <meta property="og:url" content="${skillsSiteUrl}">
   <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
   </script>

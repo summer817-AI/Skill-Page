@@ -10,6 +10,15 @@
 - Root directory: 仓库根目录
 - Production branch: `main`
 
+## 正式域名
+
+- Skill 推荐库主入口：`https://skills.summerai.cc/`
+- 旧入口 `https://summerai.cc/skills/` 永久跳转到新域名
+- Cloudflare Pages 项目：`skill-page`
+- Pages 原始域名：`https://skill-page.pages.dev/`
+- `functions/index.js` 在子域名根路径内部读取 `/skills/` 静态页面
+- `functions/skills/index.js` 负责旧入口与子域名 `/skills/` 的规范化跳转
+
 ## 公开文件
 
 - `public/skills/`: Skill 推荐库页面

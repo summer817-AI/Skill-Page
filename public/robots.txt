@@ -41,3 +41,4 @@ Disallow: /output/
 Disallow: /.codepilot-uploads/
 
 Sitemap: https://summerai.cc/sitemap.xml
+Sitemap: https://skills.summerai.cc/skills-sitemap.xml
