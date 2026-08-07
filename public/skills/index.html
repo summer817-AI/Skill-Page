@@ -369,6 +369,12 @@
       "position": 59,
       "name": "Human Writing",
       "url": "https://skills.summerai.cc/#human-writing"
+    },
+    {
+      "@type": "ListItem",
+      "position": 60,
+      "name": "open-kimi-ppt",
+      "url": "https://skills.summerai.cc/#open-kimi-ppt"
     }
   ]
 }
@@ -382,7 +388,7 @@
 <body>
   <header><div class="shell nav"><a class="brand" href="./" aria-label="返回 Skill 推荐库首页"><span><strong>好用Skill 推荐</strong></span></a><nav class="nav-links" aria-label="站点导航"><a href="./">Skill 推荐库</a><a href="../skills.json">skills.json</a><a href="../llms.txt">llms.txt</a></nav></div></header>
   <main class="shell">
-    <section class="source-strip"><p>当前收录 <strong>59</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
+    <section class="source-strip"><p>当前收录 <strong>60</strong> 个 skill，来源覆盖 GitHub、官方文档和候选作者库。</p><p>入选标准：可安装、用途明确、依赖透明、风险可说明。</p></section>
     <section class="intro">
       <div class="intro-copy"><h1>好用的 agent skill，要能被人理解，也要能被 agent 搜到。</h1><p class="lead">这里滚动收录经过人工筛选的实用 skill 来源：包括 GitHub 仓库、官方文档和可信候选。每个条目都保留来源、适用场景、限制和安装命令。</p></div>
       <aside class="agent-box"><h2>Agent 读取入口</h2><p>优先读取结构化数据，再进入页面查看完整说明。</p><div class="agent-actions"><a class="data-link" href="../skills.json">skills.json</a><a class="data-link" href="../llms.txt">llms.txt</a></div></aside>
@@ -414,6 +420,7 @@
       <button class="author-card" data-author="rongrongwr" aria-pressed="false"><img src="https://github.com/rongrongwr.png" alt="rongrongwr 头像" loading="lazy"><span><strong>rongrongwr</strong><small>把陌生概念解释、权威来源筛选和结构化报告沉淀成跨平台 skill，适合先搭判断框架再做决策。</small></span></button>
       <button class="author-card" data-author="summer817-AI" aria-pressed="false"><img src="https://github.com/summer817-AI.png" alt="SummerAI / summer817-AI 头像" loading="lazy"><span><strong>SummerAI / summer817-AI</strong><small>围绕真实项目工作流沉淀 Codex skills，偏演示文档、PPT/PDF 转换、内容生产和本地自动化。</small></span></button>
       <button class="author-card" data-author="yaojingang" aria-pressed="false"><img src="https://github.com/yaojingang.png" alt="Yao Team / yaojingang 头像" loading="lazy"><span><strong>Yao Team / yaojingang</strong><small>维护 Yao Meta Skill，把 Skill 创建扩展为包含 Skill IR、多端编译、评测、治理、发布门禁和持续迭代的工程系统。</small></span></button>
+      <button class="author-card" data-author="Binaryify" aria-pressed="false"><img src="https://github.com/Binaryify.png" alt="Binaryify 头像" loading="lazy"><span><strong>Binaryify</strong><small>维护非官方 open-kimi-ppt-skill，以 PPTD 中间格式、本地浏览器编辑器和 Kimi 公网页面导出链路，生成可继续编辑的 PPTD 项目与 PPTX。</small></span></button>
         </section>
       </aside>
       <section class="skill-pane">
@@ -1343,12 +1350,24 @@ cp -R human-writing/human-writing ~/.codex/skills/human-writing</code></pre></di
         <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。</code></pre></div>
         <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/KKKKhazix/human-writing/tree/main/human-writing" target="_blank" rel="noopener noreferrer" data-author="KKKKhazix" data-skill-id="human-writing" data-source-url="https://github.com/KKKKhazix/human-writing/tree/main/human-writing">https://github.com/KKKKhazix/human-writing/tree/main/human-writing</a></p></div>
       </article>
+      <article class="skill-card" id="open-kimi-ppt" data-category="office design" data-author="Binaryify" data-text="open-kimi-ppt 用 pptd 中间格式创建、编辑或复刻演示文稿，默认同时交付可继续编辑的完整 pptd 项目和本地导出的 pptx。 binaryify https://github.com/binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt office design 可编辑 pptd / pptx">
+        <div class="skill-title"><img src="https://github.com/Binaryify.png" alt="Binaryify 头像" loading="lazy"><h2>open-kimi-ppt</h2></div>
+        <div class="meta"><span class="pill level">推荐：较高</span><span class="pill">可编辑 PPTD / PPTX</span><span class="pill">办公演示</span><span class="pill">设计视觉</span><span class="pill source-pill">作者：Binaryify</span><span class="pill source-pill">来源：GitHub</span></div>
+        <p class="summary">用 PPTD 中间格式创建、编辑或复刻演示文稿，默认同时交付可继续编辑的完整 PPTD 项目和本地导出的 PPTX。</p>
+        <div><p class="section-title">适合场景</p><ul><li>需要从主题、大纲、文档或模板生成正式 PPT，并希望文本、形状和图片还能继续编辑。</li><li>需要把现有 PPTX 转成 PPTD 后局部修改，或根据 PDF、截图和参考演示稿复刻版式。</li><li>希望在浏览器中预览、微调页面和切换动画，再导出带字体与淡入淡出翻页的 PPTX。</li></ul></div>
+        <div><p class="section-title">输入 / 输出</p><ul><li>输入：主题、受众、页数、内容或大纲、风格要求，以及可选 PPTX/PDF/截图/模板和图片素材。</li><li>输出：自包含的 PPTD 项目目录（清单、pages、media）与对应 PPTX；视觉质检时还会生成逐页图片和总览图。</li></ul></div>
+        <div><p class="section-title">注意事项</p><ul><li>这是逆向 Kimi Slides 公网页面和 PPTD 协议的非官方实现；Kimi 前端资源、格式或通信协议变化后可能暂时失效。</li><li>PPTX 导出依赖 Node.js 18+、npm/npx、Python、Chromium，以及访问 www.kimi.com 和 statics.moonshot.cn 的网络；PPTD 内容会交给公开 Kimi 编辑器 iframe 处理。</li><li>脚本在缺少依赖时可能执行 pip --user 安装 PyYAML、Pillow、websocket-client，并通过 npm 全局安装或升级 agent-browser；Windows 导出可能启动一个常驻调试浏览器。</li><li>重复执行安装会覆盖所选 skills 目录里现有的 open-kimi-ppt；成功生成 PPTX 也不保证 PowerPoint、WPS 与 Keynote 对所有动画完全一致。</li><li>仓库测试在 Windows 为 14/15：唯一失败来自测试把 LF 写死，而检出文件为 CRLF；npm dry-run 打包检查通过。</li></ul></div>
+        <div><p class="section-title">安装（Windows PowerShell）</p><pre class="install"><code>npx.cmd open-kimi-ppt-skill@latest install -y</code></pre></div>
+        <div><p class="section-title">安装（macOS / Linux）</p><pre class="install"><code>npx open-kimi-ppt-skill@latest install -y</code></pre></div>
+        <div><p class="section-title">调用示例</p><pre class="invoke"><code>请用 open-kimi-ppt 把这份产品发布大纲做成 12 页、深色科技风的可编辑 PPT；先做视觉质检，再同时交付完整 PPTD 项目和 PPTX。</code></pre></div>
+        <div><p class="section-title">来源</p><p class="source-url"><a class="source-link" href="https://github.com/Binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt" target="_blank" rel="noopener noreferrer" data-author="Binaryify" data-skill-id="open-kimi-ppt" data-source-url="https://github.com/Binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt">https://github.com/Binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt</a></p></div>
+      </article>
           <div class="empty">没有匹配的 skill，换个关键词或分类试试。</div>
         </section>
       </section>
     </div>
   </main>
-  <footer><div class="shell">最后更新：2026-08-07 · 共 59 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
+  <footer><div class="shell">最后更新：2026-08-07 · 共 60 个 skill · 公开页面不包含私钥、token 或本地隐私路径。</div></footer>
   <script>
     const search = document.querySelector('.search');
     const cards = [...document.querySelectorAll('.skill-card')];

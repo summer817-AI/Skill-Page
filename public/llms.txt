@@ -661,3 +661,14 @@ Site: https://skills.summerai.cc/
 - use_when: 要写或重写知乎回答、论坛长帖、公众号文章、博客、人物故事、行业解读、教程、评测、口播或演讲稿。；要创作小说、故事和对白，或清理空泛机构腔、营销腔和常见 AI 句式，同时保留事实与人物因果。
 - limitations: 现实长文材料不足时会先研究、最多追问三个问题或主动缩短，不会用虚构案例和重复解释硬凑字数。；成稿规则会强制避开冒号、破折号、多类翻案句及一批黑话，风格约束很强；必须保留原始引文、特定标点或品牌句式时要提前声明例外。；检查脚本只负责发现规则命中和可疑形状，不会核验事实，也不会自动替用户改文。
 - invocation_example: 请用 human-writing 把这些采访材料写成一篇有活人感的公众号文章；事实只用我提供的内容，不够就先问我。
+
+### open-kimi-ppt
+- id: open-kimi-ppt
+- author: Binaryify
+- category: office, design
+- recommendation: medium-high
+- source: https://github.com/Binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt
+- summary: 用 PPTD 中间格式创建、编辑或复刻演示文稿，默认同时交付可继续编辑的完整 PPTD 项目和本地导出的 PPTX。
+- use_when: 需要从主题、大纲、文档或模板生成正式 PPT，并希望文本、形状和图片还能继续编辑。；需要把现有 PPTX 转成 PPTD 后局部修改，或根据 PDF、截图和参考演示稿复刻版式。；希望在浏览器中预览、微调页面和切换动画，再导出带字体与淡入淡出翻页的 PPTX。
+- limitations: 这是逆向 Kimi Slides 公网页面和 PPTD 协议的非官方实现；Kimi 前端资源、格式或通信协议变化后可能暂时失效。；PPTX 导出依赖 Node.js 18+、npm/npx、Python、Chromium，以及访问 www.kimi.com 和 statics.moonshot.cn 的网络；PPTD 内容会交给公开 Kimi 编辑器 iframe 处理。；脚本在缺少依赖时可能执行 pip --user 安装 PyYAML、Pillow、websocket-client，并通过 npm 全局安装或升级 agent-browser；Windows 导出可能启动一个常驻调试浏览器。；重复执行安装会覆盖所选 skills 目录里现有的 open-kimi-ppt；成功生成 PPTX 也不保证 PowerPoint、WPS 与 Keynote 对所有动画完全一致。；仓库测试在 Windows 为 14/15：唯一失败来自测试把 LF 写死，而检出文件为 CRLF；npm dry-run 打包检查通过。
+- invocation_example: 请用 open-kimi-ppt 把这份产品发布大纲做成 12 页、深色科技风的可编辑 PPT；先做视觉质检，再同时交付完整 PPTD 项目和 PPTX。

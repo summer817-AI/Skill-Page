@@ -163,6 +163,13 @@
       "github_url": "https://github.com/yaojingang",
       "avatar_url": "https://github.com/yaojingang.png",
       "summary": "维护 Yao Meta Skill，把 Skill 创建扩展为包含 Skill IR、多端编译、评测、治理、发布门禁和持续迭代的工程系统。"
+    },
+    {
+      "login": "Binaryify",
+      "name": "Binaryify",
+      "github_url": "https://github.com/Binaryify",
+      "avatar_url": "https://github.com/Binaryify.png",
+      "summary": "维护非官方 open-kimi-ppt-skill，以 PPTD 中间格式、本地浏览器编辑器和 Kimi 公网页面导出链路，生成可继续编辑的 PPTD 项目与 PPTX。"
     }
   ],
   "source_repositories": [
@@ -416,6 +423,12 @@
       "url": "https://github.com/KKKKhazix/human-writing",
       "author": "KKKKhazix",
       "trust_note": "已审查 README、双层 MIT LICENSE、human-writing/SKILL.md、references、OpenAI 接口元数据和检查脚本；脚本只读取指定稿件并报告命中的写作规则，实际文本冒烟测试通过。"
+    },
+    {
+      "name": "Binaryify/open-kimi-ppt-skill",
+      "url": "https://github.com/Binaryify/open-kimi-ppt-skill",
+      "author": "Binaryify",
+      "trust_note": "已审查 skills/open-kimi-ppt/SKILL.md、README.md、MIT LICENSE、CLI 与本地 editor server、PPTX/图片导出脚本和测试；npm dry-run 打包通过，Windows 测试 14/15，唯一失败为 CRLF 换行断言。"
     }
   ],
   "agent_entrypoints": {
@@ -3615,6 +3628,61 @@
         "claude_code_or_claw": [
           "请使用 human-writing 这个 skill，帮我处理：<把你的任务写在这里>",
           "Use the human-writing skill to handle: <your task here>"
+        ]
+      }
+    },
+    {
+      "id": "open-kimi-ppt",
+      "name": "open-kimi-ppt",
+      "category": [
+        "office",
+        "design"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "Binaryify",
+        "github_url": "https://github.com/Binaryify",
+        "avatar_url": "https://github.com/Binaryify.png"
+      },
+      "source_repository": "https://github.com/Binaryify/open-kimi-ppt-skill",
+      "source_path": "skills/open-kimi-ppt/SKILL.md",
+      "source_url": "https://github.com/Binaryify/open-kimi-ppt-skill/tree/main/skills/open-kimi-ppt",
+      "topic_tag": "可编辑 PPTD / PPTX",
+      "summary": "用 PPTD 中间格式创建、编辑或复刻演示文稿，默认同时交付可继续编辑的完整 PPTD 项目和本地导出的 PPTX。",
+      "use_when": [
+        "需要从主题、大纲、文档或模板生成正式 PPT，并希望文本、形状和图片还能继续编辑。",
+        "需要把现有 PPTX 转成 PPTD 后局部修改，或根据 PDF、截图和参考演示稿复刻版式。",
+        "希望在浏览器中预览、微调页面和切换动画，再导出带字体与淡入淡出翻页的 PPTX。"
+      ],
+      "inputs_outputs": [
+        "输入：主题、受众、页数、内容或大纲、风格要求，以及可选 PPTX/PDF/截图/模板和图片素材。",
+        "输出：自包含的 PPTD 项目目录（清单、pages、media）与对应 PPTX；视觉质检时还会生成逐页图片和总览图。"
+      ],
+      "limitations": [
+        "这是逆向 Kimi Slides 公网页面和 PPTD 协议的非官方实现；Kimi 前端资源、格式或通信协议变化后可能暂时失效。",
+        "PPTX 导出依赖 Node.js 18+、npm/npx、Python、Chromium，以及访问 www.kimi.com 和 statics.moonshot.cn 的网络；PPTD 内容会交给公开 Kimi 编辑器 iframe 处理。",
+        "脚本在缺少依赖时可能执行 pip --user 安装 PyYAML、Pillow、websocket-client，并通过 npm 全局安装或升级 agent-browser；Windows 导出可能启动一个常驻调试浏览器。",
+        "重复执行安装会覆盖所选 skills 目录里现有的 open-kimi-ppt；成功生成 PPTX 也不保证 PowerPoint、WPS 与 Keynote 对所有动画完全一致。",
+        "仓库测试在 Windows 为 14/15：唯一失败来自测试把 LF 写死，而检出文件为 CRLF；npm dry-run 打包检查通过。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "npx.cmd open-kimi-ppt-skill@latest install -y"
+        ],
+        "macos_linux": [
+          "npx open-kimi-ppt-skill@latest install -y"
+        ]
+      },
+      "example_prompt": "请用 open-kimi-ppt 把这份产品发布大纲做成 12 页、深色科技风的可编辑 PPT；先做视觉质检，再同时交付完整 PPTD 项目和 PPTX。",
+      "page_url": "https://skills.summerai.cc/#open-kimi-ppt",
+      "invocation": {
+        "codex": [
+          "请使用 open-kimi-ppt 这个 skill，帮我处理：<把你的演示文稿任务写在这里>",
+          "$open-kimi-ppt <把你的演示文稿任务写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 open-kimi-ppt 这个 skill，帮我处理：<把你的演示文稿任务写在这里>",
+          "Use the open-kimi-ppt skill to handle: <your presentation task>"
         ]
       }
     }
