@@ -705,3 +705,14 @@ Site: https://skills.summerai.cc/
 - use_when: 要沿用参考图的机位和视觉动线，但把哥特、现代或其他建筑元素转译为中式巨构。；要把古诗、亭台楼阁、门派场所、园林或建筑局部营造成白玉京、宫城蓝线图或仙侠空间提示词。
 - limitations: 默认只生成提示词，不会自动消耗生图额度；实际成图受模型、参考图和平台参数影响。；建筑术语适合概念设计与视觉约束，不能替代文物、建筑史或工程用途的专业核验。；仓库只发布营造师.skill 压缩包，安装后需要把内部目录重命名为 celestial-architect；其中 SKILL.md 提到的 ../_shared/图片提示词技能路由表.md 未随压缩包提供，但核心流程和 4 份 references 完整。；仓库在本次审查时未见 LICENSE；可从原仓库安装体验，但再分发、改编或商业使用前应向作者确认许可。
 - invocation_example: 请用 celestial-architect 参考这张图的构图和视角，把‘危楼高百尺，手可摘星辰’营造成云上白玉京；无人物，用飞鸟作尺度参照。
+
+### 新概念一等奖写作
+- id: new-concept-writing
+- author: orange2ai
+- category: writing, humanizer
+- recommendation: medium
+- source: https://github.com/orange2ai/new-concept-writing
+- summary: 以读者认知状态为上层框架，用真实数字、日常物件、重复结构、信息差和零解释写出克制而高情感密度的中文故事。
+- use_when: 要把真实经历、人物口述、回忆录或非虚构素材写成冷静、不直接煽情的中文短篇或人物故事。；要通过读者预期、判断翻转和信息差设计叙事，并用动作、数字和物件替代心理解释。
+- limitations: 作者把 Opus 4.6 写为唯一推荐模型，并提到 Cola 使用入口；这不是安装所必需的技术依赖，但其他模型的完成度未经仓库验证。；Skill 不负责事实核验；只能使用材料中真实且可确认的数字、对白和经历，不能为了增强冲击力制造假精确。；风格约束很强，且与 sun-style-writing 的白描、数字锚点、物件照应和重复结构高度重叠；新闻、学术、品牌规范稿或需要直接论证的文章不适合使用。；README 声明 MIT，但仓库未提供独立 LICENSE 文件；references 中含第三方文章摘录，MIT 声明不当然覆盖这些原文，避免长段复刻，再分发或商业使用前应确认权利边界。
+- invocation_example: 请用 new-concept-writing 把这段真实口述写成一篇克制的非虚构故事；数字只用我提供的，选一个物件贯穿全文，不解释人物动机。

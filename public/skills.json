@@ -461,6 +461,12 @@
       "url": "https://github.com/irenerachel/celestial-architect-skill",
       "author": "irenerachel",
       "trust_note": "已审查 README.md、README_EN.md，以及营造师.skill 压缩包内的 SKILL.md 和 4 份 references；内容为提示词规则与知识库，不含脚本、凭据或网络动作。仓库当前未见 LICENSE。"
+    },
+    {
+      "name": "orange2ai/new-concept-writing",
+      "url": "https://github.com/orange2ai/new-concept-writing",
+      "author": "orange2ai",
+      "trust_note": "已审查根目录 SKILL.md、README.md 与 references/techniques-from-source.md；仓库仅含 Markdown 写作规则和示例，不含脚本、凭据或系统操作。README 声明 MIT，但仓库当前未见独立 LICENSE 文件。"
     }
   ],
   "agent_entrypoints": {
@@ -3885,6 +3891,63 @@
         "claude_code_or_claw": [
           "请使用 celestial-architect 这个 skill，帮我处理：<把你的参考图、诗句或建筑主题写在这里>",
           "Use the celestial-architect skill to handle: <your Chinese fantasy architecture task>"
+        ]
+      }
+    },
+    {
+      "id": "new-concept-writing",
+      "name": "新概念一等奖写作",
+      "category": [
+        "writing",
+        "humanizer"
+      ],
+      "recommendation_level": "medium",
+      "author": {
+        "login": "orange2ai",
+        "github_url": "https://github.com/orange2ai",
+        "avatar_url": "https://avatars.githubusercontent.com/u/77816124?v=4"
+      },
+      "source_repository": "https://github.com/orange2ai/new-concept-writing",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/orange2ai/new-concept-writing",
+      "topic_tag": "克制叙事认知",
+      "summary": "以读者认知状态为上层框架，用真实数字、日常物件、重复结构、信息差和零解释写出克制而高情感密度的中文故事。",
+      "use_when": [
+        "要把真实经历、人物口述、回忆录或非虚构素材写成冷静、不直接煽情的中文短篇或人物故事。",
+        "要通过读者预期、判断翻转和信息差设计叙事，并用动作、数字和物件替代心理解释。"
+      ],
+      "inputs_outputs": [
+        "输入：真实故事材料、时间线、人物关系、可核验数字与物件细节，以及核心体感、受众和篇幅。",
+        "输出：以动作和事实推进的克制叙事成稿，并按数字骨架、重复结构、信息差和禁用清单完成减法检查。"
+      ],
+      "limitations": [
+        "作者把 Opus 4.6 写为唯一推荐模型，并提到 Cola 使用入口；这不是安装所必需的技术依赖，但其他模型的完成度未经仓库验证。",
+        "Skill 不负责事实核验；只能使用材料中真实且可确认的数字、对白和经历，不能为了增强冲击力制造假精确。",
+        "风格约束很强，且与 sun-style-writing 的白描、数字锚点、物件照应和重复结构高度重叠；新闻、学术、品牌规范稿或需要直接论证的文章不适合使用。",
+        "README 声明 MIT，但仓库未提供独立 LICENSE 文件；references 中含第三方文章摘录，MIT 声明不当然覆盖这些原文，避免长段复刻，再分发或商业使用前应确认权利边界。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/orange2ai/new-concept-writing.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\new-concept-writing \"$env:USERPROFILE\\.codex\\skills\\new-concept-writing\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/orange2ai/new-concept-writing.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R new-concept-writing ~/.codex/skills/new-concept-writing"
+        ]
+      },
+      "example_prompt": "请用 new-concept-writing 把这段真实口述写成一篇克制的非虚构故事；数字只用我提供的，选一个物件贯穿全文，不解释人物动机。",
+      "page_url": "https://skills.summerai.cc/#new-concept-writing",
+      "invocation": {
+        "codex": [
+          "请使用 new-concept-writing 这个 skill，帮我处理：<把你的真实故事材料和写作要求写在这里>",
+          "$new-concept-writing <把你的真实故事材料和写作要求写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 new-concept-writing 这个 skill，帮我处理：<把你的真实故事材料和写作要求写在这里>",
+          "Use the new-concept-writing skill to handle: <your restrained narrative writing task>"
         ]
       }
     }
