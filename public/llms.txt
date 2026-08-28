@@ -2,7 +2,7 @@
 
 A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.
 
-Updated: 2026-08-07
+Updated: 2026-08-28
 Site: https://skills.summerai.cc/
 
 ## 入选标准
@@ -672,3 +672,36 @@ Site: https://skills.summerai.cc/
 - use_when: 需要从主题、大纲、文档或模板生成正式 PPT，并希望文本、形状和图片还能继续编辑。；需要把现有 PPTX 转成 PPTD 后局部修改，或根据 PDF、截图和参考演示稿复刻版式。；希望在浏览器中预览、微调页面和切换动画，再导出带字体与淡入淡出翻页的 PPTX。
 - limitations: 这是逆向 Kimi Slides 公网页面和 PPTD 协议的非官方实现；Kimi 前端资源、格式或通信协议变化后可能暂时失效。；PPTX 导出依赖 Node.js 18+、npm/npx、Python、Chromium，以及访问 www.kimi.com 和 statics.moonshot.cn 的网络；PPTD 内容会交给公开 Kimi 编辑器 iframe 处理。；脚本在缺少依赖时可能执行 pip --user 安装 PyYAML、Pillow、websocket-client，并通过 npm 全局安装或升级 agent-browser；Windows 导出可能启动一个常驻调试浏览器。；重复执行安装会覆盖所选 skills 目录里现有的 open-kimi-ppt；成功生成 PPTX 也不保证 PowerPoint、WPS 与 Keynote 对所有动画完全一致。；仓库测试在 Windows 为 14/15：唯一失败来自测试把 LF 写死，而检出文件为 CRLF；npm dry-run 打包检查通过。
 - invocation_example: 请用 open-kimi-ppt 把这份产品发布大纲做成 12 页、深色科技风的可编辑 PPT；先做视觉质检，再同时交付完整 PPTD 项目和 PPTX。
+
+### 孙学写作法
+- id: sun-style-writing
+- author: KKKKhazix
+- category: writing, humanizer
+- recommendation: medium-high
+- source: https://github.com/KKKKhazix/sun-style-writing/tree/main/sun-style-writing
+- summary: 把白描、短句、数字锚点、物件照应、沉默留白和反高潮组织成一套克制的中文非虚构叙事工作流。
+- use_when: 要把个人经历、人物故事、回忆录、纪实散文或创业故事写成克制、不直接煽情的中文长文。；要用真实动作、物件、数字和场景替代空泛情绪词，并检查短句节奏、伏笔照应与结尾回环。
+- limitations: 规则约束很强，不适合新闻通稿、学术论文、品牌规范稿或需要直接表达观点和情绪的文体。；Skill 不负责事实核验；不得为了追求精确感编造数字、对白、动机或人物经历。；方法源自对一篇公开文章的技法拆解；使用时应抽象借鉴白描等手法，避免复刻原文长段、冒充原作者或把生成内容当成真实回忆。
+- invocation_example: 请用 sun-style-writing 把这些真实采访材料写成第一人称长文；数字只用材料里能确认的，重点展开两个场景，不要直接解释情绪。
+
+### 萌粒风个人 IP 全套
+- id: ip-illustration-character-system
+- author: EverettFish
+- category: design
+- recommendation: medium-high
+- source: https://github.com/EverettFish/ip_illustration_for_yourself
+- summary: 先建立一致的角色身份锚点，再生成文章配图、信息图、实拍融合、贴纸、文件夹图标、信纸、相框、头像和表情包等整套个人 IP 资产。
+- use_when: 要把真人、宠物、原创角色或吉祥物做成跨多种画幅和资产类型仍保持身份一致的个人 IP。；要围绕同一个角色制作文章插图、透明贴纸、头像、表情包、实拍融合或可用的 PNG/ICO 图标。
+- limitations: 创意图片生成依赖当前 Agent 可调用的生图或图片编辑工具；没有图片工具时只交付可复制的 Prompt 包，成图一致性仍受模型能力影响。；使用真人照片、品牌、影视或表情包参考前应确认肖像权和素材授权；示例图只控制布局或风格，不能把其中的角色、Logo、水印和文字默认复制进结果。；两个后处理脚本依赖 Python Pillow，会写入用户指定的 PNG/ICO 输出路径；执行前应确认文件名和目标目录。；仓库在本次审查时未见 LICENSE；可从原仓库安装体验，但再分发、改编或商业使用前应向作者确认许可。
+- invocation_example: 请用 ip-illustration-character-system 先根据这张参考图建立角色锚点，再做 5 张文章配图、4 个头像和一套 12 张表情包；所有输出保持同一身份特征。
+
+### 营造师
+- id: celestial-architect
+- author: irenerachel
+- category: design
+- recommendation: medium
+- source: https://github.com/irenerachel/celestial-architect-skill
+- summary: 把参考图构图、古诗意象或建筑关键词转译为形制明确、尺度宏大、疏密有序的中式巨构、白玉京和仙侠场景双语生图提示词。
+- use_when: 要沿用参考图的机位和视觉动线，但把哥特、现代或其他建筑元素转译为中式巨构。；要把古诗、亭台楼阁、门派场所、园林或建筑局部营造成白玉京、宫城蓝线图或仙侠空间提示词。
+- limitations: 默认只生成提示词，不会自动消耗生图额度；实际成图受模型、参考图和平台参数影响。；建筑术语适合概念设计与视觉约束，不能替代文物、建筑史或工程用途的专业核验。；仓库只发布营造师.skill 压缩包，安装后需要把内部目录重命名为 celestial-architect；其中 SKILL.md 提到的 ../_shared/图片提示词技能路由表.md 未随压缩包提供，但核心流程和 4 份 references 完整。；仓库在本次审查时未见 LICENSE；可从原仓库安装体验，但再分发、改编或商业使用前应向作者确认许可。
+- invocation_example: 请用 celestial-architect 参考这张图的构图和视角，把‘危楼高百尺，手可摘星辰’营造成云上白玉京；无人物，用飞鸟作尺度参照。

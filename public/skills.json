@@ -1,6 +1,6 @@
 {
   "site": "https://skills.summerai.cc/",
-  "updated_at": "2026-08-07",
+  "updated_at": "2026-08-28",
   "purpose": "A curated directory of practical AI agent skills from trusted GitHub repositories and official documentation, written for both humans and searchable agents.",
   "authors": [
     {
@@ -170,6 +170,20 @@
       "github_url": "https://github.com/Binaryify",
       "avatar_url": "https://github.com/Binaryify.png",
       "summary": "维护非官方 open-kimi-ppt-skill，以 PPTD 中间格式、本地浏览器编辑器和 Kimi 公网页面导出链路，生成可继续编辑的 PPTD 项目与 PPTX。"
+    },
+    {
+      "login": "EverettFish",
+      "name": "EverettFish",
+      "github_url": "https://github.com/EverettFish",
+      "avatar_url": "https://github.com/EverettFish.png",
+      "summary": "围绕角色身份锚点维护个人 IP 视觉资产工作流，覆盖文章配图、信息图、实拍融合、贴纸、图标、头像和表情包等多类输出。"
+    },
+    {
+      "login": "irenerachel",
+      "name": "irenerachel",
+      "github_url": "https://github.com/irenerachel",
+      "avatar_url": "https://github.com/irenerachel.png",
+      "summary": "把中式建筑正名、三远法、样式雷图学和仙侠概念设计整理为双语生图提示词工作流。"
     }
   ],
   "source_repositories": [
@@ -429,6 +443,24 @@
       "url": "https://github.com/Binaryify/open-kimi-ppt-skill",
       "author": "Binaryify",
       "trust_note": "已审查 skills/open-kimi-ppt/SKILL.md、README.md、MIT LICENSE、CLI 与本地 editor server、PPTX/图片导出脚本和测试；npm dry-run 打包通过，Windows 测试 14/15，唯一失败为 CRLF 换行断言。"
+    },
+    {
+      "name": "KKKKhazix/sun-style-writing",
+      "url": "https://github.com/KKKKhazix/sun-style-writing",
+      "author": "KKKKhazix",
+      "trust_note": "已审查 sun-style-writing/SKILL.md、README.md、MIT LICENSE 与 references/style-anatomy.md；仓库为 Markdown 写作规则与示例拆解，不含可执行脚本、凭据或外部调用。"
+    },
+    {
+      "name": "EverettFish/ip_illustration_for_yourself",
+      "url": "https://github.com/EverettFish/ip_illustration_for_yourself",
+      "author": "EverettFish",
+      "trust_note": "已审查根目录 SKILL.md、README.md、agents/openai.yaml、11 份 references 与两个 Pillow 脚本；脚本只处理用户指定的本地 PNG/ICO 路径并校验透明通道。仓库当前未见 LICENSE。"
+    },
+    {
+      "name": "irenerachel/celestial-architect-skill",
+      "url": "https://github.com/irenerachel/celestial-architect-skill",
+      "author": "irenerachel",
+      "trust_note": "已审查 README.md、README_EN.md，以及营造师.skill 压缩包内的 SKILL.md 和 4 份 references；内容为提示词规则与知识库，不含脚本、凭据或网络动作。仓库当前未见 LICENSE。"
     }
   ],
   "agent_entrypoints": {
@@ -3683,6 +3715,176 @@
         "claude_code_or_claw": [
           "请使用 open-kimi-ppt 这个 skill，帮我处理：<把你的演示文稿任务写在这里>",
           "Use the open-kimi-ppt skill to handle: <your presentation task>"
+        ]
+      }
+    },
+    {
+      "id": "sun-style-writing",
+      "name": "孙学写作法",
+      "category": [
+        "writing",
+        "humanizer"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "KKKKhazix",
+        "github_url": "https://github.com/KKKKhazix",
+        "avatar_url": "https://avatars.githubusercontent.com/u/239590580?v=4"
+      },
+      "source_repository": "https://github.com/KKKKhazix/sun-style-writing",
+      "source_path": "sun-style-writing/SKILL.md",
+      "source_url": "https://github.com/KKKKhazix/sun-style-writing/tree/main/sun-style-writing",
+      "topic_tag": "克制白描叙事",
+      "summary": "把白描、短句、数字锚点、物件照应、沉默留白和反高潮组织成一套克制的中文非虚构叙事工作流。",
+      "use_when": [
+        "要把个人经历、人物故事、回忆录、纪实散文或创业故事写成克制、不直接煽情的中文长文。",
+        "要用真实动作、物件、数字和场景替代空泛情绪词，并检查短句节奏、伏笔照应与结尾回环。"
+      ],
+      "inputs_outputs": [
+        "输入：可核验的事件材料、人物关系、时间线、真实数字与物件细节，以及题材、受众和篇幅。",
+        "输出：以白描和短句推进的中文叙事成稿，并可按内置清单检查场景深度、事实边界、留白和节奏。"
+      ],
+      "limitations": [
+        "规则约束很强，不适合新闻通稿、学术论文、品牌规范稿或需要直接表达观点和情绪的文体。",
+        "Skill 不负责事实核验；不得为了追求精确感编造数字、对白、动机或人物经历。",
+        "方法源自对一篇公开文章的技法拆解；使用时应抽象借鉴白描等手法，避免复刻原文长段、冒充原作者或把生成内容当成真实回忆。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/KKKKhazix/sun-style-writing.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\sun-style-writing\\sun-style-writing \"$env:USERPROFILE\\.codex\\skills\\sun-style-writing\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/KKKKhazix/sun-style-writing.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R sun-style-writing/sun-style-writing ~/.codex/skills/sun-style-writing"
+        ]
+      },
+      "example_prompt": "请用 sun-style-writing 把这些真实采访材料写成第一人称长文；数字只用材料里能确认的，重点展开两个场景，不要直接解释情绪。",
+      "page_url": "https://skills.summerai.cc/#sun-style-writing",
+      "invocation": {
+        "codex": [
+          "请使用 sun-style-writing 这个 skill，帮我处理：<把你的写作材料和要求写在这里>",
+          "$sun-style-writing <把你的写作材料和要求写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 sun-style-writing 这个 skill，帮我处理：<把你的写作材料和要求写在这里>",
+          "Use the sun-style-writing skill to handle: <your narrative writing task>"
+        ]
+      }
+    },
+    {
+      "id": "ip-illustration-character-system",
+      "name": "萌粒风个人 IP 全套",
+      "category": [
+        "design"
+      ],
+      "recommendation_level": "medium-high",
+      "author": {
+        "login": "EverettFish",
+        "github_url": "https://github.com/EverettFish",
+        "avatar_url": "https://github.com/EverettFish.png"
+      },
+      "source_repository": "https://github.com/EverettFish/ip_illustration_for_yourself",
+      "source_path": "SKILL.md",
+      "source_url": "https://github.com/EverettFish/ip_illustration_for_yourself",
+      "topic_tag": "个人 IP 视觉系统",
+      "summary": "先建立一致的角色身份锚点，再生成文章配图、信息图、实拍融合、贴纸、文件夹图标、信纸、相框、头像和表情包等整套个人 IP 资产。",
+      "use_when": [
+        "要把真人、宠物、原创角色或吉祥物做成跨多种画幅和资产类型仍保持身份一致的个人 IP。",
+        "要围绕同一个角色制作文章插图、透明贴纸、头像、表情包、实拍融合或可用的 PNG/ICO 图标。"
+      ],
+      "inputs_outputs": [
+        "输入：角色参考图、目标风格、需要的资产类型与数量、主题、文字、画幅、透明度及实拍融合素材。",
+        "输出：确认后的角色锚点、各路线视觉资产、文件路径与清单，以及透明通道和确定性后处理说明。"
+      ],
+      "limitations": [
+        "创意图片生成依赖当前 Agent 可调用的生图或图片编辑工具；没有图片工具时只交付可复制的 Prompt 包，成图一致性仍受模型能力影响。",
+        "使用真人照片、品牌、影视或表情包参考前应确认肖像权和素材授权；示例图只控制布局或风格，不能把其中的角色、Logo、水印和文字默认复制进结果。",
+        "两个后处理脚本依赖 Python Pillow，会写入用户指定的 PNG/ICO 输出路径；执行前应确认文件名和目标目录。",
+        "仓库在本次审查时未见 LICENSE；可从原仓库安装体验，但再分发、改编或商业使用前应向作者确认许可。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/EverettFish/ip_illustration_for_yourself.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "Copy-Item -Recurse .\\ip_illustration_for_yourself \"$env:USERPROFILE\\.codex\\skills\\ip-illustration-character-system\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/EverettFish/ip_illustration_for_yourself.git",
+          "mkdir -p ~/.codex/skills",
+          "cp -R ip_illustration_for_yourself ~/.codex/skills/ip-illustration-character-system"
+        ]
+      },
+      "example_prompt": "请用 ip-illustration-character-system 先根据这张参考图建立角色锚点，再做 5 张文章配图、4 个头像和一套 12 张表情包；所有输出保持同一身份特征。",
+      "page_url": "https://skills.summerai.cc/#ip-illustration-character-system",
+      "invocation": {
+        "codex": [
+          "请使用 ip-illustration-character-system 这个 skill，帮我处理：<把你的角色和资产需求写在这里>",
+          "$ip-illustration-character-system <把你的角色和资产需求写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 ip-illustration-character-system 这个 skill，帮我处理：<把你的角色和资产需求写在这里>",
+          "Use the ip-illustration-character-system skill to handle: <your personal-IP asset task>"
+        ]
+      }
+    },
+    {
+      "id": "celestial-architect",
+      "name": "营造师",
+      "category": [
+        "design"
+      ],
+      "recommendation_level": "medium",
+      "author": {
+        "login": "irenerachel",
+        "github_url": "https://github.com/irenerachel",
+        "avatar_url": "https://github.com/irenerachel.png"
+      },
+      "source_repository": "https://github.com/irenerachel/celestial-architect-skill",
+      "source_path": "营造师.skill!/营造师/SKILL.md",
+      "source_url": "https://github.com/irenerachel/celestial-architect-skill",
+      "topic_tag": "中式巨构造景",
+      "summary": "把参考图构图、古诗意象或建筑关键词转译为形制明确、尺度宏大、疏密有序的中式巨构、白玉京和仙侠场景双语生图提示词。",
+      "use_when": [
+        "要沿用参考图的机位和视觉动线，但把哥特、现代或其他建筑元素转译为中式巨构。",
+        "要把古诗、亭台楼阁、门派场所、园林或建筑局部营造成白玉京、宫城蓝线图或仙侠空间提示词。"
+      ],
+      "inputs_outputs": [
+        "输入：参考图、古诗句或建筑/场所关键词，以及人物、视觉路线、画幅、组数和目标生图平台等可选要求。",
+        "输出：默认 3 组密、均、疏互补视角；每组包含标题、路线、机位、建议画幅及信息量对齐的中英文提示词。"
+      ],
+      "limitations": [
+        "默认只生成提示词，不会自动消耗生图额度；实际成图受模型、参考图和平台参数影响。",
+        "建筑术语适合概念设计与视觉约束，不能替代文物、建筑史或工程用途的专业核验。",
+        "仓库只发布营造师.skill 压缩包，安装后需要把内部目录重命名为 celestial-architect；其中 SKILL.md 提到的 ../_shared/图片提示词技能路由表.md 未随压缩包提供，但核心流程和 4 份 references 完整。",
+        "仓库在本次审查时未见 LICENSE；可从原仓库安装体验，但再分发、改编或商业使用前应向作者确认许可。"
+      ],
+      "install": {
+        "windows_powershell": [
+          "git clone https://github.com/irenerachel/celestial-architect-skill.git",
+          "New-Item -ItemType Directory -Force \"$env:USERPROFILE\\.codex\\skills\" | Out-Null",
+          "tar -xf .\\celestial-architect-skill\\营造师.skill -C \"$env:USERPROFILE\\.codex\\skills\"",
+          "Rename-Item \"$env:USERPROFILE\\.codex\\skills\\营造师\" \"celestial-architect\""
+        ],
+        "macos_linux": [
+          "git clone https://github.com/irenerachel/celestial-architect-skill.git",
+          "mkdir -p ~/.codex/skills",
+          "unzip celestial-architect-skill/营造师.skill -d ~/.codex/skills",
+          "mv ~/.codex/skills/营造师 ~/.codex/skills/celestial-architect"
+        ]
+      },
+      "example_prompt": "请用 celestial-architect 参考这张图的构图和视角，把‘危楼高百尺，手可摘星辰’营造成云上白玉京；无人物，用飞鸟作尺度参照。",
+      "page_url": "https://skills.summerai.cc/#celestial-architect",
+      "invocation": {
+        "codex": [
+          "请使用 celestial-architect 这个 skill，帮我处理：<把你的参考图、诗句或建筑主题写在这里>",
+          "$celestial-architect <把你的参考图、诗句或建筑主题写在这里>"
+        ],
+        "claude_code_or_claw": [
+          "请使用 celestial-architect 这个 skill，帮我处理：<把你的参考图、诗句或建筑主题写在这里>",
+          "Use the celestial-architect skill to handle: <your Chinese fantasy architecture task>"
         ]
       }
     }
